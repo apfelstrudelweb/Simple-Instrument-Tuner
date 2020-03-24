@@ -98,10 +98,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uLk-vP-iNI" userLabel="deviationView">
-                                <rect key="frame" x="106" y="659.5" width="202" height="25"/>
-                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcu-kb-rNu" userLabel="micButton">
                                 <rect key="frame" x="172" y="780" width="70" height="70.5"/>
                                 <constraints>
@@ -126,24 +122,29 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oWN-up-Uaj">
-                                <rect key="frame" x="106" y="613" width="202" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="29" id="4yw-vJ-dYu"/>
-                                </constraints>
+                                <rect key="frame" x="106" y="612.5" width="202" height="29"/>
                                 <connections>
                                     <segue destination="8xy-W9-wva" kind="embed" identifier="volumeMeterSegue" id="8L5-Wj-17s"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wPJ-p5-BCi">
+                                <rect key="frame" x="106" y="657.5" width="202" height="29"/>
+                                <connections>
+                                    <segue destination="JH4-YD-FpM" kind="embed" identifier="deviationMeterSegue" id="IOi-kj-hwG"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" red="0.1529633105" green="0.16794264319999999" blue="0.18741327520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="wPJ-p5-BCi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.5" id="10M-LQ-xbS"/>
                             <constraint firstItem="6nW-qN-5fD" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="1Kc-Dm-fOc"/>
                             <constraint firstItem="oWN-up-Uaj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.4" id="2N3-jB-luw"/>
                             <constraint firstItem="tlR-YH-jlN" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.07" id="4CV-0K-23S"/>
                             <constraint firstItem="pJy-6n-tqR" firstAttribute="width" secondItem="jcu-kb-rNu" secondAttribute="width" multiplier="0.7" id="6Zj-ZC-G9A"/>
-                            <constraint firstItem="uLk-vP-iNI" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.5" id="6c4-Pv-rte"/>
                             <constraint firstItem="W2O-oX-8br" firstAttribute="leading" secondItem="oWN-up-Uaj" secondAttribute="leading" id="7hA-pi-ree"/>
+                            <constraint firstItem="wPJ-p5-BCi" firstAttribute="trailing" secondItem="oWN-up-Uaj" secondAttribute="trailing" id="9RU-d4-8Bn"/>
                             <constraint firstItem="5Vw-Yb-CA4" firstAttribute="centerX" secondItem="tlR-YH-jlN" secondAttribute="centerX" id="9sF-FD-faL"/>
+                            <constraint firstItem="oWN-up-Uaj" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.0323661" id="Am4-zq-Ill"/>
                             <constraint firstItem="jcu-kb-rNu" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.17" id="Aww-i0-NmC"/>
                             <constraint firstItem="WnS-BV-RBB" firstAttribute="width" secondItem="5Vw-Yb-CA4" secondAttribute="width" id="BXx-aL-qNg"/>
                             <constraint firstItem="gbW-zA-tn6" firstAttribute="centerY" secondItem="tlR-YH-jlN" secondAttribute="centerY" id="BgZ-vo-79n"/>
@@ -151,12 +152,11 @@
                             <constraint firstItem="oWN-up-Uaj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EkA-5C-Zeq"/>
                             <constraint firstItem="hdJ-Pc-bjB" firstAttribute="centerY" secondItem="DAJ-WS-Zch" secondAttribute="centerY" id="Euy-Df-ldY"/>
                             <constraint firstItem="hdJ-Pc-bjB" firstAttribute="trailing" secondItem="uU6-0l-OPV" secondAttribute="trailing" id="F6O-ft-Dof"/>
-                            <constraint firstItem="uLk-vP-iNI" firstAttribute="trailing" secondItem="oWN-up-Uaj" secondAttribute="trailing" id="GRt-Vc-lL3"/>
                             <constraint firstItem="W2O-oX-8br" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.32" id="GVZ-nZ-uqW"/>
                             <constraint firstItem="WnS-BV-RBB" firstAttribute="centerY" secondItem="5Vw-Yb-CA4" secondAttribute="centerY" id="K4L-3X-bJG"/>
                             <constraint firstItem="6nW-qN-5fD" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.13" id="Kr4-Qi-3np"/>
+                            <constraint firstItem="wPJ-p5-BCi" firstAttribute="leading" secondItem="oWN-up-Uaj" secondAttribute="leading" id="MD1-6R-e44"/>
                             <constraint firstItem="gbW-zA-tn6" firstAttribute="width" secondItem="tlR-YH-jlN" secondAttribute="width" id="OME-c4-CLo"/>
-                            <constraint firstItem="uLk-vP-iNI" firstAttribute="leading" secondItem="oWN-up-Uaj" secondAttribute="leading" id="PTU-6b-ZHX"/>
                             <constraint firstItem="jcu-kb-rNu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.82" id="Pj3-T3-wZc"/>
                             <constraint firstItem="ldv-Qj-Zm6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.65" id="PzU-kQ-5Vl"/>
                             <constraint firstItem="5R4-no-p7F" firstAttribute="height" secondItem="gbW-zA-tn6" secondAttribute="height" id="QPU-4v-Ie4"/>
@@ -167,6 +167,7 @@
                             <constraint firstItem="W2O-oX-8br" firstAttribute="trailing" secondItem="oWN-up-Uaj" secondAttribute="trailing" id="UI6-cZ-ZUV"/>
                             <constraint firstItem="pJy-6n-tqR" firstAttribute="trailing" secondItem="zSU-BG-s5S" secondAttribute="trailing" id="UhB-fU-Toi"/>
                             <constraint firstItem="oWN-up-Uaj" firstAttribute="width" secondItem="uU6-0l-OPV" secondAttribute="width" multiplier="0.573864" id="UkQ-Gc-vYa"/>
+                            <constraint firstItem="wPJ-p5-BCi" firstAttribute="height" secondItem="oWN-up-Uaj" secondAttribute="height" id="V6g-dS-CHo"/>
                             <constraint firstItem="WnS-BV-RBB" firstAttribute="centerX" secondItem="gbW-zA-tn6" secondAttribute="centerX" id="VMK-5D-p7A"/>
                             <constraint firstItem="SD9-2v-ndg" firstAttribute="height" secondItem="5R4-no-p7F" secondAttribute="height" id="WR3-Qh-JHH"/>
                             <constraint firstItem="tlR-YH-jlN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.1" id="WhV-Gq-AtL"/>
@@ -201,7 +202,6 @@
                             <constraint firstItem="uU6-0l-OPV" firstAttribute="top" secondItem="6nW-qN-5fD" secondAttribute="bottom" id="rf8-ex-tew"/>
                             <constraint firstItem="SD9-2v-ndg" firstAttribute="width" secondItem="5R4-no-p7F" secondAttribute="width" id="taj-Pg-YVf"/>
                             <constraint firstItem="zSU-BG-s5S" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.07" id="uZX-zA-RnC"/>
-                            <constraint firstItem="uLk-vP-iNI" firstAttribute="height" secondItem="oWN-up-Uaj" secondAttribute="height" multiplier="0.862069" id="uzQ-oY-Dbf"/>
                             <constraint firstItem="zSU-BG-s5S" firstAttribute="leading" secondItem="DAJ-WS-Zch" secondAttribute="leading" id="vyd-Zk-kZg"/>
                             <constraint firstItem="DAJ-WS-Zch" firstAttribute="width" secondItem="uU6-0l-OPV" secondAttribute="width" multiplier="0.485795" id="wd6-eN-v0v"/>
                             <constraint firstItem="gbW-zA-tn6" firstAttribute="centerX" secondItem="qDH-bj-9dt" secondAttribute="centerX" multiplier="0.91" id="wnT-6O-iXN"/>
@@ -238,6 +238,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hXc-bV-ouM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="867" y="258"/>
+        </scene>
+        <!--DeviationMeter-->
+        <scene sceneID="vSE-YN-e9m">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DeviationMeter" id="JH4-YD-FpM" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BNc-Vx-L2T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="849" y="319"/>
         </scene>
     </scenes>
     <resources>

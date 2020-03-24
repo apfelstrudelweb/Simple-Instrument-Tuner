@@ -24,6 +24,7 @@ class InstrumentViewController: UIViewController {
     
     private var embeddedGaugeViewController: GaugeViewController!
     private var embeddedVolumeMeterController: VolumeMeterViewController!
+    private var embeddedDeviationMeterController: DeviationMeterViewController!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? GaugeViewController,
@@ -33,6 +34,10 @@ class InstrumentViewController: UIViewController {
         if let vc = segue.destination as? VolumeMeterViewController,
             segue.identifier == "volumeMeterSegue" {
             embeddedVolumeMeterController = vc
+        }
+        if let vc = segue.destination as? DeviationMeterViewController,
+            segue.identifier == "deviationMeterSegue" {
+            embeddedDeviationMeterController = vc
         }
     }
     
@@ -98,6 +103,8 @@ class InstrumentViewController: UIViewController {
             // Gauge
             embeddedGaugeViewController.displayFrequency(frequency: frequency)
             embeddedVolumeMeterController.displayVolume(volume: frequencyTracker.amplitude)
+            
+            embeddedDeviationMeterController.displayDeviation(frequency: frequency)
         } else {
             embeddedVolumeMeterController.displayVolume(volume: 0.1)
         }

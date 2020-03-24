@@ -18,6 +18,15 @@
 		652BC0E2242A2C6F00F60B83 /* volumeMeterPattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 652BC0E1242A2C6E00F60B83 /* volumeMeterPattern.png */; };
 		652BC0E3242A2C6F00F60B83 /* volumeMeterPattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 652BC0E1242A2C6E00F60B83 /* volumeMeterPattern.png */; };
 		652BC0E4242A2C6F00F60B83 /* volumeMeterPattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 652BC0E1242A2C6E00F60B83 /* volumeMeterPattern.png */; };
+		652BC0E6242A582400F60B83 /* DeviationMeter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652BC0E5242A582400F60B83 /* DeviationMeter.storyboard */; };
+		652BC0E7242A582400F60B83 /* DeviationMeter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652BC0E5242A582400F60B83 /* DeviationMeter.storyboard */; };
+		652BC0E8242A582400F60B83 /* DeviationMeter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652BC0E5242A582400F60B83 /* DeviationMeter.storyboard */; };
+		652BC0EA242A583C00F60B83 /* DeviationMeterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC0E9242A583C00F60B83 /* DeviationMeterViewController.swift */; };
+		652BC0EB242A583C00F60B83 /* DeviationMeterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC0E9242A583C00F60B83 /* DeviationMeterViewController.swift */; };
+		652BC0EC242A583C00F60B83 /* DeviationMeterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC0E9242A583C00F60B83 /* DeviationMeterViewController.swift */; };
+		652BC0EF242A69A300F60B83 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC0EE242A69A300F60B83 /* Constants.swift */; };
+		652BC0F0242A69A300F60B83 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC0EE242A69A300F60B83 /* Constants.swift */; };
+		652BC0F1242A69A300F60B83 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC0EE242A69A300F60B83 /* Constants.swift */; };
 		65CCBF5624260D9E00F518D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBF5524260D9E00F518D8 /* AppDelegate.swift */; };
 		65CCBF5824260D9E00F518D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBF5724260D9E00F518D8 /* SceneDelegate.swift */; };
 		65CCBF5A24260D9E00F518D8 /* InstrumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBF5924260D9E00F518D8 /* InstrumentViewController.swift */; };
@@ -152,6 +161,9 @@
 		652BC0D9242A2C0C00F60B83 /* VolumeMeterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeMeterViewController.swift; sourceTree = "<group>"; };
 		652BC0DA242A2C0C00F60B83 /* VolumeMeter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VolumeMeter.storyboard; sourceTree = "<group>"; };
 		652BC0E1242A2C6E00F60B83 /* volumeMeterPattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volumeMeterPattern.png; sourceTree = "<group>"; };
+		652BC0E5242A582400F60B83 /* DeviationMeter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DeviationMeter.storyboard; sourceTree = "<group>"; };
+		652BC0E9242A583C00F60B83 /* DeviationMeterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviationMeterViewController.swift; sourceTree = "<group>"; };
+		652BC0EE242A69A300F60B83 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		65CCBF5224260D9E00F518D8 /* Simple Instrument Tuner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Instrument Tuner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65CCBF5524260D9E00F518D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65CCBF5724260D9E00F518D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -287,6 +299,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		652BC0ED242A698E00F60B83 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				652BC0EE242A69A300F60B83 /* Constants.swift */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
 		65CCBF4924260D9E00F518D8 = {
 			isa = PBXGroup;
 			children = (
@@ -322,6 +342,7 @@
 		65CCBF5424260D9E00F518D8 /* Simple Instrument Tuner */ = {
 			isa = PBXGroup;
 			children = (
+				652BC0ED242A698E00F60B83 /* Misc */,
 				65CCC03124266BE700F518D8 /* View */,
 				65CCBFF72426215800F518D8 /* images */,
 				65CCBF5524260D9E00F518D8 /* AppDelegate.swift */,
@@ -444,6 +465,8 @@
 		65CCC03124266BE700F518D8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				652BC0E5242A582400F60B83 /* DeviationMeter.storyboard */,
+				652BC0E9242A583C00F60B83 /* DeviationMeterViewController.swift */,
 				65CCC03224266C0B00F518D8 /* Gauge.storyboard */,
 				65CCC03624266CAA00F518D8 /* GaugeViewController.swift */,
 				652BC0DA242A2C0C00F60B83 /* VolumeMeter.storyboard */,
@@ -739,6 +762,7 @@
 				65CCC00A242626BC00F518D8 /* stringPassive.png in Resources */,
 				652BC0E2242A2C6F00F60B83 /* volumeMeterPattern.png in Resources */,
 				65CCC0022426268900F518D8 /* ledPassive.png in Resources */,
+				652BC0E6242A582400F60B83 /* DeviationMeter.storyboard in Resources */,
 				65CCC02924263B8B00F518D8 /* gaugeBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -782,6 +806,7 @@
 				65CCC022242637E700F518D8 /* info.png in Resources */,
 				65CCBF9324260E1E00F518D8 /* Main.storyboard in Resources */,
 				65CCBFFE242621D200F518D8 /* btnPassive.png in Resources */,
+				652BC0E7242A582400F60B83 /* DeviationMeter.storyboard in Resources */,
 				65CCC01B2426368600F518D8 /* microphoneOff.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -804,6 +829,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				652BC0E8242A582400F60B83 /* DeviationMeter.storyboard in Resources */,
 				65CCC0142426318E00F518D8 /* gaugePatternGreen.png in Resources */,
 				65CCC01F2426368600F518D8 /* microphoneOn.png in Resources */,
 				652BC0E4242A2C6F00F60B83 /* volumeMeterPattern.png in Resources */,
@@ -975,6 +1001,8 @@
 				652BC0DB242A2C0D00F60B83 /* VolumeMeterViewController.swift in Sources */,
 				65CCBF5A24260D9E00F518D8 /* InstrumentViewController.swift in Sources */,
 				65CCBF5624260D9E00F518D8 /* AppDelegate.swift in Sources */,
+				652BC0EF242A69A300F60B83 /* Constants.swift in Sources */,
+				652BC0EA242A583C00F60B83 /* DeviationMeterViewController.swift in Sources */,
 				65CCBF5824260D9E00F518D8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -998,11 +1026,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				65CCBF9024260E1E00F518D8 /* ViewController.swift in Sources */,
+				652BC0EB242A583C00F60B83 /* DeviationMeterViewController.swift in Sources */,
 				65CCBFF52426115200F518D8 /* InstrumentViewController.swift in Sources */,
 				652BC0DC242A2C0D00F60B83 /* VolumeMeterViewController.swift in Sources */,
 				65CCC03824266CAA00F518D8 /* GaugeViewController.swift in Sources */,
 				65CCBF8C24260E1E00F518D8 /* AppDelegate.swift in Sources */,
 				65CCBF8E24260E1E00F518D8 /* SceneDelegate.swift in Sources */,
+				652BC0F0242A69A300F60B83 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1027,11 +1057,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				65CCBFC424260E4800F518D8 /* ViewController.swift in Sources */,
+				652BC0EC242A583C00F60B83 /* DeviationMeterViewController.swift in Sources */,
 				65CCBFF62426115400F518D8 /* InstrumentViewController.swift in Sources */,
 				652BC0DD242A2C0D00F60B83 /* VolumeMeterViewController.swift in Sources */,
 				65CCC03924266CAA00F518D8 /* GaugeViewController.swift in Sources */,
 				65CCBFC024260E4800F518D8 /* AppDelegate.swift in Sources */,
 				65CCBFC224260E4800F518D8 /* SceneDelegate.swift in Sources */,
+				652BC0F1242A69A300F60B83 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
