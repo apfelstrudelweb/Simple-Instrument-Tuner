@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4vZ-Nd-hgf">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Volume Meter View Controller-->
+        <scene sceneID="iIU-PG-lV3">
+            <objects>
+                <viewController id="4vZ-Nd-hgf" customClass="VolumeMeterViewController" customModule="Simple_Banjo_Tuner" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oaG-Sk-zi5"/>
+                        <viewControllerLayoutGuide type="bottom" id="kIZ-NT-puJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6Xw-F3-w5W">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7k-k2-uBY">
+                                <rect key="frame" x="4" y="4" width="406" height="192"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yrq-Hc-rc8">
+                                <rect key="frame" x="4" y="4" width="406" height="192"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yrq-Hc-rc8" firstAttribute="bottom" secondItem="R7k-k2-uBY" secondAttribute="bottom" id="6BK-81-bDl"/>
+                            <constraint firstItem="yrq-Hc-rc8" firstAttribute="top" secondItem="R7k-k2-uBY" secondAttribute="top" id="GsH-e8-pUH"/>
+                            <constraint firstItem="yrq-Hc-rc8" firstAttribute="leading" secondItem="R7k-k2-uBY" secondAttribute="leading" id="LmB-E7-ba2"/>
+                            <constraint firstAttribute="trailing" secondItem="R7k-k2-uBY" secondAttribute="trailing" constant="4" id="O1c-iW-K17"/>
+                            <constraint firstItem="kIZ-NT-puJ" firstAttribute="top" secondItem="R7k-k2-uBY" secondAttribute="bottom" constant="4" id="UGE-e5-Ytd"/>
+                            <constraint firstItem="yrq-Hc-rc8" firstAttribute="trailing" secondItem="R7k-k2-uBY" secondAttribute="trailing" priority="250" id="w43-zV-ZSZ"/>
+                            <constraint firstItem="R7k-k2-uBY" firstAttribute="leading" secondItem="6Xw-F3-w5W" secondAttribute="leading" constant="4" id="yrM-HD-bbe"/>
+                            <constraint firstItem="R7k-k2-uBY" firstAttribute="top" secondItem="6Xw-F3-w5W" secondAttribute="top" constant="4" id="zOl-xP-IFu"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="414" height="200"/>
+                    <connections>
+                        <outlet property="backgroundView" destination="R7k-k2-uBY" id="irs-8Z-upk"/>
+                        <outlet property="meterView" destination="yrq-Hc-rc8" id="XBB-pv-LuD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0fh-SR-lbb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-288.40579710144931" y="85.714285714285708"/>
+        </scene>
+    </scenes>
+</document>

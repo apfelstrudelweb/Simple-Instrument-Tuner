@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qL3-tO-Vlf">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Gauge View Controller-->
+        <scene sceneID="9oC-js-ZgJ">
+            <objects>
+                <viewController id="qL3-tO-Vlf" customClass="GaugeViewController" customModule="Simple_Banjo_Tuner" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5RS-Dx-klZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="agd-Yv-9TH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="R8n-nt-SfM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="whv-On-Vbw">
+                                <rect key="frame" x="2" y="44" width="371" height="154"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vGk-g4-Vgv">
+                                <rect key="frame" x="2" y="2" width="371" height="196"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mbm-6x-Nol">
+                                        <rect key="frame" x="20" y="2" width="331" height="194"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1vU-2Y-gL2" userLabel="contentView">
+                                                <rect key="frame" x="0.0" y="0.0" width="2400" height="174.5"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Usz-cB-829">
+                                                        <rect key="frame" x="0.0" y="0.0" width="2400" height="174.5"/>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="Usz-cB-829" firstAttribute="width" secondItem="1vU-2Y-gL2" secondAttribute="width" id="8Mv-KA-Fpf"/>
+                                                    <constraint firstItem="Usz-cB-829" firstAttribute="top" secondItem="1vU-2Y-gL2" secondAttribute="top" id="Ng8-pO-nfN"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Usz-cB-829" secondAttribute="bottom" id="XWW-hd-9TE"/>
+                                                    <constraint firstItem="Usz-cB-829" firstAttribute="centerX" secondItem="1vU-2Y-gL2" secondAttribute="centerX" id="hzg-B7-aHe"/>
+                                                    <constraint firstAttribute="width" constant="2400" id="zqU-Bc-ZTP"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="1vU-2Y-gL2" firstAttribute="trailing" secondItem="lVB-XW-YP4" secondAttribute="trailing" id="AEF-El-ZCC"/>
+                                            <constraint firstItem="1vU-2Y-gL2" firstAttribute="bottom" secondItem="lVB-XW-YP4" secondAttribute="bottom" id="D4K-8p-CEG"/>
+                                            <constraint firstItem="1vU-2Y-gL2" firstAttribute="top" secondItem="lVB-XW-YP4" secondAttribute="top" id="Tmt-yj-Wq7"/>
+                                            <constraint firstItem="1vU-2Y-gL2" firstAttribute="leading" secondItem="lVB-XW-YP4" secondAttribute="leading" id="qtr-2p-1Lc"/>
+                                            <constraint firstItem="1vU-2Y-gL2" firstAttribute="height" secondItem="gPN-89-bft" secondAttribute="height" multiplier="0.9" id="r4l-mf-P4k"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="contentLayoutGuide" id="lVB-XW-YP4"/>
+                                        <viewLayoutGuide key="frameLayoutGuide" id="gPN-89-bft"/>
+                                    </scrollView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gaugeOverlay.png" translatesAutoresizingMaskIntoConstraints="NO" id="720-IG-NDE">
+                                        <rect key="frame" x="0.0" y="0.0" width="371" height="196"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="720-IG-NDE" firstAttribute="top" secondItem="vGk-g4-Vgv" secondAttribute="top" id="6NE-Nb-Tj6"/>
+                                    <constraint firstAttribute="bottom" secondItem="720-IG-NDE" secondAttribute="bottom" id="9ne-Ai-IhQ"/>
+                                    <constraint firstItem="720-IG-NDE" firstAttribute="leading" secondItem="vGk-g4-Vgv" secondAttribute="leading" id="JpU-EM-qZ5"/>
+                                    <constraint firstItem="Mbm-6x-Nol" firstAttribute="leading" secondItem="vGk-g4-Vgv" secondAttribute="leading" constant="20" id="MRA-Nm-tZw"/>
+                                    <constraint firstAttribute="trailing" secondItem="Mbm-6x-Nol" secondAttribute="trailing" constant="20" id="OGL-DY-gVq"/>
+                                    <constraint firstItem="Mbm-6x-Nol" firstAttribute="top" secondItem="vGk-g4-Vgv" secondAttribute="top" constant="2" id="d64-hA-cFQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="Mbm-6x-Nol" secondAttribute="bottom" id="gC1-2V-RB3"/>
+                                    <constraint firstAttribute="trailing" secondItem="720-IG-NDE" secondAttribute="trailing" id="iCh-y4-6PZ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="whv-On-Vbw" firstAttribute="leading" secondItem="vGk-g4-Vgv" secondAttribute="leading" id="6AU-mf-NIP"/>
+                            <constraint firstItem="vGk-g4-Vgv" firstAttribute="leading" secondItem="R8n-nt-SfM" secondAttribute="leading" constant="2" id="BYT-Gk-zMd"/>
+                            <constraint firstItem="agd-Yv-9TH" firstAttribute="top" secondItem="vGk-g4-Vgv" secondAttribute="bottom" constant="2" id="Ohr-3V-Zbh"/>
+                            <constraint firstItem="whv-On-Vbw" firstAttribute="top" secondItem="5RS-Dx-klZ" secondAttribute="bottom" id="PMz-5L-dm5"/>
+                            <constraint firstAttribute="trailing" secondItem="vGk-g4-Vgv" secondAttribute="trailing" constant="2" id="dOZ-m0-9iA"/>
+                            <constraint firstItem="whv-On-Vbw" firstAttribute="bottom" secondItem="vGk-g4-Vgv" secondAttribute="bottom" id="ifw-Y4-TwJ"/>
+                            <constraint firstItem="whv-On-Vbw" firstAttribute="trailing" secondItem="vGk-g4-Vgv" secondAttribute="trailing" id="kGk-lN-OPZ"/>
+                            <constraint firstItem="vGk-g4-Vgv" firstAttribute="top" secondItem="R8n-nt-SfM" secondAttribute="top" constant="2" id="xmo-ym-C9G"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="375" height="200"/>
+                    <connections>
+                        <outlet property="backgroundView" destination="vGk-g4-Vgv" id="CG1-wU-KhD"/>
+                        <outlet property="contentView" destination="1vU-2Y-gL2" id="ps9-gl-pyb"/>
+                        <outlet property="overlayView" destination="720-IG-NDE" id="IeG-7F-DgL"/>
+                        <outlet property="scrollContentView" destination="1vU-2Y-gL2" id="Fv6-lJ-iK2"/>
+                        <outlet property="scrollView" destination="Mbm-6x-Nol" id="4xf-HX-gyt"/>
+                        <outlet property="stackView" destination="Usz-cB-829" id="C1i-Uf-nuY"/>
+                        <outlet property="upperShadowView" destination="whv-On-Vbw" id="TyB-nU-79l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Im-Yw-53o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-431.15942028985512" y="-29.464285714285712"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="gaugeOverlay.png" width="1000" height="150"/>
+    </resources>
+</document>

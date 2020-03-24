@@ -1,0 +1,16 @@
+Pods/
+podfile.lock
+
+xcuserdata/
+*.xccheckout
+xcshareddata/
+
+*.cer
+*.zip
+*.ipa
+*.mobileprovision
+*.p12
+*.pem
+*.pkey
+fastlane/README.md
+fastlane/report.xml
