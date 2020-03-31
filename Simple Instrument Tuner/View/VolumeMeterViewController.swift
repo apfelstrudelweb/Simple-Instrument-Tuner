@@ -59,8 +59,12 @@ class VolumeMeterViewController: UIViewController {
     func displayVolume(volume: Double) {
         
         let w = Double(view.frame.size.width)
-        maskView.frame = CGRect(x: 0.0, y: 0.0, width: 3 * volume * w, height: Double(meterView.bounds.size.height))
-        redLine.frame = maskView.bounds.offsetBy(dx: maskView.bounds.size.width-2, dy: 0)
+ 
+        UIView.animate(withDuration: 0.2) {
+            self.maskView.frame = CGRect(x: 0.0, y: 0.0, width: 3 * volume * w, height: Double(self.meterView.bounds.size.height))
+            self.redLine.frame = self.maskView.bounds.offsetBy(dx: self.maskView.bounds.size.width-2, dy: 0)
+        }
+        
     }
     
 }

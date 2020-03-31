@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="aVk-kq-m2q">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Bridge View Controller-->
+        <scene sceneID="oTa-Hr-hXj">
+            <objects>
+                <viewController id="aVk-kq-m2q" customClass="BridgeViewController" customModule="Simple_Banjo_Tuner" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PUV-Rd-mVA"/>
+                        <viewControllerLayoutGuide type="bottom" id="oPI-3C-KXj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XAE-Je-sYi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bridge.png" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wWO-f7-C9Y">
+                                <rect key="frame" x="0.0" y="416" width="414" height="184"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="wWO-f7-C9Y" secondAttribute="height" multiplier="36:16" id="qYw-cE-GPU"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="XYL-KR-hXO" userLabel="String Stack View">
+                                <rect key="frame" x="53" y="0.0" width="308" height="564"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x5h-eF-mxL">
+                                        <rect key="frame" x="0.0" y="0.0" width="51.5" height="564"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="string.png" translatesAutoresizingMaskIntoConstraints="NO" id="45a-pS-VWs">
+                                                <rect key="frame" x="19.5" y="0.0" width="12" height="564"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="45a-pS-VWs" secondAttribute="bottom" id="6ZY-2B-Sk2"/>
+                                            <constraint firstItem="45a-pS-VWs" firstAttribute="centerX" secondItem="x5h-eF-mxL" secondAttribute="centerX" id="LIQ-ZM-3MW"/>
+                                            <constraint firstItem="45a-pS-VWs" firstAttribute="top" secondItem="x5h-eF-mxL" secondAttribute="top" id="nYQ-Tq-V6Z"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BuU-8T-LoT">
+                                        <rect key="frame" x="51.5" y="0.0" width="51" height="564"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="string.png" translatesAutoresizingMaskIntoConstraints="NO" id="Bhg-R8-bat">
+                                                <rect key="frame" x="19.5" y="0.0" width="12" height="564"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Bhg-R8-bat" secondAttribute="bottom" id="5bj-Oe-ETL"/>
+                                            <constraint firstItem="Bhg-R8-bat" firstAttribute="top" secondItem="BuU-8T-LoT" secondAttribute="top" id="QCK-gs-Gax"/>
+                                            <constraint firstItem="Bhg-R8-bat" firstAttribute="centerX" secondItem="BuU-8T-LoT" secondAttribute="centerX" id="WYj-B9-UfM"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z71-kP-UVt">
+                                        <rect key="frame" x="102.5" y="0.0" width="51.5" height="564"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="string.png" translatesAutoresizingMaskIntoConstraints="NO" id="VLc-ex-Awj">
+                                                <rect key="frame" x="20" y="0.0" width="12" height="564"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="VLc-ex-Awj" firstAttribute="centerX" secondItem="Z71-kP-UVt" secondAttribute="centerX" id="O1L-Vn-DmP"/>
+                                            <constraint firstAttribute="bottom" secondItem="VLc-ex-Awj" secondAttribute="bottom" id="Seo-Hx-kfs"/>
+                                            <constraint firstItem="VLc-ex-Awj" firstAttribute="top" secondItem="Z71-kP-UVt" secondAttribute="top" id="oLb-o3-woB"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KJ4-b4-SGG">
+                                        <rect key="frame" x="154" y="0.0" width="51.5" height="564"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="string.png" translatesAutoresizingMaskIntoConstraints="NO" id="WVf-fm-RqO">
+                                                <rect key="frame" x="19.5" y="0.0" width="12" height="564"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="WVf-fm-RqO" secondAttribute="bottom" id="8MS-iG-Svq"/>
+                                            <constraint firstItem="WVf-fm-RqO" firstAttribute="top" secondItem="KJ4-b4-SGG" secondAttribute="top" id="HRI-ql-kFe"/>
+                                            <constraint firstItem="WVf-fm-RqO" firstAttribute="centerX" secondItem="KJ4-b4-SGG" secondAttribute="centerX" id="ovJ-LZ-3H4"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ITI-A4-Pon">
+                                        <rect key="frame" x="205.5" y="0.0" width="51" height="564"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="string.png" translatesAutoresizingMaskIntoConstraints="NO" id="9NV-xK-A6W">
+                                                <rect key="frame" x="19.5" y="0.0" width="12" height="564"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="9NV-xK-A6W" firstAttribute="top" secondItem="ITI-A4-Pon" secondAttribute="top" id="Ct9-gR-pse"/>
+                                            <constraint firstItem="9NV-xK-A6W" firstAttribute="centerX" secondItem="ITI-A4-Pon" secondAttribute="centerX" id="KlB-fl-9Qk"/>
+                                            <constraint firstAttribute="bottom" secondItem="9NV-xK-A6W" secondAttribute="bottom" id="Y9Q-Ud-BFb"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ha2-ll-yCW">
+                                        <rect key="frame" x="256.5" y="0.0" width="51.5" height="564"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="string.png" translatesAutoresizingMaskIntoConstraints="NO" id="plh-DF-07R">
+                                                <rect key="frame" x="20" y="0.0" width="12" height="564"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="plh-DF-07R" firstAttribute="centerX" secondItem="ha2-ll-yCW" secondAttribute="centerX" id="9b5-VM-UpN"/>
+                                            <constraint firstItem="plh-DF-07R" firstAttribute="top" secondItem="ha2-ll-yCW" secondAttribute="top" id="FCp-xd-aha"/>
+                                            <constraint firstAttribute="bottom" secondItem="plh-DF-07R" secondAttribute="bottom" id="y1S-9f-ly6"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xBn-xl-oCU">
+                                <rect key="frame" x="53" y="416" width="308" height="110"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TVH-bU-UPr">
+                                        <rect key="frame" x="0.0" y="0.0" width="51.5" height="110"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ledPassive.png" translatesAutoresizingMaskIntoConstraints="NO" id="xMN-oK-FiS">
+                                                <rect key="frame" x="7.5" y="11" width="36" height="88"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="xMN-oK-FiS" firstAttribute="centerY" secondItem="TVH-bU-UPr" secondAttribute="centerY" id="5rH-dn-4fP"/>
+                                            <constraint firstItem="xMN-oK-FiS" firstAttribute="centerX" secondItem="TVH-bU-UPr" secondAttribute="centerX" id="C7k-iZ-eP3"/>
+                                            <constraint firstItem="xMN-oK-FiS" firstAttribute="width" secondItem="TVH-bU-UPr" secondAttribute="width" multiplier="0.7" id="tkn-YF-dDC"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="50q-0U-OA7">
+                                        <rect key="frame" x="51.5" y="0.0" width="51" height="110"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ledPassive.png" translatesAutoresizingMaskIntoConstraints="NO" id="6f5-Bq-8Me">
+                                                <rect key="frame" x="7.5" y="11" width="36" height="88"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="6f5-Bq-8Me" firstAttribute="centerX" secondItem="50q-0U-OA7" secondAttribute="centerX" id="8NN-aW-h2r"/>
+                                            <constraint firstItem="6f5-Bq-8Me" firstAttribute="centerY" secondItem="50q-0U-OA7" secondAttribute="centerY" id="Slf-xE-wHI"/>
+                                            <constraint firstItem="6f5-Bq-8Me" firstAttribute="width" secondItem="50q-0U-OA7" secondAttribute="width" multiplier="0.7" id="iPM-hW-rPC"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DV5-O6-Ea1">
+                                        <rect key="frame" x="102.5" y="0.0" width="51.5" height="110"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ledPassive.png" translatesAutoresizingMaskIntoConstraints="NO" id="J0r-wV-lfy">
+                                                <rect key="frame" x="8" y="11" width="36" height="88"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="J0r-wV-lfy" firstAttribute="centerX" secondItem="DV5-O6-Ea1" secondAttribute="centerX" id="8yO-S4-Jgp"/>
+                                            <constraint firstItem="J0r-wV-lfy" firstAttribute="width" secondItem="DV5-O6-Ea1" secondAttribute="width" multiplier="0.7" id="f2J-TC-hFl"/>
+                                            <constraint firstItem="J0r-wV-lfy" firstAttribute="centerY" secondItem="DV5-O6-Ea1" secondAttribute="centerY" id="iCe-vR-gbh"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7uv-wj-Ub9">
+                                        <rect key="frame" x="154" y="0.0" width="51.5" height="110"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ledPassive.png" translatesAutoresizingMaskIntoConstraints="NO" id="kOS-xm-suw">
+                                                <rect key="frame" x="7.5" y="11" width="36" height="88"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="kOS-xm-suw" firstAttribute="centerX" secondItem="7uv-wj-Ub9" secondAttribute="centerX" id="G4t-3g-5eF"/>
+                                            <constraint firstItem="kOS-xm-suw" firstAttribute="centerY" secondItem="7uv-wj-Ub9" secondAttribute="centerY" id="eL3-6T-lev"/>
+                                            <constraint firstItem="kOS-xm-suw" firstAttribute="width" secondItem="7uv-wj-Ub9" secondAttribute="width" multiplier="0.7" id="guv-qj-vRJ"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6U8-8A-sGS">
+                                        <rect key="frame" x="205.5" y="0.0" width="51" height="110"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ledPassive.png" translatesAutoresizingMaskIntoConstraints="NO" id="rio-ZB-KhE">
+                                                <rect key="frame" x="7.5" y="11" width="36" height="88"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="rio-ZB-KhE" firstAttribute="width" secondItem="6U8-8A-sGS" secondAttribute="width" multiplier="0.7" id="g30-3Y-IJN"/>
+                                            <constraint firstItem="rio-ZB-KhE" firstAttribute="centerY" secondItem="6U8-8A-sGS" secondAttribute="centerY" id="qtV-SC-K3p"/>
+                                            <constraint firstItem="rio-ZB-KhE" firstAttribute="centerX" secondItem="6U8-8A-sGS" secondAttribute="centerX" id="tjZ-wr-tjp"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uld-yv-eu2">
+                                        <rect key="frame" x="256.5" y="0.0" width="51.5" height="110"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ledPassive.png" translatesAutoresizingMaskIntoConstraints="NO" id="Yz5-Nz-VDa">
+                                                <rect key="frame" x="8" y="11" width="36" height="88"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="Yz5-Nz-VDa" firstAttribute="centerX" secondItem="Uld-yv-eu2" secondAttribute="centerX" id="KxL-h0-PGy"/>
+                                            <constraint firstItem="Yz5-Nz-VDa" firstAttribute="centerY" secondItem="Uld-yv-eu2" secondAttribute="centerY" id="TKH-Pz-XJS"/>
+                                            <constraint firstItem="Yz5-Nz-VDa" firstAttribute="width" secondItem="Uld-yv-eu2" secondAttribute="width" multiplier="0.7" id="zPI-RY-wHJ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="LNo-Vn-zqR" userLabel="Button Stack View">
+                                <rect key="frame" x="53" y="538" width="308" height="50"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="irm-hz-zIN">
+                                        <rect key="frame" x="0.0" y="0.0" width="51.5" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bA0-eg-1oW" customClass="NoteButton" customModule="Simple_Banjo_Tuner" customModuleProvider="target">
+                                                <rect key="frame" x="5" y="11" width="41" height="30.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="bA0-eg-1oW" secondAttribute="height" multiplier="4:3" id="Lc5-Fo-qF6"/>
+                                                </constraints>
+                                                <state key="normal" image="noteButtonPassive"/>
+                                                <connections>
+                                                    <action selector="buttonTouched:" destination="aVk-kq-m2q" eventType="touchUpInside" id="wE3-Oj-Djl"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="bA0-eg-1oW" secondAttribute="bottom" multiplier="1.2" id="51h-si-SHV"/>
+                                            <constraint firstItem="bA0-eg-1oW" firstAttribute="centerX" secondItem="irm-hz-zIN" secondAttribute="centerX" id="toW-oV-jnV"/>
+                                            <constraint firstItem="bA0-eg-1oW" firstAttribute="width" secondItem="irm-hz-zIN" secondAttribute="width" multiplier="0.8" id="yWJ-Gc-5TY"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vZW-tc-QTO">
+                                        <rect key="frame" x="51.5" y="0.0" width="51" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gEC-GV-pth" customClass="NoteButton" customModule="Simple_Banjo_Tuner" customModuleProvider="target">
+                                                <rect key="frame" x="5" y="11" width="41" height="30.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="gEC-GV-pth" secondAttribute="height" multiplier="4:3" id="i6m-NL-jxn"/>
+                                                </constraints>
+                                                <state key="normal" image="noteButtonPassive"/>
+                                                <connections>
+                                                    <action selector="buttonTouched:" destination="aVk-kq-m2q" eventType="touchUpInside" id="8FG-1a-aqn"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="gEC-GV-pth" firstAttribute="width" secondItem="vZW-tc-QTO" secondAttribute="width" multiplier="0.8" id="Ezj-aD-3W0"/>
+                                            <constraint firstAttribute="bottom" secondItem="gEC-GV-pth" secondAttribute="bottom" multiplier="1.2" id="NHj-v7-wQQ"/>
+                                            <constraint firstItem="gEC-GV-pth" firstAttribute="centerX" secondItem="vZW-tc-QTO" secondAttribute="centerX" id="hzb-X5-V9a"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vyL-el-Up9">
+                                        <rect key="frame" x="102.5" y="0.0" width="51.5" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="2" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VaK-Gn-pze" customClass="NoteButton" customModule="Simple_Banjo_Tuner" customModuleProvider="target">
+                                                <rect key="frame" x="5.5" y="11" width="41" height="30.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="VaK-Gn-pze" secondAttribute="height" multiplier="4:3" id="2mW-VH-2E1"/>
+                                                </constraints>
+                                                <state key="normal" image="noteButtonPassive"/>
+                                                <connections>
+                                                    <action selector="buttonTouched:" destination="aVk-kq-m2q" eventType="touchUpInside" id="6i4-Dn-nOx"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="VaK-Gn-pze" firstAttribute="centerX" secondItem="vyL-el-Up9" secondAttribute="centerX" id="82x-pP-Whx"/>
+                                            <constraint firstAttribute="bottom" secondItem="VaK-Gn-pze" secondAttribute="bottom" multiplier="1.2" id="AS8-6M-93Q"/>
+                                            <constraint firstItem="VaK-Gn-pze" firstAttribute="width" secondItem="vyL-el-Up9" secondAttribute="width" multiplier="0.8" id="rqc-zL-bly"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ohd-jZ-Ojb">
+                                        <rect key="frame" x="154" y="0.0" width="51.5" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="3" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JqA-2B-d5G" customClass="NoteButton" customModule="Simple_Banjo_Tuner" customModuleProvider="target">
+                                                <rect key="frame" x="5" y="11" width="41" height="30.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="JqA-2B-d5G" secondAttribute="height" multiplier="4:3" id="SNw-bm-rFJ"/>
+                                                </constraints>
+                                                <state key="normal" image="noteButtonPassive"/>
+                                                <connections>
+                                                    <action selector="buttonTouched:" destination="aVk-kq-m2q" eventType="touchUpInside" id="mmo-vk-lUl"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="JqA-2B-d5G" firstAttribute="centerX" secondItem="ohd-jZ-Ojb" secondAttribute="centerX" id="4Qy-tP-5tY"/>
+                                            <constraint firstItem="JqA-2B-d5G" firstAttribute="width" secondItem="ohd-jZ-Ojb" secondAttribute="width" multiplier="0.8" id="URL-DG-SNN"/>
+                                            <constraint firstAttribute="bottom" secondItem="JqA-2B-d5G" secondAttribute="bottom" multiplier="1.2" id="h8h-2d-yt8"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KPO-wc-LFO">
+                                        <rect key="frame" x="205.5" y="0.0" width="51" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="4" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wOb-dU-lcz" customClass="NoteButton" customModule="Simple_Banjo_Tuner" customModuleProvider="target">
+                                                <rect key="frame" x="5" y="11" width="41" height="30.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="wOb-dU-lcz" secondAttribute="height" multiplier="4:3" id="91e-4i-lGh"/>
+                                                </constraints>
+                                                <state key="normal" image="noteButtonPassive"/>
+                                                <connections>
+                                                    <action selector="buttonTouched:" destination="aVk-kq-m2q" eventType="touchUpInside" id="bg2-Te-lFS"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="wOb-dU-lcz" secondAttribute="bottom" multiplier="1.2" id="RCW-qX-bGz"/>
+                                            <constraint firstItem="wOb-dU-lcz" firstAttribute="centerX" secondItem="KPO-wc-LFO" secondAttribute="centerX" id="Viz-4e-WYY"/>
+                                            <constraint firstItem="wOb-dU-lcz" firstAttribute="width" secondItem="KPO-wc-LFO" secondAttribute="width" multiplier="0.8" id="hRG-c9-0fn"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bgh-Mh-xsF">
+                                        <rect key="frame" x="256.5" y="0.0" width="51.5" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="5" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5z8-hs-SYn" customClass="NoteButton" customModule="Simple_Banjo_Tuner" customModuleProvider="target">
+                                                <rect key="frame" x="5.5" y="11" width="41" height="30.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="5z8-hs-SYn" secondAttribute="height" multiplier="4:3" id="8xw-On-u27"/>
+                                                </constraints>
+                                                <state key="normal" image="noteButtonPassive"/>
+                                                <connections>
+                                                    <action selector="buttonTouched:" destination="aVk-kq-m2q" eventType="touchUpInside" id="FDC-Mo-wol"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="5z8-hs-SYn" firstAttribute="width" secondItem="Bgh-Mh-xsF" secondAttribute="width" multiplier="0.8" id="6rr-c1-uf5"/>
+                                            <constraint firstAttribute="bottom" secondItem="5z8-hs-SYn" secondAttribute="bottom" multiplier="1.2" id="8Op-a1-bfz"/>
+                                            <constraint firstItem="5z8-hs-SYn" firstAttribute="centerX" secondItem="Bgh-Mh-xsF" secondAttribute="centerX" id="Hx0-Tg-yf0"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LNo-Vn-zqR" firstAttribute="height" secondItem="xBn-xl-oCU" secondAttribute="height" multiplier="0.454545" id="0Td-dD-KvH"/>
+                            <constraint firstItem="oPI-3C-KXj" firstAttribute="top" secondItem="wWO-f7-C9Y" secondAttribute="bottom" id="1sK-2M-ZtJ"/>
+                            <constraint firstAttribute="trailing" secondItem="wWO-f7-C9Y" secondAttribute="trailing" id="5Yy-ge-Mh5"/>
+                            <constraint firstItem="xBn-xl-oCU" firstAttribute="leading" secondItem="XYL-KR-hXO" secondAttribute="leading" id="Ad8-AN-0Bo"/>
+                            <constraint firstItem="xBn-xl-oCU" firstAttribute="trailing" secondItem="XYL-KR-hXO" secondAttribute="trailing" id="B35-9t-onC"/>
+                            <constraint firstItem="xBn-xl-oCU" firstAttribute="top" secondItem="wWO-f7-C9Y" secondAttribute="top" id="IWv-xk-He7"/>
+                            <constraint firstItem="XYL-KR-hXO" firstAttribute="top" secondItem="XAE-Je-sYi" secondAttribute="top" id="Oh2-B4-t6Y"/>
+                            <constraint firstItem="LNo-Vn-zqR" firstAttribute="width" secondItem="xBn-xl-oCU" secondAttribute="width" id="TRa-gh-ZbG"/>
+                            <constraint firstItem="XYL-KR-hXO" firstAttribute="height" secondItem="XAE-Je-sYi" secondAttribute="height" multiplier="0.94" id="dLu-NU-au3"/>
+                            <constraint firstItem="LNo-Vn-zqR" firstAttribute="bottom" secondItem="wWO-f7-C9Y" secondAttribute="bottom" multiplier="0.98" id="hrB-R8-qg7"/>
+                            <constraint firstItem="XYL-KR-hXO" firstAttribute="width" secondItem="XAE-Je-sYi" secondAttribute="width" multiplier="0.743961" id="lkP-8k-qPN"/>
+                            <constraint firstItem="wWO-f7-C9Y" firstAttribute="leading" secondItem="XAE-Je-sYi" secondAttribute="leading" id="lyu-6q-a4Y"/>
+                            <constraint firstItem="LNo-Vn-zqR" firstAttribute="centerX" secondItem="XAE-Je-sYi" secondAttribute="centerX" id="rXf-YE-MQy"/>
+                            <constraint firstItem="xBn-xl-oCU" firstAttribute="height" secondItem="XYL-KR-hXO" secondAttribute="height" multiplier="0.195035" id="s15-Q2-4cz"/>
+                            <constraint firstItem="XYL-KR-hXO" firstAttribute="centerX" secondItem="XAE-Je-sYi" secondAttribute="centerX" id="wX9-Dx-iXN"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="414" height="600"/>
+                    <connections>
+                        <outlet property="ledStackView" destination="xBn-xl-oCU" id="eLl-wW-X0q"/>
+                        <outletCollection property="stringCollection" destination="45a-pS-VWs" collectionClass="NSMutableArray" id="WdJ-1j-a6u"/>
+                        <outletCollection property="stringCollection" destination="Bhg-R8-bat" collectionClass="NSMutableArray" id="tL4-Ds-h4M"/>
+                        <outletCollection property="stringCollection" destination="VLc-ex-Awj" collectionClass="NSMutableArray" id="9y2-4N-qhG"/>
+                        <outletCollection property="stringCollection" destination="WVf-fm-RqO" collectionClass="NSMutableArray" id="qe8-5f-jih"/>
+                        <outletCollection property="buttonCollection" destination="bA0-eg-1oW" collectionClass="NSMutableArray" id="ZRy-Zv-DOO"/>
+                        <outletCollection property="buttonCollection" destination="gEC-GV-pth" collectionClass="NSMutableArray" id="AGJ-9k-Wqi"/>
+                        <outletCollection property="buttonCollection" destination="VaK-Gn-pze" collectionClass="NSMutableArray" id="lSo-3i-gCl"/>
+                        <outletCollection property="buttonCollection" destination="JqA-2B-d5G" collectionClass="NSMutableArray" id="4Yz-Br-cbs"/>
+                        <outletCollection property="buttonCollection" destination="wOb-dU-lcz" collectionClass="NSMutableArray" id="8tA-d4-BE0"/>
+                        <outletCollection property="buttonCollection" destination="5z8-hs-SYn" collectionClass="NSMutableArray" id="vEW-jX-H7s"/>
+                        <outletCollection property="stringCollection" destination="9NV-xK-A6W" collectionClass="NSMutableArray" id="PPG-Ck-LGs"/>
+                        <outletCollection property="stringCollection" destination="plh-DF-07R" collectionClass="NSMutableArray" id="q9n-su-37g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e5m-ch-ZZP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="15.942028985507248" y="124.55357142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bridge.png" width="360" height="160"/>
+        <image name="ledPassive.png" width="87" height="88"/>
+        <image name="noteButtonPassive" width="128" height="128"/>
+        <image name="string.png" width="12" height="1129"/>
+    </resources>
+</document>

@@ -22,6 +22,7 @@ class GaugeViewController: UIViewController {
 
     
     var smoothArray = [Float]()
+    var numberOfTries = 0
 
     
     override func viewDidLoad() {
@@ -86,15 +87,27 @@ class GaugeViewController: UIViewController {
 
     }
     
+    func resetGauge() {
+        numberOfTries = 0
+    }
+    
+    
     func displayFrequency(frequency: Float) {
         
-        smoothArray.append(frequency)
+//        if numberOfTries < 3 {
+//            numberOfTries += 1
+//            return
+//        }
+//        
+//        print(frequency)
+//        
+//        smoothArray.append(frequency)
+//        
+//        if smoothArray.count > 3 {
+//            smoothArray.remove(at: 0)
+//        }
         
-        if smoothArray.count > 2 {
-            smoothArray.remove(at: 0)
-        } 
-        
-        var freq = smoothArray.average
+        var freq = frequency //smoothArray.average
         
         while freq > Float(freqArray[freqArray.count - 1]) {
             freq /= 2.0
@@ -110,6 +123,7 @@ class GaugeViewController: UIViewController {
         let xOffset = 15.0 - 0.5 * (view.frame.size.width - 350.0)
         let p = segmentWidth * CGFloat(x + 10.0)  + xOffset
 
+        
         self.scrollView.setContentOffset(CGPoint(x: p, y: 0), animated: true)
     }
 }

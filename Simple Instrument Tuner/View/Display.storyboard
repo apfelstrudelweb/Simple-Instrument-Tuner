@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pTM-Ei-kiO">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Display View Controller-->
+        <scene sceneID="XoQ-8q-yIe">
+            <objects>
+                <viewController id="pTM-Ei-kiO" customClass="DisplayViewController" customModule="Simple_Banjo_Tuner" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FcM-Nf-1FN"/>
+                        <viewControllerLayoutGuide type="bottom" id="a13-h2-9u8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fyb-uN-Red">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="onj-sh-Wvh" customClass="BezierView" customModule="Simple_Banjo_Tuner" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="a13-h2-9u8" firstAttribute="top" secondItem="onj-sh-Wvh" secondAttribute="bottom" id="1dI-jZ-Myh"/>
+                            <constraint firstAttribute="trailing" secondItem="onj-sh-Wvh" secondAttribute="trailing" id="PRb-Bi-L5s"/>
+                            <constraint firstItem="onj-sh-Wvh" firstAttribute="leading" secondItem="Fyb-uN-Red" secondAttribute="leading" id="SSY-BN-Ea5"/>
+                            <constraint firstItem="onj-sh-Wvh" firstAttribute="top" secondItem="Fyb-uN-Red" secondAttribute="top" id="XKD-no-Kdu"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="414" height="200"/>
+                    <connections>
+                        <outlet property="bezierView" destination="onj-sh-Wvh" id="yEt-5I-ppx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8cv-oi-9o9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="124.6376811594203" y="205.58035714285714"/>
+        </scene>
+    </scenes>
+</document>

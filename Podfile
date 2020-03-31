@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '12.0'
 
 target 'Simple Banjo Tuner' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -7,7 +7,8 @@ target 'Simple Banjo Tuner' do
 
   # Pods for Simple Banjo Tuner
   pod 'PureLayout'
-  pod 'AudioKit', '~> 4.0'
+  pod 'AudioKit'
+  pod 'SwiftyStoreKit'
 
 
 end
@@ -19,7 +20,8 @@ target 'Simple Instrument Tuner' do
   # Pods for Simple Instrument Tuner
 
   pod 'PureLayout'
-  pod 'AudioKit', '~> 4.0'
+  pod 'AudioKit'
+  pod 'SwiftyStoreKit'
 
 end
 
@@ -29,6 +31,7 @@ target 'Simple Ukulele Tuner' do
 
   # Pods for Simple Ukulele Tuner
   pod 'PureLayout'
-  pod 'AudioKit', '~> 4.0'
+  pod 'AudioKit'
+  #pod 'SwiftyStoreKit'
 
 end

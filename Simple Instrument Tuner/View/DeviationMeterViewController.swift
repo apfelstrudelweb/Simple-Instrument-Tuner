@@ -9,6 +9,9 @@
 import UIKit
 import PureLayout
 
+let alpha_on: CGFloat = 1.0
+let alpha_off: CGFloat = 0.3
+
 class DeviationMeterViewController: UIViewController {
     @IBOutlet var backgroundView: UIView!
     @IBOutlet weak var stackview: UIStackView!
@@ -52,8 +55,12 @@ class DeviationMeterViewController: UIViewController {
             $0.layer.borderColor = UIColor.black.withAlphaComponent(0.85).cgColor
             $0.layer.borderWidth = 0.075*w
             
-            $0.alpha = 0.5
+            $0.alpha = alpha_off
         }
+    }
+    
+    func displayExactMatch(on: Bool) {
+        ledViewCollection[2].alpha = on==true ? alpha_on : alpha_off
     }
     
     func displayDeviation(frequency: Float) {
@@ -85,35 +92,41 @@ class DeviationMeterViewController: UIViewController {
 
         // well tuned ...
         if deviation > -0.1*leftLimit && deviation < 0.1*rightLimit {
-            ledViewCollection[2].alpha = 1.0
+            ledViewCollection[2].alpha = alpha_on
         } else {
-            ledViewCollection[2].alpha = 0.5
+            ledViewCollection[2].alpha = alpha_off
         }
         
         // not too well tuned
         // left LED
         if deviation > -leftLimit && deviation < -0.1*leftLimit {
-            ledViewCollection[1].alpha = 1.0
+            ledViewCollection[1].alpha = alpha_on
+            ledViewCollection[2].alpha = 0.75 * alpha_on
         } else {
-            ledViewCollection[1].alpha = 0.5
+            ledViewCollection[1].alpha = alpha_off
+            //ledViewCollection[2].alpha = alpha_off
         }
         // right LED
         if deviation > 0.1*rightLimit && deviation < rightLimit {
-            ledViewCollection[3].alpha = 1.0
+            ledViewCollection[3].alpha = alpha_on
+            ledViewCollection[2].alpha = 0.75 * alpha_on
         } else {
-            ledViewCollection[3].alpha = 0.5
+            ledViewCollection[3].alpha = alpha_off
+            //ledViewCollection[2].alpha = alpha_off
         }
         
         // not well tuned at all
         if deviation > -leftLimit && deviation < -0.5*leftLimit {
-            ledViewCollection[0].alpha = 1.0
+            ledViewCollection[0].alpha = alpha_on
+            ledViewCollection[2].alpha = alpha_off
         } else {
-            ledViewCollection[0].alpha = 0.5
+            ledViewCollection[0].alpha = alpha_off
         }
         if deviation > 0.5*rightLimit && deviation < rightLimit {
-            ledViewCollection[4].alpha = 1.0
+            ledViewCollection[4].alpha = alpha_on
+            //ledViewCollection[2].alpha = alpha_off
         } else {
-            ledViewCollection[4].alpha = 0.5
+            ledViewCollection[4].alpha = alpha_off
         }
     }
 
