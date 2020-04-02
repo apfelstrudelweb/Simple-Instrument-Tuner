@@ -66,16 +66,22 @@
                                     <constraint firstItem="fpO-OH-YNg" firstAttribute="top" secondItem="uU6-0l-OPV" secondAttribute="top" id="hHN-vL-2DG"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DAJ-WS-Zch" userLabel="fftButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DAJ-WS-Zch" userLabel="fftButton" customClass="DisplayModeButton" customModule="Simple_Ukulele_Tuner" customModuleProvider="target">
                                 <rect key="frame" x="31" y="346.5" width="171" height="42.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="DAJ-WS-Zch" secondAttribute="height" multiplier="4:1" id="klq-9R-83U"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="btnPassive.png"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdJ-Pc-bjB" userLabel="autocorrButton">
-                                <rect key="frame" x="212" y="346.5" width="171" height="42.5"/>
                                 <state key="normal" title="Button" image="btnActive.png"/>
+                                <connections>
+                                    <action selector="fftButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="43s-p8-Awy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdJ-Pc-bjB" userLabel="amplitudeButton" customClass="DisplayModeButton" customModule="Simple_Ukulele_Tuner" customModuleProvider="target">
+                                <rect key="frame" x="212" y="346.5" width="171" height="42.5"/>
+                                <state key="normal" title="Button" image="btnPassive.png"/>
+                                <connections>
+                                    <action selector="amplitudeButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="24E-2t-Tgs"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Classical / Acoustic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W2O-oX-8br">
                                 <rect key="frame" x="106" y="580" width="202" height="23"/>
@@ -174,7 +180,10 @@
                         <viewLayoutGuide key="safeArea" id="qDH-bj-9dt"/>
                     </view>
                     <connections>
+                        <outlet property="amplitudeButton" destination="hdJ-Pc-bjB" id="rhe-vB-CGd"/>
                         <outlet property="circleView" destination="ldv-Qj-Zm6" id="LbB-VL-d33"/>
+                        <outlet property="displayView" destination="uU6-0l-OPV" id="4aq-J3-JMW"/>
+                        <outlet property="fftButton" destination="DAJ-WS-Zch" id="EAo-0j-drk"/>
                         <outlet property="frequencyLabel" destination="gda-8c-m4b" id="HMX-5f-xR3"/>
                         <outlet property="microphoneButton" destination="jcu-kb-rNu" id="IKe-UA-OMo"/>
                     </connections>

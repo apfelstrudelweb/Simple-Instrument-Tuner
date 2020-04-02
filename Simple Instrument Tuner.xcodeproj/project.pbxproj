@@ -80,6 +80,9 @@
 		65585A7E243350A7002CD214 /* Display.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65585A7D243350A7002CD214 /* Display.storyboard */; };
 		65585A7F243350A7002CD214 /* Display.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65585A7D243350A7002CD214 /* Display.storyboard */; };
 		65585A80243350A7002CD214 /* Display.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65585A7D243350A7002CD214 /* Display.storyboard */; };
+		65585A822433A793002CD214 /* DisplayModeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585A812433A793002CD214 /* DisplayModeButton.swift */; };
+		65585A832433A793002CD214 /* DisplayModeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585A812433A793002CD214 /* DisplayModeButton.swift */; };
+		65585A842433A793002CD214 /* DisplayModeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585A812433A793002CD214 /* DisplayModeButton.swift */; };
 		65CCBF5624260D9E00F518D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBF5524260D9E00F518D8 /* AppDelegate.swift */; };
 		65CCBF5824260D9E00F518D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBF5724260D9E00F518D8 /* SceneDelegate.swift */; };
 		65CCBF5A24260D9E00F518D8 /* InstrumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBF5924260D9E00F518D8 /* InstrumentViewController.swift */; };
@@ -239,6 +242,7 @@
 		65585A7524334E7E002CD214 /* BezierView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BezierView.swift; path = "../../../../../../../Downloads/Bezier-master/Bezier/BezierView.swift"; sourceTree = "<group>"; };
 		65585A792433508B002CD214 /* DisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
 		65585A7D243350A7002CD214 /* Display.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Display.storyboard; sourceTree = "<group>"; };
+		65585A812433A793002CD214 /* DisplayModeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayModeButton.swift; sourceTree = "<group>"; };
 		65CCBF5224260D9E00F518D8 /* Simple Instrument Tuner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Instrument Tuner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65CCBF5524260D9E00F518D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65CCBF5724260D9E00F518D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -403,6 +407,7 @@
 			children = (
 				653216EB242FB93A00BE1CAE /* NoteButton.swift */,
 				653216F52430E7CD00BE1CAE /* FrequencyLabel.swift */,
+				65585A812433A793002CD214 /* DisplayModeButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1134,6 +1139,7 @@
 				653216F0242FC38200BE1CAE /* Note.swift in Sources */,
 				652BC110242CC39900F60B83 /* Conductor.swift in Sources */,
 				652BC119242CC39900F60B83 /* FilterSection.swift in Sources */,
+				65585A822433A793002CD214 /* DisplayModeButton.swift in Sources */,
 				652BC113242CC39900F60B83 /* Fatten.swift in Sources */,
 				65585A6E24334A74002CD214 /* DisplayContainer.swift in Sources */,
 				65CCBF5624260D9E00F518D8 /* AppDelegate.swift in Sources */,
@@ -1175,6 +1181,7 @@
 				652BC0DC242A2C0D00F60B83 /* VolumeMeterViewController.swift in Sources */,
 				65CCC03824266CAA00F518D8 /* GaugeViewController.swift in Sources */,
 				65CCBF8C24260E1E00F518D8 /* AppDelegate.swift in Sources */,
+				65585A832433A793002CD214 /* DisplayModeButton.swift in Sources */,
 				65CCBF8E24260E1E00F518D8 /* SceneDelegate.swift in Sources */,
 				652BC111242CC39900F60B83 /* Conductor.swift in Sources */,
 				652BC11A242CC39900F60B83 /* FilterSection.swift in Sources */,
@@ -1218,6 +1225,7 @@
 				652BC0DD242A2C0D00F60B83 /* VolumeMeterViewController.swift in Sources */,
 				65CCC03924266CAA00F518D8 /* GaugeViewController.swift in Sources */,
 				65CCBFC024260E4800F518D8 /* AppDelegate.swift in Sources */,
+				65585A842433A793002CD214 /* DisplayModeButton.swift in Sources */,
 				65CCBFC224260E4800F518D8 /* SceneDelegate.swift in Sources */,
 				652BC112242CC39900F60B83 /* Conductor.swift in Sources */,
 				652BC11B242CC39900F60B83 /* FilterSection.swift in Sources */,

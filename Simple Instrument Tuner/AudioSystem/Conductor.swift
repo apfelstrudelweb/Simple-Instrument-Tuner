@@ -69,32 +69,42 @@ class Conductor {
         
         reverbMixer = AKDryWetMixer(masterVolume, reverb, balance: 0.3)
        
-        // Set Output & Start AudioKit
-        if false {
-            AudioKit.output = reverbMixer
-             do {
-                 try AudioKit.start()
-             } catch {
-                 print("AudioKit.start() failed")
-             }
-        }
-
         // Set a few sampler parameters
         sampler1.releaseDuration = 0.5
   
         // Init sequencer
         midiLoad("rom_poly")
+        
+        // load defaults
+        useSound("TX Brass")
+        sampler1.masterVolume = 1.0
+        masterVolume.volume = 2.0
+        reverb.feedback = 0.0
+        multiDelay.time = 0.0
+        filterSection.cutoffFrequency = 1000
+        filterSection.resonance = 0.0
+        filterSection.lfoAmplitude = 0.0
+        filterSection.lfoRate = 0.0
+        tremolo.depth = 2.0
+        tremolo.frequency = 0
+        decimator.rounding = 0.0
+        decimator.mix = 0.0
+        decimator.decimation = 0
     }
+    
+
     
     func addMidiListener(listener: AKMIDIListener) {
         midi.addListener(listener)
     }
 
     func playNote(note: MIDINoteNumber, velocity: MIDIVelocity, channel: MIDIChannel) {
+        mode = .play
         sampler1.play(noteNumber: note, velocity: velocity)
     }
 
     func stopNote(note: MIDINoteNumber, channel: MIDIChannel) {
+        mode = .silent
         sampler1.stop(noteNumber: note)
     }
 

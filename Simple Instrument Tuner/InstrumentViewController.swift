@@ -9,7 +9,6 @@
 import UIKit
 import AudioKit
 import AudioKitUI
-//import GameplayKit
 
 
 class InstrumentViewController: UIViewController {
@@ -17,8 +16,13 @@ class InstrumentViewController: UIViewController {
     @IBOutlet weak var circleView: UIView!
     @IBOutlet weak var frequencyLabel: FrequencyLabel!
     @IBOutlet weak var microphoneButton: UIButton!
+    @IBOutlet weak var displayView: UIView!
+    @IBOutlet weak var fftButton: DisplayModeButton!
+    @IBOutlet weak var amplitudeButton: DisplayModeButton!
     
-    let conductor = Conductor.sharedInstance
+    
+    
+    var conductor = Conductor.sharedInstance
     var midiChannelIn: MIDIChannel = 0
     var omniMode = true
     
@@ -26,10 +30,11 @@ class InstrumentViewController: UIViewController {
     var frequencyTracker: AKFrequencyTracker!
     var silence: AKBooster!
     var lowPass: AKLowPassFilter!
+    var amplitudeTracker: AKAmplitudeTracker!
+    var fftTap: AKFFTTap!
     var timer: Timer?
     
-    var audioActive = false
-    
+
     private var embeddedGaugeViewController: GaugeViewController!
     private var embeddedVolumeMeterController: VolumeMeterViewController!
     private var embeddedDeviationMeterController: DeviationMeterViewController!
@@ -42,12 +47,9 @@ class InstrumentViewController: UIViewController {
         
         embeddedBridgeViewController.delegate = self
         conductor.addMidiListener(listener: self)
-        setDefaults()
         
         NotificationCenter.default.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: nil) { (notification) in
             print("app did become active")
-            
-            self.enableAudio()
         }
         
         NotificationCenter.default.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: nil) { (notification) in
@@ -57,50 +59,77 @@ class InstrumentViewController: UIViewController {
         }
         
         circleView.layer.cornerRadius = 0.5*circleView.frame.size.width
-
-        //displayContainer.layer.cornerRadius = 0.25*circleView.layer.cornerRadius
+        displayView.layer.cornerRadius = 0.25*circleView.layer.cornerRadius
+        
+        fftButton.text = "FFT"
+        amplitudeButton.text = "Amplitude"
         
         self.view.setNeedsLayout()
         self.view.layoutIfNeeded()
         
-        // Visualization
-//        if false {
-//            let plot = AKNodeFFTPlot(conductor.reverbMixer, frame: CGRect(x: 100, y: 0, width: 5000, height: 200))
-//            plot.shouldFill = true
-//            plot.shouldMirror = true
-//            plot.shouldCenterYAxis = true
-//            plot.color = #colorLiteral(red: 0, green: 0.9808154702, blue: 0.3959429264, alpha: 1)
-//            plot.backgroundColor = #colorLiteral(red: 0.2431372549, green: 0.2431372549, blue: 0.262745098, alpha: 0)
-//            plot.gain = 0.12
-//            displayContainer.addSubview(plot)
-//            plot.inputView?.autoPinEdgesToSuperviewEdges()
-//        }
         
+        setAudioMode()
+    }
+    
+    func setAudioMode() {
         
-        // Sound detection#
-        if true {
+        embeddedDisplayViewController.clear()
+
+        do {
+            try AudioKit.stop()
+        } catch {
+            AKLog("AudioKit did not start!")
+        }
+        
+
+        if mode == .play {
+            
+            if mic != nil {
+                mic.disconnectOutput()
+            }
+            
+            AKSettings.audioInputEnabled = false
+            AudioKit.output = conductor.reverbMixer
+            embeddedDisplayViewController.plotFFTFromSound(reverbMixer: conductor.reverbMixer)
+            
+        } else if mode == .record {
+            
             AKSettings.audioInputEnabled = true
+            AudioKit.output = nil
+            
+            let input = AudioKit.engine.inputNode
+            let bus = 0
+            let inputFormat = input.outputFormat(forBus: bus)
+            AKSettings.sampleRate = inputFormat.sampleRate
+            AKSettings.channelCount = inputFormat.channelCount
+
             mic = AKMicrophone()
-            lowPass = AKLowPassFilter(mic)
-            lowPass.cutoffFrequency = 500
+            let micCopy = AKBooster(mic)
+ 
+            lowPass = AKLowPassFilter(micCopy)
+            lowPass.cutoffFrequency = 800
+            lowPass.resonance = 0.0
             frequencyTracker = AKFrequencyTracker(lowPass)
             
+            silence = AKBooster(frequencyTracker, gain: 0)
+            amplitudeTracker = AKAmplitudeTracker(micCopy)
+            fftTap = AKFFTTap.init(micCopy)
+            AudioKit.output = AKMixer(silence, amplitudeTracker)
             
-            let micCopy = AKBooster(mic)
-            let amplitudeTracker = AKAmplitudeTracker(micCopy)
-            embeddedDisplayViewController.plotAmplitude(trackedAmplitude: amplitudeTracker)
-            
-            let fftTap = AKFFTTap.init(micCopy)
-            embeddedDisplayViewController.plotFFT(fftTap: fftTap, amplitudeTracker: amplitudeTracker)
-            
-            AudioKit.output = self.silence
-            do {
-                try AudioKit.start()
-            } catch {
-                AKLog("AudioKit did not start!")
-            }
-        }
+            embeddedDisplayViewController.plotAmplitude(trackedAmplitude: self.amplitudeTracker, displayMode: displayMode)
+            embeddedDisplayViewController.plotFFT(fftTap: fftTap, amplitudeTracker: amplitudeTracker, displayMode: displayMode)
 
+            
+        } else if mode == .silent {
+            
+            return
+        }
+        
+        do {
+            try AudioKit.start()
+        } catch {
+            AKLog("AudioKit did not start!")
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -131,23 +160,18 @@ class InstrumentViewController: UIViewController {
     }
     
     
-    fileprivate func enableAudio() {
-//                AudioKit.output = self.silence
-//                do {
-//                    try AudioKit.start()
-//                } catch {
-//                    AKLog("AudioKit did not start!")
-//                }
-    }
+
     
     fileprivate func disableAudio() {
-        audioActive = false
+        mode = .silent
         handleMicrophoneButton()
         UIApplication.shared.isIdleTimerDisabled = false
     }
     
     
     @objc func updateUI() {
+
+        if frequencyTracker == nil { return }
         
         if frequencyTracker.amplitude > 0.05 {
             
@@ -166,18 +190,43 @@ class InstrumentViewController: UIViewController {
         }
     }
     
+    @IBAction func fftButtonTouched(_ sender: Any) {
+        fftButton.setImage(UIImage(named: "btnActive"), for: .normal)
+        amplitudeButton.setImage(UIImage(named: "btnPassive"), for: .normal)
+        displayMode = .fft
+        setAudioMode()
+    }
+    
+    @IBAction func amplitudeButtonTouched(_ sender: Any) {
+        amplitudeButton.setImage(UIImage(named: "btnActive"), for: .normal)
+        fftButton.setImage(UIImage(named: "btnPassive"), for: .normal)
+        displayMode = .amplitude
+        setAudioMode()
+    }
     
     @IBAction func microphoneButtonTouched(_ sender: Any) {
-        audioActive = !audioActive
-        UIApplication.shared.isIdleTimerDisabled = audioActive
+        
+        if mode == .silent {
+            mode = .record
+        } else {
+            mode = .silent
+        }
+        
+        setAudioMode()
+        UIApplication.shared.isIdleTimerDisabled = mode == .record
         handleMicrophoneButton()
+        
+        for button in self.embeddedBridgeViewController.buttonCollection {
+            button.isEnabled = mode == .silent
+        }
+        
     }
     
     fileprivate func handleMicrophoneButton() {
-        let buttonImage = audioActive == true ? UIImage(named: "microphoneOff") : UIImage(named: "microphoneOn")
+        let buttonImage = mode == .record ? UIImage(named: "microphoneOff") : UIImage(named: "microphoneOn")
         microphoneButton.setImage(buttonImage, for: .normal)
-        
-        if audioActive == true {
+
+        if mode == .record {
             self.timer = Timer.scheduledTimer(timeInterval: 0.1,
                                               target: self,
                                               selector: #selector(InstrumentViewController.updateUI),
@@ -189,24 +238,6 @@ class InstrumentViewController: UIViewController {
             UIApplication.shared.isIdleTimerDisabled = false
         }
     }
-    
-    func setDefaults() {
-
-        conductor.useSound("TX Brass")
-        conductor.sampler1.masterVolume = 1.0
-        conductor.masterVolume.volume = 2.0
-        conductor.reverb.feedback = 0.0
-        conductor.multiDelay.time = 0.0
-        conductor.filterSection.cutoffFrequency = 1000
-        conductor.filterSection.resonance = 0.0
-        conductor.filterSection.lfoAmplitude = 0.0
-        conductor.filterSection.lfoRate = 0.0
-        conductor.tremolo.depth = 2.0
-        conductor.tremolo.frequency = 0
-        conductor.decimator.rounding = 0.0
-        conductor.decimator.mix = 0.0
-        conductor.decimator.decimation = 0
-     }
     
     
     deinit {
@@ -223,6 +254,11 @@ class InstrumentViewController: UIViewController {
 extension InstrumentViewController: AKKeyboardDelegate {
     
     public func noteOn(note: MIDINoteNumber) {
+        
+        mode = .play
+        setAudioMode()
+        microphoneButton.isEnabled = false
+        
         self.embeddedVolumeMeterController.displayVolume(volume: 0.1)
         conductor.playNote(note: note, velocity: MIDIVelocity(127), channel: midiChannelIn)
 
@@ -235,10 +271,16 @@ extension InstrumentViewController: AKKeyboardDelegate {
     }
     
     public func noteOff(note: MIDINoteNumber) {
+        
+        mode = .silent
+        setAudioMode()
+        microphoneButton.isEnabled = true
+        
         DispatchQueue.main.async {
             self.conductor.stopNote(note: note, channel: self.midiChannelIn)
             self.embeddedVolumeMeterController.displayVolume(volume: 0.1)
             self.embeddedDeviationMeterController.displayExactMatch(on: false)
+            self.embeddedDisplayViewController.clear()
             self.stopObservingVolumeChanges()
         }
     }
@@ -288,4 +330,19 @@ extension InstrumentViewController: AKMIDIListener  {
         }
     }
     
+}
+
+extension DispatchQueue {
+
+    static func background(delay: Double = 0.0, background: (()->Void)? = nil, completion: (() -> Void)? = nil) {
+        DispatchQueue.global(qos: .background).async {
+            background?()
+            if let completion = completion {
+                DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: {
+                    completion()
+                })
+            }
+        }
+    }
+
 }
