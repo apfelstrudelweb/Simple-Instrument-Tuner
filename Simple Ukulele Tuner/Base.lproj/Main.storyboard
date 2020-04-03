@@ -124,6 +124,17 @@
                                     <segue destination="JH4-YD-FpM" kind="embed" identifier="deviationMeterSegue" id="IOi-kj-hwG"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mag-ER-S1V">
+                                <rect key="frame" x="339" y="605" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="EFz-J5-TT1"/>
+                                    <constraint firstAttribute="width" secondItem="mag-ER-S1V" secondAttribute="height" id="xt4-Fp-aHR"/>
+                                </constraints>
+                                <state key="normal" image="tuningfork.png"/>
+                                <connections>
+                                    <action selector="tuningforkButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LgJ-6q-J08"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1529633105" green="0.16794264319999999" blue="0.18741327520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -151,6 +162,7 @@
                             <constraint firstItem="pJy-6n-tqR" firstAttribute="trailing" secondItem="zSU-BG-s5S" secondAttribute="trailing" id="UhB-fU-Toi"/>
                             <constraint firstItem="oWN-up-Uaj" firstAttribute="width" secondItem="uU6-0l-OPV" secondAttribute="width" multiplier="0.573864" id="UkQ-Gc-vYa"/>
                             <constraint firstItem="wPJ-p5-BCi" firstAttribute="height" secondItem="oWN-up-Uaj" secondAttribute="height" id="V6g-dS-CHo"/>
+                            <constraint firstItem="mag-ER-S1V" firstAttribute="centerY" secondItem="oWN-up-Uaj" secondAttribute="centerY" id="VIU-fp-MF5"/>
                             <constraint firstItem="hdJ-Pc-bjB" firstAttribute="width" secondItem="DAJ-WS-Zch" secondAttribute="width" id="Xvx-Gc-9Lh"/>
                             <constraint firstItem="zSU-BG-s5S" firstAttribute="trailing" secondItem="hdJ-Pc-bjB" secondAttribute="trailing" id="cee-cQ-CjZ"/>
                             <constraint firstItem="nXb-WJ-rtX" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.75" id="dd3-Nm-xNS"/>
@@ -163,6 +175,7 @@
                             <constraint firstItem="hdJ-Pc-bjB" firstAttribute="height" secondItem="DAJ-WS-Zch" secondAttribute="height" id="igS-Bm-icm"/>
                             <constraint firstItem="DAJ-WS-Zch" firstAttribute="bottom" secondItem="ldv-Qj-Zm6" secondAttribute="bottom" constant="10" id="jux-lu-2if"/>
                             <constraint firstItem="jcu-kb-rNu" firstAttribute="centerX" secondItem="qDH-bj-9dt" secondAttribute="centerX" id="kGd-fv-A9s"/>
+                            <constraint firstItem="mag-ER-S1V" firstAttribute="trailing" secondItem="hdJ-Pc-bjB" secondAttribute="trailing" id="kNp-fy-k6V"/>
                             <constraint firstItem="ldv-Qj-Zm6" firstAttribute="centerX" secondItem="qDH-bj-9dt" secondAttribute="centerX" id="kt2-Rz-bqh"/>
                             <constraint firstItem="6nW-qN-5fD" firstAttribute="trailing" secondItem="qDH-bj-9dt" secondAttribute="trailing" id="lK0-nd-2z3"/>
                             <constraint firstItem="Ogw-np-qZv" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.914062" id="ltC-uA-eCm"/>
@@ -186,6 +199,7 @@
                         <outlet property="fftButton" destination="DAJ-WS-Zch" id="EAo-0j-drk"/>
                         <outlet property="frequencyLabel" destination="gda-8c-m4b" id="HMX-5f-xR3"/>
                         <outlet property="microphoneButton" destination="jcu-kb-rNu" id="IKe-UA-OMo"/>
+                        <outlet property="tuningForkButton" destination="mag-ER-S1V" id="eWs-r7-UtN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -238,5 +252,6 @@
         <image name="btnPassive.png" width="669" height="128"/>
         <image name="microphoneOn.png" width="179" height="183"/>
         <image name="settings.png" width="141" height="146"/>
+        <image name="tuningfork.png" width="227.5" height="307"/>
     </resources>
 </document>

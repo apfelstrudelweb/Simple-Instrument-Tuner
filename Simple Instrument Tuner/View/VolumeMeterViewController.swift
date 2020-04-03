@@ -59,9 +59,10 @@ class VolumeMeterViewController: UIViewController {
     func displayVolume(volume: Double) {
         
         let w = Double(view.frame.size.width)
+        let h = Double(self.meterView.bounds.size.height)
  
         UIView.animate(withDuration: 0.2) {
-            self.maskView.frame = CGRect(x: 0.0, y: 0.0, width: 3 * volume * w, height: Double(self.meterView.bounds.size.height))
+            self.maskView.frame = CGRect(x: 0.0, y: 0.0, width: 3 * volume * w, height: h)
             self.redLine.frame = self.maskView.bounds.offsetBy(dx: self.maskView.bounds.size.width-2, dy: 0)
         }
         
@@ -87,7 +88,7 @@ extension UIView {
             gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.0)
         }
         
-        gradientLayer.locations = [0.0, 0.2, 0.5, 1.0]
+        gradientLayer.locations = [0.0, 0.2, 0.3, 0.4]
 
         gradientLayer.bounds = self.bounds  //CGRect(x: 0, y: 0, width: 100, height: 20)//self.bounds
         gradientLayer.anchorPoint = CGPoint.zero

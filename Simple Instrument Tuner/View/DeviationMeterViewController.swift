@@ -15,6 +15,12 @@ let alpha_off: CGFloat = 0.3
 class DeviationMeterViewController: UIViewController {
     @IBOutlet var backgroundView: UIView!
     @IBOutlet weak var stackview: UIStackView!
+        {
+        didSet {
+
+            
+        }
+    }
     @IBOutlet var ledViewCollection: [UIView]! {
         didSet {
             ledViewCollection.sort { $0.tag < $1.tag }
@@ -57,77 +63,86 @@ class DeviationMeterViewController: UIViewController {
             
             $0.alpha = alpha_off
         }
+        
+        stackview.spacing = 0.06*backgroundView.frame.size.width
     }
     
     func displayExactMatch(on: Bool) {
-        ledViewCollection[2].alpha = on==true ? alpha_on : alpha_off
+        
+        for ledView in ledViewCollection {
+            ledView.alpha = alpha_off
+        }
+        ledByTag(tag: 0).alpha = on==true ? alpha_on : alpha_off
     }
     
     func displayDeviation(frequency: Float) {
         
-        var freq = frequency
-        
-        while freq > Float(freqArray[freqArray.count - 1]) {
-            freq /= 2.0
-        }
-         while freq < Float(freqArray[0]) {
-            freq *= 2.0
-        }
-        
-        var dist: Float = 1000.0
+        var diff: Float = 1000.0
         var foundNominalFreq: Float = 0.0
         
-        for (_, element) in freqArray.enumerated() {
-            let dev = fabsf(element - freq)
-            if dev < dist {
-                dist = dev
-                foundNominalFreq = element
+        guitarNotesArray.forEach {
+            if diff > abs($0.frequency - frequency) {
+                diff = abs($0.frequency - frequency)
+                foundNominalFreq = $0.frequency
             }
         }
         
-        let deviation = freq - foundNominalFreq
+        let deviation = frequency - foundNominalFreq
 
-        let leftLimit = 0.5 * (foundNominalFreq - foundNominalFreq / freqMultFact)
-        let rightLimit = 0.5 * (foundNominalFreq * freqMultFact - foundNominalFreq)
+        let leftLimit = 1.5 * (foundNominalFreq - foundNominalFreq / freqMultFact)
+        let rightLimit = 1.5 * (foundNominalFreq * freqMultFact - foundNominalFreq)
 
-        // well tuned ...
-        if deviation > -0.1*leftLimit && deviation < 0.1*rightLimit {
-            ledViewCollection[2].alpha = alpha_on
+        // green LED
+        if deviation > -0.2*leftLimit && deviation < 0.2*rightLimit {
+            ledByTag(tag: 0).alpha = alpha_on
         } else {
-            ledViewCollection[2].alpha = alpha_off
+            ledByTag(tag: 0).alpha = alpha_off
         }
         
-        // not too well tuned
-        // left LED
+        // first red LEDs
         if deviation > -leftLimit && deviation < -0.1*leftLimit {
-            ledViewCollection[1].alpha = alpha_on
-            ledViewCollection[2].alpha = 0.75 * alpha_on
+            ledByTag(tag: -1).alpha = alpha_on
+            ledByTag(tag: 0).alpha = 0.75 * alpha_on
         } else {
-            ledViewCollection[1].alpha = alpha_off
-            //ledViewCollection[2].alpha = alpha_off
+            ledByTag(tag: -1).alpha = alpha_off
         }
-        // right LED
         if deviation > 0.1*rightLimit && deviation < rightLimit {
-            ledViewCollection[3].alpha = alpha_on
-            ledViewCollection[2].alpha = 0.75 * alpha_on
+            ledByTag(tag: 1).alpha = alpha_on
+            ledByTag(tag: 0).alpha = 0.75 * alpha_on
         } else {
-            ledViewCollection[3].alpha = alpha_off
-            //ledViewCollection[2].alpha = alpha_off
+            ledByTag(tag: 1).alpha = alpha_off
         }
         
-        // not well tuned at all
+        // second red LEDs
         if deviation > -leftLimit && deviation < -0.5*leftLimit {
-            ledViewCollection[0].alpha = alpha_on
-            ledViewCollection[2].alpha = alpha_off
+            ledByTag(tag: -2).alpha = alpha_on
+            ledByTag(tag: 0).alpha = alpha_off
         } else {
-            ledViewCollection[0].alpha = alpha_off
+            ledByTag(tag: -2).alpha = alpha_off
         }
         if deviation > 0.5*rightLimit && deviation < rightLimit {
-            ledViewCollection[4].alpha = alpha_on
-            //ledViewCollection[2].alpha = alpha_off
+            ledByTag(tag: 2).alpha = alpha_on
         } else {
-            ledViewCollection[4].alpha = alpha_off
+            ledByTag(tag: 2).alpha = alpha_off
         }
+        
+        // third red LEDs
+        if deviation > -leftLimit && deviation < -0.8*leftLimit {
+            ledByTag(tag: -3).alpha = alpha_on
+            ledByTag(tag: 0).alpha = alpha_off
+        } else {
+            ledByTag(tag: -3).alpha = alpha_off
+        }
+        if deviation > 0.8*rightLimit && deviation < rightLimit {
+            ledByTag(tag: 3).alpha = alpha_on
+        } else {
+            ledByTag(tag: 3).alpha = alpha_off
+        }
+    }
+    
+    func ledByTag(tag: Int) -> UIView {
+        
+        return ledViewCollection.first(where: { $0.tag == tag }) ?? ledViewCollection[3]
     }
 
 }

@@ -92,21 +92,22 @@ class GaugeViewController: UIViewController {
     }
     
     
-    func displayFrequency(frequency: Float) {
+    func displayFrequency(frequency: Float, soundGenerator: Bool) {
         
-//        if numberOfTries < 3 {
-//            numberOfTries += 1
-//            return
-//        }
-//        
-//        print(frequency)
-//        
-//        smoothArray.append(frequency)
-//        
-//        if smoothArray.count > 3 {
-//            smoothArray.remove(at: 0)
-//        }
-        
+        if soundGenerator == false {
+            // tuning by microphone
+            if numberOfTries < 5 {
+                numberOfTries += 1
+                return
+            }
+            
+            smoothArray.append(frequency)
+            
+            if smoothArray.count > 3 {
+                smoothArray.remove(at: 0)
+            }
+        }
+
         var freq = frequency //smoothArray.average
         
         while freq > Float(freqArray[freqArray.count - 1]) {

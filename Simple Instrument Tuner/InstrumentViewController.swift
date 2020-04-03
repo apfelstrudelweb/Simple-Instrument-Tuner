@@ -19,6 +19,8 @@ class InstrumentViewController: UIViewController {
     @IBOutlet weak var displayView: UIView!
     @IBOutlet weak var fftButton: DisplayModeButton!
     @IBOutlet weak var amplitudeButton: DisplayModeButton!
+    @IBOutlet weak var tuningForkButton: UIButton!
+    
     
     
     
@@ -29,7 +31,7 @@ class InstrumentViewController: UIViewController {
     var mic: AKMicrophone!
     var frequencyTracker: AKFrequencyTracker!
     var silence: AKBooster!
-    var lowPass: AKLowPassFilter!
+    var lowPass: AKKorgLowPassFilter!
     var amplitudeTracker: AKAmplitudeTracker!
     var fftTap: AKFFTTap!
     var timer: Timer?
@@ -64,6 +66,7 @@ class InstrumentViewController: UIViewController {
         fftButton.text = "FFT"
         amplitudeButton.text = "Amplitude"
         
+        
         self.view.setNeedsLayout()
         self.view.layoutIfNeeded()
         
@@ -96,28 +99,22 @@ class InstrumentViewController: UIViewController {
             
             AKSettings.audioInputEnabled = true
             AudioKit.output = nil
-            
-            let input = AudioKit.engine.inputNode
-            let bus = 0
-            let inputFormat = input.outputFormat(forBus: bus)
-            AKSettings.sampleRate = inputFormat.sampleRate
-            AKSettings.channelCount = inputFormat.channelCount
 
             mic = AKMicrophone()
             let micCopy = AKBooster(mic)
  
-            lowPass = AKLowPassFilter(micCopy)
-            lowPass.cutoffFrequency = 800
-            lowPass.resonance = 0.0
+            lowPass = AKKorgLowPassFilter(micCopy)
             frequencyTracker = AKFrequencyTracker(lowPass)
             
             silence = AKBooster(frequencyTracker, gain: 0)
             amplitudeTracker = AKAmplitudeTracker(micCopy)
             fftTap = AKFFTTap.init(micCopy)
-            AudioKit.output = AKMixer(silence, amplitudeTracker)
+            let mixer = AKMixer(silence, amplitudeTracker)
+            //mixer.volume = 0.0 // silence sound feeback on loudspeaker
+            AudioKit.output = mixer
             
-            embeddedDisplayViewController.plotAmplitude(trackedAmplitude: self.amplitudeTracker, displayMode: displayMode)
-            embeddedDisplayViewController.plotFFT(fftTap: fftTap, amplitudeTracker: amplitudeTracker, displayMode: displayMode)
+            embeddedDisplayViewController.plotAmplitude(trackedAmplitude: self.amplitudeTracker)
+            embeddedDisplayViewController.plotFFT(fftTap: fftTap, amplitudeTracker: amplitudeTracker)
 
             
         } else if mode == .silent {
@@ -180,7 +177,7 @@ class InstrumentViewController: UIViewController {
             // Header
             frequencyLabel.frequency = frequency
             // Gauge
-            embeddedGaugeViewController.displayFrequency(frequency: frequency)
+            embeddedGaugeViewController.displayFrequency(frequency: frequency, soundGenerator: false)
             embeddedVolumeMeterController.displayVolume(volume: frequencyTracker.amplitude)
             
             embeddedDeviationMeterController.displayDeviation(frequency: frequency)
@@ -193,15 +190,38 @@ class InstrumentViewController: UIViewController {
     @IBAction func fftButtonTouched(_ sender: Any) {
         fftButton.setImage(UIImage(named: "btnActive"), for: .normal)
         amplitudeButton.setImage(UIImage(named: "btnPassive"), for: .normal)
-        displayMode = .fft
-        setAudioMode()
+        embeddedDisplayViewController.setDisplayMode(mode: .fft)
     }
     
     @IBAction func amplitudeButtonTouched(_ sender: Any) {
         amplitudeButton.setImage(UIImage(named: "btnActive"), for: .normal)
         fftButton.setImage(UIImage(named: "btnPassive"), for: .normal)
-        displayMode = .amplitude
-        setAudioMode()
+        embeddedDisplayViewController.setDisplayMode(mode: .amplitude)
+    }
+    
+    @IBAction func tuningforkButtonTouched(_ sender: Any) {
+        
+        let buttons = embeddedBridgeViewController.buttonCollection
+        
+        var activeButton: UIButton
+        
+        if let firstButton = buttons?.first(where: { $0.isActive == true }) {
+            let tag = firstButton.tag + 1
+            
+            guard let count = buttons?.count else { return }
+            
+            if tag > count - 1 {
+                guard let lastButton: UIButton = buttons?.last else { return }
+                embeddedBridgeViewController.buttonTouched(lastButton)
+                return
+            }
+            activeButton = embeddedBridgeViewController.buttonCollection[tag]
+ 
+        } else {
+            activeButton = embeddedBridgeViewController.buttonCollection[0]
+        }
+        
+        embeddedBridgeViewController.buttonTouched(activeButton)
     }
     
     @IBAction func microphoneButtonTouched(_ sender: Any) {
@@ -219,7 +239,7 @@ class InstrumentViewController: UIViewController {
         for button in self.embeddedBridgeViewController.buttonCollection {
             button.isEnabled = mode == .silent
         }
-        
+        tuningForkButton.isEnabled = mode == .silent
     }
     
     fileprivate func handleMicrophoneButton() {
@@ -264,7 +284,7 @@ extension InstrumentViewController: AKKeyboardDelegate {
 
         let frequency = Constants().getFrequencyFromNote(number: Int(note))
         frequencyLabel.frequency = frequency
-        embeddedGaugeViewController.displayFrequency(frequency: frequency)
+        embeddedGaugeViewController.displayFrequency(frequency: frequency, soundGenerator: true)
         embeddedDeviationMeterController.displayExactMatch(on: true)
 
         startObservingVolumeChanges()

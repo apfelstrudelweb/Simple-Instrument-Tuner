@@ -83,6 +83,9 @@
 		65585A822433A793002CD214 /* DisplayModeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585A812433A793002CD214 /* DisplayModeButton.swift */; };
 		65585A832433A793002CD214 /* DisplayModeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585A812433A793002CD214 /* DisplayModeButton.swift */; };
 		65585A842433A793002CD214 /* DisplayModeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585A812433A793002CD214 /* DisplayModeButton.swift */; };
+		65B60323243728B600BBA23D /* tuningfork.png in Resources */ = {isa = PBXBuildFile; fileRef = 65B60322243728B600BBA23D /* tuningfork.png */; };
+		65B60324243728B600BBA23D /* tuningfork.png in Resources */ = {isa = PBXBuildFile; fileRef = 65B60322243728B600BBA23D /* tuningfork.png */; };
+		65B60325243728B600BBA23D /* tuningfork.png in Resources */ = {isa = PBXBuildFile; fileRef = 65B60322243728B600BBA23D /* tuningfork.png */; };
 		65CCBF5624260D9E00F518D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBF5524260D9E00F518D8 /* AppDelegate.swift */; };
 		65CCBF5824260D9E00F518D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBF5724260D9E00F518D8 /* SceneDelegate.swift */; };
 		65CCBF5A24260D9E00F518D8 /* InstrumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBF5924260D9E00F518D8 /* InstrumentViewController.swift */; };
@@ -243,6 +246,8 @@
 		65585A792433508B002CD214 /* DisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
 		65585A7D243350A7002CD214 /* Display.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Display.storyboard; sourceTree = "<group>"; };
 		65585A812433A793002CD214 /* DisplayModeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayModeButton.swift; sourceTree = "<group>"; };
+		65585A8924371B6A002CD214 /* loudspeaker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loudspeaker.png; sourceTree = "<group>"; };
+		65B60322243728B600BBA23D /* tuningfork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tuningfork.png; sourceTree = "<group>"; };
 		65CCBF5224260D9E00F518D8 /* Simple Instrument Tuner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Instrument Tuner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65CCBF5524260D9E00F518D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65CCBF5724260D9E00F518D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -458,6 +463,7 @@
 				65CCBF5924260D9E00F518D8 /* InstrumentViewController.swift */,
 				65CCBF5B24260D9E00F518D8 /* Main.storyboard */,
 				65CCBF5E24260DA100F518D8 /* Assets.xcassets */,
+				65585A8924371B6A002CD214 /* loudspeaker.png */,
 				65CCBF6024260DA100F518D8 /* LaunchScreen.storyboard */,
 				65CCBF6324260DA100F518D8 /* Info.plist */,
 			);
@@ -568,6 +574,7 @@
 				65CCC0192426368600F518D8 /* microphoneOn.png */,
 				652BC102242BF64B00F60B83 /* string.png */,
 				65CCC024242637F400F518D8 /* settings.png */,
+				65B60322243728B600BBA23D /* tuningfork.png */,
 				652BC0E1242A2C6E00F60B83 /* volumeMeterPattern.png */,
 			);
 			path = images;
@@ -860,6 +867,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65B60323243728B600BBA23D /* tuningfork.png in Resources */,
 				652BC120242CDA3400F60B83 /* Sounds in Resources */,
 				65CCC0052426268900F518D8 /* ledActive.png in Resources */,
 				652BC0F7242BEC7500F60B83 /* bridge.png in Resources */,
@@ -935,6 +943,7 @@
 				65CCBFFE242621D200F518D8 /* btnPassive.png in Resources */,
 				652BC0E7242A582400F60B83 /* DeviationMeter.storyboard in Resources */,
 				65CCC01B2426368600F518D8 /* microphoneOff.png in Resources */,
+				65B60324243728B600BBA23D /* tuningfork.png in Resources */,
 				65585A7F243350A7002CD214 /* Display.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -977,6 +986,7 @@
 				65CCBFF124260EC500F518D8 /* banjo_background5.png in Resources */,
 				65585A80243350A7002CD214 /* Display.storyboard in Resources */,
 				65CCBFC724260E4800F518D8 /* Main.storyboard in Resources */,
+				65B60325243728B600BBA23D /* tuningfork.png in Resources */,
 				652BC105242BF64B00F60B83 /* string.png in Resources */,
 				65CCBFF224260EC500F518D8 /* banjo_background4.png in Resources */,
 				652BC0E0242A2C0D00F60B83 /* VolumeMeter.storyboard in Resources */,

@@ -67,13 +67,7 @@ class DisplayViewController: UIViewController {
         return points
     }
     
-    func plotFFT(fftTap: AKFFTTap, amplitudeTracker: AKAmplitudeTracker, displayMode: DisplayMode) {
-        
-        if displayMode == .amplitude {
-            self.bezierView.alpha = 0.0
-        } else {
-            self.bezierView.alpha = 1.0
-        }
+    func plotFFT(fftTap: AKFFTTap, amplitudeTracker: AKAmplitudeTracker) {
 
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { (timer) in
             
@@ -91,21 +85,15 @@ class DisplayViewController: UIViewController {
             }
             if max == 0 { return }
             for y in yArray {
-                self.dataPoints.append(255.0*(1.0-0.5*y/max))
-                //self.dataPoints.append(255.0*(1.0-15*amplitudeTracker.amplitude*y/max))
+                //self.dataPoints.append(255.0*(1.0-0.5*y/max))
+                self.dataPoints.append(255.0*(1.0-15*amplitudeTracker.amplitude*y/max))
             }
             
             self.bezierView.layoutSubviews()
         })
     }
     
-    func plotAmplitude(trackedAmplitude: AKAmplitudeTracker, displayMode: DisplayMode) {
-        
-        if displayMode == .fft {
-            nodeOutputPlot.alpha = 0.0
-        } else {
-            nodeOutputPlot.alpha = 1.0
-        }
+    func plotAmplitude(trackedAmplitude: AKAmplitudeTracker) {
         
         nodeOutputPlot.node = trackedAmplitude
         nodeOutputPlot.frame = CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height)
@@ -146,6 +134,17 @@ class DisplayViewController: UIViewController {
         nodeFFTPlot?.alpha = 0.0
         nodeOutputPlot.alpha = 0.0
         //nodeFFTPlot?.clear()
+    }
+    
+    func setDisplayMode(mode: DisplayMode) {
+        
+        if mode == .fft {
+            bezierView.alpha = 1.0
+            nodeOutputPlot.alpha = 0.0
+        } else {
+            bezierView.alpha = 0.0
+            nodeOutputPlot.alpha = 1.0
+        }
     }
 }
 
