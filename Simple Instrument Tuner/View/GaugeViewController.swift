@@ -21,9 +21,6 @@ class GaugeViewController: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
 
     
-    var smoothArray = [Float]()
-    var numberOfTries = 0
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,33 +84,15 @@ class GaugeViewController: UIViewController {
 
     }
     
-    func resetGauge() {
-        numberOfTries = 0
-    }
-    
     
     func displayFrequency(frequency: Float, soundGenerator: Bool) {
-        
-        if soundGenerator == false {
-            // tuning by microphone
-            if numberOfTries < 5 {
-                numberOfTries += 1
-                return
-            }
-            
-            smoothArray.append(frequency)
-            
-            if smoothArray.count > 3 {
-                smoothArray.remove(at: 0)
-            }
-        }
 
-        var freq = frequency //smoothArray.average
+        var freq = frequency
         
-        while freq > Float(freqArray[freqArray.count - 1]) {
+        while freq > Float(freqArray.last! + 1.0) {
             freq /= 2.0
         }
-        while freq < Float(freqArray[0]) {
+        while freq < Float(freqArray.first! - 1.0) {
             freq *= 2.0
         }
         
@@ -123,6 +102,8 @@ class GaugeViewController: UIViewController {
         let segmentWidth = stackView.arrangedSubviews.first?.frame.size.width ?? 66.5
         let xOffset = 15.0 - 0.5 * (view.frame.size.width - 350.0)
         let p = segmentWidth * CGFloat(x + 10.0)  + xOffset
+        
+        print(freq)
 
         
         self.scrollView.setContentOffset(CGPoint(x: p, y: 0), animated: true)

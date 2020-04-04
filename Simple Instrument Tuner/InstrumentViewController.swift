@@ -31,10 +31,12 @@ class InstrumentViewController: UIViewController {
     var mic: AKMicrophone!
     var frequencyTracker: AKFrequencyTracker!
     var silence: AKBooster!
-    var lowPass: AKKorgLowPassFilter!
+    var bandPass: AKBandPassButterworthFilter!
     var amplitudeTracker: AKAmplitudeTracker!
     var fftTap: AKFFTTap!
     var timer: Timer?
+    
+    var smoothArray = [Float]()
     
 
     private var embeddedGaugeViewController: GaugeViewController!
@@ -60,16 +62,14 @@ class InstrumentViewController: UIViewController {
             self.disableAudio()
         }
         
+        self.view.setNeedsLayout()
+        self.view.layoutIfNeeded()
+        
         circleView.layer.cornerRadius = 0.5*circleView.frame.size.width
         displayView.layer.cornerRadius = 0.25*circleView.layer.cornerRadius
         
         fftButton.text = "FFT"
         amplitudeButton.text = "Amplitude"
-        
-        
-        self.view.setNeedsLayout()
-        self.view.layoutIfNeeded()
-        
         
         setAudioMode()
     }
@@ -102,9 +102,17 @@ class InstrumentViewController: UIViewController {
 
             mic = AKMicrophone()
             let micCopy = AKBooster(mic)
+            
+            let sortedFreq = guitarNotesArray.sorted(by: { $0.frequency < $1.frequency })
+            let minFreq: Float = sortedFreq.first?.frequency ?? 0
+            let maxFreq: Float = sortedFreq.last?.frequency ?? 0
+            let avrFreq = 0.5 * (minFreq + maxFreq)
+            let bandwidth = maxFreq - minFreq
  
-            lowPass = AKKorgLowPassFilter(micCopy)
-            frequencyTracker = AKFrequencyTracker(lowPass)
+            bandPass = AKBandPassButterworthFilter(micCopy)
+            bandPass.centerFrequency = avrFreq
+            bandPass.bandwidth = Double(bandwidth)
+            frequencyTracker = AKFrequencyTracker(bandPass)
             
             silence = AKBooster(frequencyTracker, gain: 0)
             amplitudeTracker = AKAmplitudeTracker(micCopy)
@@ -169,23 +177,52 @@ class InstrumentViewController: UIViewController {
     @objc func updateUI() {
 
         if frequencyTracker == nil { return }
+
         
         if frequencyTracker.amplitude > 0.05 {
             
-            let frequency = Float(frequencyTracker.frequency)
+//            let frequency: Float = 251 - Float.random(in: 0..<10)//Float(frequencyTracker.frequency)
+//            embeddedGaugeViewController.displayFrequency(frequency: frequency, soundGenerator: false)
+//            return
             
-            // Header
+            let frequency: Float = Float(frequencyTracker.frequency)
+            
+            if frequency < Float(bandPass.centerFrequency - bandPass.bandwidth) || frequency > Float(bandPass.centerFrequency + bandPass.bandwidth) { return }
+            
             frequencyLabel.frequency = frequency
             // Gauge
             embeddedGaugeViewController.displayFrequency(frequency: frequency, soundGenerator: false)
             embeddedVolumeMeterController.displayVolume(volume: frequencyTracker.amplitude)
             
             embeddedDeviationMeterController.displayDeviation(frequency: frequency)
+            
+  
+//            smoothArray.append(frequency)
+//            //print("\(frequency) --\(smoothArray.avg()) -- \(smoothArray.std())")
+//
+//            if smoothArray.count > 5 {
+//                smoothArray.remove(at: 0)
+//            }
+//
+//            if smoothArray.count > 0 && smoothArray.std() < 2.0 {
+//                // Header
+//                frequencyLabel.frequency = frequency
+//                // Gauge
+//                embeddedGaugeViewController.displayFrequency(frequency: frequency, soundGenerator: false)
+//                embeddedVolumeMeterController.displayVolume(volume: frequencyTracker.amplitude)
+//
+//                embeddedDeviationMeterController.displayDeviation(frequency: frequency)
+//
+//                //print("\(frequency) --\(smoothArray.avg()) -- \(smoothArray.std())")
+//            } else {
+//                print("\(frequency) --\(smoothArray.avg()) -- \(smoothArray.std())")
+//            }
+
         } else {
             embeddedVolumeMeterController.displayVolume(volume: 0.1)
-            embeddedGaugeViewController.resetGauge()
         }
     }
+    
     
     @IBAction func fftButtonTouched(_ sender: Any) {
         fftButton.setImage(UIImage(named: "btnActive"), for: .normal)
@@ -247,7 +284,7 @@ class InstrumentViewController: UIViewController {
         microphoneButton.setImage(buttonImage, for: .normal)
 
         if mode == .record {
-            self.timer = Timer.scheduledTimer(timeInterval: 0.1,
+            self.timer = Timer.scheduledTimer(timeInterval: 0.01,
                                               target: self,
                                               selector: #selector(InstrumentViewController.updateUI),
                                               userInfo: nil,
@@ -350,19 +387,4 @@ extension InstrumentViewController: AKMIDIListener  {
         }
     }
     
-}
-
-extension DispatchQueue {
-
-    static func background(delay: Double = 0.0, background: (()->Void)? = nil, completion: (() -> Void)? = nil) {
-        DispatchQueue.global(qos: .background).async {
-            background?()
-            if let completion = completion {
-                DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: {
-                    completion()
-                })
-            }
-        }
-    }
-
 }
