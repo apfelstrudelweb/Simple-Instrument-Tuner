@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zh9-0E-QVY">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Instrument View Controller-->
         <scene sceneID="5Yx-be-lbt">
             <objects>
-                <viewController id="Zh9-0E-QVY" sceneMemberID="viewController">
+                <viewController id="Zh9-0E-QVY" customClass="InstrumentViewController" customModule="Simple_Instrument_Tuner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Mr-tI-Co5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iwQ-5l-fUH" userLabel="MainContainerView">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iwQ-5l-fUH" userLabel="MainContainerView">
+                                <rect key="frame" x="96" y="77" width="576" height="870"/>
                                 <subviews>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TaP-bL-MlF" userLabel="BridgeView">
-                                        <rect key="frame" x="51.666666666666657" y="0.0" width="310.66666666666674" height="564.33333333333337"/>
+                                    <containerView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TaP-bL-MlF" userLabel="BridgeView">
+                                        <rect key="frame" x="72" y="0.0" width="432" height="548"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </containerView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HmZ-41-X8f" userLabel="HeaderView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="116.33333333333333"/>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HmZ-41-X8f" userLabel="HeaderView">
+                                        <rect key="frame" x="0.0" y="0.0" width="576" height="113"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0 Hz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vqR-9h-0vg" customClass="FrequencyLabel" customModule="Simple_Ukulele_Tuner" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="67" width="374" height="34"/>
+                                                <rect key="frame" x="20" y="63.5" width="536" height="34"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -40,10 +40,10 @@
                                         </constraints>
                                     </view>
                                     <view clipsSubviews="YES" alpha="0.89999997615814209" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="mhP-Xd-8do" userLabel="DisplayContainer">
-                                        <rect key="frame" x="31" y="116.33333333333333" width="352" height="197.33333333333337"/>
+                                        <rect key="frame" x="43" y="113" width="490" height="191.5"/>
                                         <subviews>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pej-Cn-rxy">
-                                                <rect key="frame" x="0.0" y="0.0" width="352" height="197.33333333333334"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="490" height="191.5"/>
                                             </containerView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.24221085140000001" green="0.24408468450000001" blue="0.25857644950000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -55,17 +55,17 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rPp-IO-99f" userLabel="ButtonContainer">
-                                        <rect key="frame" x="31" y="313.66666666666669" width="352" height="107.33333333333331"/>
+                                        <rect key="frame" x="43" y="304.5" width="490" height="104.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HaD-mg-trs" userLabel="fftButton" customClass="DisplayModeButton" customModule="Simple_Ukulele_Tuner" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="32.333333333333314" width="171" height="42.666666666666657"/>
+                                                <rect key="frame" x="0.0" y="22" width="240" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="HaD-mg-trs" secondAttribute="height" multiplier="4:1" id="HL8-OA-jVt"/>
                                                 </constraints>
                                                 <state key="normal" title="Button" image="btnActive.png"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bog-oP-HxY" userLabel="amplitudeButton" customClass="DisplayModeButton" customModule="Simple_Ukulele_Tuner" customModuleProvider="target">
-                                                <rect key="frame" x="181" y="32.333333333333314" width="171" height="42.666666666666657"/>
+                                                <rect key="frame" x="250" y="22" width="240" height="60"/>
                                                 <state key="normal" title="Button" image="btnPassive.png"/>
                                             </button>
                                         </subviews>
@@ -81,16 +81,16 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Classical / Acoustic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AdA-7t-Bka">
-                                        <rect key="frame" x="31" y="564.33333333333337" width="352" height="45"/>
+                                        <rect key="frame" x="43" y="548" width="490" height="43.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yFw-fg-sHu" userLabel="TuningforkView">
-                                        <rect key="frame" x="312.66666666666669" y="609.33333333333337" width="101.33333333333331" height="89.666666666666629"/>
+                                        <rect key="frame" x="435" y="591.5" width="141" height="87"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9A4-uR-tvp">
-                                                <rect key="frame" x="28.666666666666629" y="22.999999999999996" width="44" height="43.666666666666657"/>
+                                                <rect key="frame" x="49" y="22.5" width="42.5" height="42.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="9A4-uR-tvp" secondAttribute="height" id="7v6-Ck-erF"/>
                                                 </constraints>
@@ -105,14 +105,14 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tyh-Vq-PuI" userLabel="MeterContainer">
-                                        <rect key="frame" x="101.33333333333333" y="609.33333333333337" width="211.33333333333337" height="89.666666666666629"/>
+                                        <rect key="frame" x="141" y="591.5" width="294" height="87"/>
                                         <subviews>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nVw-6n-KWa" userLabel="VolumeView">
-                                                <rect key="frame" x="0.0" y="0.0" width="211.33333333333334" height="26.666666666666668"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="294" height="26.5"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
                                             </containerView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mhb-3q-7Rf" userLabel="Deviation View">
-                                                <rect key="frame" x="0.0" y="49.333333333333258" width="211.33333333333334" height="26.666666666666671"/>
+                                                <rect key="frame" x="0.0" y="48" width="294" height="26"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
                                             </containerView>
                                         </subviews>
@@ -129,21 +129,21 @@
                                         </constraints>
                                     </view>
                                     <containerView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DmA-vC-Mtb" userLabel="GaugeView">
-                                        <rect key="frame" x="31" y="707" width="352" height="62.666666666666629"/>
+                                        <rect key="frame" x="43" y="686.5" width="490" height="61"/>
                                         <color key="backgroundColor" red="0.73042827070000005" green="0.29231952750000001" blue="0.059315979269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </containerView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="deE-YG-KUm" userLabel="BottomView">
-                                        <rect key="frame" x="31" y="769.66666666666663" width="352" height="126.33333333333337"/>
+                                        <rect key="frame" x="43" y="747.5" width="490" height="122.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnj-Ib-jUF" userLabel="micButton">
-                                                <rect key="frame" x="138" y="25.333333333333371" width="76" height="75.666666666666671"/>
+                                                <rect key="frame" x="208" y="24.5" width="74" height="73.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="mnj-Ib-jUF" secondAttribute="height" id="vPc-SW-gXM"/>
                                                 </constraints>
                                                 <state key="normal" image="microphoneOn.png"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tOw-9U-RVG" userLabel="settingsButton">
-                                                <rect key="frame" x="299" y="36.666666666666742" width="53" height="53"/>
+                                                <rect key="frame" x="438.5" y="35.5" width="51.5" height="51.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="tOw-9U-RVG" secondAttribute="height" id="qkc-8B-gUh"/>
                                                 </constraints>
@@ -227,6 +227,10 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="headerView" destination="HmZ-41-X8f" id="e8V-Zx-5fc"/>
+                        <outlet property="mainContainerView" destination="iwQ-5l-fUH" id="xe1-SC-OzZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HFA-KD-dIu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

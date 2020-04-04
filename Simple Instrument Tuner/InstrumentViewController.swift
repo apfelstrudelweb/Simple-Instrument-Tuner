@@ -13,6 +13,9 @@ import AudioKitUI
 
 class InstrumentViewController: UIViewController {
     
+    @IBOutlet weak var mainContainerView: UIView!
+    @IBOutlet weak var headerView: UIView!
+    
     @IBOutlet weak var circleView: UIView!
     @IBOutlet weak var frequencyLabel: FrequencyLabel!
     @IBOutlet weak var microphoneButton: UIButton!
@@ -27,7 +30,7 @@ class InstrumentViewController: UIViewController {
     var conductor = Conductor.sharedInstance
     var midiChannelIn: MIDIChannel = 0
     var omniMode = true
-    
+
     var mic: AKMicrophone!
     var frequencyTracker: AKFrequencyTracker!
     var silence: AKBooster!
@@ -35,9 +38,9 @@ class InstrumentViewController: UIViewController {
     var amplitudeTracker: AKAmplitudeTracker!
     var fftTap: AKFFTTap!
     var timer: Timer?
-    
+
     var smoothArray = [Float]()
-    
+
 
     private var embeddedGaugeViewController: GaugeViewController!
     private var embeddedVolumeMeterController: VolumeMeterViewController!
@@ -49,29 +52,39 @@ class InstrumentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        embeddedBridgeViewController.delegate = self
-        conductor.addMidiListener(listener: self)
-        
-        NotificationCenter.default.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: nil) { (notification) in
-            print("app did become active")
-        }
-        
-        NotificationCenter.default.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: nil) { (notification) in
-            print("app did enter background")
-            
-            self.disableAudio()
-        }
-        
         self.view.setNeedsLayout()
         self.view.layoutIfNeeded()
         
-        circleView.layer.cornerRadius = 0.5*circleView.frame.size.width
-        displayView.layer.cornerRadius = 0.25*circleView.layer.cornerRadius
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            mainContainerView.layer.cornerRadius = 0.05*mainContainerView.bounds.size.width
+            headerView.roundCorners([.topLeft, .topRight], radius: mainContainerView.layer.cornerRadius)
+            mainContainerView.dropShadow()
+        }
         
-        fftButton.text = "FFT"
-        amplitudeButton.text = "Amplitude"
+
         
-        setAudioMode()
+//        embeddedBridgeViewController.delegate = self
+//        conductor.addMidiListener(listener: self)
+//
+//        NotificationCenter.default.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: nil) { (notification) in
+//            print("app did become active")
+//        }
+//
+//        NotificationCenter.default.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: nil) { (notification) in
+//            print("app did enter background")
+//
+//            self.disableAudio()
+//        }
+//
+
+//
+//        circleView.layer.cornerRadius = 0.5*circleView.frame.size.width
+//        displayView.layer.cornerRadius = 0.25*circleView.layer.cornerRadius
+//
+//        fftButton.text = "FFT"
+//        amplitudeButton.text = "Amplitude"
+//
+//        setAudioMode()
     }
     
     func setAudioMode() {
@@ -387,4 +400,26 @@ extension InstrumentViewController: AKMIDIListener  {
         }
     }
     
+}
+
+
+  extension UIView {
+
+    func dropShadow() {
+        self.layer.masksToBounds = false
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOpacity = 1
+        self.layer.shadowOffset = CGSize(width: -10, height: -10)
+        self.layer.shadowRadius = self.layer.cornerRadius
+        self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
+        self.layer.shouldRasterize = true
+        self.layer.rasterizationScale = UIScreen.main.scale
+    }
+    
+    func roundCorners(_ corners: UIRectCorner, radius: CGFloat) {
+         let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+         let mask = CAShapeLayer()
+         mask.path = path.cgPath
+         self.layer.mask = mask
+    }
 }
