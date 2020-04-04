@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,56 +14,13 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banjo_background5.png" translatesAutoresizingMaskIntoConstraints="NO" id="uuU-Su-tFz">
-                                <rect key="frame" x="0.0" y="114.5" width="414" height="761.5"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bVs-N6-3Ix" userLabel="HeaderView">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="134.5"/>
-                                <color key="backgroundColor" red="0.68902570009999997" green="0.26623564960000001" blue="0.2310875654" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view alpha="0.55000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fNn-9z-VCh" userLabel="GraphView">
-                                <rect key="frame" x="31" y="134.5" width="352" height="197"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yT9-fw-Ala" userLabel="CircleView">
-                                <rect key="frame" x="119" y="229" width="176" height="176"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="yT9-fw-Ala" secondAttribute="height" id="cNn-4V-duQ"/>
-                                </constraints>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" red="0.1529633105" green="0.16794264319999999" blue="0.18741327520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="bVs-N6-3Ix" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="08q-Ud-pg5"/>
-                            <constraint firstItem="bVs-N6-3Ix" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.15" id="B13-wN-ijm"/>
-                            <constraint firstItem="fNn-9z-VCh" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.219866" id="HHs-6R-ZEi"/>
-                            <constraint firstItem="yT9-fw-Ala" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Iwc-6H-3cd"/>
-                            <constraint firstItem="yT9-fw-Ala" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.7" id="JHq-JH-uUc"/>
-                            <constraint firstItem="yT9-fw-Ala" firstAttribute="width" secondItem="fNn-9z-VCh" secondAttribute="width" multiplier="0.5" id="P07-9a-EP7"/>
-                            <constraint firstAttribute="bottom" secondItem="uuU-Su-tFz" secondAttribute="bottom" constant="20" symbolic="YES" id="QAX-e8-lb6"/>
-                            <constraint firstItem="bVs-N6-3Ix" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="XQa-Bf-zvV"/>
-                            <constraint firstItem="fNn-9z-VCh" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.85" id="fFp-dx-mjP"/>
-                            <constraint firstItem="fNn-9z-VCh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kS6-0o-bd0"/>
-                            <constraint firstItem="uuU-Su-tFz" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.85" id="m8h-z9-LDI"/>
-                            <constraint firstItem="uuU-Su-tFz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="oyD-9p-FVQ"/>
-                            <constraint firstItem="uuU-Su-tFz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rWS-Gw-KA9"/>
-                            <constraint firstItem="bVs-N6-3Ix" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tyr-HT-J2V"/>
-                            <constraint firstItem="fNn-9z-VCh" firstAttribute="top" secondItem="bVs-N6-3Ix" secondAttribute="bottom" id="wkJ-0r-yrY"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <connections>
-                        <outlet property="circleView" destination="yT9-fw-Ala" id="WCr-Cg-qwA"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="banjo_background5.png" width="640" height="1136"/>
-    </resources>
 </document>
