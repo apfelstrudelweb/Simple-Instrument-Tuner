@@ -44,10 +44,12 @@ class DeviationMeterViewController: UIViewController {
         backgroundView.layer.cornerRadius = 0.5*backgroundView.frame.size.height
         stackview.layer.cornerRadius = backgroundView.layer.cornerRadius
         
+        let offset = 0.08*self.view.bounds.size.height
+        
         backgroundView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1).cgColor
-        backgroundView.layer.shadowOffset = CGSize(width: 0, height: 3)
+        backgroundView.layer.shadowOffset = CGSize(width: 0, height: offset)
         backgroundView.layer.shadowOpacity = 1.0
-        backgroundView.layer.shadowRadius = 5.0
+        backgroundView.layer.shadowRadius = 2*offset
         backgroundView.layer.masksToBounds = false
         
         ledViewCollection.forEach {

@@ -61,30 +61,27 @@ class InstrumentViewController: UIViewController {
             mainContainerView.dropShadow()
         }
         
+        circleView.layer.cornerRadius = 0.5*circleView.frame.size.width
+        displayView.roundCorners([.bottomLeft, .bottomRight], radius: 0.15*circleView.layer.cornerRadius)
+
+        fftButton.text = "FFT"
+        amplitudeButton.text = "Amplitude"
 
         
-//        embeddedBridgeViewController.delegate = self
-//        conductor.addMidiListener(listener: self)
-//
-//        NotificationCenter.default.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: nil) { (notification) in
-//            print("app did become active")
-//        }
-//
-//        NotificationCenter.default.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: nil) { (notification) in
-//            print("app did enter background")
-//
-//            self.disableAudio()
-//        }
-//
+        embeddedBridgeViewController.delegate = self
+        conductor.addMidiListener(listener: self)
 
-//
-//        circleView.layer.cornerRadius = 0.5*circleView.frame.size.width
-//        displayView.layer.cornerRadius = 0.25*circleView.layer.cornerRadius
-//
-//        fftButton.text = "FFT"
-//        amplitudeButton.text = "Amplitude"
-//
-//        setAudioMode()
+        NotificationCenter.default.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: nil) { (notification) in
+            print("app did become active")
+        }
+
+        NotificationCenter.default.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: nil) { (notification) in
+            print("app did enter background")
+
+            self.disableAudio()
+        }
+
+        setAudioMode()
     }
     
     func setAudioMode() {
@@ -374,7 +371,7 @@ extension InstrumentViewController: AKKeyboardDelegate {
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if context == &Observation.Context {
             if keyPath == Observation.VolumeKey, let volume = (change?[NSKeyValueChangeKey.newKey] as? NSNumber)?.floatValue {
-                print("Volume: \(volume)")
+                //print("Volume: \(volume)")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                     self.embeddedVolumeMeterController.displayVolume(volume: volume*0.3)
                 }

@@ -47,10 +47,12 @@ class VolumeMeterViewController: UIViewController {
         backgroundView.layer.cornerRadius = 0.5*backgroundView.frame.size.height
         meterView.layer.cornerRadius = backgroundView.layer.cornerRadius
         
+        let offset = 0.08*self.view.bounds.size.height
+        
         backgroundView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1).cgColor
-        backgroundView.layer.shadowOffset = CGSize(width: 0, height: 3)
+        backgroundView.layer.shadowOffset = CGSize(width: 0, height: offset)
         backgroundView.layer.shadowOpacity = 1.0
-        backgroundView.layer.shadowRadius = 5.0
+        backgroundView.layer.shadowRadius = 2 * offset
         backgroundView.layer.masksToBounds = false
 
         displayVolume(volume: 0.1)
@@ -88,7 +90,7 @@ extension UIView {
             gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.0)
         }
         
-        gradientLayer.locations = [0.0, 0.2, 0.3, 0.4]
+        gradientLayer.locations = [0.0, 0.2, 0.5, 0.8]
 
         gradientLayer.bounds = self.bounds  //CGRect(x: 0, y: 0, width: 100, height: 20)//self.bounds
         gradientLayer.anchorPoint = CGPoint.zero
