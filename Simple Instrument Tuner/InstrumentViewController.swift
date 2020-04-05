@@ -9,7 +9,7 @@
 import UIKit
 import AudioKit
 import AudioKitUI
-
+import GoogleMobileAds
 
 class InstrumentViewController: UIViewController {
     
@@ -24,8 +24,7 @@ class InstrumentViewController: UIViewController {
     @IBOutlet weak var amplitudeButton: DisplayModeButton!
     @IBOutlet weak var tuningForkButton: UIButton!
     
-    
-    
+    var bannerView: GADBannerView!
     
     var conductor = Conductor.sharedInstance
     var midiChannelIn: MIDIChannel = 0
@@ -82,8 +81,24 @@ class InstrumentViewController: UIViewController {
         }
 
         setAudioMode()
+        
+        handleAd()
     }
     
+    func handleAd() {
+        guard let path = Bundle.main.path(forResource: "Info", ofType: "plist"), let dict = NSDictionary(contentsOfFile: path) else { return }
+        
+        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        bannerView.adUnitID = dict.value(forKey: "GADApplicationIdentifier") as? String
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.insertSubview(bannerView, aboveSubview: displayView)
+        bannerView.autoPinEdge(.top, to: .top, of: displayView)
+        bannerView.autoAlignAxis(.vertical, toSameAxisOf: displayView)
+        
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+    }
+
     func setAudioMode() {
         
         embeddedDisplayViewController.clear()

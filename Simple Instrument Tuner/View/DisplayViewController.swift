@@ -10,6 +10,7 @@ import UIKit
 import PureLayout
 import AudioKit
 import AudioKitUI
+import GoogleMobileAds
 
 class DisplayViewController: UIViewController {
     

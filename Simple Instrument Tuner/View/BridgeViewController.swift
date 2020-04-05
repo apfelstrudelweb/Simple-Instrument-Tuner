@@ -28,25 +28,8 @@ class BridgeViewController: UIViewController, AKMIDIListener {
     @IBOutlet weak var bottomView: UIView!
     
     
-//    @IBOutlet var buttonCollection: [NoteButton]! {
-//        didSet {
-//            buttonCollection.sort { $0.tag < $1.tag }
-//            buttonCollection.forEach {
-//                $0.note = guitarNotesArray[$0.tag]
-//            }
-//        }
-//    }
-//
     open weak var keyboardDelegate: AKKeyboardDelegate?
-    
-    @IBOutlet var stringCollection: [UIImageView]! {
-        didSet {
-            stringCollection.sort { $0.tag < $1.tag }
-            stringCollection.forEach {
-                $0.autoSetDimension(.width, toSize: CGFloat(10*exp(-0.2*(Float($0.tag)))))
-            }
-        }
-    }
+
     
     var buttonCollection = [NoteButton]()
     

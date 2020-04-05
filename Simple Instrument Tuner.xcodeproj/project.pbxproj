@@ -7,145 +7,56 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		186FEF7D9C91CADF2FDAEB04 /* Pods_Simple_Instrument_Tuner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EC20B08874F2FD75C51E109 /* Pods_Simple_Instrument_Tuner.framework */; };
-		333E6F818BC12E3DD53EF862 /* Pods_Simple_Ukulele_Tuner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E849D0811F4D0AE7CF791B /* Pods_Simple_Ukulele_Tuner.framework */; };
+		196C73E26B765DA8A06A41C0 /* Pods_Simple_Instrument_Tuner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8872FBF9142C6B47D3CAE0F9 /* Pods_Simple_Instrument_Tuner.framework */; };
 		652BC0DB242A2C0D00F60B83 /* VolumeMeterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC0D9242A2C0C00F60B83 /* VolumeMeterViewController.swift */; };
-		652BC0DC242A2C0D00F60B83 /* VolumeMeterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC0D9242A2C0C00F60B83 /* VolumeMeterViewController.swift */; };
-		652BC0DD242A2C0D00F60B83 /* VolumeMeterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC0D9242A2C0C00F60B83 /* VolumeMeterViewController.swift */; };
 		652BC0DE242A2C0D00F60B83 /* VolumeMeter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652BC0DA242A2C0C00F60B83 /* VolumeMeter.storyboard */; };
-		652BC0DF242A2C0D00F60B83 /* VolumeMeter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652BC0DA242A2C0C00F60B83 /* VolumeMeter.storyboard */; };
-		652BC0E0242A2C0D00F60B83 /* VolumeMeter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652BC0DA242A2C0C00F60B83 /* VolumeMeter.storyboard */; };
 		652BC0E2242A2C6F00F60B83 /* volumeMeterPattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 652BC0E1242A2C6E00F60B83 /* volumeMeterPattern.png */; };
-		652BC0E3242A2C6F00F60B83 /* volumeMeterPattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 652BC0E1242A2C6E00F60B83 /* volumeMeterPattern.png */; };
-		652BC0E4242A2C6F00F60B83 /* volumeMeterPattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 652BC0E1242A2C6E00F60B83 /* volumeMeterPattern.png */; };
 		652BC0E6242A582400F60B83 /* DeviationMeter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652BC0E5242A582400F60B83 /* DeviationMeter.storyboard */; };
-		652BC0E7242A582400F60B83 /* DeviationMeter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652BC0E5242A582400F60B83 /* DeviationMeter.storyboard */; };
-		652BC0E8242A582400F60B83 /* DeviationMeter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652BC0E5242A582400F60B83 /* DeviationMeter.storyboard */; };
 		652BC0EA242A583C00F60B83 /* DeviationMeterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC0E9242A583C00F60B83 /* DeviationMeterViewController.swift */; };
-		652BC0EB242A583C00F60B83 /* DeviationMeterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC0E9242A583C00F60B83 /* DeviationMeterViewController.swift */; };
-		652BC0EC242A583C00F60B83 /* DeviationMeterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC0E9242A583C00F60B83 /* DeviationMeterViewController.swift */; };
 		652BC0EF242A69A300F60B83 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC0EE242A69A300F60B83 /* Constants.swift */; };
-		652BC0F0242A69A300F60B83 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC0EE242A69A300F60B83 /* Constants.swift */; };
-		652BC0F1242A69A300F60B83 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC0EE242A69A300F60B83 /* Constants.swift */; };
 		652BC0F7242BEC7500F60B83 /* bridge.png in Resources */ = {isa = PBXBuildFile; fileRef = 652BC0F6242BEC7500F60B83 /* bridge.png */; };
-		652BC0F8242BEC7500F60B83 /* bridge.png in Resources */ = {isa = PBXBuildFile; fileRef = 652BC0F6242BEC7500F60B83 /* bridge.png */; };
-		652BC0F9242BEC7500F60B83 /* bridge.png in Resources */ = {isa = PBXBuildFile; fileRef = 652BC0F6242BEC7500F60B83 /* bridge.png */; };
 		652BC0FB242BECFB00F60B83 /* Bridge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652BC0FA242BECFB00F60B83 /* Bridge.storyboard */; };
-		652BC0FC242BECFB00F60B83 /* Bridge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652BC0FA242BECFB00F60B83 /* Bridge.storyboard */; };
-		652BC0FD242BECFB00F60B83 /* Bridge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652BC0FA242BECFB00F60B83 /* Bridge.storyboard */; };
 		652BC0FF242BED0F00F60B83 /* BridgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC0FE242BED0F00F60B83 /* BridgeViewController.swift */; };
-		652BC100242BED0F00F60B83 /* BridgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC0FE242BED0F00F60B83 /* BridgeViewController.swift */; };
-		652BC101242BED0F00F60B83 /* BridgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC0FE242BED0F00F60B83 /* BridgeViewController.swift */; };
 		652BC103242BF64B00F60B83 /* string.png in Resources */ = {isa = PBXBuildFile; fileRef = 652BC102242BF64B00F60B83 /* string.png */; };
-		652BC104242BF64B00F60B83 /* string.png in Resources */ = {isa = PBXBuildFile; fileRef = 652BC102242BF64B00F60B83 /* string.png */; };
-		652BC105242BF64B00F60B83 /* string.png in Resources */ = {isa = PBXBuildFile; fileRef = 652BC102242BF64B00F60B83 /* string.png */; };
 		652BC110242CC39900F60B83 /* Conductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC10B242CC39900F60B83 /* Conductor.swift */; };
-		652BC111242CC39900F60B83 /* Conductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC10B242CC39900F60B83 /* Conductor.swift */; };
-		652BC112242CC39900F60B83 /* Conductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC10B242CC39900F60B83 /* Conductor.swift */; };
 		652BC113242CC39900F60B83 /* Fatten.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC10C242CC39900F60B83 /* Fatten.swift */; };
-		652BC114242CC39900F60B83 /* Fatten.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC10C242CC39900F60B83 /* Fatten.swift */; };
-		652BC115242CC39900F60B83 /* Fatten.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC10C242CC39900F60B83 /* Fatten.swift */; };
 		652BC116242CC39900F60B83 /* PingPongDelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC10D242CC39900F60B83 /* PingPongDelay.swift */; };
-		652BC117242CC39900F60B83 /* PingPongDelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC10D242CC39900F60B83 /* PingPongDelay.swift */; };
-		652BC118242CC39900F60B83 /* PingPongDelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC10D242CC39900F60B83 /* PingPongDelay.swift */; };
 		652BC119242CC39900F60B83 /* FilterSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC10E242CC39900F60B83 /* FilterSection.swift */; };
-		652BC11A242CC39900F60B83 /* FilterSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC10E242CC39900F60B83 /* FilterSection.swift */; };
-		652BC11B242CC39900F60B83 /* FilterSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC10E242CC39900F60B83 /* FilterSection.swift */; };
 		652BC11C242CC39900F60B83 /* AutoPan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC10F242CC39900F60B83 /* AutoPan.swift */; };
-		652BC11D242CC39900F60B83 /* AutoPan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC10F242CC39900F60B83 /* AutoPan.swift */; };
-		652BC11E242CC39900F60B83 /* AutoPan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC10F242CC39900F60B83 /* AutoPan.swift */; };
 		652BC120242CDA3400F60B83 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 652BC11F242CDA3400F60B83 /* Sounds */; };
-		652BC121242CDA3400F60B83 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 652BC11F242CDA3400F60B83 /* Sounds */; };
-		652BC122242CDA3400F60B83 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 652BC11F242CDA3400F60B83 /* Sounds */; };
 		652BC125242CDABF00F60B83 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 652BC124242CDABF00F60B83 /* AudioToolbox.framework */; };
 		653216EC242FB93A00BE1CAE /* NoteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653216EB242FB93A00BE1CAE /* NoteButton.swift */; };
-		653216ED242FB93A00BE1CAE /* NoteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653216EB242FB93A00BE1CAE /* NoteButton.swift */; };
-		653216EE242FB93A00BE1CAE /* NoteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653216EB242FB93A00BE1CAE /* NoteButton.swift */; };
 		653216F0242FC38200BE1CAE /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653216EF242FC38200BE1CAE /* Note.swift */; };
-		653216F1242FC38200BE1CAE /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653216EF242FC38200BE1CAE /* Note.swift */; };
-		653216F2242FC38200BE1CAE /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653216EF242FC38200BE1CAE /* Note.swift */; };
-		653216F42430DA0700BE1CAE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 652BC124242CDABF00F60B83 /* AudioToolbox.framework */; };
 		653216F62430E7CE00BE1CAE /* FrequencyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653216F52430E7CD00BE1CAE /* FrequencyLabel.swift */; };
-		653216F72430E7CE00BE1CAE /* FrequencyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653216F52430E7CD00BE1CAE /* FrequencyLabel.swift */; };
-		653216F82430E7CE00BE1CAE /* FrequencyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653216F52430E7CD00BE1CAE /* FrequencyLabel.swift */; };
 		65585A6E24334A74002CD214 /* DisplayContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585A6D24334A74002CD214 /* DisplayContainer.swift */; };
-		65585A6F24334A74002CD214 /* DisplayContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585A6D24334A74002CD214 /* DisplayContainer.swift */; };
-		65585A7024334A74002CD214 /* DisplayContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585A6D24334A74002CD214 /* DisplayContainer.swift */; };
 		65585A7624334E7E002CD214 /* BezierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585A7524334E7E002CD214 /* BezierView.swift */; };
-		65585A7724334E7E002CD214 /* BezierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585A7524334E7E002CD214 /* BezierView.swift */; };
-		65585A7824334E7E002CD214 /* BezierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585A7524334E7E002CD214 /* BezierView.swift */; };
 		65585A7A2433508C002CD214 /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585A792433508B002CD214 /* DisplayViewController.swift */; };
-		65585A7B2433508C002CD214 /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585A792433508B002CD214 /* DisplayViewController.swift */; };
-		65585A7C2433508C002CD214 /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585A792433508B002CD214 /* DisplayViewController.swift */; };
 		65585A7E243350A7002CD214 /* Display.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65585A7D243350A7002CD214 /* Display.storyboard */; };
-		65585A7F243350A7002CD214 /* Display.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65585A7D243350A7002CD214 /* Display.storyboard */; };
-		65585A80243350A7002CD214 /* Display.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65585A7D243350A7002CD214 /* Display.storyboard */; };
 		65585A822433A793002CD214 /* DisplayModeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585A812433A793002CD214 /* DisplayModeButton.swift */; };
-		65585A832433A793002CD214 /* DisplayModeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585A812433A793002CD214 /* DisplayModeButton.swift */; };
-		65585A842433A793002CD214 /* DisplayModeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585A812433A793002CD214 /* DisplayModeButton.swift */; };
 		65B60323243728B600BBA23D /* tuningfork.png in Resources */ = {isa = PBXBuildFile; fileRef = 65B60322243728B600BBA23D /* tuningfork.png */; };
-		65B60324243728B600BBA23D /* tuningfork.png in Resources */ = {isa = PBXBuildFile; fileRef = 65B60322243728B600BBA23D /* tuningfork.png */; };
-		65B60325243728B600BBA23D /* tuningfork.png in Resources */ = {isa = PBXBuildFile; fileRef = 65B60322243728B600BBA23D /* tuningfork.png */; };
 		65B603322438D49D00BBA23D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65B603302438D49C00BBA23D /* Main.storyboard */; };
 		65CCBF5624260D9E00F518D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBF5524260D9E00F518D8 /* AppDelegate.swift */; };
 		65CCBF5824260D9E00F518D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBF5724260D9E00F518D8 /* SceneDelegate.swift */; };
 		65CCBF5A24260D9E00F518D8 /* InstrumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBF5924260D9E00F518D8 /* InstrumentViewController.swift */; };
 		65CCBF5F24260DA100F518D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65CCBF5E24260DA100F518D8 /* Assets.xcassets */; };
 		65CCBF6224260DA100F518D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65CCBF6024260DA100F518D8 /* LaunchScreen.storyboard */; };
-		65CCBFF52426115200F518D8 /* InstrumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBF5924260D9E00F518D8 /* InstrumentViewController.swift */; };
-		65CCBFF62426115400F518D8 /* InstrumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBF5924260D9E00F518D8 /* InstrumentViewController.swift */; };
 		65CCBFFA242621D200F518D8 /* btnActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCBFF8242621D100F518D8 /* btnActive.png */; };
-		65CCBFFB242621D200F518D8 /* btnActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCBFF8242621D100F518D8 /* btnActive.png */; };
-		65CCBFFC242621D200F518D8 /* btnActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCBFF8242621D100F518D8 /* btnActive.png */; };
 		65CCBFFD242621D200F518D8 /* btnPassive.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCBFF9242621D200F518D8 /* btnPassive.png */; };
-		65CCBFFE242621D200F518D8 /* btnPassive.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCBFF9242621D200F518D8 /* btnPassive.png */; };
-		65CCBFFF242621D200F518D8 /* btnPassive.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCBFF9242621D200F518D8 /* btnPassive.png */; };
 		65CCC0022426268900F518D8 /* ledPassive.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC0002426268900F518D8 /* ledPassive.png */; };
-		65CCC0032426268900F518D8 /* ledPassive.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC0002426268900F518D8 /* ledPassive.png */; };
-		65CCC0042426268900F518D8 /* ledPassive.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC0002426268900F518D8 /* ledPassive.png */; };
 		65CCC0052426268900F518D8 /* ledActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC0012426268900F518D8 /* ledActive.png */; };
-		65CCC0062426268900F518D8 /* ledActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC0012426268900F518D8 /* ledActive.png */; };
-		65CCC0072426268900F518D8 /* ledActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC0012426268900F518D8 /* ledActive.png */; };
 		65CCC00A242626BC00F518D8 /* noteButtonPassive.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC008242626BC00F518D8 /* noteButtonPassive.png */; };
-		65CCC00B242626BC00F518D8 /* noteButtonPassive.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC008242626BC00F518D8 /* noteButtonPassive.png */; };
-		65CCC00C242626BC00F518D8 /* noteButtonPassive.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC008242626BC00F518D8 /* noteButtonPassive.png */; };
 		65CCC00D242626BC00F518D8 /* noteButtonActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC009242626BC00F518D8 /* noteButtonActive.png */; };
-		65CCC00E242626BC00F518D8 /* noteButtonActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC009242626BC00F518D8 /* noteButtonActive.png */; };
-		65CCC00F242626BC00F518D8 /* noteButtonActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC009242626BC00F518D8 /* noteButtonActive.png */; };
 		65CCC0122426318E00F518D8 /* gaugePatternGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC0102426318E00F518D8 /* gaugePatternGreen.png */; };
-		65CCC0132426318E00F518D8 /* gaugePatternGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC0102426318E00F518D8 /* gaugePatternGreen.png */; };
-		65CCC0142426318E00F518D8 /* gaugePatternGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC0102426318E00F518D8 /* gaugePatternGreen.png */; };
 		65CCC0152426318E00F518D8 /* gaugePattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC0112426318E00F518D8 /* gaugePattern.png */; };
-		65CCC0162426318E00F518D8 /* gaugePattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC0112426318E00F518D8 /* gaugePattern.png */; };
-		65CCC0172426318E00F518D8 /* gaugePattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC0112426318E00F518D8 /* gaugePattern.png */; };
 		65CCC01A2426368600F518D8 /* microphoneOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC0182426368600F518D8 /* microphoneOff.png */; };
-		65CCC01B2426368600F518D8 /* microphoneOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC0182426368600F518D8 /* microphoneOff.png */; };
-		65CCC01C2426368600F518D8 /* microphoneOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC0182426368600F518D8 /* microphoneOff.png */; };
 		65CCC01D2426368600F518D8 /* microphoneOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC0192426368600F518D8 /* microphoneOn.png */; };
-		65CCC01E2426368600F518D8 /* microphoneOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC0192426368600F518D8 /* microphoneOn.png */; };
-		65CCC01F2426368600F518D8 /* microphoneOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC0192426368600F518D8 /* microphoneOn.png */; };
 		65CCC021242637E700F518D8 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC020242637E700F518D8 /* info.png */; };
-		65CCC022242637E700F518D8 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC020242637E700F518D8 /* info.png */; };
-		65CCC023242637E700F518D8 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC020242637E700F518D8 /* info.png */; };
 		65CCC025242637F400F518D8 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC024242637F400F518D8 /* settings.png */; };
-		65CCC026242637F400F518D8 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC024242637F400F518D8 /* settings.png */; };
-		65CCC027242637F400F518D8 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC024242637F400F518D8 /* settings.png */; };
 		65CCC02924263B8B00F518D8 /* gaugeBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC02824263B8B00F518D8 /* gaugeBackground.png */; };
-		65CCC02A24263B8B00F518D8 /* gaugeBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC02824263B8B00F518D8 /* gaugeBackground.png */; };
-		65CCC02B24263B8B00F518D8 /* gaugeBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC02824263B8B00F518D8 /* gaugeBackground.png */; };
 		65CCC02E2426683400F518D8 /* gaugeOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC02D2426683400F518D8 /* gaugeOverlay.png */; };
-		65CCC02F2426683400F518D8 /* gaugeOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC02D2426683400F518D8 /* gaugeOverlay.png */; };
-		65CCC0302426683400F518D8 /* gaugeOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC02D2426683400F518D8 /* gaugeOverlay.png */; };
 		65CCC03324266C0B00F518D8 /* Gauge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC03224266C0B00F518D8 /* Gauge.storyboard */; };
-		65CCC03424266C0B00F518D8 /* Gauge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC03224266C0B00F518D8 /* Gauge.storyboard */; };
-		65CCC03524266C0B00F518D8 /* Gauge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC03224266C0B00F518D8 /* Gauge.storyboard */; };
 		65CCC03724266CAA00F518D8 /* GaugeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCC03624266CAA00F518D8 /* GaugeViewController.swift */; };
-		65CCC03824266CAA00F518D8 /* GaugeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCC03624266CAA00F518D8 /* GaugeViewController.swift */; };
-		65CCC03924266CAA00F518D8 /* GaugeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCC03624266CAA00F518D8 /* GaugeViewController.swift */; };
 		65CCC03B2426AD6B00F518D8 /* gaugeScale.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC03A2426AD6B00F518D8 /* gaugeScale.png */; };
-		65CCC03C2426AD6B00F518D8 /* gaugeScale.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC03A2426AD6B00F518D8 /* gaugeScale.png */; };
-		65CCC03D2426AD6B00F518D8 /* gaugeScale.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC03A2426AD6B00F518D8 /* gaugeScale.png */; };
-		6F52FC9C293BE29A3F34B73A /* Pods_Simple_Banjo_Tuner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF8F36F61697034E69B7789 /* Pods_Simple_Banjo_Tuner.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,42 +74,10 @@
 			remoteGlobalIDString = 65CCBF5124260D9E00F518D8;
 			remoteInfo = "Simple Instrument Tuner";
 		};
-		65CCBF9F24260E1F00F518D8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 65CCBF4A24260D9E00F518D8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 65CCBF8824260E1E00F518D8;
-			remoteInfo = "Simple Ukulele Tuner";
-		};
-		65CCBFAA24260E1F00F518D8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 65CCBF4A24260D9E00F518D8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 65CCBF8824260E1E00F518D8;
-			remoteInfo = "Simple Ukulele Tuner";
-		};
-		65CCBFD324260E4900F518D8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 65CCBF4A24260D9E00F518D8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 65CCBFBC24260E4800F518D8;
-			remoteInfo = "Simple Banjo Tuner";
-		};
-		65CCBFDE24260E4900F518D8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 65CCBF4A24260D9E00F518D8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 65CCBFBC24260E4800F518D8;
-			remoteInfo = "Simple Banjo Tuner";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0906B5D173A9CC0A0670DEC2 /* Pods-Simple Banjo Tuner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simple Banjo Tuner.release.xcconfig"; path = "Target Support Files/Pods-Simple Banjo Tuner/Pods-Simple Banjo Tuner.release.xcconfig"; sourceTree = "<group>"; };
-		1EC20B08874F2FD75C51E109 /* Pods_Simple_Instrument_Tuner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Simple_Instrument_Tuner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		213B034AA4248E35E00C62FD /* Pods-Simple Instrument Tuner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simple Instrument Tuner.release.xcconfig"; path = "Target Support Files/Pods-Simple Instrument Tuner/Pods-Simple Instrument Tuner.release.xcconfig"; sourceTree = "<group>"; };
-		42D624BF4B137BD334EF671A /* Pods-Simple Ukulele Tuner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simple Ukulele Tuner.debug.xcconfig"; path = "Target Support Files/Pods-Simple Ukulele Tuner/Pods-Simple Ukulele Tuner.debug.xcconfig"; sourceTree = "<group>"; };
-		56EC65B897FD926830A06798 /* Pods-Simple Ukulele Tuner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simple Ukulele Tuner.release.xcconfig"; path = "Target Support Files/Pods-Simple Ukulele Tuner/Pods-Simple Ukulele Tuner.release.xcconfig"; sourceTree = "<group>"; };
+		3FBDCEFA8E7C4EFE0EB2777D /* Pods-Simple Instrument Tuner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simple Instrument Tuner.debug.xcconfig"; path = "Target Support Files/Pods-Simple Instrument Tuner/Pods-Simple Instrument Tuner.debug.xcconfig"; sourceTree = "<group>"; };
 		652BC0D9242A2C0C00F60B83 /* VolumeMeterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeMeterViewController.swift; sourceTree = "<group>"; };
 		652BC0DA242A2C0C00F60B83 /* VolumeMeter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VolumeMeter.storyboard; sourceTree = "<group>"; };
 		652BC0E1242A2C6E00F60B83 /* volumeMeterPattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volumeMeterPattern.png; sourceTree = "<group>"; };
@@ -238,12 +117,6 @@
 		65CCBF6324260DA100F518D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65CCBF6824260DA100F518D8 /* Simple Instrument TunerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Simple Instrument TunerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65CCBF7324260DA100F518D8 /* Simple Instrument TunerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Simple Instrument TunerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		65CCBF8924260E1E00F518D8 /* Simple Ukulele Tuner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Ukulele Tuner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		65CCBF9E24260E1F00F518D8 /* Simple Ukulele TunerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Simple Ukulele TunerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		65CCBFA924260E1F00F518D8 /* Simple Ukulele TunerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Simple Ukulele TunerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		65CCBFBD24260E4800F518D8 /* Simple Banjo Tuner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Banjo Tuner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		65CCBFD224260E4900F518D8 /* Simple Banjo TunerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Simple Banjo TunerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		65CCBFDD24260E4900F518D8 /* Simple Banjo TunerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Simple Banjo TunerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65CCBFF8242621D100F518D8 /* btnActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnActive.png; sourceTree = "<group>"; };
 		65CCBFF9242621D200F518D8 /* btnPassive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnPassive.png; sourceTree = "<group>"; };
 		65CCC0002426268900F518D8 /* ledPassive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ledPassive.png; sourceTree = "<group>"; };
@@ -261,10 +134,8 @@
 		65CCC03224266C0B00F518D8 /* Gauge.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Gauge.storyboard; sourceTree = "<group>"; };
 		65CCC03624266CAA00F518D8 /* GaugeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaugeViewController.swift; sourceTree = "<group>"; };
 		65CCC03A2426AD6B00F518D8 /* gaugeScale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gaugeScale.png; sourceTree = "<group>"; };
-		758D3F08148FB69B3AFFAA40 /* Pods-Simple Banjo Tuner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simple Banjo Tuner.debug.xcconfig"; path = "Target Support Files/Pods-Simple Banjo Tuner/Pods-Simple Banjo Tuner.debug.xcconfig"; sourceTree = "<group>"; };
-		7B2DB564805B36EEE0293EEA /* Pods-Simple Instrument Tuner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simple Instrument Tuner.debug.xcconfig"; path = "Target Support Files/Pods-Simple Instrument Tuner/Pods-Simple Instrument Tuner.debug.xcconfig"; sourceTree = "<group>"; };
-		CFF8F36F61697034E69B7789 /* Pods_Simple_Banjo_Tuner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Simple_Banjo_Tuner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4E849D0811F4D0AE7CF791B /* Pods_Simple_Ukulele_Tuner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Simple_Ukulele_Tuner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8872FBF9142C6B47D3CAE0F9 /* Pods_Simple_Instrument_Tuner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Simple_Instrument_Tuner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F364C94BD852EF19656C9054 /* Pods-Simple Instrument Tuner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simple Instrument Tuner.release.xcconfig"; path = "Target Support Files/Pods-Simple Instrument Tuner/Pods-Simple Instrument Tuner.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,7 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				652BC125242CDABF00F60B83 /* AudioToolbox.framework in Frameworks */,
-				186FEF7D9C91CADF2FDAEB04 /* Pods_Simple_Instrument_Tuner.framework in Frameworks */,
+				196C73E26B765DA8A06A41C0 /* Pods_Simple_Instrument_Tuner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,51 +156,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		65CCBF7024260DA100F518D8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		65CCBF8624260E1E00F518D8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				333E6F818BC12E3DD53EF862 /* Pods_Simple_Ukulele_Tuner.framework in Frameworks */,
-				653216F42430DA0700BE1CAE /* AudioToolbox.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		65CCBF9B24260E1F00F518D8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		65CCBFA624260E1F00F518D8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		65CCBFBA24260E4800F518D8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6F52FC9C293BE29A3F34B73A /* Pods_Simple_Banjo_Tuner.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		65CCBFCF24260E4900F518D8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		65CCBFDA24260E4900F518D8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -388,12 +214,6 @@
 				65CCBF5224260D9E00F518D8 /* Simple Instrument Tuner.app */,
 				65CCBF6824260DA100F518D8 /* Simple Instrument TunerTests.xctest */,
 				65CCBF7324260DA100F518D8 /* Simple Instrument TunerUITests.xctest */,
-				65CCBF8924260E1E00F518D8 /* Simple Ukulele Tuner.app */,
-				65CCBF9E24260E1F00F518D8 /* Simple Ukulele TunerTests.xctest */,
-				65CCBFA924260E1F00F518D8 /* Simple Ukulele TunerUITests.xctest */,
-				65CCBFBD24260E4800F518D8 /* Simple Banjo Tuner.app */,
-				65CCBFD224260E4900F518D8 /* Simple Banjo TunerTests.xctest */,
-				65CCBFDD24260E4900F518D8 /* Simple Banjo TunerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -468,9 +288,7 @@
 			children = (
 				653216E9242D18F800BE1CAE /* CoreAudioKit.framework */,
 				652BC124242CDABF00F60B83 /* AudioToolbox.framework */,
-				CFF8F36F61697034E69B7789 /* Pods_Simple_Banjo_Tuner.framework */,
-				1EC20B08874F2FD75C51E109 /* Pods_Simple_Instrument_Tuner.framework */,
-				F4E849D0811F4D0AE7CF791B /* Pods_Simple_Ukulele_Tuner.framework */,
+				8872FBF9142C6B47D3CAE0F9 /* Pods_Simple_Instrument_Tuner.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -478,12 +296,8 @@
 		B0281B6E1E5D3DE8CC47E754 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				758D3F08148FB69B3AFFAA40 /* Pods-Simple Banjo Tuner.debug.xcconfig */,
-				0906B5D173A9CC0A0670DEC2 /* Pods-Simple Banjo Tuner.release.xcconfig */,
-				7B2DB564805B36EEE0293EEA /* Pods-Simple Instrument Tuner.debug.xcconfig */,
-				213B034AA4248E35E00C62FD /* Pods-Simple Instrument Tuner.release.xcconfig */,
-				42D624BF4B137BD334EF671A /* Pods-Simple Ukulele Tuner.debug.xcconfig */,
-				56EC65B897FD926830A06798 /* Pods-Simple Ukulele Tuner.release.xcconfig */,
+				3FBDCEFA8E7C4EFE0EB2777D /* Pods-Simple Instrument Tuner.debug.xcconfig */,
+				F364C94BD852EF19656C9054 /* Pods-Simple Instrument Tuner.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -495,11 +309,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 65CCBF7C24260DA100F518D8 /* Build configuration list for PBXNativeTarget "Simple Instrument Tuner" */;
 			buildPhases = (
-				3BC1EAE16A4726F097B21FEE /* [CP] Check Pods Manifest.lock */,
+				4D13ECD0F98D54692DC567FE /* [CP] Check Pods Manifest.lock */,
 				65CCBF4E24260D9E00F518D8 /* Sources */,
 				65CCBF4F24260D9E00F518D8 /* Frameworks */,
 				65CCBF5024260D9E00F518D8 /* Resources */,
-				FE7BBC69BD687E25979DD78B /* [CP] Embed Pods Frameworks */,
+				BD0E154ED437A1A307200F83 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -546,116 +360,6 @@
 			productReference = 65CCBF7324260DA100F518D8 /* Simple Instrument TunerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		65CCBF8824260E1E00F518D8 /* Simple Ukulele Tuner */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 65CCBFB024260E1F00F518D8 /* Build configuration list for PBXNativeTarget "Simple Ukulele Tuner" */;
-			buildPhases = (
-				19A96290255F075466F5C6A4 /* [CP] Check Pods Manifest.lock */,
-				65CCBF8524260E1E00F518D8 /* Sources */,
-				65CCBF8624260E1E00F518D8 /* Frameworks */,
-				65CCBF8724260E1E00F518D8 /* Resources */,
-				0D1EA2269011BFE8CDB312CB /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Simple Ukulele Tuner";
-			productName = "Simple Ukulele Tuner";
-			productReference = 65CCBF8924260E1E00F518D8 /* Simple Ukulele Tuner.app */;
-			productType = "com.apple.product-type.application";
-		};
-		65CCBF9D24260E1F00F518D8 /* Simple Ukulele TunerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 65CCBFB324260E1F00F518D8 /* Build configuration list for PBXNativeTarget "Simple Ukulele TunerTests" */;
-			buildPhases = (
-				65CCBF9A24260E1F00F518D8 /* Sources */,
-				65CCBF9B24260E1F00F518D8 /* Frameworks */,
-				65CCBF9C24260E1F00F518D8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				65CCBFA024260E1F00F518D8 /* PBXTargetDependency */,
-			);
-			name = "Simple Ukulele TunerTests";
-			productName = "Simple Ukulele TunerTests";
-			productReference = 65CCBF9E24260E1F00F518D8 /* Simple Ukulele TunerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		65CCBFA824260E1F00F518D8 /* Simple Ukulele TunerUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 65CCBFB624260E1F00F518D8 /* Build configuration list for PBXNativeTarget "Simple Ukulele TunerUITests" */;
-			buildPhases = (
-				65CCBFA524260E1F00F518D8 /* Sources */,
-				65CCBFA624260E1F00F518D8 /* Frameworks */,
-				65CCBFA724260E1F00F518D8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				65CCBFAB24260E1F00F518D8 /* PBXTargetDependency */,
-			);
-			name = "Simple Ukulele TunerUITests";
-			productName = "Simple Ukulele TunerUITests";
-			productReference = 65CCBFA924260E1F00F518D8 /* Simple Ukulele TunerUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-		65CCBFBC24260E4800F518D8 /* Simple Banjo Tuner */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 65CCBFE424260E4900F518D8 /* Build configuration list for PBXNativeTarget "Simple Banjo Tuner" */;
-			buildPhases = (
-				294B5EF0DBA55290A44067BA /* [CP] Check Pods Manifest.lock */,
-				65CCBFB924260E4800F518D8 /* Sources */,
-				65CCBFBA24260E4800F518D8 /* Frameworks */,
-				65CCBFBB24260E4800F518D8 /* Resources */,
-				E622368D500B27DDA259D728 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Simple Banjo Tuner";
-			productName = "Simple Banjo Tuner";
-			productReference = 65CCBFBD24260E4800F518D8 /* Simple Banjo Tuner.app */;
-			productType = "com.apple.product-type.application";
-		};
-		65CCBFD124260E4900F518D8 /* Simple Banjo TunerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 65CCBFE724260E4900F518D8 /* Build configuration list for PBXNativeTarget "Simple Banjo TunerTests" */;
-			buildPhases = (
-				65CCBFCE24260E4900F518D8 /* Sources */,
-				65CCBFCF24260E4900F518D8 /* Frameworks */,
-				65CCBFD024260E4900F518D8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				65CCBFD424260E4900F518D8 /* PBXTargetDependency */,
-			);
-			name = "Simple Banjo TunerTests";
-			productName = "Simple Banjo TunerTests";
-			productReference = 65CCBFD224260E4900F518D8 /* Simple Banjo TunerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		65CCBFDC24260E4900F518D8 /* Simple Banjo TunerUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 65CCBFEA24260E4900F518D8 /* Build configuration list for PBXNativeTarget "Simple Banjo TunerUITests" */;
-			buildPhases = (
-				65CCBFD924260E4900F518D8 /* Sources */,
-				65CCBFDA24260E4900F518D8 /* Frameworks */,
-				65CCBFDB24260E4900F518D8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				65CCBFDF24260E4900F518D8 /* PBXTargetDependency */,
-			);
-			name = "Simple Banjo TunerUITests";
-			productName = "Simple Banjo TunerUITests";
-			productReference = 65CCBFDD24260E4900F518D8 /* Simple Banjo TunerUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -677,28 +381,6 @@
 						CreatedOnToolsVersion = 11.3.1;
 						TestTargetID = 65CCBF5124260D9E00F518D8;
 					};
-					65CCBF8824260E1E00F518D8 = {
-						CreatedOnToolsVersion = 11.3.1;
-					};
-					65CCBF9D24260E1F00F518D8 = {
-						CreatedOnToolsVersion = 11.3.1;
-						TestTargetID = 65CCBF8824260E1E00F518D8;
-					};
-					65CCBFA824260E1F00F518D8 = {
-						CreatedOnToolsVersion = 11.3.1;
-						TestTargetID = 65CCBF8824260E1E00F518D8;
-					};
-					65CCBFBC24260E4800F518D8 = {
-						CreatedOnToolsVersion = 11.3.1;
-					};
-					65CCBFD124260E4900F518D8 = {
-						CreatedOnToolsVersion = 11.3.1;
-						TestTargetID = 65CCBFBC24260E4800F518D8;
-					};
-					65CCBFDC24260E4900F518D8 = {
-						CreatedOnToolsVersion = 11.3.1;
-						TestTargetID = 65CCBFBC24260E4800F518D8;
-					};
 				};
 			};
 			buildConfigurationList = 65CCBF4D24260D9E00F518D8 /* Build configuration list for PBXProject "Simple Instrument Tuner" */;
@@ -717,12 +399,6 @@
 				65CCBF5124260D9E00F518D8 /* Simple Instrument Tuner */,
 				65CCBF6724260DA100F518D8 /* Simple Instrument TunerTests */,
 				65CCBF7224260DA100F518D8 /* Simple Instrument TunerUITests */,
-				65CCBF8824260E1E00F518D8 /* Simple Ukulele Tuner */,
-				65CCBF9D24260E1F00F518D8 /* Simple Ukulele TunerTests */,
-				65CCBFA824260E1F00F518D8 /* Simple Ukulele TunerUITests */,
-				65CCBFBC24260E4800F518D8 /* Simple Banjo Tuner */,
-				65CCBFD124260E4900F518D8 /* Simple Banjo TunerTests */,
-				65CCBFDC24260E4900F518D8 /* Simple Banjo TunerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -777,163 +453,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		65CCBF8724260E1E00F518D8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				652BC0E3242A2C6F00F60B83 /* volumeMeterPattern.png in Resources */,
-				65CCC026242637F400F518D8 /* settings.png in Resources */,
-				65CCC01E2426368600F518D8 /* microphoneOn.png in Resources */,
-				652BC121242CDA3400F60B83 /* Sounds in Resources */,
-				652BC0DF242A2C0D00F60B83 /* VolumeMeter.storyboard in Resources */,
-				65CCC03C2426AD6B00F518D8 /* gaugeScale.png in Resources */,
-				65CCC02F2426683400F518D8 /* gaugeOverlay.png in Resources */,
-				65CCC0032426268900F518D8 /* ledPassive.png in Resources */,
-				65CCC00B242626BC00F518D8 /* noteButtonPassive.png in Resources */,
-				65CCC03424266C0B00F518D8 /* Gauge.storyboard in Resources */,
-				65CCC0162426318E00F518D8 /* gaugePattern.png in Resources */,
-				652BC0F8242BEC7500F60B83 /* bridge.png in Resources */,
-				65CCC00E242626BC00F518D8 /* noteButtonActive.png in Resources */,
-				65CCC0062426268900F518D8 /* ledActive.png in Resources */,
-				65CCC0132426318E00F518D8 /* gaugePatternGreen.png in Resources */,
-				65CCBFFB242621D200F518D8 /* btnActive.png in Resources */,
-				652BC0FC242BECFB00F60B83 /* Bridge.storyboard in Resources */,
-				652BC104242BF64B00F60B83 /* string.png in Resources */,
-				65CCC02A24263B8B00F518D8 /* gaugeBackground.png in Resources */,
-				65CCC022242637E700F518D8 /* info.png in Resources */,
-				65CCBFFE242621D200F518D8 /* btnPassive.png in Resources */,
-				652BC0E7242A582400F60B83 /* DeviationMeter.storyboard in Resources */,
-				65CCC01B2426368600F518D8 /* microphoneOff.png in Resources */,
-				65B60324243728B600BBA23D /* tuningfork.png in Resources */,
-				65585A7F243350A7002CD214 /* Display.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		65CCBF9C24260E1F00F518D8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		65CCBFA724260E1F00F518D8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		65CCBFBB24260E4800F518D8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				652BC0E8242A582400F60B83 /* DeviationMeter.storyboard in Resources */,
-				65CCC0142426318E00F518D8 /* gaugePatternGreen.png in Resources */,
-				65CCC01F2426368600F518D8 /* microphoneOn.png in Resources */,
-				652BC0E4242A2C6F00F60B83 /* volumeMeterPattern.png in Resources */,
-				65CCC027242637F400F518D8 /* settings.png in Resources */,
-				652BC122242CDA3400F60B83 /* Sounds in Resources */,
-				65CCC0172426318E00F518D8 /* gaugePattern.png in Resources */,
-				65CCC0042426268900F518D8 /* ledPassive.png in Resources */,
-				652BC0FD242BECFB00F60B83 /* Bridge.storyboard in Resources */,
-				65CCC02B24263B8B00F518D8 /* gaugeBackground.png in Resources */,
-				65CCC01C2426368600F518D8 /* microphoneOff.png in Resources */,
-				65CCC023242637E700F518D8 /* info.png in Resources */,
-				65CCC03D2426AD6B00F518D8 /* gaugeScale.png in Resources */,
-				65CCC0072426268900F518D8 /* ledActive.png in Resources */,
-				65CCC0302426683400F518D8 /* gaugeOverlay.png in Resources */,
-				65585A80243350A7002CD214 /* Display.storyboard in Resources */,
-				65B60325243728B600BBA23D /* tuningfork.png in Resources */,
-				652BC105242BF64B00F60B83 /* string.png in Resources */,
-				652BC0E0242A2C0D00F60B83 /* VolumeMeter.storyboard in Resources */,
-				65CCBFFC242621D200F518D8 /* btnActive.png in Resources */,
-				65CCC03524266C0B00F518D8 /* Gauge.storyboard in Resources */,
-				652BC0F9242BEC7500F60B83 /* bridge.png in Resources */,
-				65CCC00C242626BC00F518D8 /* noteButtonPassive.png in Resources */,
-				65CCBFFF242621D200F518D8 /* btnPassive.png in Resources */,
-				65CCC00F242626BC00F518D8 /* noteButtonActive.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		65CCBFD024260E4900F518D8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		65CCBFDB24260E4900F518D8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0D1EA2269011BFE8CDB312CB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Simple Ukulele Tuner/Pods-Simple Ukulele Tuner-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Simple Ukulele Tuner/Pods-Simple Ukulele Tuner-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Simple Ukulele Tuner/Pods-Simple Ukulele Tuner-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		19A96290255F075466F5C6A4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Simple Ukulele Tuner-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		294B5EF0DBA55290A44067BA /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Simple Banjo Tuner-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3BC1EAE16A4726F097B21FEE /* [CP] Check Pods Manifest.lock */ = {
+		4D13ECD0F98D54692DC567FE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -955,24 +478,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E622368D500B27DDA259D728 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Simple Banjo Tuner/Pods-Simple Banjo Tuner-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Simple Banjo Tuner/Pods-Simple Banjo Tuner-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Simple Banjo Tuner/Pods-Simple Banjo Tuner-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FE7BBC69BD687E25979DD78B /* [CP] Embed Pods Frameworks */ = {
+		BD0E154ED437A1A307200F83 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1033,84 +539,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		65CCBF8524260E1E00F518D8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				65585A6F24334A74002CD214 /* DisplayContainer.swift in Sources */,
-				65585A7B2433508C002CD214 /* DisplayViewController.swift in Sources */,
-				652BC0EB242A583C00F60B83 /* DeviationMeterViewController.swift in Sources */,
-				65CCBFF52426115200F518D8 /* InstrumentViewController.swift in Sources */,
-				652BC117242CC39900F60B83 /* PingPongDelay.swift in Sources */,
-				653216ED242FB93A00BE1CAE /* NoteButton.swift in Sources */,
-				652BC0DC242A2C0D00F60B83 /* VolumeMeterViewController.swift in Sources */,
-				65CCC03824266CAA00F518D8 /* GaugeViewController.swift in Sources */,
-				65585A832433A793002CD214 /* DisplayModeButton.swift in Sources */,
-				652BC111242CC39900F60B83 /* Conductor.swift in Sources */,
-				652BC11A242CC39900F60B83 /* FilterSection.swift in Sources */,
-				653216F1242FC38200BE1CAE /* Note.swift in Sources */,
-				652BC100242BED0F00F60B83 /* BridgeViewController.swift in Sources */,
-				652BC0F0242A69A300F60B83 /* Constants.swift in Sources */,
-				652BC11D242CC39900F60B83 /* AutoPan.swift in Sources */,
-				653216F72430E7CE00BE1CAE /* FrequencyLabel.swift in Sources */,
-				652BC114242CC39900F60B83 /* Fatten.swift in Sources */,
-				65585A7724334E7E002CD214 /* BezierView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		65CCBF9A24260E1F00F518D8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		65CCBFA524260E1F00F518D8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		65CCBFB924260E4800F518D8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				65585A7024334A74002CD214 /* DisplayContainer.swift in Sources */,
-				65585A7C2433508C002CD214 /* DisplayViewController.swift in Sources */,
-				652BC0EC242A583C00F60B83 /* DeviationMeterViewController.swift in Sources */,
-				65CCBFF62426115400F518D8 /* InstrumentViewController.swift in Sources */,
-				652BC118242CC39900F60B83 /* PingPongDelay.swift in Sources */,
-				653216EE242FB93A00BE1CAE /* NoteButton.swift in Sources */,
-				652BC0DD242A2C0D00F60B83 /* VolumeMeterViewController.swift in Sources */,
-				65CCC03924266CAA00F518D8 /* GaugeViewController.swift in Sources */,
-				65585A842433A793002CD214 /* DisplayModeButton.swift in Sources */,
-				652BC112242CC39900F60B83 /* Conductor.swift in Sources */,
-				652BC11B242CC39900F60B83 /* FilterSection.swift in Sources */,
-				653216F2242FC38200BE1CAE /* Note.swift in Sources */,
-				652BC101242BED0F00F60B83 /* BridgeViewController.swift in Sources */,
-				652BC0F1242A69A300F60B83 /* Constants.swift in Sources */,
-				652BC11E242CC39900F60B83 /* AutoPan.swift in Sources */,
-				653216F82430E7CE00BE1CAE /* FrequencyLabel.swift in Sources */,
-				652BC115242CC39900F60B83 /* Fatten.swift in Sources */,
-				65585A7824334E7E002CD214 /* BezierView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		65CCBFCE24260E4900F518D8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		65CCBFD924260E4900F518D8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1123,26 +551,6 @@
 			isa = PBXTargetDependency;
 			target = 65CCBF5124260D9E00F518D8 /* Simple Instrument Tuner */;
 			targetProxy = 65CCBF7424260DA100F518D8 /* PBXContainerItemProxy */;
-		};
-		65CCBFA024260E1F00F518D8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 65CCBF8824260E1E00F518D8 /* Simple Ukulele Tuner */;
-			targetProxy = 65CCBF9F24260E1F00F518D8 /* PBXContainerItemProxy */;
-		};
-		65CCBFAB24260E1F00F518D8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 65CCBF8824260E1E00F518D8 /* Simple Ukulele Tuner */;
-			targetProxy = 65CCBFAA24260E1F00F518D8 /* PBXContainerItemProxy */;
-		};
-		65CCBFD424260E4900F518D8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 65CCBFBC24260E4800F518D8 /* Simple Banjo Tuner */;
-			targetProxy = 65CCBFD324260E4900F518D8 /* PBXContainerItemProxy */;
-		};
-		65CCBFDF24260E4900F518D8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 65CCBFBC24260E4800F518D8 /* Simple Banjo Tuner */;
-			targetProxy = 65CCBFDE24260E4900F518D8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1284,17 +692,18 @@
 		};
 		65CCBF7D24260DA100F518D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7B2DB564805B36EEE0293EEA /* Pods-Simple Instrument Tuner.debug.xcconfig */;
+			baseConfigurationReference = 3FBDCEFA8E7C4EFE0EB2777D /* Pods-Simple Instrument Tuner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Simple Instrument Tuner/Simple Instrument Tuner.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P2EQM7YAFH;
 				INFOPLIST_FILE = "Simple Instrument Tuner/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ch.vormbrock.simpleukuleletuner2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1304,17 +713,18 @@
 		};
 		65CCBF7E24260DA100F518D8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 213B034AA4248E35E00C62FD /* Pods-Simple Instrument Tuner.release.xcconfig */;
+			baseConfigurationReference = F364C94BD852EF19656C9054 /* Pods-Simple Instrument Tuner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Simple Instrument Tuner/Simple Instrument Tuner.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P2EQM7YAFH;
 				INFOPLIST_FILE = "Simple Instrument Tuner/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ch.vormbrock.simpleukuleletuner2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1402,250 +812,6 @@
 			};
 			name = Release;
 		};
-		65CCBFB124260E1F00F518D8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 42D624BF4B137BD334EF671A /* Pods-Simple Ukulele Tuner.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
-				CODE_SIGN_ENTITLEMENTS = "Simple Ukulele Tuner/Simple Ukulele Tuner.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = P2EQM7YAFH;
-				INFOPLIST_FILE = "Simple Ukulele Tuner/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ch.vormbrock.simpleukuleletuner2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = Rookie2020_03;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		65CCBFB224260E1F00F518D8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 56EC65B897FD926830A06798 /* Pods-Simple Ukulele Tuner.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
-				CODE_SIGN_ENTITLEMENTS = "Simple Ukulele Tuner/Simple Ukulele Tuner.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = P2EQM7YAFH;
-				INFOPLIST_FILE = "Simple Ukulele Tuner/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ch.vormbrock.simpleukuleletuner2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = Rookie2020_03;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		65CCBFB424260E1F00F518D8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Simple Ukulele TunerTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ch.vormbrock.Simple-Ukulele-TunerTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Simple Ukulele Tuner.app/Simple Ukulele Tuner";
-			};
-			name = Debug;
-		};
-		65CCBFB524260E1F00F518D8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Simple Ukulele TunerTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ch.vormbrock.Simple-Ukulele-TunerTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Simple Ukulele Tuner.app/Simple Ukulele Tuner";
-			};
-			name = Release;
-		};
-		65CCBFB724260E1F00F518D8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Simple Ukulele TunerUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ch.vormbrock.Simple-Ukulele-TunerUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Simple Ukulele Tuner";
-			};
-			name = Debug;
-		};
-		65CCBFB824260E1F00F518D8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Simple Ukulele TunerUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ch.vormbrock.Simple-Ukulele-TunerUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Simple Ukulele Tuner";
-			};
-			name = Release;
-		};
-		65CCBFE524260E4900F518D8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 758D3F08148FB69B3AFFAA40 /* Pods-Simple Banjo Tuner.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Simple Banjo Tuner/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ch.vormbrock.Simple-Banjo-Tuner";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		65CCBFE624260E4900F518D8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0906B5D173A9CC0A0670DEC2 /* Pods-Simple Banjo Tuner.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Simple Banjo Tuner/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ch.vormbrock.Simple-Banjo-Tuner";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		65CCBFE824260E4900F518D8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Simple Banjo TunerTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ch.vormbrock.Simple-Banjo-TunerTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Simple Banjo Tuner.app/Simple Banjo Tuner";
-			};
-			name = Debug;
-		};
-		65CCBFE924260E4900F518D8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Simple Banjo TunerTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ch.vormbrock.Simple-Banjo-TunerTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Simple Banjo Tuner.app/Simple Banjo Tuner";
-			};
-			name = Release;
-		};
-		65CCBFEB24260E4900F518D8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Simple Banjo TunerUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ch.vormbrock.Simple-Banjo-TunerUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Simple Banjo Tuner";
-			};
-			name = Debug;
-		};
-		65CCBFEC24260E4900F518D8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Simple Banjo TunerUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ch.vormbrock.Simple-Banjo-TunerUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Simple Banjo Tuner";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1681,60 +847,6 @@
 			buildConfigurations = (
 				65CCBF8324260DA100F518D8 /* Debug */,
 				65CCBF8424260DA100F518D8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		65CCBFB024260E1F00F518D8 /* Build configuration list for PBXNativeTarget "Simple Ukulele Tuner" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				65CCBFB124260E1F00F518D8 /* Debug */,
-				65CCBFB224260E1F00F518D8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		65CCBFB324260E1F00F518D8 /* Build configuration list for PBXNativeTarget "Simple Ukulele TunerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				65CCBFB424260E1F00F518D8 /* Debug */,
-				65CCBFB524260E1F00F518D8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		65CCBFB624260E1F00F518D8 /* Build configuration list for PBXNativeTarget "Simple Ukulele TunerUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				65CCBFB724260E1F00F518D8 /* Debug */,
-				65CCBFB824260E1F00F518D8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		65CCBFE424260E4900F518D8 /* Build configuration list for PBXNativeTarget "Simple Banjo Tuner" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				65CCBFE524260E4900F518D8 /* Debug */,
-				65CCBFE624260E4900F518D8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		65CCBFE724260E4900F518D8 /* Build configuration list for PBXNativeTarget "Simple Banjo TunerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				65CCBFE824260E4900F518D8 /* Debug */,
-				65CCBFE924260E4900F518D8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		65CCBFEA24260E4900F518D8 /* Build configuration list for PBXNativeTarget "Simple Banjo TunerUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				65CCBFEB24260E4900F518D8 /* Debug */,
-				65CCBFEC24260E4900F518D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
