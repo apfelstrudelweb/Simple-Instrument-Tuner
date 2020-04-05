@@ -46,6 +46,7 @@ class InstrumentViewController: UIViewController {
     private var embeddedDeviationMeterController: DeviationMeterViewController!
     private var embeddedBridgeViewController: BridgeViewController!
     private var embeddedDisplayViewController: DisplayViewController!
+    private var settingsViewController: SettingsViewController!
     
     
     override func viewDidLoad() {
@@ -187,6 +188,14 @@ class InstrumentViewController: UIViewController {
             segue.identifier == "displaySegue" {
             embeddedDisplayViewController = vc
         }
+        if let vc = segue.destination as? SettingsViewController,
+            segue.identifier == "settingsSegue" {
+            settingsViewController = vc
+            guard let backgroundColor = self.view.backgroundColor else { return }
+            settingsViewController.backgroundColor = backgroundColor
+            settingsViewController.closeButton.backgroundColor = headerView.backgroundColor
+        }
+        
     }
     
     

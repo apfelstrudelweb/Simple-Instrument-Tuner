@@ -10,6 +10,7 @@ target 'Simple Instrument Tuner' do
   pod 'PureLayout'
   pod 'AudioKit'
   pod 'Google-Mobile-Ads-SDK'
-  pod 'SwiftyStoreKit'
+  pod 'iOSDropDown'
+  #pod 'SwiftyStoreKit'
 
 end
