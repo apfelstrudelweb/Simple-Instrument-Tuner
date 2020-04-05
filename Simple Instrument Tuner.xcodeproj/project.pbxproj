@@ -92,25 +92,6 @@
 		65CCBF5A24260D9E00F518D8 /* InstrumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBF5924260D9E00F518D8 /* InstrumentViewController.swift */; };
 		65CCBF5F24260DA100F518D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65CCBF5E24260DA100F518D8 /* Assets.xcassets */; };
 		65CCBF6224260DA100F518D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65CCBF6024260DA100F518D8 /* LaunchScreen.storyboard */; };
-		65CCBF8C24260E1E00F518D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBF8B24260E1E00F518D8 /* AppDelegate.swift */; };
-		65CCBF8E24260E1E00F518D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBF8D24260E1E00F518D8 /* SceneDelegate.swift */; };
-		65CCBF9024260E1E00F518D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBF8F24260E1E00F518D8 /* ViewController.swift */; };
-		65CCBF9324260E1E00F518D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65CCBF9124260E1E00F518D8 /* Main.storyboard */; };
-		65CCBF9524260E1F00F518D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65CCBF9424260E1F00F518D8 /* Assets.xcassets */; };
-		65CCBF9824260E1F00F518D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65CCBF9624260E1F00F518D8 /* LaunchScreen.storyboard */; };
-		65CCBFA324260E1F00F518D8 /* Simple_Ukulele_TunerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBFA224260E1F00F518D8 /* Simple_Ukulele_TunerTests.swift */; };
-		65CCBFAE24260E1F00F518D8 /* Simple_Ukulele_TunerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBFAD24260E1F00F518D8 /* Simple_Ukulele_TunerUITests.swift */; };
-		65CCBFC024260E4800F518D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBFBF24260E4800F518D8 /* AppDelegate.swift */; };
-		65CCBFC224260E4800F518D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBFC124260E4800F518D8 /* SceneDelegate.swift */; };
-		65CCBFC424260E4800F518D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBFC324260E4800F518D8 /* ViewController.swift */; };
-		65CCBFC724260E4800F518D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65CCBFC524260E4800F518D8 /* Main.storyboard */; };
-		65CCBFC924260E4900F518D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65CCBFC824260E4900F518D8 /* Assets.xcassets */; };
-		65CCBFCC24260E4900F518D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65CCBFCA24260E4900F518D8 /* LaunchScreen.storyboard */; };
-		65CCBFD724260E4900F518D8 /* Simple_Banjo_TunerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBFD624260E4900F518D8 /* Simple_Banjo_TunerTests.swift */; };
-		65CCBFE224260E4900F518D8 /* Simple_Banjo_TunerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBFE124260E4900F518D8 /* Simple_Banjo_TunerUITests.swift */; };
-		65CCBFF124260EC500F518D8 /* banjo_background5.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCBFEF24260EC500F518D8 /* banjo_background5.png */; };
-		65CCBFF224260EC500F518D8 /* banjo_background4.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCBFF024260EC500F518D8 /* banjo_background4.png */; };
-		65CCBFF424260F8C00F518D8 /* background4.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCBFF324260F8C00F518D8 /* background4.png */; };
 		65CCBFF52426115200F518D8 /* InstrumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBF5924260D9E00F518D8 /* InstrumentViewController.swift */; };
 		65CCBFF62426115400F518D8 /* InstrumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBF5924260D9E00F518D8 /* InstrumentViewController.swift */; };
 		65CCBFFA242621D200F518D8 /* btnActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCBFF8242621D100F518D8 /* btnActive.png */; };
@@ -239,7 +220,6 @@
 		653216E9242D18F800BE1CAE /* CoreAudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioKit.framework; path = System/Library/Frameworks/CoreAudioKit.framework; sourceTree = SDKROOT; };
 		653216EB242FB93A00BE1CAE /* NoteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteButton.swift; sourceTree = "<group>"; };
 		653216EF242FC38200BE1CAE /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
-		653216F32430DA0700BE1CAE /* Simple Ukulele Tuner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Simple Ukulele Tuner.entitlements"; sourceTree = "<group>"; };
 		653216F52430E7CD00BE1CAE /* FrequencyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyLabel.swift; sourceTree = "<group>"; };
 		65585A6D24334A74002CD214 /* DisplayContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayContainer.swift; sourceTree = "<group>"; };
 		65585A7524334E7E002CD214 /* BezierView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BezierView.swift; path = "../../../../../../../Downloads/Bezier-master/Bezier/BezierView.swift"; sourceTree = "<group>"; };
@@ -259,36 +239,11 @@
 		65CCBF6824260DA100F518D8 /* Simple Instrument TunerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Simple Instrument TunerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65CCBF7324260DA100F518D8 /* Simple Instrument TunerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Simple Instrument TunerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65CCBF8924260E1E00F518D8 /* Simple Ukulele Tuner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Ukulele Tuner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		65CCBF8B24260E1E00F518D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		65CCBF8D24260E1E00F518D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		65CCBF8F24260E1E00F518D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		65CCBF9224260E1E00F518D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		65CCBF9424260E1F00F518D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		65CCBF9724260E1F00F518D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		65CCBF9924260E1F00F518D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65CCBF9E24260E1F00F518D8 /* Simple Ukulele TunerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Simple Ukulele TunerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		65CCBFA224260E1F00F518D8 /* Simple_Ukulele_TunerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simple_Ukulele_TunerTests.swift; sourceTree = "<group>"; };
-		65CCBFA424260E1F00F518D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65CCBFA924260E1F00F518D8 /* Simple Ukulele TunerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Simple Ukulele TunerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		65CCBFAD24260E1F00F518D8 /* Simple_Ukulele_TunerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simple_Ukulele_TunerUITests.swift; sourceTree = "<group>"; };
-		65CCBFAF24260E1F00F518D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65CCBFBD24260E4800F518D8 /* Simple Banjo Tuner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Banjo Tuner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		65CCBFBF24260E4800F518D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		65CCBFC124260E4800F518D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		65CCBFC324260E4800F518D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		65CCBFC624260E4800F518D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		65CCBFC824260E4900F518D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		65CCBFCB24260E4900F518D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		65CCBFCD24260E4900F518D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65CCBFD224260E4900F518D8 /* Simple Banjo TunerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Simple Banjo TunerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		65CCBFD624260E4900F518D8 /* Simple_Banjo_TunerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simple_Banjo_TunerTests.swift; sourceTree = "<group>"; };
-		65CCBFD824260E4900F518D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65CCBFDD24260E4900F518D8 /* Simple Banjo TunerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Simple Banjo TunerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		65CCBFE124260E4900F518D8 /* Simple_Banjo_TunerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simple_Banjo_TunerUITests.swift; sourceTree = "<group>"; };
-		65CCBFE324260E4900F518D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		65CCBFEF24260EC500F518D8 /* banjo_background5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = banjo_background5.png; sourceTree = "<group>"; };
-		65CCBFF024260EC500F518D8 /* banjo_background4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = banjo_background4.png; sourceTree = "<group>"; };
-		65CCBFF324260F8C00F518D8 /* background4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background4.png; sourceTree = "<group>"; };
 		65CCBFF8242621D100F518D8 /* btnActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnActive.png; sourceTree = "<group>"; };
 		65CCBFF9242621D200F518D8 /* btnPassive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnPassive.png; sourceTree = "<group>"; };
 		65CCC0002426268900F518D8 /* ledPassive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ledPassive.png; sourceTree = "<group>"; };
@@ -421,12 +376,6 @@
 			isa = PBXGroup;
 			children = (
 				65CCBF5424260D9E00F518D8 /* Simple Instrument Tuner */,
-				65CCBF8A24260E1E00F518D8 /* Simple Ukulele Tuner */,
-				65CCBFA124260E1F00F518D8 /* Simple Ukulele TunerTests */,
-				65CCBFAC24260E1F00F518D8 /* Simple Ukulele TunerUITests */,
-				65CCBFBE24260E4800F518D8 /* Simple Banjo Tuner */,
-				65CCBFD524260E4900F518D8 /* Simple Banjo TunerTests */,
-				65CCBFE024260E4900F518D8 /* Simple Banjo TunerUITests */,
 				65CCBF5324260D9E00F518D8 /* Products */,
 				B0281B6E1E5D3DE8CC47E754 /* Pods */,
 				9A9C7B4F070DD9E7BE52FEBB /* Frameworks */,
@@ -468,90 +417,6 @@
 				65CCBF6324260DA100F518D8 /* Info.plist */,
 			);
 			path = "Simple Instrument Tuner";
-			sourceTree = "<group>";
-		};
-		65CCBF8A24260E1E00F518D8 /* Simple Ukulele Tuner */ = {
-			isa = PBXGroup;
-			children = (
-				653216F32430DA0700BE1CAE /* Simple Ukulele Tuner.entitlements */,
-				65CCBFED24260E9500F518D8 /* images */,
-				65CCBF8B24260E1E00F518D8 /* AppDelegate.swift */,
-				65CCBF8D24260E1E00F518D8 /* SceneDelegate.swift */,
-				65CCBF8F24260E1E00F518D8 /* ViewController.swift */,
-				65CCBF9124260E1E00F518D8 /* Main.storyboard */,
-				65CCBF9424260E1F00F518D8 /* Assets.xcassets */,
-				65CCBF9624260E1F00F518D8 /* LaunchScreen.storyboard */,
-				65CCBF9924260E1F00F518D8 /* Info.plist */,
-			);
-			path = "Simple Ukulele Tuner";
-			sourceTree = "<group>";
-		};
-		65CCBFA124260E1F00F518D8 /* Simple Ukulele TunerTests */ = {
-			isa = PBXGroup;
-			children = (
-				65CCBFA224260E1F00F518D8 /* Simple_Ukulele_TunerTests.swift */,
-				65CCBFA424260E1F00F518D8 /* Info.plist */,
-			);
-			path = "Simple Ukulele TunerTests";
-			sourceTree = "<group>";
-		};
-		65CCBFAC24260E1F00F518D8 /* Simple Ukulele TunerUITests */ = {
-			isa = PBXGroup;
-			children = (
-				65CCBFAD24260E1F00F518D8 /* Simple_Ukulele_TunerUITests.swift */,
-				65CCBFAF24260E1F00F518D8 /* Info.plist */,
-			);
-			path = "Simple Ukulele TunerUITests";
-			sourceTree = "<group>";
-		};
-		65CCBFBE24260E4800F518D8 /* Simple Banjo Tuner */ = {
-			isa = PBXGroup;
-			children = (
-				65CCBFEE24260EA400F518D8 /* images */,
-				65CCBFBF24260E4800F518D8 /* AppDelegate.swift */,
-				65CCBFC124260E4800F518D8 /* SceneDelegate.swift */,
-				65CCBFC324260E4800F518D8 /* ViewController.swift */,
-				65CCBFC524260E4800F518D8 /* Main.storyboard */,
-				65CCBFC824260E4900F518D8 /* Assets.xcassets */,
-				65CCBFCA24260E4900F518D8 /* LaunchScreen.storyboard */,
-				65CCBFCD24260E4900F518D8 /* Info.plist */,
-			);
-			path = "Simple Banjo Tuner";
-			sourceTree = "<group>";
-		};
-		65CCBFD524260E4900F518D8 /* Simple Banjo TunerTests */ = {
-			isa = PBXGroup;
-			children = (
-				65CCBFD624260E4900F518D8 /* Simple_Banjo_TunerTests.swift */,
-				65CCBFD824260E4900F518D8 /* Info.plist */,
-			);
-			path = "Simple Banjo TunerTests";
-			sourceTree = "<group>";
-		};
-		65CCBFE024260E4900F518D8 /* Simple Banjo TunerUITests */ = {
-			isa = PBXGroup;
-			children = (
-				65CCBFE124260E4900F518D8 /* Simple_Banjo_TunerUITests.swift */,
-				65CCBFE324260E4900F518D8 /* Info.plist */,
-			);
-			path = "Simple Banjo TunerUITests";
-			sourceTree = "<group>";
-		};
-		65CCBFED24260E9500F518D8 /* images */ = {
-			isa = PBXGroup;
-			children = (
-				65CCBFF324260F8C00F518D8 /* background4.png */,
-			);
-			path = images;
-			sourceTree = "<group>";
-		};
-		65CCBFEE24260EA400F518D8 /* images */ = {
-			isa = PBXGroup;
-			children = (
-				65CCBFF024260EC500F518D8 /* banjo_background4.png */,
-				65CCBFEF24260EC500F518D8 /* banjo_background5.png */,
-			);
-			path = images;
 			sourceTree = "<group>";
 		};
 		65CCBFF72426215800F518D8 /* images */ = {
@@ -933,13 +798,9 @@
 				65CCC0132426318E00F518D8 /* gaugePatternGreen.png in Resources */,
 				65CCBFFB242621D200F518D8 /* btnActive.png in Resources */,
 				652BC0FC242BECFB00F60B83 /* Bridge.storyboard in Resources */,
-				65CCBF9824260E1F00F518D8 /* LaunchScreen.storyboard in Resources */,
-				65CCBF9524260E1F00F518D8 /* Assets.xcassets in Resources */,
 				652BC104242BF64B00F60B83 /* string.png in Resources */,
 				65CCC02A24263B8B00F518D8 /* gaugeBackground.png in Resources */,
-				65CCBFF424260F8C00F518D8 /* background4.png in Resources */,
 				65CCC022242637E700F518D8 /* info.png in Resources */,
-				65CCBF9324260E1E00F518D8 /* Main.storyboard in Resources */,
 				65CCBFFE242621D200F518D8 /* btnPassive.png in Resources */,
 				652BC0E7242A582400F60B83 /* DeviationMeter.storyboard in Resources */,
 				65CCC01B2426368600F518D8 /* microphoneOff.png in Resources */,
@@ -970,12 +831,10 @@
 				65CCC0142426318E00F518D8 /* gaugePatternGreen.png in Resources */,
 				65CCC01F2426368600F518D8 /* microphoneOn.png in Resources */,
 				652BC0E4242A2C6F00F60B83 /* volumeMeterPattern.png in Resources */,
-				65CCBFCC24260E4900F518D8 /* LaunchScreen.storyboard in Resources */,
 				65CCC027242637F400F518D8 /* settings.png in Resources */,
 				652BC122242CDA3400F60B83 /* Sounds in Resources */,
 				65CCC0172426318E00F518D8 /* gaugePattern.png in Resources */,
 				65CCC0042426268900F518D8 /* ledPassive.png in Resources */,
-				65CCBFC924260E4900F518D8 /* Assets.xcassets in Resources */,
 				652BC0FD242BECFB00F60B83 /* Bridge.storyboard in Resources */,
 				65CCC02B24263B8B00F518D8 /* gaugeBackground.png in Resources */,
 				65CCC01C2426368600F518D8 /* microphoneOff.png in Resources */,
@@ -983,12 +842,9 @@
 				65CCC03D2426AD6B00F518D8 /* gaugeScale.png in Resources */,
 				65CCC0072426268900F518D8 /* ledActive.png in Resources */,
 				65CCC0302426683400F518D8 /* gaugeOverlay.png in Resources */,
-				65CCBFF124260EC500F518D8 /* banjo_background5.png in Resources */,
 				65585A80243350A7002CD214 /* Display.storyboard in Resources */,
-				65CCBFC724260E4800F518D8 /* Main.storyboard in Resources */,
 				65B60325243728B600BBA23D /* tuningfork.png in Resources */,
 				652BC105242BF64B00F60B83 /* string.png in Resources */,
-				65CCBFF224260EC500F518D8 /* banjo_background4.png in Resources */,
 				652BC0E0242A2C0D00F60B83 /* VolumeMeter.storyboard in Resources */,
 				65CCBFFC242621D200F518D8 /* btnActive.png in Resources */,
 				65CCC03524266C0B00F518D8 /* Gauge.storyboard in Resources */,
@@ -1183,16 +1039,13 @@
 			files = (
 				65585A6F24334A74002CD214 /* DisplayContainer.swift in Sources */,
 				65585A7B2433508C002CD214 /* DisplayViewController.swift in Sources */,
-				65CCBF9024260E1E00F518D8 /* ViewController.swift in Sources */,
 				652BC0EB242A583C00F60B83 /* DeviationMeterViewController.swift in Sources */,
 				65CCBFF52426115200F518D8 /* InstrumentViewController.swift in Sources */,
 				652BC117242CC39900F60B83 /* PingPongDelay.swift in Sources */,
 				653216ED242FB93A00BE1CAE /* NoteButton.swift in Sources */,
 				652BC0DC242A2C0D00F60B83 /* VolumeMeterViewController.swift in Sources */,
 				65CCC03824266CAA00F518D8 /* GaugeViewController.swift in Sources */,
-				65CCBF8C24260E1E00F518D8 /* AppDelegate.swift in Sources */,
 				65585A832433A793002CD214 /* DisplayModeButton.swift in Sources */,
-				65CCBF8E24260E1E00F518D8 /* SceneDelegate.swift in Sources */,
 				652BC111242CC39900F60B83 /* Conductor.swift in Sources */,
 				652BC11A242CC39900F60B83 /* FilterSection.swift in Sources */,
 				653216F1242FC38200BE1CAE /* Note.swift in Sources */,
@@ -1209,7 +1062,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65CCBFA324260E1F00F518D8 /* Simple_Ukulele_TunerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1217,7 +1069,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65CCBFAE24260E1F00F518D8 /* Simple_Ukulele_TunerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1227,16 +1078,13 @@
 			files = (
 				65585A7024334A74002CD214 /* DisplayContainer.swift in Sources */,
 				65585A7C2433508C002CD214 /* DisplayViewController.swift in Sources */,
-				65CCBFC424260E4800F518D8 /* ViewController.swift in Sources */,
 				652BC0EC242A583C00F60B83 /* DeviationMeterViewController.swift in Sources */,
 				65CCBFF62426115400F518D8 /* InstrumentViewController.swift in Sources */,
 				652BC118242CC39900F60B83 /* PingPongDelay.swift in Sources */,
 				653216EE242FB93A00BE1CAE /* NoteButton.swift in Sources */,
 				652BC0DD242A2C0D00F60B83 /* VolumeMeterViewController.swift in Sources */,
 				65CCC03924266CAA00F518D8 /* GaugeViewController.swift in Sources */,
-				65CCBFC024260E4800F518D8 /* AppDelegate.swift in Sources */,
 				65585A842433A793002CD214 /* DisplayModeButton.swift in Sources */,
-				65CCBFC224260E4800F518D8 /* SceneDelegate.swift in Sources */,
 				652BC112242CC39900F60B83 /* Conductor.swift in Sources */,
 				652BC11B242CC39900F60B83 /* FilterSection.swift in Sources */,
 				653216F2242FC38200BE1CAE /* Note.swift in Sources */,
@@ -1253,7 +1101,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65CCBFD724260E4900F518D8 /* Simple_Banjo_TunerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1261,7 +1108,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65CCBFE224260E4900F518D8 /* Simple_Banjo_TunerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1313,38 +1159,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				65CCBF6124260DA100F518D8 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		65CCBF9124260E1E00F518D8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				65CCBF9224260E1E00F518D8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		65CCBF9624260E1F00F518D8 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				65CCBF9724260E1F00F518D8 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		65CCBFC524260E4800F518D8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				65CCBFC624260E4800F518D8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		65CCBFCA24260E4900F518D8 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				65CCBFCB24260E4900F518D8 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

@@ -252,18 +252,18 @@ class InstrumentViewController: UIViewController {
         
         var activeButton: UIButton
         
-        if let firstButton = buttons?.first(where: { $0.isActive == true }) {
+        if let firstButton = buttons.first(where: { $0.isActive == true }) {
             let tag = firstButton.tag + 1
-            
-            guard let count = buttons?.count else { return }
-            
+
+            let count = buttons.count
+
             if tag > count - 1 {
-                guard let lastButton: UIButton = buttons?.last else { return }
+                guard let lastButton: UIButton = buttons.last else { return }
                 embeddedBridgeViewController.buttonTouched(lastButton)
                 return
             }
             activeButton = embeddedBridgeViewController.buttonCollection[tag]
- 
+
         } else {
             activeButton = embeddedBridgeViewController.buttonCollection[0]
         }
