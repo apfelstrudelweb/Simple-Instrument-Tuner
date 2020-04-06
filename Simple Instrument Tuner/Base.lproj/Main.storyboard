@@ -44,7 +44,7 @@
                                                 </variation>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guitarSymbol.png" translatesAutoresizingMaskIntoConstraints="NO" id="waB-fO-CiB">
-                                                <rect key="frame" x="31.000000000000007" y="29.666666666666664" width="81.666666666666686" height="81.333333333333343"/>
+                                                <rect key="frame" x="31" y="41.333333333333336" width="70" height="69.666666666666657"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="waB-fO-CiB" secondAttribute="height" id="jAu-31-i6Y"/>
                                                 </constraints>
@@ -53,7 +53,7 @@
                                         <color key="backgroundColor" red="0.68902570009999997" green="0.26623564960000001" blue="0.2310875654" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="vqR-9h-0vg" firstAttribute="width" secondItem="HmZ-41-X8f" secondAttribute="width" multiplier="0.4" id="2W5-2Y-6ze"/>
-                                            <constraint firstItem="waB-fO-CiB" firstAttribute="height" secondItem="HmZ-41-X8f" secondAttribute="height" multiplier="0.7" id="I6g-T5-BM7"/>
+                                            <constraint firstItem="waB-fO-CiB" firstAttribute="height" secondItem="HmZ-41-X8f" secondAttribute="height" multiplier="0.6" id="I6g-T5-BM7"/>
                                             <constraint firstItem="waB-fO-CiB" firstAttribute="bottom" secondItem="vqR-9h-0vg" secondAttribute="bottom" multiplier="1.1" id="dmY-DJ-sY0"/>
                                             <constraint firstAttribute="bottom" secondItem="vqR-9h-0vg" secondAttribute="bottom" constant="15.5" id="xe5-P6-Oes"/>
                                             <constraint firstItem="vqR-9h-0vg" firstAttribute="centerX" secondItem="HmZ-41-X8f" secondAttribute="centerX" id="zD0-IW-2nZ"/>
@@ -299,6 +299,7 @@
                         <outlet property="fftButton" destination="HaD-mg-trs" id="VpY-Y2-UcC"/>
                         <outlet property="frequencyLabel" destination="vqR-9h-0vg" id="Pvk-uu-ESx"/>
                         <outlet property="headerView" destination="HmZ-41-X8f" id="e8V-Zx-5fc"/>
+                        <outlet property="instrumentImageView" destination="waB-fO-CiB" id="yLs-FJ-FdU"/>
                         <outlet property="mainContainerView" destination="iwQ-5l-fUH" id="xe1-SC-OzZ"/>
                         <outlet property="microphoneButton" destination="mnj-Ib-jUF" id="7gZ-h3-21p"/>
                         <outlet property="tuningForkButton" destination="9A4-uR-tvp" id="tar-Do-liM"/>
@@ -371,10 +372,10 @@
                                 </variation>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddI-Wq-d4u" customClass="DropDown" customModule="iOSDropDown">
-                                <rect key="frame" x="82.666666666666671" y="162" width="248.66666666666663" height="42"/>
+                                <rect key="frame" x="62" y="162" width="290" height="42"/>
                                 <color key="backgroundColor" red="0.17969004403112809" green="0.20315182492711178" blue="0.2304651411959362" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="rowBackgroundColor">
@@ -404,15 +405,46 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 </variation>
                             </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fea-lr-uCU">
+                                <rect key="frame" x="62" y="234" width="290" height="179"/>
+                                <color key="backgroundColor" red="0.17991855740000001" green="0.2035782039" blue="0.2313624024" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="productCell" textLabel="51p-Zc-1xS" style="IBUITableViewCellStyleDefault" id="gG7-Bg-Fsf">
+                                        <rect key="frame" x="0.0" y="28" width="290" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gG7-Bg-Fsf" id="hrx-JA-6Lh">
+                                            <rect key="frame" x="0.0" y="0.0" width="290" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="51p-Zc-1xS">
+                                                    <rect key="frame" x="16" y="0.0" width="258" height="43.666667938232422"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.17969004399999999" green="0.2031518249" blue="0.2304651412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="hih-AW-H12" id="ckU-3Y-8vD"/>
+                                    <outlet property="delegate" destination="hih-AW-H12" id="8wk-7s-FPx"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.1529633105" green="0.16794264319999999" blue="0.18741327520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="mCn-UK-uyd" firstAttribute="top" secondItem="rcZ-Nt-Eve" secondAttribute="bottom" constant="30" id="3Hy-Ud-oBt"/>
-                            <constraint firstItem="ddI-Wq-d4u" firstAttribute="width" secondItem="UEY-sm-vof" secondAttribute="width" multiplier="0.6" id="61H-Tx-tgv"/>
+                            <constraint firstItem="ddI-Wq-d4u" firstAttribute="width" secondItem="UEY-sm-vof" secondAttribute="width" multiplier="0.7" id="61H-Tx-tgv"/>
+                            <constraint firstItem="fea-lr-uCU" firstAttribute="leading" secondItem="ddI-Wq-d4u" secondAttribute="leading" id="9Fc-oN-BNK"/>
                             <constraint firstItem="ddI-Wq-d4u" firstAttribute="centerX" secondItem="UEY-sm-vof" secondAttribute="centerX" id="CD5-HJ-Xfh"/>
+                            <constraint firstItem="fea-lr-uCU" firstAttribute="trailing" secondItem="ddI-Wq-d4u" secondAttribute="trailing" id="Dho-Wz-Ghi"/>
                             <constraint firstItem="ddI-Wq-d4u" firstAttribute="top" secondItem="mCn-UK-uyd" secondAttribute="bottom" constant="20" id="Knd-0B-nA2"/>
                             <constraint firstItem="rcZ-Nt-Eve" firstAttribute="trailing" secondItem="xqv-pn-s16" secondAttribute="trailing" id="NAq-d4-gVC"/>
                             <constraint firstItem="mCn-UK-uyd" firstAttribute="leading" secondItem="xqv-pn-s16" secondAttribute="leading" id="RsT-eD-093"/>
@@ -420,8 +452,10 @@
                             <constraint firstItem="rcZ-Nt-Eve" firstAttribute="top" secondItem="xqv-pn-s16" secondAttribute="top" id="bqn-wZ-4In"/>
                             <constraint firstItem="ddI-Wq-d4u" firstAttribute="height" secondItem="UEY-sm-vof" secondAttribute="height" multiplier="0.05" id="c5B-f7-4ZZ"/>
                             <constraint firstItem="mCn-UK-uyd" firstAttribute="centerX" secondItem="UEY-sm-vof" secondAttribute="centerX" id="dLE-nH-nI4"/>
+                            <constraint firstItem="fea-lr-uCU" firstAttribute="height" secondItem="UEY-sm-vof" secondAttribute="height" multiplier="0.212589" id="hMg-mS-E80"/>
                             <constraint firstItem="rcZ-Nt-Eve" firstAttribute="height" secondItem="UEY-sm-vof" secondAttribute="height" multiplier="0.1" id="hPg-hy-gRA"/>
                             <constraint firstItem="xqv-pn-s16" firstAttribute="trailing" secondItem="mCn-UK-uyd" secondAttribute="trailing" id="kct-ba-Wlh"/>
+                            <constraint firstItem="fea-lr-uCU" firstAttribute="top" secondItem="ddI-Wq-d4u" secondAttribute="bottom" constant="30" id="ztk-N8-7ER"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xqv-pn-s16"/>
                     </view>
@@ -429,6 +463,7 @@
                     <connections>
                         <outlet property="closeButton" destination="rcZ-Nt-Eve" id="oCP-ze-zge"/>
                         <outlet property="dropDown" destination="ddI-Wq-d4u" id="iq4-9w-Lht"/>
+                        <outlet property="productTableView" destination="fea-lr-uCU" id="SZm-S8-Djc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OHs-an-K8k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -28,6 +28,8 @@
 		653216EC242FB93A00BE1CAE /* NoteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653216EB242FB93A00BE1CAE /* NoteButton.swift */; };
 		653216F0242FC38200BE1CAE /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653216EF242FC38200BE1CAE /* Note.swift */; };
 		653216F62430E7CE00BE1CAE /* FrequencyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653216F52430E7CD00BE1CAE /* FrequencyLabel.swift */; };
+		6532522A243B36420004005C /* PKIAPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65325229243B36420004005C /* PKIAPHandler.swift */; };
+		6532522C243BB4FD0004005C /* Instruments.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6532522B243BB4FD0004005C /* Instruments.plist */; };
 		655585F7243A25BC004A94C0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655585F6243A25BC004A94C0 /* SettingsViewController.swift */; };
 		655585FD243A53ED004A94C0 /* guitarSymbol.png in Resources */ = {isa = PBXBuildFile; fileRef = 655585FC243A53ED004A94C0 /* guitarSymbol.png */; };
 		65558603243A5706004A94C0 /* balalaikaSymbol.png in Resources */ = {isa = PBXBuildFile; fileRef = 655585FE243A5705004A94C0 /* balalaikaSymbol.png */; };
@@ -106,6 +108,8 @@
 		653216EB242FB93A00BE1CAE /* NoteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteButton.swift; sourceTree = "<group>"; };
 		653216EF242FC38200BE1CAE /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		653216F52430E7CD00BE1CAE /* FrequencyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyLabel.swift; sourceTree = "<group>"; };
+		65325229243B36420004005C /* PKIAPHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKIAPHandler.swift; sourceTree = "<group>"; };
+		6532522B243BB4FD0004005C /* Instruments.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Instruments.plist; sourceTree = "<group>"; };
 		655585F6243A25BC004A94C0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		655585F8243A4ACF004A94C0 /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		655585FC243A53ED004A94C0 /* guitarSymbol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guitarSymbol.png; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 				652BC0EE242A69A300F60B83 /* Constants.swift */,
 				65585A7524334E7E002CD214 /* BezierView.swift */,
 				653216EF242FC38200BE1CAE /* Note.swift */,
+				65325229243B36420004005C /* PKIAPHandler.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 				65CCBF6024260DA100F518D8 /* LaunchScreen.storyboard */,
 				65B603302438D49C00BBA23D /* Main.storyboard */,
 				65CCBF6324260DA100F518D8 /* Info.plist */,
+				6532522B243BB4FD0004005C /* Instruments.plist */,
 			);
 			path = "Simple Instrument Tuner";
 			sourceTree = "<group>";
@@ -462,6 +468,7 @@
 				65CCC01D2426368600F518D8 /* microphoneOn.png in Resources */,
 				65CCC03324266C0B00F518D8 /* Gauge.storyboard in Resources */,
 				65CCC00D242626BC00F518D8 /* noteButtonActive.png in Resources */,
+				6532522C243BB4FD0004005C /* Instruments.plist in Resources */,
 				65CCC02E2426683400F518D8 /* gaugeOverlay.png in Resources */,
 				65CCC01A2426368600F518D8 /* microphoneOff.png in Resources */,
 				65CCBFFD242621D200F518D8 /* btnPassive.png in Resources */,
@@ -557,6 +564,7 @@
 				652BC116242CC39900F60B83 /* PingPongDelay.swift in Sources */,
 				65585A7A2433508C002CD214 /* DisplayViewController.swift in Sources */,
 				652BC0EA242A583C00F60B83 /* DeviationMeterViewController.swift in Sources */,
+				6532522A243B36420004005C /* PKIAPHandler.swift in Sources */,
 				65CCBF5824260D9E00F518D8 /* SceneDelegate.swift in Sources */,
 				65585A7624334E7E002CD214 /* BezierView.swift in Sources */,
 				653216EC242FB93A00BE1CAE /* NoteButton.swift in Sources */,
@@ -734,7 +742,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Simple Instrument Tuner/Simple Instrument Tuner.entitlements";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = P2EQM7YAFH;
 				INFOPLIST_FILE = "Simple Instrument Tuner/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -743,8 +752,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ch.vormbrock.simpleukuleletuner2;
+				PRODUCT_BUNDLE_IDENTIFIER = ch.vormbrock.simpleinstrumenttuner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Simple Instrument Tuner";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -756,7 +766,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Simple Instrument Tuner/Simple Instrument Tuner.entitlements";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = P2EQM7YAFH;
 				INFOPLIST_FILE = "Simple Instrument Tuner/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -765,8 +776,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ch.vormbrock.simpleukuleletuner2;
+				PRODUCT_BUNDLE_IDENTIFIER = ch.vormbrock.simpleinstrumenttuner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Simple Instrument Tuner";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

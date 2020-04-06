@@ -11,8 +11,10 @@ import AudioKit
 import AudioKitUI
 import GoogleMobileAds
 
-class InstrumentViewController: UIViewController {
+class InstrumentViewController: UIViewController, SettingsViewControllerDelegate {
+     
     
+    @IBOutlet weak var instrumentImageView: UIImageView!
     @IBOutlet weak var mainContainerView: UIView!
     @IBOutlet weak var headerView: UIView!
     
@@ -84,6 +86,12 @@ class InstrumentViewController: UIViewController {
         setAudioMode()
         
         handleAd()
+    }
+    
+    func didChangeInstrument() {
+        guard let path = Bundle.main.path(forResource: "Instrument", ofType: "plist"), let dict = NSDictionary(contentsOfFile: path) else { return }
+        let currentInstrument = dict.value(forKey: "currentInstrument") as? String
+        instrumentImageView.image = UIImage(named: "banjoSymbol")
     }
     
     func handleAd() {
@@ -194,6 +202,8 @@ class InstrumentViewController: UIViewController {
             guard let backgroundColor = self.view.backgroundColor else { return }
             settingsViewController.backgroundColor = backgroundColor
             settingsViewController.closeButton.backgroundColor = headerView.backgroundColor
+            
+            settingsViewController.settingsDelegate = self
         }
         
     }
