@@ -82,10 +82,10 @@ class DeviationMeterViewController: UIViewController {
         var diff: Float = 1000.0
         var foundNominalFreq: Float = 0.0
         
-        guitarNotesArray.forEach {
-            if diff > abs($0.frequency - frequency) {
-                diff = abs($0.frequency - frequency)
-                foundNominalFreq = $0.frequency
+        Utils().getCurrentFrequencies().forEach {
+            if diff > abs($0 - frequency) {
+                diff = abs($0 - frequency)
+                foundNominalFreq = $0
             }
         }
         

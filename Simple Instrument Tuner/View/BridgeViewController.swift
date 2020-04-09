@@ -14,9 +14,9 @@ import AudioKit
 /// Delegate for keyboard events
 public protocol AKKeyboardDelegate: class {
     /// Note on evenets
-    func noteOn(note: MIDINoteNumber)
+    func noteOn(note: Note)
     /// Note off events
-    func noteOff(note: MIDINoteNumber)
+    func noteOff(note: Note)
     
     func stopAllNotes()
 }
@@ -29,7 +29,7 @@ class BridgeViewController: UIViewController, AKMIDIListener {
     
     
     open weak var keyboardDelegate: AKKeyboardDelegate?
-
+    
     
     var buttonCollection = [NoteButton]()
     
@@ -39,24 +39,43 @@ class BridgeViewController: UIViewController, AKMIDIListener {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+         let frequencies = Utils().getCurrentFrequencies()
+         
+         let x: CGFloat = CGFloat(frequencies.count) / CGFloat(maxNumberOfStrings)
+         let widthMultiplier = exp(0.5*x-0.5)
+         
+         bridgeImageView.autoMatch(.width, to: .width, of: self.view, withMultiplier: widthMultiplier)
+         bottomView.autoMatch(.height, to: .height, of: self.view, withMultiplier: widthMultiplier*widthMultiplier*0.06)
+
+        loadElements()
+    }
+    
+    func loadElements() {
+        
+        for subview in stackView.arrangedSubviews {
+            subview.removeFromSuperview()
+        }
+        
         self.view.setNeedsLayout()
         self.view.layoutIfNeeded()
         
-        let x: CGFloat = CGFloat(guitarNotesArray.count) / CGFloat(maxNumberOfStrings)
+        let frequencies = Utils().getCurrentFrequencies()
+        
+        let x: CGFloat = CGFloat(frequencies.count) / CGFloat(maxNumberOfStrings)
         let widthMultiplier = exp(0.5*x-0.5)
         
-        bridgeImageView.autoMatch(.width, to: .width, of: self.view, withMultiplier: widthMultiplier)
-        bottomView.autoMatch(.height, to: .height, of: self.view, withMultiplier: widthMultiplier*widthMultiplier*0.06)
+        let sortedFreq = frequencies.sorted(by: { $0 < $1 })
+        let maxFreq: Float = Float(sortedFreq.last!)
         
-        let sortedFreq = guitarNotesArray.sorted(by: { $0.frequency < $1.frequency })
-        let maxFreq: Float = sortedFreq.last?.frequency ?? 0
+        let notes: [Note] = Utils().getCurrentNoteObjects()!
         
-        for (index, guitarNote) in guitarNotesArray.enumerated() {
+        for (index, note) in notes.enumerated() {
             
-            let frequency = guitarNote.frequency
+            let frequency = note.frequency
             let fact = self.view.bounds.size.width / 2000.0
-            let stringWidth: CGFloat = CGFloat(Float(fact) * maxFreq / sqrt(2*frequency))
- 
+            let div = sqrt(frequency)
+            let stringWidth: CGFloat = CGFloat(Float(fact) * maxFreq / div)
+            
             let containerView = UIView()
             containerView.backgroundColor = .clear
             
@@ -67,7 +86,7 @@ class BridgeViewController: UIViewController, AKMIDIListener {
             let button = NoteButton()
             button.setBackgroundImage(UIImage(named: "noteButtonPassive"), for: .normal)
             button.tag = index
-            button.note = guitarNote
+            button.note = note
             button.addTarget(self, action:#selector(self.buttonTouched), for: .touchUpInside)
             buttonCollection.append(button)
             containerView.addSubview(button)
@@ -82,17 +101,19 @@ class BridgeViewController: UIViewController, AKMIDIListener {
             button.autoMatch(.width, to: .width, of: containerView, withMultiplier: widthMultiplier*0.8)
             button.autoMatch(.height, to: .width, of: button)
             
-            let noteName = guitarNote.noteName
-            let noteLabel = UILabel()
-            noteLabel.text = noteName
-            let fontSize = min(self.view.bounds.size.width / 30, 26.0)
-            noteLabel.font = UIFont.boldSystemFont(ofSize: fontSize)
+            let noteLabel = NoteLabel()
+            noteLabel.localizedText = note.noteName
             button.addSubview(noteLabel)
             
             noteLabel.autoCenterInSuperview()
-            
-            
+   
             stackView.addArrangedSubview(containerView)
+            
+            self.view.setNeedsLayout()
+            self.view.layoutIfNeeded()
+                
+            let fontSize = min(noteLabel.bounds.size.width / 1.5, 26.0)
+            noteLabel.font = UIFont.boldSystemFont(ofSize: fontSize)
         }
     }
     
@@ -107,11 +128,11 @@ class BridgeViewController: UIViewController, AKMIDIListener {
         }
         
         noteButton.isActive = !noteButton.isActive
-
+        
         if noteButton.isActive == true {
-            delegate?.noteOn(note: noteButton.note.number)
+            delegate?.noteOn(note: noteButton.note)
         } else {
-            delegate?.noteOff(note: noteButton.note.number)
+            delegate?.noteOff(note: noteButton.note)
         }
     }
 }

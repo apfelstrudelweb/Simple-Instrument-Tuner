@@ -9,7 +9,7 @@
 import UIKit
 import AudioKit
 
-class Note: NSObject {
+public class Note: NSObject {
     
     var noteName : String = ""
     var frequency : Float = 0.0

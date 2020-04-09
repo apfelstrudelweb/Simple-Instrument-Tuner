@@ -24,10 +24,10 @@ class NoteButton: UIButton {
             self.setNeedsLayout()
             self.layoutIfNeeded()
             
-            let noteLabel = UILabel()
-            let fact: CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 0.5 : 0.9
+            let noteLabel = NoteLabel()
+            let fact: CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 0.6 : 0.9
             noteLabel.font = UIFont.boldSystemFont(ofSize: fact*self.bounds.size.height)
-            noteLabel.text = note.noteName
+            noteLabel.localizedText = note.noteName
             self.addSubview(noteLabel)
             noteLabel.autoCenterInSuperview()
         }

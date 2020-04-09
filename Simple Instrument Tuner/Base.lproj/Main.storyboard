@@ -302,6 +302,7 @@
                         <outlet property="instrumentImageView" destination="waB-fO-CiB" id="yLs-FJ-FdU"/>
                         <outlet property="mainContainerView" destination="iwQ-5l-fUH" id="xe1-SC-OzZ"/>
                         <outlet property="microphoneButton" destination="mnj-Ib-jUF" id="7gZ-h3-21p"/>
+                        <outlet property="settingsButton" destination="tOw-9U-RVG" id="GfL-ye-3h0"/>
                         <outlet property="tuningForkButton" destination="9A4-uR-tvp" id="tar-Do-liM"/>
                     </connections>
                 </viewController>

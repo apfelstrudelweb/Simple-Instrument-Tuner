@@ -30,6 +30,8 @@
 		653216F62430E7CE00BE1CAE /* FrequencyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653216F52430E7CD00BE1CAE /* FrequencyLabel.swift */; };
 		6532522A243B36420004005C /* PKIAPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65325229243B36420004005C /* PKIAPHandler.swift */; };
 		6532522C243BB4FD0004005C /* Instruments.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6532522B243BB4FD0004005C /* Instruments.plist */; };
+		6532522E243C6C990004005C /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6532522D243C6C990004005C /* KeyChain.swift */; };
+		65325230243C7A640004005C /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6532522F243C7A640004005C /* Utils.swift */; };
 		655585F7243A25BC004A94C0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655585F6243A25BC004A94C0 /* SettingsViewController.swift */; };
 		655585FD243A53ED004A94C0 /* guitarSymbol.png in Resources */ = {isa = PBXBuildFile; fileRef = 655585FC243A53ED004A94C0 /* guitarSymbol.png */; };
 		65558603243A5706004A94C0 /* balalaikaSymbol.png in Resources */ = {isa = PBXBuildFile; fileRef = 655585FE243A5705004A94C0 /* balalaikaSymbol.png */; };
@@ -38,12 +40,13 @@
 		65558606243A5706004A94C0 /* ukuleleSymbol.png in Resources */ = {isa = PBXBuildFile; fileRef = 65558601243A5705004A94C0 /* ukuleleSymbol.png */; };
 		65558607243A5706004A94C0 /* violinSymbol.png in Resources */ = {isa = PBXBuildFile; fileRef = 65558602243A5705004A94C0 /* violinSymbol.png */; };
 		65585A6E24334A74002CD214 /* DisplayContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585A6D24334A74002CD214 /* DisplayContainer.swift */; };
-		65585A7624334E7E002CD214 /* BezierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585A7524334E7E002CD214 /* BezierView.swift */; };
 		65585A7A2433508C002CD214 /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585A792433508B002CD214 /* DisplayViewController.swift */; };
 		65585A7E243350A7002CD214 /* Display.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65585A7D243350A7002CD214 /* Display.storyboard */; };
 		65585A822433A793002CD214 /* DisplayModeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585A812433A793002CD214 /* DisplayModeButton.swift */; };
+		6576A16A243FA85200970132 /* BezierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576A169243FA85200970132 /* BezierView.swift */; };
 		65B60323243728B600BBA23D /* tuningfork.png in Resources */ = {isa = PBXBuildFile; fileRef = 65B60322243728B600BBA23D /* tuningfork.png */; };
 		65B603322438D49D00BBA23D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65B603302438D49C00BBA23D /* Main.storyboard */; };
+		65C871C8243D09DD0047DB8F /* NoteLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C871C7243D09DD0047DB8F /* NoteLabel.swift */; };
 		65CCBF5624260D9E00F518D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBF5524260D9E00F518D8 /* AppDelegate.swift */; };
 		65CCBF5824260D9E00F518D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBF5724260D9E00F518D8 /* SceneDelegate.swift */; };
 		65CCBF5A24260D9E00F518D8 /* InstrumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBF5924260D9E00F518D8 /* InstrumentViewController.swift */; };
@@ -110,6 +113,8 @@
 		653216F52430E7CD00BE1CAE /* FrequencyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyLabel.swift; sourceTree = "<group>"; };
 		65325229243B36420004005C /* PKIAPHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKIAPHandler.swift; sourceTree = "<group>"; };
 		6532522B243BB4FD0004005C /* Instruments.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Instruments.plist; sourceTree = "<group>"; };
+		6532522D243C6C990004005C /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
+		6532522F243C7A640004005C /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		655585F6243A25BC004A94C0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		655585F8243A4ACF004A94C0 /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		655585FC243A53ED004A94C0 /* guitarSymbol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guitarSymbol.png; sourceTree = "<group>"; };
@@ -119,13 +124,14 @@
 		65558601243A5705004A94C0 /* ukuleleSymbol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ukuleleSymbol.png; sourceTree = "<group>"; };
 		65558602243A5705004A94C0 /* violinSymbol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = violinSymbol.png; sourceTree = "<group>"; };
 		65585A6D24334A74002CD214 /* DisplayContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayContainer.swift; sourceTree = "<group>"; };
-		65585A7524334E7E002CD214 /* BezierView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BezierView.swift; path = "../../../../../../../Downloads/Bezier-master/Bezier/BezierView.swift"; sourceTree = "<group>"; };
 		65585A792433508B002CD214 /* DisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
 		65585A7D243350A7002CD214 /* Display.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Display.storyboard; sourceTree = "<group>"; };
 		65585A812433A793002CD214 /* DisplayModeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayModeButton.swift; sourceTree = "<group>"; };
 		65585A8924371B6A002CD214 /* loudspeaker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loudspeaker.png; sourceTree = "<group>"; };
+		6576A169243FA85200970132 /* BezierView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierView.swift; sourceTree = "<group>"; };
 		65B60322243728B600BBA23D /* tuningfork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tuningfork.png; sourceTree = "<group>"; };
 		65B603312438D49C00BBA23D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		65C871C7243D09DD0047DB8F /* NoteLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteLabel.swift; sourceTree = "<group>"; };
 		65CCBF5224260D9E00F518D8 /* Simple Instrument Tuner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Instrument Tuner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65CCBF5524260D9E00F518D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65CCBF5724260D9E00F518D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -189,9 +195,11 @@
 			children = (
 				653216F92430EB2A00BE1CAE /* View */,
 				652BC0EE242A69A300F60B83 /* Constants.swift */,
-				65585A7524334E7E002CD214 /* BezierView.swift */,
+				6576A169243FA85200970132 /* BezierView.swift */,
 				653216EF242FC38200BE1CAE /* Note.swift */,
 				65325229243B36420004005C /* PKIAPHandler.swift */,
+				6532522D243C6C990004005C /* KeyChain.swift */,
+				6532522F243C7A640004005C /* Utils.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -214,6 +222,7 @@
 				653216EB242FB93A00BE1CAE /* NoteButton.swift */,
 				653216F52430E7CD00BE1CAE /* FrequencyLabel.swift */,
 				65585A812433A793002CD214 /* DisplayModeButton.swift */,
+				65C871C7243D09DD0047DB8F /* NoteLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -547,9 +556,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				65CCC03724266CAA00F518D8 /* GaugeViewController.swift in Sources */,
+				6576A16A243FA85200970132 /* BezierView.swift in Sources */,
 				653216F62430E7CE00BE1CAE /* FrequencyLabel.swift in Sources */,
 				655585F7243A25BC004A94C0 /* SettingsViewController.swift in Sources */,
 				652BC11C242CC39900F60B83 /* AutoPan.swift in Sources */,
+				65C871C8243D09DD0047DB8F /* NoteLabel.swift in Sources */,
 				652BC0FF242BED0F00F60B83 /* BridgeViewController.swift in Sources */,
 				652BC0DB242A2C0D00F60B83 /* VolumeMeterViewController.swift in Sources */,
 				65CCBF5A24260D9E00F518D8 /* InstrumentViewController.swift in Sources */,
@@ -560,14 +571,15 @@
 				652BC113242CC39900F60B83 /* Fatten.swift in Sources */,
 				65585A6E24334A74002CD214 /* DisplayContainer.swift in Sources */,
 				65CCBF5624260D9E00F518D8 /* AppDelegate.swift in Sources */,
+				6532522E243C6C990004005C /* KeyChain.swift in Sources */,
 				652BC0EF242A69A300F60B83 /* Constants.swift in Sources */,
 				652BC116242CC39900F60B83 /* PingPongDelay.swift in Sources */,
 				65585A7A2433508C002CD214 /* DisplayViewController.swift in Sources */,
 				652BC0EA242A583C00F60B83 /* DeviationMeterViewController.swift in Sources */,
 				6532522A243B36420004005C /* PKIAPHandler.swift in Sources */,
 				65CCBF5824260D9E00F518D8 /* SceneDelegate.swift in Sources */,
-				65585A7624334E7E002CD214 /* BezierView.swift in Sources */,
 				653216EC242FB93A00BE1CAE /* NoteButton.swift in Sources */,
+				65325230243C7A640004005C /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

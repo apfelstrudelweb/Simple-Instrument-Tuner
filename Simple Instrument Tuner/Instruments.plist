@@ -9,6 +9,30 @@
 		<string>Guitar</string>
 		<key>image</key>
 		<string>guitarSymbol</string>
+        <key>tunings</key>
+        <dict>
+            <key>standard</key>
+            <dict>
+                <key>notes</key>
+                <array>
+                    <string>E2</string>
+                    <string>A2</string>
+                    <string>D3</string>
+                    <string>G3</string>
+                    <string>B3</string>
+                    <string>E4</string>
+                </array>
+                <key>midis</key>
+                <array>
+                    <integer>52</integer>
+                    <integer>57</integer>
+                    <integer>62</integer>
+                    <integer>67</integer>
+                    <integer>71</integer>
+                    <integer>76</integer>
+                </array>
+            </dict>
+        </dict>
 	</dict>
 	<dict>
 		<key>id</key>
@@ -17,6 +41,28 @@
 		<string>Banjo</string>
 		<key>image</key>
 		<string>banjoSymbol</string>
+        <key>tunings</key>
+        <dict>
+            <key>standard</key>
+            <dict>
+                <key>notes</key>
+                <array>
+                    <string>G4</string>
+                    <string>D3</string>
+                    <string>G3</string>
+                    <string>B3</string>
+                    <string>D4</string>
+                </array>
+                <key>midis</key>
+                <array>
+                    <integer>79</integer>
+                    <integer>62</integer>
+                    <integer>67</integer>
+                    <integer>71</integer>
+                    <integer>74</integer>
+                </array>
+            </dict>
+        </dict>
 	</dict>
 	<dict>
 		<key>id</key>
@@ -25,6 +71,26 @@
 		<string>Ukulele</string>
 		<key>image</key>
 		<string>ukuleleSymbol</string>
+        <key>tunings</key>
+        <dict>
+            <key>standard</key>
+            <dict>
+                <key>notes</key>
+                <array>
+                    <string>G4</string>
+                    <string>C4</string>
+                    <string>E4</string>
+                    <string>A4</string>
+                </array>
+                <key>midis</key>
+                <array>
+                    <integer>79</integer>
+                    <integer>72</integer>
+                    <integer>76</integer>
+                    <integer>81</integer>
+                </array>
+            </dict>
+        </dict>
 	</dict>
 	<dict>
 		<key>id</key>
@@ -33,6 +99,26 @@
 		<string>Violin</string>
 		<key>image</key>
 		<string>violinSymbol</string>
+        <key>tunings</key>
+        <dict>
+            <key>standard</key>
+            <dict>
+                <key>notes</key>
+                <array>
+                    <string>G3</string>
+                    <string>D4</string>
+                    <string>A4</string>
+                    <string>E5</string>
+                </array>
+                <key>midis</key>
+                <array>
+                    <integer>67</integer>
+                    <integer>74</integer>
+                    <integer>81</integer>
+                    <integer>88</integer>
+                </array>
+            </dict>
+        </dict>
 	</dict>
 	<dict>
 		<key>id</key>
@@ -41,6 +127,26 @@
 		<string>Mandolin</string>
 		<key>image</key>
 		<string>mandolinSymbol</string>
+        <key>tunings</key>
+        <dict>
+            <key>standard</key>
+            <dict>
+                <key>notes</key>
+                <array>
+                    <string>G3</string>
+                    <string>D4</string>
+                    <string>A4</string>
+                    <string>E5</string>
+                </array>
+                <key>midis</key>
+                <array>
+                    <integer>67</integer>
+                    <integer>74</integer>
+                    <integer>81</integer>
+                    <integer>88</integer>
+                </array>
+            </dict>
+        </dict>
 	</dict>
 	<dict>
 		<key>id</key>
@@ -49,6 +155,24 @@
 		<string>Balalaika</string>
 		<key>image</key>
 		<string>mandolinSymbol</string>
+        <key>tunings</key>
+        <dict>
+            <key>standard</key>
+            <dict>
+                <key>notes</key>
+                <array>
+                    <string>E4</string>
+                    <string>E4</string>
+                    <string>A4</string>
+                </array>
+                <key>midis</key>
+                <array>
+                    <integer>76</integer>
+                    <integer>76</integer>
+                    <integer>81</integer>
+                </array>
+            </dict>
+        </dict>
 	</dict>
 </array>
 </plist>

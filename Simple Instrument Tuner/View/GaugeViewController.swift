@@ -64,10 +64,10 @@ class GaugeViewController: UIViewController {
                 
                 let scaleView = UIImageView(image: UIImage(named: "gaugeScale"))
                 
-                let noteLabel = UILabel()
+                let noteLabel = NoteLabel()
                 noteLabel.textAlignment = .center
                 noteLabel.font = UIFont.systemFont(ofSize: 0.6*h)
-                noteLabel.text = "\(note)"
+                noteLabel.localizedText = "\(note)"
                 
                 let noteView = UIView()
                 noteView.addSubview(scaleView)

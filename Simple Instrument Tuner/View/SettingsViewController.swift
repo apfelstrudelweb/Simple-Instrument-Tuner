@@ -31,10 +31,11 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     weak var settingsDelegate: SettingsViewControllerDelegate?
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let path = Bundle.main.path(forResource: "Instruments", ofType: "plist"), let array = NSArray(contentsOfFile: path) else { return }
+        guard let path = Bundle.main.path(forResource: INSTRUMENTS_PLIST_FILE, ofType: "plist"), let array = NSArray(contentsOfFile: path) else { return }
         
         for instrument in array.enumerated() {
             let dict = instrument.element as! NSDictionary
@@ -46,12 +47,18 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             dropDown.optionImageArray.append(image)
         }
 
+        if let receivedData = KeyChain.load(key: KEYCHAIN_CURRENT_INSTRUMENT_ID) {
+            let currentInstrumentId = receivedData.to(type: Int.self)
+            dropDown.selectedIndex = currentInstrumentId
+            dropDown.text = dropDown.optionArray[dropDown.selectedIndex ?? 0]
+        }
         
-        dropDown.selectedIndex = 0
-        dropDown.text = dropDown.optionArray[dropDown.selectedIndex ?? 0]
-        
+
         dropDown.didSelect{(selectedText , index ,id) in
             print("Selected String: \(selectedText) \n index: \(index)")
+            
+            let data = Data(from: index)
+            let _ = KeyChain.save(key: KEYCHAIN_CURRENT_INSTRUMENT_ID, data: data)
             
             self.settingsDelegate?.didChangeInstrument()
         }

@@ -25,6 +25,7 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     @IBOutlet weak var fftButton: DisplayModeButton!
     @IBOutlet weak var amplitudeButton: DisplayModeButton!
     @IBOutlet weak var tuningForkButton: UIButton!
+    @IBOutlet weak var settingsButton: UIButton!
     
     var bannerView: GADBannerView!
     
@@ -50,12 +51,28 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     private var embeddedDisplayViewController: DisplayViewController!
     private var settingsViewController: SettingsViewController!
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.setNeedsLayout()
         self.view.layoutIfNeeded()
+        
+        let instrument = Utils().getInstrument()
+
+        if instrument == nil {
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "settingsSegue", sender: nil)
+            }
+        } else {
+            let image = instrument?.symbol
+            instrumentImageView.image = image
+        }
+
         
         if UIDevice.current.userInterfaceIdiom == .pad {
             mainContainerView.layer.cornerRadius = 0.05*mainContainerView.bounds.size.width
@@ -89,9 +106,15 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     }
     
     func didChangeInstrument() {
-        guard let path = Bundle.main.path(forResource: "Instrument", ofType: "plist"), let dict = NSDictionary(contentsOfFile: path) else { return }
-        let currentInstrument = dict.value(forKey: "currentInstrument") as? String
-        instrumentImageView.image = UIImage(named: "banjoSymbol")
+        
+        let instrument = Utils().getInstrument()
+        let image = instrument?.symbol
+        instrumentImageView.image = image
+        
+        DispatchQueue.main.async {
+            self.embeddedBridgeViewController.loadElements()
+        }
+        
     }
     
     func handleAd() {
@@ -137,9 +160,10 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
             mic = AKMicrophone()
             let micCopy = AKBooster(mic)
             
-            let sortedFreq = guitarNotesArray.sorted(by: { $0.frequency < $1.frequency })
-            let minFreq: Float = sortedFreq.first?.frequency ?? 0
-            let maxFreq: Float = sortedFreq.last?.frequency ?? 0
+            let frequencies = Utils().getCurrentFrequencies()
+            let sortedFreq = frequencies.sorted(by: { $0 < $1 })
+            let minFreq: Float = sortedFreq.first ?? 0
+            let maxFreq: Float = sortedFreq.last ?? 0
             let avrFreq = 0.5 * (minFreq + maxFreq)
             let bandwidth = maxFreq - minFreq
  
@@ -175,6 +199,7 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
         super.viewDidAppear(animated)
     }
     
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? GaugeViewController,
             segue.identifier == "gaugeSegue" {
@@ -354,16 +379,18 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
 
 extension InstrumentViewController: AKKeyboardDelegate {
     
-    public func noteOn(note: MIDINoteNumber) {
+    public func noteOn(note: Note) {
         
         mode = .play
         setAudioMode()
         microphoneButton.isEnabled = false
         
+        let frequency = note.frequency
+ 
         self.embeddedVolumeMeterController.displayVolume(volume: 0.1)
-        conductor.playNote(note: note, velocity: MIDIVelocity(127), channel: midiChannelIn)
+        conductor.playNote(note: note.number, velocity: MIDIVelocity(127), channel: midiChannelIn)
 
-        let frequency = Constants().getFrequencyFromNote(number: Int(note))
+        
         frequencyLabel.frequency = frequency
         embeddedGaugeViewController.displayFrequency(frequency: frequency, soundGenerator: true)
         embeddedDeviationMeterController.displayExactMatch(on: true)
@@ -371,14 +398,14 @@ extension InstrumentViewController: AKKeyboardDelegate {
         startObservingVolumeChanges()
     }
     
-    public func noteOff(note: MIDINoteNumber) {
+    public func noteOff(note: Note) {
         
         mode = .silent
         setAudioMode()
         microphoneButton.isEnabled = true
         
         DispatchQueue.main.async {
-            self.conductor.stopNote(note: note, channel: self.midiChannelIn)
+            self.conductor.stopNote(note: note.number, channel: self.midiChannelIn)
             self.embeddedVolumeMeterController.displayVolume(volume: 0.1)
             self.embeddedDeviationMeterController.displayExactMatch(on: false)
             self.embeddedDisplayViewController.clear()
