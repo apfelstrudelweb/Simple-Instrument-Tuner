@@ -256,7 +256,7 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
             
             let frequency: Float = Float(frequencyTracker.frequency)
             
-            if frequency < Float(bandPass.centerFrequency - bandPass.bandwidth) || frequency > Float(bandPass.centerFrequency + bandPass.bandwidth) { return }
+            //if frequency < Float(bandPass.centerFrequency - bandPass.bandwidth) || frequency > Float(bandPass.centerFrequency + bandPass.bandwidth) { return }
             
             frequencyLabel.frequency = frequency
             // Gauge

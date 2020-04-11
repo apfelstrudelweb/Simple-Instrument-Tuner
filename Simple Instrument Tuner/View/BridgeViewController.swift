@@ -12,7 +12,7 @@ import AudioKit
 
 
 /// Delegate for keyboard events
-public protocol AKKeyboardDelegate: class {
+protocol AKKeyboardDelegate: class {
     /// Note on evenets
     func noteOn(note: Note)
     /// Note off events
@@ -36,21 +36,37 @@ class BridgeViewController: UIViewController, AKMIDIListener {
     var activeSoundTag = -1
     open weak var delegate: AKKeyboardDelegate?
     
+    var widthConstraint: NSLayoutConstraint?
+    var heightConstraint: NSLayoutConstraint?
+    var widthMultiplier: CGFloat!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         let frequencies = Utils().getCurrentFrequencies()
-         
-         let x: CGFloat = CGFloat(frequencies.count) / CGFloat(maxNumberOfStrings)
-         let widthMultiplier = exp(0.5*x-0.5)
-         
-         bridgeImageView.autoMatch(.width, to: .width, of: self.view, withMultiplier: widthMultiplier)
-         bottomView.autoMatch(.height, to: .height, of: self.view, withMultiplier: widthMultiplier*widthMultiplier*0.06)
+        self.view.layoutIfNeeded()
 
         loadElements()
     }
     
+    override func updateViewConstraints() {
+        super.updateViewConstraints()
+        
+        let frequencies = Utils().getCurrentFrequencies()
+        let x: CGFloat = CGFloat(frequencies.count) / CGFloat(maxNumberOfStrings)
+        widthMultiplier = exp(0.5*x-0.5)
+        
+        widthConstraint?.autoRemove()
+        heightConstraint?.autoRemove()
+        
+        heightConstraint = bottomView.autoMatch(.height, to: .height, of: self.view, withMultiplier: widthMultiplier*widthMultiplier*0.06)
+        widthConstraint = bridgeImageView.autoMatch(.width, to: .width, of: self.view, withMultiplier: widthMultiplier)
+    }
+    
     func loadElements() {
+        
+        buttonCollection = [NoteButton]()
+        
+        self.view.setNeedsUpdateConstraints()
         
         for subview in stackView.arrangedSubviews {
             subview.removeFromSuperview()
@@ -60,10 +76,6 @@ class BridgeViewController: UIViewController, AKMIDIListener {
         self.view.layoutIfNeeded()
         
         let frequencies = Utils().getCurrentFrequencies()
-        
-        let x: CGFloat = CGFloat(frequencies.count) / CGFloat(maxNumberOfStrings)
-        let widthMultiplier = exp(0.5*x-0.5)
-        
         let sortedFreq = frequencies.sorted(by: { $0 < $1 })
         let maxFreq: Float = Float(sortedFreq.last!)
         

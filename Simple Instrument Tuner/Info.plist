@@ -72,5 +72,7 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Need microphone access to perform frequency detection</string>
 </dict>
 </plist>
