@@ -390,7 +390,6 @@ extension InstrumentViewController: AKKeyboardDelegate {
         self.embeddedVolumeMeterController.displayVolume(volume: 0.1)
         conductor.playNote(note: note.number, velocity: MIDIVelocity(127), channel: midiChannelIn)
 
-        
         frequencyLabel.frequency = frequency
         embeddedGaugeViewController.displayFrequency(frequency: frequency, soundGenerator: true)
         embeddedDeviationMeterController.displayExactMatch(on: true)

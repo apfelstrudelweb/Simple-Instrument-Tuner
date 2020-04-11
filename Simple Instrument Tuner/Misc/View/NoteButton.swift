@@ -18,7 +18,7 @@ class NoteButton: UIButton {
         }
     }
     
-    var note = Note(noteName: "", frequency: 0, number: 0) {
+    var note = Note(noteName: "", frequency: 440) {
         didSet {
             
             self.setNeedsLayout()

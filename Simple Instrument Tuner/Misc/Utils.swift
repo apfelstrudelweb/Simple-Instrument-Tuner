@@ -11,7 +11,6 @@ import UIKit
 struct Tuning {
     var noteNames: [String]?
     var frequencies: [CGFloat]?
-    var midis: [Int]?
 }
 
 struct Instrument {
@@ -34,9 +33,8 @@ class Utils: NSObject {
             guard let tuningsDict = dict.value(forKey: "tunings") as? NSDictionary, let standardDict = tuningsDict.value(forKey: "standard") as? NSDictionary else { return nil }
             let notes = standardDict.value(forKey: "notes") as? [String]
             let frequencies = standardDict.value(forKey: "frequencies") as? [CGFloat]
-            let midis = standardDict.value(forKey: "midis") as? [Int]
             
-            let tuning = Tuning(noteNames: notes, frequencies: frequencies, midis: midis)
+            let tuning = Tuning(noteNames: notes, frequencies: frequencies)
             
             return Instrument(name: name, symbol: UIImage(named: image), tuning: tuning)
             
@@ -49,14 +47,11 @@ class Utils: NSObject {
         let instrument = getInstrument()
         
         let noteNames = instrument?.tuning?.noteNames
-        let midis = instrument?.tuning?.midis
         
-        var iter1 = noteNames?.makeIterator()
-        var iter2 = midis?.makeIterator()
-        
+        var iter = noteNames?.makeIterator()
         var notes = [Note]()
 
-        while let noteName: String = iter1?.next(), let midi = iter2?.next() {
+        while let noteName: String = iter?.next() {
             
             let noteLetter = noteName[0]
             let octave: Float = Float(noteName[1])!
@@ -66,7 +61,7 @@ class Utils: NSObject {
             
             print(frequency)
             
-            notes.append(Note(noteName: noteName, frequency: Float(frequency), number: midi))
+            notes.append(Note(noteName: noteName, frequency: Float(frequency)))
         }
         
         return notes

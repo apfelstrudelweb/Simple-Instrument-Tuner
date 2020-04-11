@@ -15,10 +15,11 @@ public class Note: NSObject {
     var frequency : Float = 0.0
     var number : MIDINoteNumber = MIDINoteNumber(0)
     
-     init(noteName: String, frequency: Float, number: Int) {
+     init(noteName: String, frequency: Float) {
            self.noteName = noteName
            self.frequency = frequency
-           self.number = MIDINoteNumber(number)
+           let n = Int(round(12 * log2(2 * frequency / 440))) + 69
+           self.number = MIDINoteNumber(n)
      }
 
 }

@@ -22,15 +22,6 @@
                     <string>B3</string>
                     <string>E4</string>
                 </array>
-                <key>midis</key>
-                <array>
-                    <integer>52</integer>
-                    <integer>57</integer>
-                    <integer>62</integer>
-                    <integer>67</integer>
-                    <integer>71</integer>
-                    <integer>76</integer>
-                </array>
             </dict>
         </dict>
 	</dict>
@@ -53,14 +44,6 @@
                     <string>B3</string>
                     <string>D4</string>
                 </array>
-                <key>midis</key>
-                <array>
-                    <integer>79</integer>
-                    <integer>62</integer>
-                    <integer>67</integer>
-                    <integer>71</integer>
-                    <integer>74</integer>
-                </array>
             </dict>
         </dict>
 	</dict>
@@ -81,13 +64,6 @@
                     <string>C4</string>
                     <string>E4</string>
                     <string>A4</string>
-                </array>
-                <key>midis</key>
-                <array>
-                    <integer>79</integer>
-                    <integer>72</integer>
-                    <integer>76</integer>
-                    <integer>81</integer>
                 </array>
             </dict>
         </dict>
@@ -110,13 +86,6 @@
                     <string>A4</string>
                     <string>E5</string>
                 </array>
-                <key>midis</key>
-                <array>
-                    <integer>67</integer>
-                    <integer>74</integer>
-                    <integer>81</integer>
-                    <integer>88</integer>
-                </array>
             </dict>
         </dict>
 	</dict>
@@ -138,13 +107,6 @@
                     <string>A4</string>
                     <string>E5</string>
                 </array>
-                <key>midis</key>
-                <array>
-                    <integer>67</integer>
-                    <integer>74</integer>
-                    <integer>81</integer>
-                    <integer>88</integer>
-                </array>
             </dict>
         </dict>
 	</dict>
@@ -164,12 +126,6 @@
                     <string>E4</string>
                     <string>E4</string>
                     <string>A4</string>
-                </array>
-                <key>midis</key>
-                <array>
-                    <integer>76</integer>
-                    <integer>76</integer>
-                    <integer>81</integer>
                 </array>
             </dict>
         </dict>
