@@ -59,7 +59,7 @@ class Utils: NSObject {
             let baseFrequency:NSNumber = notesDict.value(forKey: noteLetter) as! NSNumber
             let frequency = baseFrequency.floatValue * pow(2.0, octave)
             
-            print(frequency)
+            //print(frequency)
             
             notes.append(Note(noteName: noteName, frequency: Float(frequency)))
         }
@@ -87,6 +87,16 @@ class Utils: NSObject {
             return 0.0
         }
     }
+    
+    func getCurrentCalibration() -> Float {
+        if let receivedData = KeyChain.load(key: KEYCHAIN_CURRENT_CALIBRATION) {
+            let currentCalibration = receivedData.to(type: Int.self)
+            return Float(currentCalibration)
+        } else {
+            return 440.0
+        }
+    }
+    
 }
 
 extension Array where Element: FloatingPoint {

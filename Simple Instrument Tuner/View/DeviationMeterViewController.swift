@@ -12,6 +12,13 @@ import PureLayout
 let alpha_on: CGFloat = 1.0
 let alpha_off: CGFloat = 0.3
 
+var deviation: Float?
+
+protocol DeviationDelegate: class {
+
+    func hitNote(frequency: Float, flag: Bool)
+}
+
 class DeviationMeterViewController: UIViewController {
     @IBOutlet var backgroundView: UIView!
     @IBOutlet weak var stackview: UIStackView!
@@ -27,8 +34,12 @@ class DeviationMeterViewController: UIViewController {
         }
     }
     
+    weak var deviationDelegate: DeviationDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        deviation = Utils().getCurrentCalibration() - 440.0
 
         backgroundView.backgroundColor = UIColor.init(patternImage: UIImage(named: "volumeMeterPattern")!)
             
@@ -69,6 +80,10 @@ class DeviationMeterViewController: UIViewController {
         stackview.spacing = 0.06*backgroundView.frame.size.width
     }
     
+    func updateCalibration() {
+         deviation = Utils().getCurrentCalibration() - 440.0
+     }
+    
     func displayExactMatch(on: Bool) {
         
         for ledView in ledViewCollection {
@@ -79,36 +94,40 @@ class DeviationMeterViewController: UIViewController {
     
     func displayDeviation(frequency: Float) {
         
+        let freq = frequency - (frequency * (deviation ?? 0) / 440.0)
+        
         var diff: Float = 1000.0
         var foundNominalFreq: Float = 0.0
         
         Utils().getCurrentFrequencies().forEach {
-            if diff > abs($0 - frequency) {
-                diff = abs($0 - frequency)
+            if diff > abs($0 - freq) {
+                diff = abs($0 - freq)
                 foundNominalFreq = $0
             }
         }
         
-        let deviation = frequency - foundNominalFreq
+        let deviation = freq - foundNominalFreq
 
         let leftLimit = 1.5 * (foundNominalFreq - foundNominalFreq / freqMultFact)
         let rightLimit = 1.5 * (foundNominalFreq * freqMultFact - foundNominalFreq)
 
         // green LED
-        if deviation > -0.2*leftLimit && deviation < 0.2*rightLimit {
+        if deviation > -0.1*leftLimit && deviation < 0.1*rightLimit {
             ledByTag(tag: 0).alpha = alpha_on
+            deviationDelegate?.hitNote(frequency: foundNominalFreq, flag: true)
         } else {
             ledByTag(tag: 0).alpha = alpha_off
+            deviationDelegate?.hitNote(frequency: foundNominalFreq, flag: false)
         }
         
         // first red LEDs
-        if deviation > -leftLimit && deviation < -0.1*leftLimit {
+        if deviation > -leftLimit && deviation < -0.05*leftLimit {
             ledByTag(tag: -1).alpha = alpha_on
             ledByTag(tag: 0).alpha = 0.75 * alpha_on
         } else {
             ledByTag(tag: -1).alpha = alpha_off
         }
-        if deviation > 0.1*rightLimit && deviation < rightLimit {
+        if deviation > 0.05*rightLimit && deviation < rightLimit {
             ledByTag(tag: 1).alpha = alpha_on
             ledByTag(tag: 0).alpha = 0.75 * alpha_on
         } else {
@@ -116,26 +135,26 @@ class DeviationMeterViewController: UIViewController {
         }
         
         // second red LEDs
-        if deviation > -leftLimit && deviation < -0.5*leftLimit {
+        if deviation > -leftLimit && deviation < -0.1*leftLimit {
             ledByTag(tag: -2).alpha = alpha_on
             ledByTag(tag: 0).alpha = alpha_off
         } else {
             ledByTag(tag: -2).alpha = alpha_off
         }
-        if deviation > 0.5*rightLimit && deviation < rightLimit {
+        if deviation > 0.1*rightLimit && deviation < rightLimit {
             ledByTag(tag: 2).alpha = alpha_on
         } else {
             ledByTag(tag: 2).alpha = alpha_off
         }
         
         // third red LEDs
-        if deviation > -leftLimit && deviation < -0.8*leftLimit {
+        if deviation > -leftLimit && deviation < -0.4*leftLimit {
             ledByTag(tag: -3).alpha = alpha_on
             ledByTag(tag: 0).alpha = alpha_off
         } else {
             ledByTag(tag: -3).alpha = alpha_off
         }
-        if deviation > 0.8*rightLimit && deviation < rightLimit {
+        if deviation > 0.4*rightLimit && deviation < rightLimit {
             ledByTag(tag: 3).alpha = alpha_on
         } else {
             ledByTag(tag: 3).alpha = alpha_off

@@ -67,13 +67,13 @@ class Conductor {
      
         reverb = AKCostelloReverb(masterVolume)
         
-        reverbMixer = AKDryWetMixer(masterVolume, reverb, balance: 0.3)
+        reverbMixer = AKDryWetMixer(masterVolume, reverb, balance: 1)
        
         // Set a few sampler parameters
         sampler1.releaseDuration = 0.5
   
         // Init sequencer
-        midiLoad("rom_poly")
+        midiLoad("rom_bass")
         
         // load defaults
         useSound("TX Brass")
@@ -82,7 +82,7 @@ class Conductor {
         reverb.feedback = 0.0
         multiDelay.time = 0.0
         filterSection.cutoffFrequency = 1000
-        filterSection.resonance = 0.0
+        filterSection.resonance = 10.0
         filterSection.lfoAmplitude = 0.0
         filterSection.lfoRate = 0.0
         tremolo.depth = 2.0
@@ -101,6 +101,7 @@ class Conductor {
     func playNote(note: MIDINoteNumber, velocity: MIDIVelocity, channel: MIDIChannel) {
         mode = .play
         sampler1.play(noteNumber: note, velocity: velocity)
+        //sampler1.play(noteNumber: 0, velocity: velocity, frequency: 90)
     }
 
     func stopNote(note: MIDINoteNumber, channel: MIDIChannel) {

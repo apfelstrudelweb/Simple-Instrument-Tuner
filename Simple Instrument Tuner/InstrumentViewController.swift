@@ -11,8 +11,8 @@ import AudioKit
 import AudioKitUI
 import GoogleMobileAds
 
-class InstrumentViewController: UIViewController, SettingsViewControllerDelegate {
-     
+class InstrumentViewController: UIViewController, SettingsViewControllerDelegate, CalibrationSliderDelegate, DeviationDelegate {
+
     
     @IBOutlet weak var instrumentImageView: UIImageView!
     @IBOutlet weak var mainContainerView: UIView!
@@ -20,6 +20,8 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     
     @IBOutlet weak var circleView: UIView!
     @IBOutlet weak var frequencyLabel: FrequencyLabel!
+    @IBOutlet weak var calibrationLabel: CalibrationLabel!
+    
     @IBOutlet weak var microphoneButton: UIButton!
     @IBOutlet weak var displayView: UIView!
     @IBOutlet weak var fftButton: DisplayModeButton!
@@ -40,6 +42,7 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     var amplitudeTracker: AKAmplitudeTracker!
     var fftTap: AKFFTTap!
     var timer: Timer?
+    
 
     var smoothArray = [Float]()
 
@@ -114,7 +117,18 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
         DispatchQueue.main.async {
             self.embeddedBridgeViewController.loadElements()
         }
-        
+    }
+    
+    // MARK: CalibrationSliderDelegate
+    func didChangeCalibration() {
+        calibrationLabel.updateValueFromKeychain()
+        embeddedGaugeViewController.updateCalibration()
+        embeddedDeviationMeterController.updateCalibration()
+    }
+    
+    // MARK: DeviationDelegate
+    func hitNote(frequency: Float, flag: Bool) {
+        embeddedBridgeViewController.animateString(frequency: frequency, flag: flag)
     }
     
     func handleAd() {
@@ -149,7 +163,14 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
             }
             
             AKSettings.audioInputEnabled = false
-            AudioKit.output = conductor.reverbMixer
+            
+            let n = 1200 * log2(112/110) / 100
+
+            let effect = AKOperationEffect(conductor.reverbMixer) { player, parameters in
+                return player.pitchShift(semitones: n)
+            }
+            
+            AudioKit.output = effect
             embeddedDisplayViewController.plotFFTFromSound(reverbMixer: conductor.reverbMixer)
             
         } else if mode == .record {
@@ -212,6 +233,7 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
         if let vc = segue.destination as? DeviationMeterViewController,
             segue.identifier == "deviationMeterSegue" {
             embeddedDeviationMeterController = vc
+            embeddedDeviationMeterController.deviationDelegate = self
         }
         if let vc = segue.destination as? BridgeViewController,
             segue.identifier == "bridgeSegue" {
@@ -229,12 +251,10 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
             settingsViewController.closeButton.backgroundColor = headerView.backgroundColor
             
             settingsViewController.settingsDelegate = self
+            settingsViewController.calibrationSlider.calibrationDelegate = self
         }
         
     }
-    
-    
-
     
     fileprivate func disableAudio() {
         mode = .silent
@@ -248,7 +268,7 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
         if frequencyTracker == nil { return }
 
         
-        if frequencyTracker.amplitude > 0.05 {
+        if frequencyTracker.amplitude > 0.02 {
             
 //            let frequency: Float = 251 - Float.random(in: 0..<10)//Float(frequencyTracker.frequency)
 //            embeddedGaugeViewController.displayFrequency(frequency: frequency, soundGenerator: false)
@@ -262,7 +282,6 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
             // Gauge
             embeddedGaugeViewController.displayFrequency(frequency: frequency, soundGenerator: false)
             embeddedVolumeMeterController.displayVolume(volume: frequencyTracker.amplitude)
-            
             embeddedDeviationMeterController.displayDeviation(frequency: frequency)
             
   
@@ -346,6 +365,7 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
             button.isEnabled = mode == .silent
         }
         tuningForkButton.isEnabled = mode == .silent
+        settingsButton.isEnabled = mode == .silent
     }
     
     fileprivate func handleMicrophoneButton() {
@@ -379,6 +399,7 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
 
 extension InstrumentViewController: AKKeyboardDelegate {
     
+
     public func noteOn(note: Note) {
         
         mode = .play
@@ -389,6 +410,7 @@ extension InstrumentViewController: AKKeyboardDelegate {
  
         self.embeddedVolumeMeterController.displayVolume(volume: 0.1)
         conductor.playNote(note: note.number, velocity: MIDIVelocity(127), channel: midiChannelIn)
+        
 
         frequencyLabel.frequency = frequency
         embeddedGaugeViewController.displayFrequency(frequency: frequency, soundGenerator: true)

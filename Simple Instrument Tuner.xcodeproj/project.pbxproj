@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		09F09E18BB53204138F4080E /* Pods_Simple_Instrument_Tuner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7811777121F5C8C8C07A0362 /* Pods_Simple_Instrument_Tuner.framework */; };
 		652BC0DB242A2C0D00F60B83 /* VolumeMeterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC0D9242A2C0C00F60B83 /* VolumeMeterViewController.swift */; };
 		652BC0DE242A2C0D00F60B83 /* VolumeMeter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652BC0DA242A2C0C00F60B83 /* VolumeMeter.storyboard */; };
 		652BC0E2242A2C6F00F60B83 /* volumeMeterPattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 652BC0E1242A2C6E00F60B83 /* volumeMeterPattern.png */; };
@@ -44,6 +43,11 @@
 		65585A7E243350A7002CD214 /* Display.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65585A7D243350A7002CD214 /* Display.storyboard */; };
 		65585A822433A793002CD214 /* DisplayModeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585A812433A793002CD214 /* DisplayModeButton.swift */; };
 		6576A16A243FA85200970132 /* BezierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576A169243FA85200970132 /* BezierView.swift */; };
+		6576A171244254B100970132 /* CalibrationSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576A170244254B100970132 /* CalibrationSlider.swift */; };
+		6576A1732443190500970132 /* CalibrationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576A1722443190500970132 /* CalibrationLabel.swift */; };
+		6576A1752443312400970132 /* StringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576A1742443312400970132 /* StringView.swift */; };
+		6576A17924436DE500970132 /* giphy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6576A17824436DE500970132 /* giphy.gif */; };
+		6576A17B244397E700970132 /* animatedString.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6576A17A244397E700970132 /* animatedString.gif */; };
 		65B60323243728B600BBA23D /* tuningfork.png in Resources */ = {isa = PBXBuildFile; fileRef = 65B60322243728B600BBA23D /* tuningfork.png */; };
 		65B603322438D49D00BBA23D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65B603302438D49C00BBA23D /* Main.storyboard */; };
 		65C871C8243D09DD0047DB8F /* NoteLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C871C7243D09DD0047DB8F /* NoteLabel.swift */; };
@@ -69,6 +73,7 @@
 		65CCC03324266C0B00F518D8 /* Gauge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC03224266C0B00F518D8 /* Gauge.storyboard */; };
 		65CCC03724266CAA00F518D8 /* GaugeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCC03624266CAA00F518D8 /* GaugeViewController.swift */; };
 		65CCC03B2426AD6B00F518D8 /* gaugeScale.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC03A2426AD6B00F518D8 /* gaugeScale.png */; };
+		B0F0082E9BBC993D31373BCC /* Pods_Simple_Instrument_Tuner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E5CC0E191BB9651FCDAC6B /* Pods_Simple_Instrument_Tuner.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +94,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5FBF6516350C5DCC90FD0DA2 /* Pods-Simple Instrument Tuner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simple Instrument Tuner.debug.xcconfig"; path = "Target Support Files/Pods-Simple Instrument Tuner/Pods-Simple Instrument Tuner.debug.xcconfig"; sourceTree = "<group>"; };
+		62FD49AE314BC0ABB89243CD /* Pods-Simple Instrument Tuner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simple Instrument Tuner.release.xcconfig"; path = "Target Support Files/Pods-Simple Instrument Tuner/Pods-Simple Instrument Tuner.release.xcconfig"; sourceTree = "<group>"; };
 		652BC0D9242A2C0C00F60B83 /* VolumeMeterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeMeterViewController.swift; sourceTree = "<group>"; };
 		652BC0DA242A2C0C00F60B83 /* VolumeMeter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VolumeMeter.storyboard; sourceTree = "<group>"; };
 		652BC0E1242A2C6E00F60B83 /* volumeMeterPattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volumeMeterPattern.png; sourceTree = "<group>"; };
@@ -128,7 +135,12 @@
 		65585A7D243350A7002CD214 /* Display.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Display.storyboard; sourceTree = "<group>"; };
 		65585A812433A793002CD214 /* DisplayModeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayModeButton.swift; sourceTree = "<group>"; };
 		65585A8924371B6A002CD214 /* loudspeaker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loudspeaker.png; sourceTree = "<group>"; };
-		6576A169243FA85200970132 /* BezierView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierView.swift; sourceTree = "<group>"; };
+		6576A169243FA85200970132 /* BezierView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BezierView.swift; path = ../BezierView.swift; sourceTree = "<group>"; };
+		6576A170244254B100970132 /* CalibrationSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationSlider.swift; sourceTree = "<group>"; };
+		6576A1722443190500970132 /* CalibrationLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationLabel.swift; sourceTree = "<group>"; };
+		6576A1742443312400970132 /* StringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringView.swift; sourceTree = "<group>"; };
+		6576A17824436DE500970132 /* giphy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = giphy.gif; path = "Simple Instrument Tuner/images/giphy.gif"; sourceTree = SOURCE_ROOT; };
+		6576A17A244397E700970132 /* animatedString.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = animatedString.gif; sourceTree = "<group>"; };
 		65B60322243728B600BBA23D /* tuningfork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tuningfork.png; sourceTree = "<group>"; };
 		65B603312438D49C00BBA23D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		65C871C7243D09DD0047DB8F /* NoteLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteLabel.swift; sourceTree = "<group>"; };
@@ -158,9 +170,7 @@
 		65CCC03224266C0B00F518D8 /* Gauge.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Gauge.storyboard; sourceTree = "<group>"; };
 		65CCC03624266CAA00F518D8 /* GaugeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaugeViewController.swift; sourceTree = "<group>"; };
 		65CCC03A2426AD6B00F518D8 /* gaugeScale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gaugeScale.png; sourceTree = "<group>"; };
-		7811777121F5C8C8C07A0362 /* Pods_Simple_Instrument_Tuner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Simple_Instrument_Tuner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E02A73902009D71C4A732EAC /* Pods-Simple Instrument Tuner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simple Instrument Tuner.release.xcconfig"; path = "Target Support Files/Pods-Simple Instrument Tuner/Pods-Simple Instrument Tuner.release.xcconfig"; sourceTree = "<group>"; };
-		EA3375841BF86ABE8824653E /* Pods-Simple Instrument Tuner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simple Instrument Tuner.debug.xcconfig"; path = "Target Support Files/Pods-Simple Instrument Tuner/Pods-Simple Instrument Tuner.debug.xcconfig"; sourceTree = "<group>"; };
+		F1E5CC0E191BB9651FCDAC6B /* Pods_Simple_Instrument_Tuner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Simple_Instrument_Tuner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,7 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				652BC125242CDABF00F60B83 /* AudioToolbox.framework in Frameworks */,
-				09F09E18BB53204138F4080E /* Pods_Simple_Instrument_Tuner.framework in Frameworks */,
+				B0F0082E9BBC993D31373BCC /* Pods_Simple_Instrument_Tuner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,7 +205,6 @@
 			children = (
 				653216F92430EB2A00BE1CAE /* View */,
 				652BC0EE242A69A300F60B83 /* Constants.swift */,
-				6576A169243FA85200970132 /* BezierView.swift */,
 				653216EF242FC38200BE1CAE /* Note.swift */,
 				65325229243B36420004005C /* PKIAPHandler.swift */,
 				6532522D243C6C990004005C /* KeyChain.swift */,
@@ -219,10 +228,14 @@
 		653216F92430EB2A00BE1CAE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6576A169243FA85200970132 /* BezierView.swift */,
 				653216EB242FB93A00BE1CAE /* NoteButton.swift */,
 				653216F52430E7CD00BE1CAE /* FrequencyLabel.swift */,
 				65585A812433A793002CD214 /* DisplayModeButton.swift */,
 				65C871C7243D09DD0047DB8F /* NoteLabel.swift */,
+				6576A170244254B100970132 /* CalibrationSlider.swift */,
+				6576A1722443190500970132 /* CalibrationLabel.swift */,
+				6576A1742443312400970132 /* StringView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -302,6 +315,8 @@
 				65CCC0182426368600F518D8 /* microphoneOff.png */,
 				65CCC0192426368600F518D8 /* microphoneOn.png */,
 				652BC102242BF64B00F60B83 /* string.png */,
+				6576A17A244397E700970132 /* animatedString.gif */,
+				6576A17824436DE500970132 /* giphy.gif */,
 				65CCC024242637F400F518D8 /* settings.png */,
 				65B60322243728B600BBA23D /* tuningfork.png */,
 				652BC0E1242A2C6E00F60B83 /* volumeMeterPattern.png */,
@@ -334,7 +349,7 @@
 				655585F8243A4ACF004A94C0 /* iOSDropDown.framework */,
 				653216E9242D18F800BE1CAE /* CoreAudioKit.framework */,
 				652BC124242CDABF00F60B83 /* AudioToolbox.framework */,
-				7811777121F5C8C8C07A0362 /* Pods_Simple_Instrument_Tuner.framework */,
+				F1E5CC0E191BB9651FCDAC6B /* Pods_Simple_Instrument_Tuner.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -342,8 +357,8 @@
 		B0281B6E1E5D3DE8CC47E754 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				EA3375841BF86ABE8824653E /* Pods-Simple Instrument Tuner.debug.xcconfig */,
-				E02A73902009D71C4A732EAC /* Pods-Simple Instrument Tuner.release.xcconfig */,
+				5FBF6516350C5DCC90FD0DA2 /* Pods-Simple Instrument Tuner.debug.xcconfig */,
+				62FD49AE314BC0ABB89243CD /* Pods-Simple Instrument Tuner.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -355,11 +370,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 65CCBF7C24260DA100F518D8 /* Build configuration list for PBXNativeTarget "Simple Instrument Tuner" */;
 			buildPhases = (
-				448696E3F141A850C31B4DA6 /* [CP] Check Pods Manifest.lock */,
+				2F4690144AC0155F2649D2FF /* [CP] Check Pods Manifest.lock */,
 				65CCBF4E24260D9E00F518D8 /* Sources */,
 				65CCBF4F24260D9E00F518D8 /* Frameworks */,
 				65CCBF5024260D9E00F518D8 /* Resources */,
-				9E50F3D51B4D4ABC6476F0BE /* [CP] Embed Pods Frameworks */,
+				CDD2BF5A99724A60727C1E6D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -456,6 +471,7 @@
 			files = (
 				65B60323243728B600BBA23D /* tuningfork.png in Resources */,
 				652BC120242CDA3400F60B83 /* Sounds in Resources */,
+				6576A17924436DE500970132 /* giphy.gif in Resources */,
 				65558607243A5706004A94C0 /* violinSymbol.png in Resources */,
 				65CCC0052426268900F518D8 /* ledActive.png in Resources */,
 				652BC0F7242BEC7500F60B83 /* bridge.png in Resources */,
@@ -472,6 +488,7 @@
 				65558605243A5706004A94C0 /* mandolinSymbol.png in Resources */,
 				652BC0DE242A2C0D00F60B83 /* VolumeMeter.storyboard in Resources */,
 				65558603243A5706004A94C0 /* balalaikaSymbol.png in Resources */,
+				6576A17B244397E700970132 /* animatedString.gif in Resources */,
 				65CCC03B2426AD6B00F518D8 /* gaugeScale.png in Resources */,
 				65CCC025242637F400F518D8 /* settings.png in Resources */,
 				65CCC01D2426368600F518D8 /* microphoneOn.png in Resources */,
@@ -509,7 +526,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		448696E3F141A850C31B4DA6 /* [CP] Check Pods Manifest.lock */ = {
+		2F4690144AC0155F2649D2FF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -531,7 +548,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9E50F3D51B4D4ABC6476F0BE /* [CP] Embed Pods Frameworks */ = {
+		CDD2BF5A99724A60727C1E6D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -560,6 +577,7 @@
 				653216F62430E7CE00BE1CAE /* FrequencyLabel.swift in Sources */,
 				655585F7243A25BC004A94C0 /* SettingsViewController.swift in Sources */,
 				652BC11C242CC39900F60B83 /* AutoPan.swift in Sources */,
+				6576A1752443312400970132 /* StringView.swift in Sources */,
 				65C871C8243D09DD0047DB8F /* NoteLabel.swift in Sources */,
 				652BC0FF242BED0F00F60B83 /* BridgeViewController.swift in Sources */,
 				652BC0DB242A2C0D00F60B83 /* VolumeMeterViewController.swift in Sources */,
@@ -576,7 +594,9 @@
 				652BC116242CC39900F60B83 /* PingPongDelay.swift in Sources */,
 				65585A7A2433508C002CD214 /* DisplayViewController.swift in Sources */,
 				652BC0EA242A583C00F60B83 /* DeviationMeterViewController.swift in Sources */,
+				6576A171244254B100970132 /* CalibrationSlider.swift in Sources */,
 				6532522A243B36420004005C /* PKIAPHandler.swift in Sources */,
+				6576A1732443190500970132 /* CalibrationLabel.swift in Sources */,
 				65CCBF5824260D9E00F518D8 /* SceneDelegate.swift in Sources */,
 				653216EC242FB93A00BE1CAE /* NoteButton.swift in Sources */,
 				65325230243C7A640004005C /* Utils.swift in Sources */,
@@ -750,7 +770,7 @@
 		};
 		65CCBF7D24260DA100F518D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA3375841BF86ABE8824653E /* Pods-Simple Instrument Tuner.debug.xcconfig */;
+			baseConfigurationReference = 5FBF6516350C5DCC90FD0DA2 /* Pods-Simple Instrument Tuner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Simple Instrument Tuner/Simple Instrument Tuner.entitlements";
@@ -774,7 +794,7 @@
 		};
 		65CCBF7E24260DA100F518D8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E02A73902009D71C4A732EAC /* Pods-Simple Instrument Tuner.release.xcconfig */;
+			baseConfigurationReference = 62FD49AE314BC0ABB89243CD /* Pods-Simple Instrument Tuner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Simple Instrument Tuner/Simple Instrument Tuner.entitlements";

@@ -20,6 +20,7 @@ enum DisplayMode {
 }
 
 var KEYCHAIN_CURRENT_INSTRUMENT_ID = "currentInstrumentId"
+var KEYCHAIN_CURRENT_CALIBRATION = "currentCalibration"
 var INSTRUMENTS_PLIST_FILE = "Instruments"
 
 var mode : Mode = .silent

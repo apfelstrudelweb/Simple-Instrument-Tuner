@@ -49,12 +49,24 @@
                                                     <constraint firstAttribute="width" secondItem="waB-fO-CiB" secondAttribute="height" id="jAu-31-i6Y"/>
                                                 </constraints>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="440 Hz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekl-pO-cjx" customClass="CalibrationLabel" customModule="Simple_Instrument_Tuner" customModuleProvider="target">
+                                                <rect key="frame" x="124.33333333333333" y="48" width="165.33333333333337" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                                                </variation>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" red="0.68902570009999997" green="0.26623564960000001" blue="0.2310875654" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="vqR-9h-0vg" firstAttribute="width" secondItem="HmZ-41-X8f" secondAttribute="width" multiplier="0.4" id="2W5-2Y-6ze"/>
                                             <constraint firstItem="waB-fO-CiB" firstAttribute="height" secondItem="HmZ-41-X8f" secondAttribute="height" multiplier="0.6" id="I6g-T5-BM7"/>
+                                            <constraint firstItem="ekl-pO-cjx" firstAttribute="trailing" secondItem="vqR-9h-0vg" secondAttribute="trailing" id="Or7-BG-KX3"/>
+                                            <constraint firstItem="ekl-pO-cjx" firstAttribute="leading" secondItem="vqR-9h-0vg" secondAttribute="leading" id="ZC1-0F-DXV"/>
                                             <constraint firstItem="waB-fO-CiB" firstAttribute="bottom" secondItem="vqR-9h-0vg" secondAttribute="bottom" multiplier="1.1" id="dmY-DJ-sY0"/>
+                                            <constraint firstItem="ekl-pO-cjx" firstAttribute="centerY" secondItem="HmZ-41-X8f" secondAttribute="centerY" id="sZl-Qe-4q4"/>
                                             <constraint firstAttribute="bottom" secondItem="vqR-9h-0vg" secondAttribute="bottom" constant="15.5" id="xe5-P6-Oes"/>
                                             <constraint firstItem="vqR-9h-0vg" firstAttribute="centerX" secondItem="HmZ-41-X8f" secondAttribute="centerX" id="zD0-IW-2nZ"/>
                                         </constraints>
@@ -294,6 +306,7 @@
                     </view>
                     <connections>
                         <outlet property="amplitudeButton" destination="Bog-oP-HxY" id="26I-zv-esP"/>
+                        <outlet property="calibrationLabel" destination="ekl-pO-cjx" id="2RJ-f4-gAl"/>
                         <outlet property="circleView" destination="RXa-5h-gjY" id="mAJ-4v-uDP"/>
                         <outlet property="displayView" destination="mhP-Xd-8do" id="Xnn-hP-Sjn"/>
                         <outlet property="fftButton" destination="HaD-mg-trs" id="VpY-Y2-UcC"/>
@@ -375,6 +388,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddI-Wq-d4u" customClass="DropDown" customModule="iOSDropDown">
                                 <rect key="frame" x="62" y="162" width="290" height="42"/>
                                 <color key="backgroundColor" red="0.17969004403112809" green="0.20315182492711178" blue="0.2304651411959362" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -403,6 +417,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="arrowSize">
                                         <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <variation key="heightClass=regular-widthClass=regular">
@@ -438,17 +455,23 @@
                                     <outlet property="delegate" destination="hih-AW-H12" id="8wk-7s-FPx"/>
                                 </connections>
                             </tableView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="440" minValue="430" maxValue="450" translatesAutoresizingMaskIntoConstraints="NO" id="HLR-jh-hUG" customClass="CalibrationSlider" customModule="Simple_Instrument_Tuner" customModuleProvider="target">
+                                <rect key="frame" x="60" y="274" width="294" height="31"/>
+                                <color key="tintColor" red="0.68902570009999997" green="0.26623564960000001" blue="0.2310875654" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" red="0.1529633105" green="0.16794264319999999" blue="0.18741327520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="mCn-UK-uyd" firstAttribute="top" secondItem="rcZ-Nt-Eve" secondAttribute="bottom" constant="30" id="3Hy-Ud-oBt"/>
                             <constraint firstItem="ddI-Wq-d4u" firstAttribute="width" secondItem="UEY-sm-vof" secondAttribute="width" multiplier="0.7" id="61H-Tx-tgv"/>
                             <constraint firstItem="fea-lr-uCU" firstAttribute="leading" secondItem="ddI-Wq-d4u" secondAttribute="leading" id="9Fc-oN-BNK"/>
+                            <constraint firstItem="HLR-jh-hUG" firstAttribute="leading" secondItem="fea-lr-uCU" secondAttribute="leading" id="ARz-so-g5L"/>
                             <constraint firstItem="ddI-Wq-d4u" firstAttribute="centerX" secondItem="UEY-sm-vof" secondAttribute="centerX" id="CD5-HJ-Xfh"/>
                             <constraint firstItem="fea-lr-uCU" firstAttribute="trailing" secondItem="ddI-Wq-d4u" secondAttribute="trailing" id="Dho-Wz-Ghi"/>
                             <constraint firstItem="ddI-Wq-d4u" firstAttribute="top" secondItem="mCn-UK-uyd" secondAttribute="bottom" constant="20" id="Knd-0B-nA2"/>
                             <constraint firstItem="rcZ-Nt-Eve" firstAttribute="trailing" secondItem="xqv-pn-s16" secondAttribute="trailing" id="NAq-d4-gVC"/>
                             <constraint firstItem="mCn-UK-uyd" firstAttribute="leading" secondItem="xqv-pn-s16" secondAttribute="leading" id="RsT-eD-093"/>
+                            <constraint firstItem="HLR-jh-hUG" firstAttribute="top" secondItem="fea-lr-uCU" secondAttribute="top" constant="40" id="VoN-IM-Cbw"/>
                             <constraint firstItem="rcZ-Nt-Eve" firstAttribute="leading" secondItem="xqv-pn-s16" secondAttribute="leading" id="XIM-GK-zC6"/>
                             <constraint firstItem="rcZ-Nt-Eve" firstAttribute="top" secondItem="xqv-pn-s16" secondAttribute="top" id="bqn-wZ-4In"/>
                             <constraint firstItem="ddI-Wq-d4u" firstAttribute="height" secondItem="UEY-sm-vof" secondAttribute="height" multiplier="0.05" id="c5B-f7-4ZZ"/>
@@ -456,13 +479,15 @@
                             <constraint firstItem="fea-lr-uCU" firstAttribute="height" secondItem="UEY-sm-vof" secondAttribute="height" multiplier="0.212589" id="hMg-mS-E80"/>
                             <constraint firstItem="rcZ-Nt-Eve" firstAttribute="height" secondItem="UEY-sm-vof" secondAttribute="height" multiplier="0.1" id="hPg-hy-gRA"/>
                             <constraint firstItem="xqv-pn-s16" firstAttribute="trailing" secondItem="mCn-UK-uyd" secondAttribute="trailing" id="kct-ba-Wlh"/>
+                            <constraint firstItem="HLR-jh-hUG" firstAttribute="trailing" secondItem="fea-lr-uCU" secondAttribute="trailing" id="qMs-DT-IHm"/>
                             <constraint firstItem="fea-lr-uCU" firstAttribute="top" secondItem="ddI-Wq-d4u" secondAttribute="bottom" constant="30" id="ztk-N8-7ER"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xqv-pn-s16"/>
                     </view>
                     <navigationItem key="navigationItem" id="Aqa-Uu-GU6"/>
                     <connections>
-                        <outlet property="closeButton" destination="rcZ-Nt-Eve" id="oCP-ze-zge"/>
+                        <outlet property="calibrationSlider" destination="HLR-jh-hUG" id="MbK-AG-jR1"/>
+                        <outlet property="closeButton" destination="rcZ-Nt-Eve" id="JgD-7K-X1b"/>
                         <outlet property="dropDown" destination="ddI-Wq-d4u" id="iq4-9w-Lht"/>
                         <outlet property="productTableView" destination="fea-lr-uCU" id="SZm-S8-Djc"/>
                     </connections>

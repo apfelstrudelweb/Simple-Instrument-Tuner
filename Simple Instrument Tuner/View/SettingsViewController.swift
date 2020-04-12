@@ -9,6 +9,8 @@
 import UIKit
 import StoreKit
 import iOSDropDown
+import fluid_slider
+import PureLayout
 
 protocol SettingsViewControllerDelegate: AnyObject {
 
@@ -20,6 +22,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var dropDown: DropDown!
     @IBOutlet weak var productTableView: UITableView!
+    @IBOutlet weak var calibrationSlider: CalibrationSlider!
     
     var productsArray = [SKProduct]()
     
@@ -61,7 +64,14 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             let _ = KeyChain.save(key: KEYCHAIN_CURRENT_INSTRUMENT_ID, data: data)
             
             self.settingsDelegate?.didChangeInstrument()
+            self.dismiss(animated: true, completion: nil)
         }
+        
+        // Calibration
+        //calibrationSlider.tintColor = closeButton.backgroundColor
+        //calibrationLabel.text = "\(Int(calibrationSlider.value)) Hz"
+        
+        // IAP
 
         PKIAPHandler.shared.setProductIds(ids: ["ch.vormbrock.simpleukuleletuner.alluke", "ch.vormbrock.simpleukuleletuner.premium", "ch.vormbrock.simpleukuleletuner.signalplus"])
         PKIAPHandler.shared.fetchAvailableProducts { [weak self](products)   in

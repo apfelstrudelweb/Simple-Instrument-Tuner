@@ -9,7 +9,7 @@
 import UIKit
 import PureLayout
 import AudioKit
-
+import SwiftGifOrigin
 
 /// Delegate for keyboard events
 protocol AKKeyboardDelegate: class {
@@ -32,6 +32,7 @@ class BridgeViewController: UIViewController, AKMIDIListener {
     
     
     var buttonCollection = [NoteButton]()
+    var stringCollection = [StringView]()
     
     var activeSoundTag = -1
     open weak var delegate: AKKeyboardDelegate?
@@ -40,12 +41,51 @@ class BridgeViewController: UIViewController, AKMIDIListener {
     var heightConstraint: NSLayoutConstraint?
     var widthMultiplier: CGFloat!
     
+    
+    var numberOfLoops = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let instrument = Utils().getInstrument()
+        if instrument == nil {
+            return
+        }
+        
         self.view.layoutIfNeeded()
-
+        
         loadElements()
+    }
+    
+    func animateString(frequency: Float, flag: Bool) {
+
+        if flag == true {
+            
+            stringCollection.forEach {
+                
+                if $0.frequency == frequency {
+                    $0.image = UIImage.gif(name: "animatedString")
+                } else {
+                    $0.image = UIImage(named: "string")
+                }
+            }
+            
+            buttonCollection.forEach {
+                if $0.note.frequency == frequency {
+                    $0.isActive = true
+                } else {
+                    $0.isActive = false
+                }
+            }
+        } else {
+            
+            stringCollection.forEach {
+                $0.image = UIImage(named: "string")
+            }
+            buttonCollection.forEach {
+                $0.isActive = false
+            }
+        }
     }
     
     override func updateViewConstraints() {
@@ -64,6 +104,7 @@ class BridgeViewController: UIViewController, AKMIDIListener {
     
     func loadElements() {
         
+        stringCollection = [StringView]()
         buttonCollection = [NoteButton]()
         
         self.view.setNeedsUpdateConstraints()
@@ -91,8 +132,9 @@ class BridgeViewController: UIViewController, AKMIDIListener {
             let containerView = UIView()
             containerView.backgroundColor = .clear
             
-            let stringView = UIImageView()
+            let stringView = StringView()
             stringView.image = UIImage(named: "string")
+            stringView.frequency = note.frequency
             containerView.addSubview(stringView)
             
             let button = NoteButton()
@@ -108,6 +150,8 @@ class BridgeViewController: UIViewController, AKMIDIListener {
             stringView.autoPinEdge(toSuperviewEdge: .bottom)
             stringView.autoSetDimension(.width, toSize: stringWidth)
             
+            stringCollection.append(stringView)
+            
             button.autoPinEdge(toSuperviewEdge: .bottom, withInset: -4)
             button.autoAlignAxis(toSuperviewMarginAxis: .vertical)
             button.autoMatch(.width, to: .width, of: containerView, withMultiplier: widthMultiplier*0.8)
@@ -118,12 +162,12 @@ class BridgeViewController: UIViewController, AKMIDIListener {
             button.addSubview(noteLabel)
             
             noteLabel.autoCenterInSuperview()
-   
+            
             stackView.addArrangedSubview(containerView)
             
             self.view.setNeedsLayout()
             self.view.layoutIfNeeded()
-                
+            
             let fontSize = min(noteLabel.bounds.size.width / 1.5, 26.0)
             noteLabel.font = UIFont.boldSystemFont(ofSize: fontSize)
         }

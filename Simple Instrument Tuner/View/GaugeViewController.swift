@@ -20,10 +20,13 @@ class GaugeViewController: UIViewController {
     @IBOutlet weak var scrollContentView: UIView!
     @IBOutlet weak var stackView: UIStackView!
 
+    var deviation: Float?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        deviation = Utils().getCurrentCalibration() - 440.0
 
         backgroundView.backgroundColor = UIColor.init(patternImage: UIImage(named: "gaugePattern")!)
 
@@ -48,6 +51,10 @@ class GaugeViewController: UIViewController {
         backgroundView.layer.shadowRadius = shadowSize
         
         populateGauge()
+    }
+    
+    func updateCalibration() {
+        deviation = Utils().getCurrentCalibration() - 440.0
     }
     
     private func populateGauge() {
@@ -86,8 +93,8 @@ class GaugeViewController: UIViewController {
     
     
     func displayFrequency(frequency: Float, soundGenerator: Bool) {
-
-        var freq = frequency
+        
+        var freq = frequency - (frequency * (deviation ?? 0) / 440.0)
         
         while freq > Float(freqArray.last! + 1.0) {
             freq /= 2.0
@@ -103,10 +110,12 @@ class GaugeViewController: UIViewController {
         let xOffset = 15.0 - 0.5 * (view.frame.size.width - 350.0)
         let p = segmentWidth * CGFloat(x + 10.0)  + xOffset
         
-        //print(freq)
+        print(freq)
 
+        UIView.animate(withDuration: 0.5, animations: {
+            self.scrollView.setContentOffset(CGPoint(x: p, y: 0), animated: false)
+        })
         
-        self.scrollView.setContentOffset(CGPoint(x: p, y: 0), animated: true)
     }
 }
 
