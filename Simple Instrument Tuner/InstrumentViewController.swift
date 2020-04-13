@@ -127,6 +127,7 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     }
     
     func didChangeTuning() {
+        
         tuningLabel.text = Utils().getCurrentTuningName()
         
         DispatchQueue.main.async {

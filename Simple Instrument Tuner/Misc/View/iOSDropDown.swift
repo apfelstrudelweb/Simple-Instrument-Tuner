@@ -228,13 +228,13 @@ open class DropDown : UITextField{
                 self.table.reloadData()
             }
         }
-        parentController?.view.addSubview(shadow)
+        //parentController?.view.addSubview(shadow)
         parentController?.view.addSubview(table)
         self.isSelected = true
         let height = (self.parentController?.view.frame.height ?? 0) - (self.pointToParent.y + self.frame.height + 5)
         var y = self.pointToParent.y+self.frame.height+5
         if height < (keyboardHeight+tableheightX){
-            y = self.pointToParent.y - tableheightX
+            //y = self.pointToParent.y - tableheightX
         }
         UIView.animate(withDuration: 0.9,
                        delay: 0,

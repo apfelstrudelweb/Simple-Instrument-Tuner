@@ -35,12 +35,12 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="116.33333333333333"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0 Hz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vqR-9h-0vg" customClass="FrequencyLabel" customModule="Simple_Instrument_Tuner" customModuleProvider="target">
-                                                <rect key="frame" x="124.33333333333333" y="68.666666666666671" width="165.33333333333337" height="32.333333333333329"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                                <rect key="frame" x="124.33333333333333" y="72.333333333333329" width="165.33333333333337" height="28.666666666666671"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                                 <variation key="heightClass=regular-widthClass=regular">
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="38"/>
                                                 </variation>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guitarSymbol.png" translatesAutoresizingMaskIntoConstraints="NO" id="waB-fO-CiB">
@@ -50,7 +50,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="440 Hz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekl-pO-cjx" customClass="CalibrationLabel" customModule="Simple_Instrument_Tuner" customModuleProvider="target">
-                                                <rect key="frame" x="124.33333333333333" y="48" width="165.33333333333337" height="20.333333333333329"/>
+                                                <rect key="frame" x="124.33333333333333" y="37" width="165.33333333333337" height="19.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -66,7 +66,7 @@
                                             <constraint firstItem="ekl-pO-cjx" firstAttribute="trailing" secondItem="vqR-9h-0vg" secondAttribute="trailing" id="Or7-BG-KX3"/>
                                             <constraint firstItem="ekl-pO-cjx" firstAttribute="leading" secondItem="vqR-9h-0vg" secondAttribute="leading" id="ZC1-0F-DXV"/>
                                             <constraint firstItem="waB-fO-CiB" firstAttribute="bottom" secondItem="vqR-9h-0vg" secondAttribute="bottom" multiplier="1.1" id="dmY-DJ-sY0"/>
-                                            <constraint firstItem="ekl-pO-cjx" firstAttribute="centerY" secondItem="HmZ-41-X8f" secondAttribute="centerY" id="sZl-Qe-4q4"/>
+                                            <constraint firstItem="ekl-pO-cjx" firstAttribute="centerY" secondItem="HmZ-41-X8f" secondAttribute="centerY" multiplier="0.8" id="sZl-Qe-4q4"/>
                                             <constraint firstAttribute="bottom" secondItem="vqR-9h-0vg" secondAttribute="bottom" constant="15.5" id="xe5-P6-Oes"/>
                                             <constraint firstItem="vqR-9h-0vg" firstAttribute="centerX" secondItem="HmZ-41-X8f" secondAttribute="centerX" id="zD0-IW-2nZ"/>
                                         </constraints>
@@ -428,11 +428,11 @@
                                 </variation>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gH1-V9-dyA" customClass="DropDown" customModule="Simple_Instrument_Tuner" customModuleProvider="target">
-                                <rect key="frame" x="62" y="244" width="290" height="36"/>
+                                <rect key="frame" x="62" y="244" width="290" height="34"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="rowBackgroundColor">
@@ -446,10 +446,10 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSearchEnable" value="NO"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="rowHeight">
-                                        <real key="value" value="70"/>
+                                        <real key="value" value="60"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="listHeight">
-                                        <real key="value" value="450"/>
+                                        <real key="value" value="300"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="0.0"/>
@@ -469,7 +469,7 @@
                                 </variation>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fea-lr-uCU">
-                                <rect key="frame" x="62" y="423" width="290" height="179"/>
+                                <rect key="frame" x="62" y="461" width="290" height="179"/>
                                 <color key="backgroundColor" red="0.17991855740000001" green="0.2035782039" blue="0.2313624024" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="productCell" textLabel="51p-Zc-1xS" style="IBUITableViewCellStyleDefault" id="gG7-Bg-Fsf">
@@ -498,7 +498,7 @@
                                 </connections>
                             </tableView>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="440" minValue="430" maxValue="450" translatesAutoresizingMaskIntoConstraints="NO" id="HLR-jh-hUG" customClass="CalibrationSlider" customModule="Simple_Instrument_Tuner" customModuleProvider="target">
-                                <rect key="frame" x="60" y="340" width="294" height="31"/>
+                                <rect key="frame" x="60" y="378" width="294" height="31"/>
                                 <color key="tintColor" red="0.68902570009999997" green="0.26623564960000001" blue="0.2310875654" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </slider>
                         </subviews>
@@ -523,7 +523,7 @@
                             <constraint firstItem="fea-lr-uCU" firstAttribute="height" secondItem="UEY-sm-vof" secondAttribute="height" multiplier="0.212589" id="hMg-mS-E80"/>
                             <constraint firstItem="rcZ-Nt-Eve" firstAttribute="height" secondItem="UEY-sm-vof" secondAttribute="height" multiplier="0.1" id="hPg-hy-gRA"/>
                             <constraint firstItem="xqv-pn-s16" firstAttribute="trailing" secondItem="mCn-UK-uyd" secondAttribute="trailing" id="kct-ba-Wlh"/>
-                            <constraint firstItem="HLR-jh-hUG" firstAttribute="top" secondItem="gH1-V9-dyA" secondAttribute="bottom" constant="60" id="nKN-fu-p3c"/>
+                            <constraint firstItem="HLR-jh-hUG" firstAttribute="top" secondItem="gH1-V9-dyA" secondAttribute="bottom" constant="100" id="nKN-fu-p3c"/>
                             <constraint firstItem="HLR-jh-hUG" firstAttribute="trailing" secondItem="fea-lr-uCU" secondAttribute="trailing" id="qMs-DT-IHm"/>
                             <constraint firstItem="fea-lr-uCU" firstAttribute="top" secondItem="HLR-jh-hUG" secondAttribute="bottom" constant="53" id="tbo-wL-3PX"/>
                         </constraints>

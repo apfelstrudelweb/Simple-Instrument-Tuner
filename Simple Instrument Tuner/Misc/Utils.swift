@@ -20,6 +20,12 @@ struct Instrument {
     var tunings: [Tuning]?
 }
 
+struct InstrumentsOptions {
+    var ids: [Int]?
+    var names: [String]?
+    var images: [String]?
+}
+
 class Utils: NSObject {
     
     func getInstrument() -> Instrument? {
@@ -47,11 +53,88 @@ class Utils: NSObject {
                 
                 tunings.append(Tuning(name: name, notes: notes, frequencies: frequencies))
             }
- 
+            
             return Instrument(name: name, symbol: UIImage(named: image), tunings: tunings)
             
         }
         return nil
+    }
+    
+    func saveInstrument(index: Int) {
+        
+        let key = KEYCHAIN_CURRENT_INSTRUMENT_ID
+        
+        let data = Data(from: index)
+        let _ = KeyChain.save(key: key, data: data)
+    }
+    
+    func getTuningId() -> Int {
+        
+        var currentTuningId = 0
+        guard let instrumentName = getInstrument()?.name else { return 0 }
+        let key = KEYCHAIN_CURRENT_TUNING_ID + instrumentName
+        
+        if let receivedData = KeyChain.load(key: key) {
+            currentTuningId = receivedData.to(type: Int.self)
+        }
+        return currentTuningId
+    }
+    
+    func getInstrumentsArray() -> InstrumentsOptions {
+        
+        guard let path = Bundle.main.path(forResource: INSTRUMENTS_PLIST_FILE, ofType: "plist"), let array = NSArray(contentsOfFile: path) else { return InstrumentsOptions() }
+        
+        var idArray = [Int]()
+        var nameArray = [String]()
+        var imageArray = [String]()
+        
+        for instrument in array.enumerated() {
+            let dict = instrument.element as! NSDictionary
+            
+            guard let name = dict.value(forKey: "name") as? String, let image = dict.value(forKey: "image") as? String, let id = dict.value(forKey: "id") as? Int else { continue }
+            
+            idArray.append(id)
+            nameArray.append(name)
+            imageArray.append(image)
+        }
+    
+        return InstrumentsOptions(ids: idArray, names: nameArray, images: imageArray)
+    }
+    
+    func getTuningsArray() -> [String] {
+        
+        guard let instrument = getInstrument(), let tunings = instrument.tunings else { return [] }
+        
+        var optionArray = [String]()
+        
+        for tuning in tunings {
+            guard let name = tuning.name else { continue }
+            guard let notes = tuning.notes else { continue }
+            
+            var noteString = ""
+            for (index, note) in notes.enumerated() {
+                
+                if index < notes.count - 1 {
+                    noteString += "\(note) - "
+                } else {
+                    noteString += "\(note)"
+                }
+            }
+            
+            let string = "\(name) ---\(noteString)"
+            optionArray.append(string)
+        }
+        return optionArray
+    }
+    
+    func saveTuning(index: Int) {
+        
+        let instrument = getInstrument()
+        guard let instrumentName = instrument?.name else { return }
+        let key = KEYCHAIN_CURRENT_TUNING_ID + instrumentName
+        
+        let data = Data(from: index)
+        let _ = KeyChain.save(key: key, data: data)
     }
     
     func getFrequencyFromNote(note: String) -> CGFloat {
@@ -64,39 +147,42 @@ class Utils: NSObject {
     }
     
     func getCurrentNoteObjects() -> [Note]? {
-
+        
         let instrument = getInstrument()
         
+        guard let instrumentName = instrument?.name else { return [] }
+        
         var currentTuningId: Int = 0
-        if let receivedData = KeyChain.load(key: KEYCHAIN_CURRENT_TUNING_ID) {
+        let key = KEYCHAIN_CURRENT_TUNING_ID + instrumentName
+        if let receivedData = KeyChain.load(key: key) {
             currentTuningId = receivedData.to(type: Int.self)
         }
-
+        
         guard let tunings = instrument?.tunings else { return [] }
         if currentTuningId > tunings.count - 1 {
             currentTuningId = 0
         }
         guard let noteNames = tunings[currentTuningId].notes else { return [] }
         guard let frequencies = instrument?.tunings?[currentTuningId].frequencies else { return [] }
-
+        
         var iter1 = noteNames.makeIterator()
         var iter2 = frequencies.makeIterator()
         
         var notes = [Note]()
-
+        
         while let noteName: String = iter1.next(), let frequency = iter2.next() {
-
+            
             notes.append(Note(noteName: noteName, frequency: Float(frequency)))
         }
-
+        
         return notes
     }
     
     func getCurrentFrequencies() -> [Float] {
-
+        
         var frequencies = [Float]()
         let notes: [Note] = getCurrentNoteObjects()!
-
+        
         for note in notes {
             frequencies.append(note.frequency)
         }
@@ -107,8 +193,11 @@ class Utils: NSObject {
         
         let instrument = getInstrument()
         
-        guard let receivedData = KeyChain.load(key: KEYCHAIN_CURRENT_TUNING_ID) else { return "" }
-            
+        guard let instrumentName = instrument?.name else { return "" }
+        let key = KEYCHAIN_CURRENT_TUNING_ID + instrumentName
+        
+        guard let receivedData = KeyChain.load(key: key) else { return "" }
+        
         var currentTuningId = receivedData.to(type: Int.self)
         
         guard let tunings = instrument?.tunings else { return "" }
@@ -156,7 +245,7 @@ extension String {
         let nsString = self as NSString
         return (try? NSRegularExpression(pattern: regex, options: []))?.matches(in: self, options: [], range: NSMakeRange(0, count)).map { match in
             (0..<match.numberOfRanges).map { match.range(at: $0).location == NSNotFound ? "" : nsString.substring(with: match.range(at: $0)) }
-        } ?? []
+            } ?? []
     }
     
     subscript(_ i: Int) -> String {

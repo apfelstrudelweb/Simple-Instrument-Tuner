@@ -20,7 +20,10 @@ enum DisplayMode {
 }
 
 var KEYCHAIN_CURRENT_INSTRUMENT_ID = "currentInstrumentId"
+// TODO: different tuning Ids for different instruments!
 var KEYCHAIN_CURRENT_TUNING_ID = "currentTuningId"
+
+
 var KEYCHAIN_CURRENT_CALIBRATION = "currentCalibration"
 var INSTRUMENTS_PLIST_FILE = "Instruments"
 
