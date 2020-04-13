@@ -168,7 +168,9 @@ class BridgeViewController: UIViewController, AKMIDIListener {
             self.view.setNeedsLayout()
             self.view.layoutIfNeeded()
             
-            let fontSize = min(noteLabel.bounds.size.width / 1.5, 26.0)
+            var fontSize = min(noteLabel.bounds.size.width / 1.5, 26.0)
+            if noteLabel.localizedText?.count == 3 { fontSize = fontSize / 1.5}
+            
             noteLabel.font = UIFont.boldSystemFont(ofSize: fontSize)
         }
     }

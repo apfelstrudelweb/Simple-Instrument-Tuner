@@ -39,7 +39,7 @@ class DeviationMeterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        deviation = Utils().getCurrentCalibration() - 440.0
+        deviation = Utils().getCurrentCalibration() - chambertone
 
         backgroundView.backgroundColor = UIColor.init(patternImage: UIImage(named: "volumeMeterPattern")!)
             
@@ -81,7 +81,7 @@ class DeviationMeterViewController: UIViewController {
     }
     
     func updateCalibration() {
-         deviation = Utils().getCurrentCalibration() - 440.0
+         deviation = Utils().getCurrentCalibration() - chambertone
      }
     
     func displayExactMatch(on: Bool) {
@@ -94,7 +94,7 @@ class DeviationMeterViewController: UIViewController {
     
     func displayDeviation(frequency: Float) {
         
-        let freq = frequency - (frequency * (deviation ?? 0) / 440.0)
+        let freq = frequency - (frequency * (deviation ?? 0) / chambertone)
         
         var diff: Float = 1000.0
         var foundNominalFreq: Float = 0.0

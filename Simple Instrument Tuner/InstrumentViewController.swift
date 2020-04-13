@@ -21,6 +21,7 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     @IBOutlet weak var circleView: UIView!
     @IBOutlet weak var frequencyLabel: FrequencyLabel!
     @IBOutlet weak var calibrationLabel: CalibrationLabel!
+    @IBOutlet weak var tuningLabel: UILabel!
     
     @IBOutlet weak var microphoneButton: UIButton!
     @IBOutlet weak var displayView: UIView!
@@ -42,6 +43,8 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     var amplitudeTracker: AKAmplitudeTracker!
     var fftTap: AKFFTTap!
     var timer: Timer?
+    
+    let semitone = pow(2.0, 1.0/12.0)
     
 
     var smoothArray = [Float]()
@@ -88,6 +91,7 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
 
         fftButton.text = "FFT"
         amplitudeButton.text = "Amplitude"
+        tuningLabel.text = Utils().getCurrentTuningName()
 
         
         embeddedBridgeViewController.delegate = self
@@ -108,11 +112,22 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
         handleAd()
     }
     
+    // TODO: didChangeTuning
     func didChangeInstrument() {
         
         let instrument = Utils().getInstrument()
         let image = instrument?.symbol
         instrumentImageView.image = image
+        
+        tuningLabel.text = Utils().getCurrentTuningName()
+        
+        DispatchQueue.main.async {
+            self.embeddedBridgeViewController.loadElements()
+        }
+    }
+    
+    func didChangeTuning() {
+        tuningLabel.text = Utils().getCurrentTuningName()
         
         DispatchQueue.main.async {
             self.embeddedBridgeViewController.loadElements()
@@ -164,10 +179,11 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
             
             AKSettings.audioInputEnabled = false
             
-            let n = 1200 * log2(112/110) / 100
+            let ratio = Utils().getCurrentCalibration() / chambertone
+            let fractionSemitone = 12.0 * log2(ratio)
 
             let effect = AKOperationEffect(conductor.reverbMixer) { player, parameters in
-                return player.pitchShift(semitones: n)
+                return player.pitchShift(semitones: fractionSemitone)
             }
             
             AudioKit.output = effect

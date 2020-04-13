@@ -26,7 +26,7 @@ class GaugeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        deviation = Utils().getCurrentCalibration() - 440.0
+        deviation = Utils().getCurrentCalibration() - chambertone
 
         backgroundView.backgroundColor = UIColor.init(patternImage: UIImage(named: "gaugePattern")!)
 
@@ -54,7 +54,7 @@ class GaugeViewController: UIViewController {
     }
     
     func updateCalibration() {
-        deviation = Utils().getCurrentCalibration() - 440.0
+        deviation = Utils().getCurrentCalibration() - chambertone
     }
     
     private func populateGauge() {
@@ -94,7 +94,7 @@ class GaugeViewController: UIViewController {
     
     func displayFrequency(frequency: Float, soundGenerator: Bool) {
         
-        var freq = frequency - (frequency * (deviation ?? 0) / 440.0)
+        var freq = frequency - (frequency * (deviation ?? 0) / chambertone)
         
         while freq > Float(freqArray.last! + 1.0) {
             freq /= 2.0
