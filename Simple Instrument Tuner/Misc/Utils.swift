@@ -10,6 +10,7 @@ import UIKit
 
 struct Tuning {
     var name: String?
+    var isStandard: Bool?
     var notes: [String]?
     var frequencies: [CGFloat]?
 }
@@ -42,7 +43,7 @@ class Utils: NSObject {
             var tunings = [Tuning]()
             
             for dict in tuningsArray {
-                guard let name = dict.value(forKey: "tuningName") as? String, let notes = dict.value(forKey: "notes") as? [String] else { continue }
+                guard let name = dict.value(forKey: "tuningName") as? String, let notes = dict.value(forKey: "notes") as? [String], let isStandard = dict.value(forKey: "standard") as? Bool else { continue }
                 
                 var frequencies = [CGFloat]()
                 
@@ -51,7 +52,7 @@ class Utils: NSObject {
                     frequencies.append(frequency)
                 }
                 
-                tunings.append(Tuning(name: name, notes: notes, frequencies: frequencies))
+                tunings.append(Tuning(name: name, isStandard: isStandard, notes: notes, frequencies: frequencies))
             }
             
             return Instrument(name: name, symbol: UIImage(named: image), tunings: tunings)
@@ -105,11 +106,14 @@ class Utils: NSObject {
         
         guard let instrument = getInstrument(), let tunings = instrument.tunings else { return [] }
         
+        //let filteredTunings = tunings.filter({ $0.isStandard == true })
+        
         var optionArray = [String]()
         
         for tuning in tunings {
             guard let name = tuning.name else { continue }
             guard let notes = tuning.notes else { continue }
+            guard let isStandard = tuning.isStandard else { continue }
             
             var noteString = ""
             for (index, note) in notes.enumerated() {
@@ -121,7 +125,7 @@ class Utils: NSObject {
                 }
             }
             
-            let string = "\(name) ---\(noteString)"
+            let string = isStandard == true ? "## \(name) ## ---\(noteString)" : "\(name) ---\(noteString)"
             optionArray.append(string)
         }
         return optionArray
