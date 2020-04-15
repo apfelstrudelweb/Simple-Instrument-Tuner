@@ -89,7 +89,14 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         
         if tuningDropDown.optionArray.count == 0 { return }
              
-        let currentTuningId = Utils().getTuningId()
+        var currentTuningId = Utils().getTuningId()
+        
+        // Workaround
+        if currentTuningId > tuningDropDown.optionArray.count - 1 {
+            currentTuningId = 0
+        }
+        
+        
         tuningDropDown.selectedIndex = currentTuningId
         let text = tuningDropDown.optionArray[currentTuningId]
         tuningDropDown.text = text.components(separatedBy: "---").first
