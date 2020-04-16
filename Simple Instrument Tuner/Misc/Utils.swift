@@ -18,6 +18,7 @@ struct Tuning {
 struct Instrument {
     var name: String?
     var symbol: UIImage?
+    var doubleStrings: Bool?
     var tunings: [Tuning]?
 }
 
@@ -34,7 +35,7 @@ class Utils: NSObject {
         guard let path = Bundle.main.path(forResource: INSTRUMENTS_PLIST_FILE, ofType: "plist"), let array = NSArray(contentsOfFile: path) else { return nil }
         if let receivedData = KeyChain.load(key: KEYCHAIN_CURRENT_INSTRUMENT_ID) {
             let currentInstrumentId = receivedData.to(type: Int.self)
-            guard let dict = array[currentInstrumentId] as? NSDictionary, let name = dict.value(forKey: "name") as? String, let image = dict.value(forKey: "image") as? String else {
+            guard let dict = array[currentInstrumentId] as? NSDictionary, let name = dict.value(forKey: "name") as? String, let image = dict.value(forKey: "image") as? String, let doubleStrings = dict.value(forKey: "doubleStrings") as? Bool else {
                 return nil
             }
             
@@ -55,7 +56,7 @@ class Utils: NSObject {
                 tunings.append(Tuning(name: name, isStandard: isStandard, notes: notes, frequencies: frequencies))
             }
             
-            return Instrument(name: name, symbol: UIImage(named: image), tunings: tunings)
+            return Instrument(name: name, symbol: UIImage(named: image), doubleStrings: doubleStrings, tunings: tunings)
             
         }
         return nil
@@ -256,5 +257,35 @@ extension String {
         let idx1 = index(startIndex, offsetBy: i)
         let idx2 = index(idx1, offsetBy: 1)
         return String(self[idx1..<idx2])
+    }
+}
+
+extension UIView {
+    func addTopBorderWithColor(color: UIColor, width: CGFloat) {
+        let border = CALayer()
+        border.backgroundColor = color.cgColor
+        border.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: width)
+        self.layer.addSublayer(border)
+    }
+
+    func addRightBorderWithColor(color: UIColor, width: CGFloat) {
+        let border = CALayer()
+        border.backgroundColor = color.cgColor
+        border.frame = CGRect(x: self.frame.size.width - width, y: 0, width: width, height: self.frame.size.height)
+        self.layer.addSublayer(border)
+    }
+
+    func addBottomBorderWithColor(color: UIColor, width: CGFloat) {
+        let border = CALayer()
+        border.backgroundColor = color.cgColor
+        border.frame = CGRect(x: 0, y: self.frame.size.height - width, width: self.frame.size.width, height: width)
+        self.layer.addSublayer(border)
+    }
+
+    func addLeftBorderWithColor(color: UIColor, width: CGFloat) {
+        let border = CALayer()
+        border.backgroundColor = color.cgColor
+        border.frame = CGRect(x: 0, y: 0, width: width, height: self.frame.size.height)
+        self.layer.addSublayer(border)
     }
 }

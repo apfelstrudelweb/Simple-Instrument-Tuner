@@ -117,6 +117,7 @@ class BridgeViewController: UIViewController, AKMIDIListener {
         self.view.layoutIfNeeded()
         
         let frequencies = Utils().getCurrentFrequencies()
+        let instrument = Utils().getInstrument()
         let sortedFreq = frequencies.sorted(by: { $0 < $1 })
         let maxFreq: Float = Float(sortedFreq.last!)
         
@@ -133,7 +134,7 @@ class BridgeViewController: UIViewController, AKMIDIListener {
             containerView.backgroundColor = .clear
             
             let stringView = StringView()
-            stringView.image = UIImage(named: "string")
+            stringView.image = instrument?.doubleStrings == true ? UIImage(named: "doubleString") : UIImage(named: "string")
             stringView.frequency = note.frequency
             containerView.addSubview(stringView)
             

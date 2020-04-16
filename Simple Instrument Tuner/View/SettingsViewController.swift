@@ -19,13 +19,15 @@ protocol SettingsViewControllerDelegate: AnyObject {
 }
 
 
-class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, TuningTableViewControllerDelegate {
     
+
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var instrumentDropDown: DropDown!
-    @IBOutlet weak var tuningDropDown: DropDown!
     @IBOutlet weak var productTableView: UITableView!
     @IBOutlet weak var calibrationSlider: CalibrationSlider!
+    
+    private var embeddedTuningViewViewController: TuningTableViewController!
     
     var productsArray = [SKProduct]()
     
@@ -37,12 +39,25 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     weak var settingsDelegate: SettingsViewControllerDelegate?
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           if let vc = segue.destination as? TuningTableViewController,
+               segue.identifier == "tuningSegue" {
+               embeddedTuningViewViewController = vc
+               embeddedTuningViewViewController.tuningDelegate = self
+           }
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         handleInstrumentsList()
         handleTuningsList()
+        
+        embeddedTuningViewViewController.tableView.layer.borderColor = #colorLiteral(red: 0.1529633105, green: 0.1679426432, blue: 0.1874132752, alpha: 1)
+        embeddedTuningViewViewController.tableView.layer.borderWidth = 2.0
+        embeddedTuningViewViewController.tableView.layer.masksToBounds = true
+        embeddedTuningViewViewController.tableView.layer.cornerRadius = 4
 
         // In App Purchase
         // TODO - put them into constants
@@ -85,29 +100,15 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     fileprivate func handleTuningsList() {
         
-        tuningDropDown.optionArray = Utils().getTuningsArray()
-        
-        if tuningDropDown.optionArray.count == 0 { return }
-             
-        var currentTuningId = Utils().getTuningId()
-        
-        // Workaround
-        if currentTuningId > tuningDropDown.optionArray.count - 1 {
-            currentTuningId = 0
-        }
-        
-        
-        tuningDropDown.selectedIndex = currentTuningId
-        let text = tuningDropDown.optionArray[currentTuningId]
-        tuningDropDown.text = text.components(separatedBy: "---").first
-        
-        tuningDropDown.didSelect{(selectedText , index ,id) in
-            Utils().saveTuning(index: index)
-            self.settingsDelegate?.didChangeTuning()
-        }
+        embeddedTuningViewViewController.tunings = Utils().getInstrument()?.tunings
+        embeddedTuningViewViewController.tableView.reloadData()
     }
     
-
+    // MARK: TuningTableViewControllerDelegate
+    func didChangeTuning() {
+        self.settingsDelegate?.didChangeTuning()
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return productsArray.count

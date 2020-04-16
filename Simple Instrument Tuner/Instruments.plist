@@ -9,6 +9,8 @@
 		<string>Guitar</string>
 		<key>image</key>
 		<string>guitarSymbol</string>
+        <key>doubleStrings</key>
+        <false/>
 		<key>tunings</key>
 		<array>
 			<dict>
@@ -170,6 +172,8 @@
 		<string>Banjo</string>
 		<key>image</key>
 		<string>banjoSymbol</string>
+        <key>doubleStrings</key>
+        <false/>
 		<key>tunings</key>
 		<array>
 			<dict>
@@ -187,7 +191,7 @@
 			</dict>
 			<dict>
 				<key>tuningName</key>
-				<string>C - 4 strings</string>
+				<string>C</string>
                 <key>standard</key>
                 <false/>
 				<key>notes</key>
@@ -374,6 +378,8 @@
 		<string>Ukulele</string>
 		<key>image</key>
 		<string>ukuleleSymbol</string>
+        <key>doubleStrings</key>
+        <false/>
 		<key>tunings</key>
 		<array>
 			<dict>
@@ -554,6 +560,8 @@
 		<string>Violin</string>
 		<key>image</key>
 		<string>violinSymbol</string>
+        <key>doubleStrings</key>
+        <false/>
 		<key>tunings</key>
 		<array>
 			<dict>
@@ -578,8 +586,11 @@
 		<string>Mandolin</string>
 		<key>image</key>
 		<string>mandolinSymbol</string>
+        <key>doubleStrings</key>
+        <true/>
 		<key>tunings</key>
 		<array>
+            <!-- http://www.tabwritebymusicatt.com/tunings_mandolin.html -->
 			<dict>
 				<key>tuningName</key>
 				<string>Standard</string>
@@ -602,6 +613,8 @@
 		<string>Balalaika</string>
 		<key>image</key>
 		<string>balalaikaSymbol</string>
+        <key>doubleStrings</key>
+        <false/>
 		<key>tunings</key>
 		<array>
 			<dict>

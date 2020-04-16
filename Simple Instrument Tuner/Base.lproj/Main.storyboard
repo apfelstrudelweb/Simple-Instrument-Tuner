@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zh9-0E-QVY">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -427,49 +427,8 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gH1-V9-dyA" customClass="DropDown" customModule="Simple_Instrument_Tuner" customModuleProvider="target">
-                                <rect key="frame" x="62" y="244" width="290" height="34"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="rowBackgroundColor">
-                                        <color key="value" red="0.17991855740000001" green="0.2035782039" blue="0.2313624024" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedRowColor">
-                                        <color key="value" red="0.68902570009999997" green="0.26623564960000001" blue="0.2310875654" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="arrowColor">
-                                        <color key="value" red="0.68902570009999997" green="0.26623564960000001" blue="0.2310875654" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSearchEnable" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="rowHeight">
-                                        <real key="value" value="60"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="listHeight">
-                                        <real key="value" value="300"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="arrowSize">
-                                        <real key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                </variation>
-                            </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fea-lr-uCU">
-                                <rect key="frame" x="62" y="461" width="290" height="179"/>
+                                <rect key="frame" x="62" y="607" width="290" height="179"/>
                                 <color key="backgroundColor" red="0.17991855740000001" green="0.2035782039" blue="0.2313624024" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="productCell" textLabel="51p-Zc-1xS" style="IBUITableViewCellStyleDefault" id="gG7-Bg-Fsf">
@@ -498,24 +457,41 @@
                                 </connections>
                             </tableView>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="440" minValue="430" maxValue="450" translatesAutoresizingMaskIntoConstraints="NO" id="HLR-jh-hUG" customClass="CalibrationSlider" customModule="Simple_Instrument_Tuner" customModuleProvider="target">
-                                <rect key="frame" x="60" y="378" width="294" height="31"/>
+                                <rect key="frame" x="60" y="524" width="294" height="31"/>
                                 <color key="tintColor" red="0.68902570009999997" green="0.26623564960000001" blue="0.2310875654" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </slider>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="65h-ua-oTY">
+                                <rect key="frame" x="62" y="224" width="290" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="zZ2-Lv-DMb"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="GYy-a6-go5" kind="embed" identifier="tuningSegue" id="ast-pB-deg"/>
+                                </connections>
+                            </containerView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tuningsGradient.png" translatesAutoresizingMaskIntoConstraints="NO" id="l83-IK-XMu">
+                                <rect key="frame" x="62" y="224" width="290" height="250"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.1529633105" green="0.16794264319999999" blue="0.18741327520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="gH1-V9-dyA" firstAttribute="trailing" secondItem="fea-lr-uCU" secondAttribute="trailing" id="08e-CV-rlQ"/>
-                            <constraint firstItem="gH1-V9-dyA" firstAttribute="leading" secondItem="fea-lr-uCU" secondAttribute="leading" id="22k-yE-1o7"/>
                             <constraint firstItem="mCn-UK-uyd" firstAttribute="top" secondItem="rcZ-Nt-Eve" secondAttribute="bottom" constant="30" id="3Hy-Ud-oBt"/>
+                            <constraint firstItem="l83-IK-XMu" firstAttribute="top" secondItem="65h-ua-oTY" secondAttribute="top" id="3jt-HB-wJn"/>
                             <constraint firstItem="ddI-Wq-d4u" firstAttribute="width" secondItem="UEY-sm-vof" secondAttribute="width" multiplier="0.7" id="61H-Tx-tgv"/>
                             <constraint firstItem="fea-lr-uCU" firstAttribute="leading" secondItem="ddI-Wq-d4u" secondAttribute="leading" id="9Fc-oN-BNK"/>
+                            <constraint firstItem="65h-ua-oTY" firstAttribute="trailing" secondItem="ddI-Wq-d4u" secondAttribute="trailing" id="9wA-Re-TuR"/>
                             <constraint firstItem="HLR-jh-hUG" firstAttribute="leading" secondItem="fea-lr-uCU" secondAttribute="leading" id="ARz-so-g5L"/>
+                            <constraint firstItem="HLR-jh-hUG" firstAttribute="top" secondItem="65h-ua-oTY" secondAttribute="bottom" constant="50" id="AwG-r6-zLD"/>
                             <constraint firstItem="ddI-Wq-d4u" firstAttribute="centerX" secondItem="UEY-sm-vof" secondAttribute="centerX" id="CD5-HJ-Xfh"/>
                             <constraint firstItem="fea-lr-uCU" firstAttribute="trailing" secondItem="ddI-Wq-d4u" secondAttribute="trailing" id="Dho-Wz-Ghi"/>
-                            <constraint firstItem="gH1-V9-dyA" firstAttribute="top" secondItem="ddI-Wq-d4u" secondAttribute="bottom" constant="40" id="Gxr-Pi-JPi"/>
+                            <constraint firstItem="l83-IK-XMu" firstAttribute="trailing" secondItem="65h-ua-oTY" secondAttribute="trailing" id="FUR-G9-gBj"/>
+                            <constraint firstItem="l83-IK-XMu" firstAttribute="leading" secondItem="65h-ua-oTY" secondAttribute="leading" id="Ikh-gL-aQb"/>
                             <constraint firstItem="ddI-Wq-d4u" firstAttribute="top" secondItem="mCn-UK-uyd" secondAttribute="bottom" constant="20" id="Knd-0B-nA2"/>
                             <constraint firstItem="rcZ-Nt-Eve" firstAttribute="trailing" secondItem="xqv-pn-s16" secondAttribute="trailing" id="NAq-d4-gVC"/>
+                            <constraint firstItem="65h-ua-oTY" firstAttribute="top" secondItem="ddI-Wq-d4u" secondAttribute="bottom" constant="20" id="PFW-bv-vZE"/>
+                            <constraint firstItem="65h-ua-oTY" firstAttribute="leading" secondItem="ddI-Wq-d4u" secondAttribute="leading" id="Rin-RX-oUJ"/>
                             <constraint firstItem="mCn-UK-uyd" firstAttribute="leading" secondItem="xqv-pn-s16" secondAttribute="leading" id="RsT-eD-093"/>
+                            <constraint firstItem="l83-IK-XMu" firstAttribute="bottom" secondItem="65h-ua-oTY" secondAttribute="bottom" id="TSt-NI-AYt"/>
                             <constraint firstItem="rcZ-Nt-Eve" firstAttribute="leading" secondItem="xqv-pn-s16" secondAttribute="leading" id="XIM-GK-zC6"/>
                             <constraint firstItem="rcZ-Nt-Eve" firstAttribute="top" secondItem="xqv-pn-s16" secondAttribute="top" id="bqn-wZ-4In"/>
                             <constraint firstItem="ddI-Wq-d4u" firstAttribute="height" secondItem="UEY-sm-vof" secondAttribute="height" multiplier="0.05" id="c5B-f7-4ZZ"/>
@@ -523,7 +499,6 @@
                             <constraint firstItem="fea-lr-uCU" firstAttribute="height" secondItem="UEY-sm-vof" secondAttribute="height" multiplier="0.212589" id="hMg-mS-E80"/>
                             <constraint firstItem="rcZ-Nt-Eve" firstAttribute="height" secondItem="UEY-sm-vof" secondAttribute="height" multiplier="0.1" id="hPg-hy-gRA"/>
                             <constraint firstItem="xqv-pn-s16" firstAttribute="trailing" secondItem="mCn-UK-uyd" secondAttribute="trailing" id="kct-ba-Wlh"/>
-                            <constraint firstItem="HLR-jh-hUG" firstAttribute="top" secondItem="gH1-V9-dyA" secondAttribute="bottom" constant="100" id="nKN-fu-p3c"/>
                             <constraint firstItem="HLR-jh-hUG" firstAttribute="trailing" secondItem="fea-lr-uCU" secondAttribute="trailing" id="qMs-DT-IHm"/>
                             <constraint firstItem="fea-lr-uCU" firstAttribute="top" secondItem="HLR-jh-hUG" secondAttribute="bottom" constant="53" id="tbo-wL-3PX"/>
                         </constraints>
@@ -535,12 +510,19 @@
                         <outlet property="closeButton" destination="rcZ-Nt-Eve" id="JgD-7K-X1b"/>
                         <outlet property="instrumentDropDown" destination="ddI-Wq-d4u" id="Apb-Pz-RHr"/>
                         <outlet property="productTableView" destination="fea-lr-uCU" id="SZm-S8-Djc"/>
-                        <outlet property="tuningDropDown" destination="gH1-V9-dyA" id="bfm-DE-9hP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OHs-an-K8k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1304.3478260869567" y="208.92857142857142"/>
+        </scene>
+        <!--Tuning-->
+        <scene sceneID="7ud-f2-Ee7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Tuning" id="GYy-a6-go5" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ric-dB-dIX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1914" y="303"/>
         </scene>
         <!--DeviationMeter-->
         <scene sceneID="P0Q-aw-KCq">
@@ -548,7 +530,7 @@
                 <viewControllerPlaceholder storyboardName="DeviationMeter" id="kZW-0P-6Jc" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ze5-LZ-ksm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="933" y="354"/>
+            <point key="canvasLocation" x="843" y="353"/>
         </scene>
     </scenes>
     <resources>
@@ -558,5 +540,6 @@
         <image name="microphoneOn.png" width="179" height="183"/>
         <image name="settings.png" width="141" height="146"/>
         <image name="tuningfork.png" width="100" height="135"/>
+        <image name="tuningsGradient.png" width="100" height="100"/>
     </resources>
 </document>

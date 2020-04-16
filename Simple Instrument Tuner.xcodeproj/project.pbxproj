@@ -74,6 +74,17 @@
 		65CCC03324266C0B00F518D8 /* Gauge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC03224266C0B00F518D8 /* Gauge.storyboard */; };
 		65CCC03724266CAA00F518D8 /* GaugeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCC03624266CAA00F518D8 /* GaugeViewController.swift */; };
 		65CCC03B2426AD6B00F518D8 /* gaugeScale.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC03A2426AD6B00F518D8 /* gaugeScale.png */; };
+		65CE479D2448DCFD00E3B2EC /* doubleString.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CE479C2448DCFC00E3B2EC /* doubleString.png */; };
+		65CE479F2448E5A200E3B2EC /* settingsPatternLight.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CE479E2448E5A200E3B2EC /* settingsPatternLight.png */; };
+		65CE47A12448E93100E3B2EC /* tuningsGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CE47A02448E93100E3B2EC /* tuningsGradient.png */; };
+		65FCB7A424478EC3005E142A /* Tuning.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65FCB7A324478EC3005E142A /* Tuning.storyboard */; };
+		65FCB7A824478F22005E142A /* TuningTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FCB7A724478F22005E142A /* TuningTableViewController.swift */; };
+		65FCB7B424479246005E142A /* offButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 65FCB7B124479246005E142A /* offButton.png */; };
+		65FCB7B524479246005E142A /* onButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 65FCB7B224479246005E142A /* onButton.png */; };
+		65FCB7B624479246005E142A /* shoppingCart.png in Resources */ = {isa = PBXBuildFile; fileRef = 65FCB7B324479246005E142A /* shoppingCart.png */; };
+		65FCB7B9244792EC005E142A /* settingsPattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 65FCB7B7244792EC005E142A /* settingsPattern.png */; };
+		65FCB7BA244792EC005E142A /* settingsPatternDark.png in Resources */ = {isa = PBXBuildFile; fileRef = 65FCB7B8244792EC005E142A /* settingsPatternDark.png */; };
+		65FCB7BC2447934B005E142A /* TuningTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FCB7BB2447934B005E142A /* TuningTableViewCell.swift */; };
 		E560E76A83F9C8FCACBACD68 /* Pods_Simple_Instrument_Tuner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2EF0CF10FF023AACDC21C74 /* Pods_Simple_Instrument_Tuner.framework */; };
 /* End PBXBuildFile section */
 
@@ -172,6 +183,17 @@
 		65CCC03224266C0B00F518D8 /* Gauge.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Gauge.storyboard; sourceTree = "<group>"; };
 		65CCC03624266CAA00F518D8 /* GaugeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaugeViewController.swift; sourceTree = "<group>"; };
 		65CCC03A2426AD6B00F518D8 /* gaugeScale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gaugeScale.png; sourceTree = "<group>"; };
+		65CE479C2448DCFC00E3B2EC /* doubleString.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doubleString.png; sourceTree = "<group>"; };
+		65CE479E2448E5A200E3B2EC /* settingsPatternLight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingsPatternLight.png; sourceTree = "<group>"; };
+		65CE47A02448E93100E3B2EC /* tuningsGradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tuningsGradient.png; sourceTree = "<group>"; };
+		65FCB7A324478EC3005E142A /* Tuning.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tuning.storyboard; sourceTree = "<group>"; };
+		65FCB7A724478F22005E142A /* TuningTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuningTableViewController.swift; sourceTree = "<group>"; };
+		65FCB7B124479246005E142A /* offButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = offButton.png; path = "Simple Instrument Tuner/images/offButton.png"; sourceTree = SOURCE_ROOT; };
+		65FCB7B224479246005E142A /* onButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = onButton.png; path = "Simple Instrument Tuner/images/onButton.png"; sourceTree = SOURCE_ROOT; };
+		65FCB7B324479246005E142A /* shoppingCart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shoppingCart.png; path = "Simple Instrument Tuner/images/shoppingCart.png"; sourceTree = SOURCE_ROOT; };
+		65FCB7B7244792EC005E142A /* settingsPattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settingsPattern.png; path = "Simple Instrument Tuner/images/settingsPattern.png"; sourceTree = SOURCE_ROOT; };
+		65FCB7B8244792EC005E142A /* settingsPatternDark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settingsPatternDark.png; path = "Simple Instrument Tuner/images/settingsPatternDark.png"; sourceTree = SOURCE_ROOT; };
+		65FCB7BB2447934B005E142A /* TuningTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuningTableViewCell.swift; sourceTree = "<group>"; };
 		E2EF0CF10FF023AACDC21C74 /* Pods_Simple_Instrument_Tuner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Simple_Instrument_Tuner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -303,6 +325,13 @@
 			children = (
 				65558608243A570F004A94C0 /* instruments */,
 				652BC0F6242BEC7500F60B83 /* bridge.png */,
+				65CE47A02448E93100E3B2EC /* tuningsGradient.png */,
+				65FCB7B7244792EC005E142A /* settingsPattern.png */,
+				65FCB7B8244792EC005E142A /* settingsPatternDark.png */,
+				65CE479E2448E5A200E3B2EC /* settingsPatternLight.png */,
+				65FCB7B124479246005E142A /* offButton.png */,
+				65FCB7B224479246005E142A /* onButton.png */,
+				65FCB7B324479246005E142A /* shoppingCart.png */,
 				65CCBFF8242621D100F518D8 /* btnActive.png */,
 				65CCBFF9242621D200F518D8 /* btnPassive.png */,
 				65CCC0012426268900F518D8 /* ledActive.png */,
@@ -317,6 +346,7 @@
 				65CCC020242637E700F518D8 /* info.png */,
 				65CCC0182426368600F518D8 /* microphoneOff.png */,
 				65CCC0192426368600F518D8 /* microphoneOn.png */,
+				65CE479C2448DCFC00E3B2EC /* doubleString.png */,
 				652BC102242BF64B00F60B83 /* string.png */,
 				6576A17A244397E700970132 /* animatedString.gif */,
 				6576A17824436DE500970132 /* giphy.gif */,
@@ -342,6 +372,9 @@
 				65585A792433508B002CD214 /* DisplayViewController.swift */,
 				65585A7D243350A7002CD214 /* Display.storyboard */,
 				655585F6243A25BC004A94C0 /* SettingsViewController.swift */,
+				65FCB7A324478EC3005E142A /* Tuning.storyboard */,
+				65FCB7A724478F22005E142A /* TuningTableViewController.swift */,
+				65FCB7BB2447934B005E142A /* TuningTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -479,6 +512,8 @@
 				65CCC0052426268900F518D8 /* ledActive.png in Resources */,
 				652BC0F7242BEC7500F60B83 /* bridge.png in Resources */,
 				65CCC021242637E700F518D8 /* info.png in Resources */,
+				65FCB7A424478EC3005E142A /* Tuning.storyboard in Resources */,
+				65CE47A12448E93100E3B2EC /* tuningsGradient.png in Resources */,
 				652BC103242BF64B00F60B83 /* string.png in Resources */,
 				65CCBF6224260DA100F518D8 /* LaunchScreen.storyboard in Resources */,
 				65B603322438D49D00BBA23D /* Main.storyboard in Resources */,
@@ -498,15 +533,22 @@
 				65CCC03324266C0B00F518D8 /* Gauge.storyboard in Resources */,
 				65CCC00D242626BC00F518D8 /* noteButtonActive.png in Resources */,
 				6532522C243BB4FD0004005C /* Instruments.plist in Resources */,
+				65FCB7BA244792EC005E142A /* settingsPatternDark.png in Resources */,
 				65CCC02E2426683400F518D8 /* gaugeOverlay.png in Resources */,
+				65CE479D2448DCFD00E3B2EC /* doubleString.png in Resources */,
 				65CCC01A2426368600F518D8 /* microphoneOff.png in Resources */,
+				65FCB7B524479246005E142A /* onButton.png in Resources */,
+				65FCB7B9244792EC005E142A /* settingsPattern.png in Resources */,
 				65CCBFFD242621D200F518D8 /* btnPassive.png in Resources */,
 				65558604243A5706004A94C0 /* banjoSymbol.png in Resources */,
 				65CCBFFA242621D200F518D8 /* btnActive.png in Resources */,
+				65FCB7B624479246005E142A /* shoppingCart.png in Resources */,
 				655585FD243A53ED004A94C0 /* guitarSymbol.png in Resources */,
 				65CCC00A242626BC00F518D8 /* noteButtonPassive.png in Resources */,
 				652BC0E2242A2C6F00F60B83 /* volumeMeterPattern.png in Resources */,
 				65CCC0022426268900F518D8 /* ledPassive.png in Resources */,
+				65FCB7B424479246005E142A /* offButton.png in Resources */,
+				65CE479F2448E5A200E3B2EC /* settingsPatternLight.png in Resources */,
 				652BC0E6242A582400F60B83 /* DeviationMeter.storyboard in Resources */,
 				65CCC02924263B8B00F518D8 /* gaugeBackground.png in Resources */,
 			);
@@ -589,6 +631,7 @@
 				653216F0242FC38200BE1CAE /* Note.swift in Sources */,
 				652BC110242CC39900F60B83 /* Conductor.swift in Sources */,
 				652BC119242CC39900F60B83 /* FilterSection.swift in Sources */,
+				65FCB7BC2447934B005E142A /* TuningTableViewCell.swift in Sources */,
 				65585A822433A793002CD214 /* DisplayModeButton.swift in Sources */,
 				652BC113242CC39900F60B83 /* Fatten.swift in Sources */,
 				65585A6E24334A74002CD214 /* DisplayContainer.swift in Sources */,
@@ -599,6 +642,7 @@
 				65585A7A2433508C002CD214 /* DisplayViewController.swift in Sources */,
 				652BC0EA242A583C00F60B83 /* DeviationMeterViewController.swift in Sources */,
 				6576A171244254B100970132 /* CalibrationSlider.swift in Sources */,
+				65FCB7A824478F22005E142A /* TuningTableViewController.swift in Sources */,
 				6532522A243B36420004005C /* PKIAPHandler.swift in Sources */,
 				6576A1732443190500970132 /* CalibrationLabel.swift in Sources */,
 				65CCBF5824260D9E00F518D8 /* SceneDelegate.swift in Sources */,
