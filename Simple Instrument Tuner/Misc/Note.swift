@@ -16,6 +16,9 @@ public class Note: NSObject {
     var number : MIDINoteNumber = MIDINoteNumber(0)
     
      init(noteName: String, frequency: Float) {
+        
+        if frequency == 0 { return }
+            
            self.noteName = noteName
            self.frequency = frequency
            let n = Int(round(12 * log2(2 * frequency / 440))) + 69

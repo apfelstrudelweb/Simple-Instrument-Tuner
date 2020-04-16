@@ -428,7 +428,7 @@
                                 </variation>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fea-lr-uCU">
-                                <rect key="frame" x="62" y="607" width="290" height="179"/>
+                                <rect key="frame" x="62" y="651.66666666666663" width="290" height="179"/>
                                 <color key="backgroundColor" red="0.17991855740000001" green="0.2035782039" blue="0.2313624024" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="productCell" textLabel="51p-Zc-1xS" style="IBUITableViewCellStyleDefault" id="gG7-Bg-Fsf">
@@ -457,20 +457,17 @@
                                 </connections>
                             </tableView>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="440" minValue="430" maxValue="450" translatesAutoresizingMaskIntoConstraints="NO" id="HLR-jh-hUG" customClass="CalibrationSlider" customModule="Simple_Instrument_Tuner" customModuleProvider="target">
-                                <rect key="frame" x="60" y="524" width="294" height="31"/>
+                                <rect key="frame" x="60" y="568.66666666666663" width="294" height="31"/>
                                 <color key="tintColor" red="0.68902570009999997" green="0.26623564960000001" blue="0.2310875654" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </slider>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="65h-ua-oTY">
-                                <rect key="frame" x="62" y="224" width="290" height="250"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="zZ2-Lv-DMb"/>
-                                </constraints>
+                                <rect key="frame" x="62" y="224.00000000000003" width="290" height="294.66666666666674"/>
                                 <connections>
                                     <segue destination="GYy-a6-go5" kind="embed" identifier="tuningSegue" id="ast-pB-deg"/>
                                 </connections>
                             </containerView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tuningsGradient.png" translatesAutoresizingMaskIntoConstraints="NO" id="l83-IK-XMu">
-                                <rect key="frame" x="62" y="224" width="290" height="250"/>
+                                <rect key="frame" x="62" y="224.00000000000003" width="290" height="294.66666666666674"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.1529633105" green="0.16794264319999999" blue="0.18741327520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -481,7 +478,9 @@
                             <constraint firstItem="fea-lr-uCU" firstAttribute="leading" secondItem="ddI-Wq-d4u" secondAttribute="leading" id="9Fc-oN-BNK"/>
                             <constraint firstItem="65h-ua-oTY" firstAttribute="trailing" secondItem="ddI-Wq-d4u" secondAttribute="trailing" id="9wA-Re-TuR"/>
                             <constraint firstItem="HLR-jh-hUG" firstAttribute="leading" secondItem="fea-lr-uCU" secondAttribute="leading" id="ARz-so-g5L"/>
-                            <constraint firstItem="HLR-jh-hUG" firstAttribute="top" secondItem="65h-ua-oTY" secondAttribute="bottom" constant="50" id="AwG-r6-zLD"/>
+                            <constraint firstItem="HLR-jh-hUG" firstAttribute="top" secondItem="65h-ua-oTY" secondAttribute="bottom" constant="50" id="AwG-r6-zLD">
+                                <variation key="heightClass=regular-widthClass=regular" constant="80"/>
+                            </constraint>
                             <constraint firstItem="ddI-Wq-d4u" firstAttribute="centerX" secondItem="UEY-sm-vof" secondAttribute="centerX" id="CD5-HJ-Xfh"/>
                             <constraint firstItem="fea-lr-uCU" firstAttribute="trailing" secondItem="ddI-Wq-d4u" secondAttribute="trailing" id="Dho-Wz-Ghi"/>
                             <constraint firstItem="l83-IK-XMu" firstAttribute="trailing" secondItem="65h-ua-oTY" secondAttribute="trailing" id="FUR-G9-gBj"/>
@@ -492,6 +491,7 @@
                             <constraint firstItem="65h-ua-oTY" firstAttribute="leading" secondItem="ddI-Wq-d4u" secondAttribute="leading" id="Rin-RX-oUJ"/>
                             <constraint firstItem="mCn-UK-uyd" firstAttribute="leading" secondItem="xqv-pn-s16" secondAttribute="leading" id="RsT-eD-093"/>
                             <constraint firstItem="l83-IK-XMu" firstAttribute="bottom" secondItem="65h-ua-oTY" secondAttribute="bottom" id="TSt-NI-AYt"/>
+                            <constraint firstItem="65h-ua-oTY" firstAttribute="height" secondItem="UEY-sm-vof" secondAttribute="height" multiplier="0.35" id="VHu-jl-eq6"/>
                             <constraint firstItem="rcZ-Nt-Eve" firstAttribute="leading" secondItem="xqv-pn-s16" secondAttribute="leading" id="XIM-GK-zC6"/>
                             <constraint firstItem="rcZ-Nt-Eve" firstAttribute="top" secondItem="xqv-pn-s16" secondAttribute="top" id="bqn-wZ-4In"/>
                             <constraint firstItem="ddI-Wq-d4u" firstAttribute="height" secondItem="UEY-sm-vof" secondAttribute="height" multiplier="0.05" id="c5B-f7-4ZZ"/>

@@ -13,6 +13,12 @@ class NoteLabel: UILabel {
     var localizedText: String? {
         didSet {
             
+            if localizedText?.count == 0 {
+                localizedText = "B"
+                return
+                
+            }
+            
             if localizedText?[0] == "B" && String(Locale.preferredLanguages[0].prefix(2)) == "de" {
                 var suffix = ""
                 if let octave = localizedText?[1] { suffix = octave }

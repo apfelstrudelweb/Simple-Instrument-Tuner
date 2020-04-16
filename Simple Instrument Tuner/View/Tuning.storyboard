@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fVh-0M-e07">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,26 +23,35 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Classical / Acoustic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78q-uN-4Gm">
-                                            <rect key="frame" x="12" y="8" width="200" height="49"/>
+                                            <rect key="frame" x="24" y="16" width="290" height="17"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="200" id="0pV-av-FxV"/>
-                                                <constraint firstAttribute="height" constant="24" id="YKg-WS-pca"/>
+                                                <constraint firstAttribute="height" constant="24" id="YKg-WS-pca">
+                                                    <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+                                                </constraint>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=regular">
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                            </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E2 - A2 - D3 - G3 - B3 - E4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQm-73-kgg">
-                                            <rect key="frame" x="12" y="59" width="200" height="14"/>
+                                            <rect key="frame" x="24" y="43" width="290" height="20"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="14" id="8B7-AA-AHh"/>
+                                                <constraint firstAttribute="height" constant="14" id="8B7-AA-AHh">
+                                                    <variation key="heightClass=regular-widthClass=regular" constant="20"/>
+                                                </constraint>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=regular">
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                            </variation>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpX-CN-iVa">
-                                            <rect key="frame" x="220" y="1" width="182" height="79"/>
+                                            <rect key="frame" x="322" y="25.5" width="68" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="cpX-CN-iVa" secondAttribute="height" multiplier="23:10" id="bFE-63-8eQ"/>
                                             </constraints>
@@ -54,15 +63,33 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="cpX-CN-iVa" firstAttribute="centerY" secondItem="gDR-Qd-jMj" secondAttribute="centerY" id="9RV-LS-faM"/>
-                                        <constraint firstItem="78q-uN-4Gm" firstAttribute="leading" secondItem="gDR-Qd-jMj" secondAttribute="leading" constant="12" id="9b0-1z-uuq"/>
-                                        <constraint firstItem="78q-uN-4Gm" firstAttribute="top" secondItem="gDR-Qd-jMj" secondAttribute="top" constant="8" id="Nra-4u-hdq"/>
-                                        <constraint firstAttribute="trailing" secondItem="cpX-CN-iVa" secondAttribute="trailing" constant="12" id="Oqk-8x-D08"/>
+                                        <constraint firstItem="78q-uN-4Gm" firstAttribute="leading" secondItem="gDR-Qd-jMj" secondAttribute="leading" constant="12" id="9b0-1z-uuq">
+                                            <variation key="heightClass=regular-widthClass=regular" constant="24"/>
+                                        </constraint>
+                                        <constraint firstItem="cpX-CN-iVa" firstAttribute="height" relation="lessThanOrEqual" secondItem="gDR-Qd-jMj" secondAttribute="height" multiplier="0.8" id="LhL-2h-r7z"/>
+                                        <constraint firstItem="78q-uN-4Gm" firstAttribute="top" secondItem="gDR-Qd-jMj" secondAttribute="top" constant="8" id="Nra-4u-hdq">
+                                            <variation key="heightClass=regular-widthClass=regular" constant="16"/>
+                                        </constraint>
+                                        <constraint firstAttribute="trailing" secondItem="cpX-CN-iVa" secondAttribute="trailing" constant="12" id="Oqk-8x-D08">
+                                            <variation key="heightClass=regular-widthClass=regular" constant="24"/>
+                                        </constraint>
+                                        <constraint firstItem="78q-uN-4Gm" firstAttribute="width" secondItem="gDR-Qd-jMj" secondAttribute="width" multiplier="0.67" priority="999" id="TTL-RG-yZV"/>
                                         <constraint firstItem="uQm-73-kgg" firstAttribute="trailing" secondItem="78q-uN-4Gm" secondAttribute="trailing" id="apz-5D-FpE"/>
                                         <constraint firstItem="uQm-73-kgg" firstAttribute="leading" secondItem="78q-uN-4Gm" secondAttribute="leading" id="bDM-8J-ee2"/>
-                                        <constraint firstItem="uQm-73-kgg" firstAttribute="top" secondItem="78q-uN-4Gm" secondAttribute="bottom" constant="2" id="fqK-PG-BgS"/>
-                                        <constraint firstAttribute="bottom" secondItem="uQm-73-kgg" secondAttribute="bottom" constant="8" id="iV1-4e-URG"/>
+                                        <constraint firstItem="uQm-73-kgg" firstAttribute="top" secondItem="78q-uN-4Gm" secondAttribute="bottom" constant="2" id="fqK-PG-BgS">
+                                            <variation key="heightClass=regular-widthClass=regular" constant="10"/>
+                                        </constraint>
+                                        <constraint firstAttribute="bottom" secondItem="uQm-73-kgg" secondAttribute="bottom" constant="8" id="iV1-4e-URG">
+                                            <variation key="heightClass=regular-widthClass=regular" constant="18"/>
+                                        </constraint>
+                                        <constraint firstItem="78q-uN-4Gm" firstAttribute="width" secondItem="gDR-Qd-jMj" secondAttribute="width" multiplier="0.7" id="nFy-t6-nBT"/>
                                         <constraint firstItem="cpX-CN-iVa" firstAttribute="leading" secondItem="78q-uN-4Gm" secondAttribute="trailing" constant="8" id="wun-T6-Fcr"/>
                                     </constraints>
+                                    <variation key="heightClass=regular-widthClass=regular">
+                                        <mask key="constraints">
+                                            <exclude reference="TTL-RG-yZV"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>

@@ -127,7 +127,8 @@ class BridgeViewController: UIViewController, AKMIDIListener {
             
             let frequency = note.frequency
             let fact = self.view.bounds.size.width / 2000.0
-            let div = sqrt(frequency)
+            var div = sqrt(frequency)
+            if div == 0 { div = 80 }
             let stringWidth: CGFloat = CGFloat(Float(fact) * maxFreq / div)
             
             let containerView = UIView()

@@ -648,7 +648,7 @@
                 <false/>
 				<key>notes</key>
 				<array>
-					<string>H4</string>
+					<string>B4</string>
 					<string>E5</string>
 					<string>A5</string>
 				</array>
@@ -661,7 +661,7 @@
 				<key>notes</key>
 				<array>
 					<string>G3</string>
-					<string>H3</string>
+					<string>B3</string>
 					<string>D4</string>
 				</array>
 			</dict>

@@ -56,7 +56,7 @@ class TuningTableViewController: UITableViewController {
         let text = "\(section.sectionItem) Strings"
         
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 22)
+        label.font = UIFont.boldSystemFont(ofSize: 20)
         label.textColor = UIColor(red: 73/255, green: 73/255, blue: 73/255, alpha: 1.0)
         label.text = text
         
@@ -108,17 +108,20 @@ class TuningTableViewController: UITableViewController {
         cell.titleLabel.text = tuning.name
         cell.subtitleLabel.text = noteString
         
-        if tuning.isStandard == true {
-            cell.titleLabel.font = cell.titleLabel.font.withWeight(.heavy)
-        } else {
-            cell.titleLabel.font = cell.titleLabel.font.withWeight(.medium)
-        }
+//        if tuning.isStandard == true {
+//            cell.titleLabel.font = UIFont.boldSystemFont(ofSize: 0.25*cell.bounds.size.height)
+//            cell.subtitleLabel.font = UIFont.boldSystemFont(ofSize: 0.2*cell.bounds.size.height)
+//        } else {
+//            cell.titleLabel.font = UIFont.systemFont(ofSize: 0.25*cell.bounds.size.height)
+//            cell.subtitleLabel.font = UIFont.systemFont(ofSize: 0.2*cell.bounds.size.height)
+//        }
         
         if indexPath.row ==  Utils().getTuningId() {
             cell.buttonSwitch.setImage(UIImage(named: "onButton"), for: .normal)
         } else {
             cell.buttonSwitch.setImage(UIImage(named: "offButton"), for: .normal)
         }
+        
         
         return cell
     }
