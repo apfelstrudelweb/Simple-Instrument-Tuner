@@ -23,7 +23,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Classical / Acoustic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78q-uN-4Gm">
-                                            <rect key="frame" x="24" y="16" width="290" height="17"/>
+                                            <rect key="frame" x="24" y="16" width="277.5" height="17"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="24" id="YKg-WS-pca">
                                                     <variation key="heightClass=regular-widthClass=regular" constant="30"/>
@@ -37,7 +37,7 @@
                                             </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E2 - A2 - D3 - G3 - B3 - E4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQm-73-kgg">
-                                            <rect key="frame" x="24" y="43" width="290" height="20"/>
+                                            <rect key="frame" x="24" y="43" width="277.5" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="14" id="8B7-AA-AHh">
                                                     <variation key="heightClass=regular-widthClass=regular" constant="20"/>
@@ -51,7 +51,7 @@
                                             </variation>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpX-CN-iVa">
-                                            <rect key="frame" x="322" y="25.5" width="68" height="30"/>
+                                            <rect key="frame" x="309.5" y="23" width="80.5" height="35"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="cpX-CN-iVa" secondAttribute="height" multiplier="23:10" id="bFE-63-8eQ"/>
                                             </constraints>
@@ -60,8 +60,13 @@
                                                 <action selector="buttonSwitchTouched:" destination="tJI-Qp-dvO" eventType="touchUpInside" id="ZT3-4T-Lvg"/>
                                             </connections>
                                         </button>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DO6-WY-qK6">
+                                            <rect key="frame" x="0.0" y="0.0" width="8.5" height="81"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        </view>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="DO6-WY-qK6" firstAttribute="leading" secondItem="gDR-Qd-jMj" secondAttribute="leading" id="2dR-lK-Gi3"/>
                                         <constraint firstItem="cpX-CN-iVa" firstAttribute="centerY" secondItem="gDR-Qd-jMj" secondAttribute="centerY" id="9RV-LS-faM"/>
                                         <constraint firstItem="78q-uN-4Gm" firstAttribute="leading" secondItem="gDR-Qd-jMj" secondAttribute="leading" constant="12" id="9b0-1z-uuq">
                                             <variation key="heightClass=regular-widthClass=regular" constant="24"/>
@@ -74,6 +79,7 @@
                                             <variation key="heightClass=regular-widthClass=regular" constant="24"/>
                                         </constraint>
                                         <constraint firstItem="78q-uN-4Gm" firstAttribute="width" secondItem="gDR-Qd-jMj" secondAttribute="width" multiplier="0.67" priority="999" id="TTL-RG-yZV"/>
+                                        <constraint firstItem="DO6-WY-qK6" firstAttribute="top" secondItem="gDR-Qd-jMj" secondAttribute="top" id="aQ5-S7-3gm"/>
                                         <constraint firstItem="uQm-73-kgg" firstAttribute="trailing" secondItem="78q-uN-4Gm" secondAttribute="trailing" id="apz-5D-FpE"/>
                                         <constraint firstItem="uQm-73-kgg" firstAttribute="leading" secondItem="78q-uN-4Gm" secondAttribute="leading" id="bDM-8J-ee2"/>
                                         <constraint firstItem="uQm-73-kgg" firstAttribute="top" secondItem="78q-uN-4Gm" secondAttribute="bottom" constant="2" id="fqK-PG-BgS">
@@ -82,7 +88,8 @@
                                         <constraint firstAttribute="bottom" secondItem="uQm-73-kgg" secondAttribute="bottom" constant="8" id="iV1-4e-URG">
                                             <variation key="heightClass=regular-widthClass=regular" constant="18"/>
                                         </constraint>
-                                        <constraint firstItem="78q-uN-4Gm" firstAttribute="width" secondItem="gDR-Qd-jMj" secondAttribute="width" multiplier="0.7" id="nFy-t6-nBT"/>
+                                        <constraint firstAttribute="bottom" secondItem="DO6-WY-qK6" secondAttribute="bottom" id="kUx-hF-gPi"/>
+                                        <constraint firstItem="78q-uN-4Gm" firstAttribute="width" secondItem="gDR-Qd-jMj" secondAttribute="width" multiplier="0.67" id="nFy-t6-nBT"/>
                                         <constraint firstItem="cpX-CN-iVa" firstAttribute="leading" secondItem="78q-uN-4Gm" secondAttribute="trailing" constant="8" id="wun-T6-Fcr"/>
                                     </constraints>
                                     <variation key="heightClass=regular-widthClass=regular">
@@ -92,8 +99,12 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="DO6-WY-qK6" firstAttribute="width" secondItem="tJI-Qp-dvO" secondAttribute="width" multiplier="0.02" id="jDS-wW-jaZ"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="buttonSwitch" destination="cpX-CN-iVa" id="MfM-NT-q8g"/>
+                                    <outlet property="standardIndicatorView" destination="DO6-WY-qK6" id="ucM-wF-vKG"/>
                                     <outlet property="subtitleLabel" destination="uQm-73-kgg" id="Wwa-3j-Tne"/>
                                     <outlet property="titleLabel" destination="78q-uN-4Gm" id="EaQ-yH-rCK"/>
                                 </connections>
@@ -107,7 +118,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jtq-Dw-ScV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2.8985507246376816" y="228.34821428571428"/>
+            <point key="canvasLocation" x="2.34375" y="227.92968749999997"/>
         </scene>
     </scenes>
     <resources>

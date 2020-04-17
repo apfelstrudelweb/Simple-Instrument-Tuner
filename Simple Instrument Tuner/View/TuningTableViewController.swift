@@ -27,6 +27,8 @@ class TuningTableViewController: UITableViewController {
             
             self.sections = GroupedSection.group(rows: tunings!, by: { $0.notes!.count })
             self.sections.sort { lhs, rhs in lhs.sectionItem < rhs.sectionItem }
+            
+            //tableView.scrollToRow(at: IndexPath(item: 0, section: 1), at: .middle, animated: true)
         }
     }
     
@@ -34,17 +36,20 @@ class TuningTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
     }
     
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         return self.sections.count
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let section = self.sections[section]
+        return section.rows.count
     }
     
     
@@ -85,16 +90,15 @@ class TuningTableViewController: UITableViewController {
         return 50
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tunings?.count ?? 0
-    }
-    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: TuningTableViewCell = tableView.dequeueReusableCell(withIdentifier: "tuningCell", for: indexPath) as! TuningTableViewCell
         
-        guard let tuning = tunings?[indexPath.row], let notes = tuning.notes else { return cell }
-
+        let section = self.sections[indexPath.section]
+        
+        let tuning = section.rows[indexPath.row]
+        guard let notes = tuning.notes else { return cell }
+        
         var noteString = ""
         for (index, note) in notes.enumerated() {
             
@@ -107,32 +111,24 @@ class TuningTableViewController: UITableViewController {
         
         cell.titleLabel.text = tuning.name
         cell.subtitleLabel.text = noteString
+    
+        cell.standardIndicatorView.alpha = tuning.isStandard == true ? 1.0 : 0.0
         
-//        if tuning.isStandard == true {
-//            cell.titleLabel.font = UIFont.boldSystemFont(ofSize: 0.25*cell.bounds.size.height)
-//            cell.subtitleLabel.font = UIFont.boldSystemFont(ofSize: 0.2*cell.bounds.size.height)
-//        } else {
-//            cell.titleLabel.font = UIFont.systemFont(ofSize: 0.25*cell.bounds.size.height)
-//            cell.subtitleLabel.font = UIFont.systemFont(ofSize: 0.2*cell.bounds.size.height)
-//        }
-        
-        if indexPath.row ==  Utils().getTuningId() {
+        if indexPath.totalRow(tableView: tableView) == Utils().getTuningId() {
             cell.buttonSwitch.setImage(UIImage(named: "onButton"), for: .normal)
         } else {
             cell.buttonSwitch.setImage(UIImage(named: "offButton"), for: .normal)
         }
-        
         
         return cell
     }
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //super.tableView(tableView, didSelectRowAt: indexPath)
         
         let cell: TuningTableViewCell = tableView.dequeueReusableCell(withIdentifier: "tuningCell", for: indexPath) as! TuningTableViewCell
-        
-        Utils().saveTuning(index: indexPath.row)
+
+        Utils().saveTuning(index: indexPath.totalRow(tableView: tableView))
         cell.buttonSwitch.setImage(UIImage(named: "onButton"), for: .normal)
         
         tableView.reloadData()
@@ -142,23 +138,33 @@ class TuningTableViewController: UITableViewController {
 }
 
 struct GroupedSection<SectionItem : Hashable, RowItem> {
-
+    
     var sectionItem : SectionItem
     var rows : [RowItem]
-
+    
     static func group(rows : [RowItem], by criteria : (RowItem) -> SectionItem) -> [GroupedSection<SectionItem, RowItem>] {
         let groups = Dictionary(grouping: rows, by: criteria)
         return groups.map(GroupedSection.init(sectionItem:rows:))
     }
-
+    
 }
 
 
 extension UIFont {
-  func withWeight(_ weight: UIFont.Weight) -> UIFont {
-    let newDescriptor = fontDescriptor.addingAttributes([.traits: [
-      UIFontDescriptor.TraitKey.weight: weight]
-    ])
-    return UIFont(descriptor: newDescriptor, size: pointSize)
-  }
+    func withWeight(_ weight: UIFont.Weight) -> UIFont {
+        let newDescriptor = fontDescriptor.addingAttributes([.traits: [
+            UIFontDescriptor.TraitKey.weight: weight]
+        ])
+        return UIFont(descriptor: newDescriptor, size: pointSize)
+    }
+}
+
+extension IndexPath {
+    func totalRow(tableView: UITableView) -> Int {
+        var rowNumber = self.row
+        for i in 0..<self.section {
+            rowNumber += tableView.numberOfRows(inSection: i)
+        }
+        return rowNumber
+    }
 }
