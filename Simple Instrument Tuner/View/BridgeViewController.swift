@@ -126,7 +126,7 @@ class BridgeViewController: UIViewController, AKMIDIListener {
         for (index, note) in notes.enumerated() {
             
             let frequency = note.frequency
-            let fact = self.view.bounds.size.width / 2000.0
+            let fact = UIDevice.current.userInterfaceIdiom == .pad ?  self.view.bounds.size.width / 3500.0 : self.view.bounds.size.width / 2000.0
             var div = sqrt(frequency)
             if div == 0 { div = 80 }
             let stringWidth: CGFloat = CGFloat(Float(fact) * maxFreq / div)
@@ -170,10 +170,9 @@ class BridgeViewController: UIViewController, AKMIDIListener {
             self.view.setNeedsLayout()
             self.view.layoutIfNeeded()
             
-            var fontSize = min(noteLabel.bounds.size.width / 1.5, 26.0)
-            if noteLabel.localizedText?.count == 3 { fontSize = fontSize / 1.5}
-            
-            noteLabel.font = UIFont.boldSystemFont(ofSize: fontSize)
+            let minFontSize: CGFloat = UIDevice.current.userInterfaceIdiom == .pad ? 24.0 : 12.0
+            let fontSize = max(noteLabel.bounds.size.width / 1.5, minFontSize)
+            noteLabel.font = UIFont.systemFont(ofSize: fontSize, weight: .medium)
         }
     }
     

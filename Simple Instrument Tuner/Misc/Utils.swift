@@ -225,6 +225,19 @@ class Utils: NSObject {
         }
     }
     
+    func getOctaveFrom(frequency: Float) -> Int {
+        
+        var freq = Float(frequency)
+        while (freq > Float(freqArray.last!)) {
+            freq = freq / 2.0
+        }
+        while (freq < Float(freqArray.first!)) {
+            freq = freq * 2.0
+        }
+        
+        let octave = Int(log2f(Float(frequency) / freq))
+        return octave
+    }
 }
 
 extension Array where Element: FloatingPoint {

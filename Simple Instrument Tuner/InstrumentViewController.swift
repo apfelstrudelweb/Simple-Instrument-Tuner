@@ -10,11 +10,12 @@ import UIKit
 import AudioKit
 import AudioKitUI
 import GoogleMobileAds
+import SwiftRater
 
 class InstrumentViewController: UIViewController, SettingsViewControllerDelegate, CalibrationSliderDelegate, DeviationDelegate {
 
     
-    @IBOutlet weak var instrumentImageView: UIImageView!
+    @IBOutlet weak var instrumentButton: UIButton!
     @IBOutlet weak var mainContainerView: UIView!
     @IBOutlet weak var headerView: UIView!
     
@@ -22,6 +23,7 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     @IBOutlet weak var frequencyLabel: FrequencyLabel!
     @IBOutlet weak var calibrationLabel: CalibrationLabel!
     @IBOutlet weak var tuningLabel: UILabel!
+    @IBOutlet weak var octaveLabel: UILabel!
     
     @IBOutlet weak var microphoneButton: UIButton!
     @IBOutlet weak var displayView: UIView!
@@ -65,6 +67,8 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        SwiftRater.check()
+        
         self.view.setNeedsLayout()
         self.view.layoutIfNeeded()
         
@@ -76,7 +80,7 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
             }
         } else {
             let image = instrument?.symbol
-            instrumentImageView.image = image
+            instrumentButton.setImage(image, for: .normal)
         }
 
         
@@ -117,7 +121,7 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
         
         let instrument = Utils().getInstrument()
         let image = instrument?.symbol
-        instrumentImageView.image = image
+        instrumentButton.setImage(image, for: .normal)
         
         tuningLabel.text = Utils().getCurrentTuningName()
         
@@ -199,9 +203,9 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
             let micCopy = AKBooster(mic)
             
             let frequencies = Utils().getCurrentFrequencies()
-            let sortedFreq = frequencies.sorted(by: { $0 < $1 })
-            let minFreq: Float = sortedFreq.first ?? 0
-            let maxFreq: Float = sortedFreq.last ?? 0
+            //let sortedFreq = frequencies.sorted(by: { $0 < $1 })
+            let minFreq: Float = 80.0
+            let maxFreq: Float = 900.0
             let avrFreq = 0.5 * (minFreq + maxFreq)
             let bandwidth = maxFreq - minFreq
  
@@ -287,42 +291,16 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
         
         if frequencyTracker.amplitude > 0.02 {
             
-//            let frequency: Float = 251 - Float.random(in: 0..<10)//Float(frequencyTracker.frequency)
-//            embeddedGaugeViewController.displayFrequency(frequency: frequency, soundGenerator: false)
-//            return
-            
+
             let frequency: Float = Float(frequencyTracker.frequency)
-            
-            //if frequency < Float(bandPass.centerFrequency - bandPass.bandwidth) || frequency > Float(bandPass.centerFrequency + bandPass.bandwidth) { return }
-            
+  
             frequencyLabel.frequency = frequency
+            octaveLabel.text = "Octave: \(Utils().getOctaveFrom(frequency: frequency))"
             // Gauge
             embeddedGaugeViewController.displayFrequency(frequency: frequency, soundGenerator: false)
             embeddedVolumeMeterController.displayVolume(volume: frequencyTracker.amplitude)
             embeddedDeviationMeterController.displayDeviation(frequency: frequency)
-            
-  
-//            smoothArray.append(frequency)
-//            //print("\(frequency) --\(smoothArray.avg()) -- \(smoothArray.std())")
-//
-//            if smoothArray.count > 5 {
-//                smoothArray.remove(at: 0)
-//            }
-//
-//            if smoothArray.count > 0 && smoothArray.std() < 2.0 {
-//                // Header
-//                frequencyLabel.frequency = frequency
-//                // Gauge
-//                embeddedGaugeViewController.displayFrequency(frequency: frequency, soundGenerator: false)
-//                embeddedVolumeMeterController.displayVolume(volume: frequencyTracker.amplitude)
-//
-//                embeddedDeviationMeterController.displayDeviation(frequency: frequency)
-//
-//                //print("\(frequency) --\(smoothArray.avg()) -- \(smoothArray.std())")
-//            } else {
-//                print("\(frequency) --\(smoothArray.avg()) -- \(smoothArray.std())")
-//            }
-
+        
         } else {
             embeddedVolumeMeterController.displayVolume(volume: 0.1)
         }

@@ -22,8 +22,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="81"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Classical / Acoustic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78q-uN-4Gm">
-                                            <rect key="frame" x="24" y="16" width="277.5" height="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Classical / Acoustic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="78q-uN-4Gm">
+                                            <rect key="frame" x="24" y="16" width="263.5" height="17"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="24" id="YKg-WS-pca">
                                                     <variation key="heightClass=regular-widthClass=regular" constant="30"/>
@@ -36,8 +36,8 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E2 - A2 - D3 - G3 - B3 - E4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQm-73-kgg">
-                                            <rect key="frame" x="24" y="43" width="277.5" height="20"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E2 - A2 - D3 - G3 - B3 - E4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="uQm-73-kgg">
+                                            <rect key="frame" x="24" y="43" width="263.5" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="14" id="8B7-AA-AHh">
                                                     <variation key="heightClass=regular-widthClass=regular" constant="20"/>
@@ -50,38 +50,32 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                             </variation>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpX-CN-iVa">
-                                            <rect key="frame" x="309.5" y="23" width="80.5" height="35"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="cpX-CN-iVa" secondAttribute="height" multiplier="23:10" id="bFE-63-8eQ"/>
-                                            </constraints>
-                                            <state key="normal" image="onButton.png"/>
-                                            <connections>
-                                                <action selector="buttonSwitchTouched:" destination="tJI-Qp-dvO" eventType="touchUpInside" id="ZT3-4T-Lvg"/>
-                                            </connections>
-                                        </button>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DO6-WY-qK6">
                                             <rect key="frame" x="0.0" y="0.0" width="8.5" height="81"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         </view>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="offButton.png" translatesAutoresizingMaskIntoConstraints="NO" id="auo-12-n5Q">
+                                            <rect key="frame" x="295.5" y="20.5" width="94.5" height="40.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="auo-12-n5Q" secondAttribute="height" multiplier="184:79" id="6Oh-fh-9y3"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="DO6-WY-qK6" firstAttribute="leading" secondItem="gDR-Qd-jMj" secondAttribute="leading" id="2dR-lK-Gi3"/>
-                                        <constraint firstItem="cpX-CN-iVa" firstAttribute="centerY" secondItem="gDR-Qd-jMj" secondAttribute="centerY" id="9RV-LS-faM"/>
+                                        <constraint firstItem="auo-12-n5Q" firstAttribute="height" relation="greaterThanOrEqual" secondItem="gDR-Qd-jMj" secondAttribute="height" multiplier="0.5" id="3Dk-kd-haa"/>
+                                        <constraint firstItem="auo-12-n5Q" firstAttribute="leading" secondItem="78q-uN-4Gm" secondAttribute="trailing" constant="8" id="3rI-ID-Wn0"/>
                                         <constraint firstItem="78q-uN-4Gm" firstAttribute="leading" secondItem="gDR-Qd-jMj" secondAttribute="leading" constant="12" id="9b0-1z-uuq">
                                             <variation key="heightClass=regular-widthClass=regular" constant="24"/>
                                         </constraint>
-                                        <constraint firstItem="cpX-CN-iVa" firstAttribute="height" relation="lessThanOrEqual" secondItem="gDR-Qd-jMj" secondAttribute="height" multiplier="0.8" id="LhL-2h-r7z"/>
                                         <constraint firstItem="78q-uN-4Gm" firstAttribute="top" secondItem="gDR-Qd-jMj" secondAttribute="top" constant="8" id="Nra-4u-hdq">
                                             <variation key="heightClass=regular-widthClass=regular" constant="16"/>
-                                        </constraint>
-                                        <constraint firstAttribute="trailing" secondItem="cpX-CN-iVa" secondAttribute="trailing" constant="12" id="Oqk-8x-D08">
-                                            <variation key="heightClass=regular-widthClass=regular" constant="24"/>
                                         </constraint>
                                         <constraint firstItem="78q-uN-4Gm" firstAttribute="width" secondItem="gDR-Qd-jMj" secondAttribute="width" multiplier="0.67" priority="999" id="TTL-RG-yZV"/>
                                         <constraint firstItem="DO6-WY-qK6" firstAttribute="top" secondItem="gDR-Qd-jMj" secondAttribute="top" id="aQ5-S7-3gm"/>
                                         <constraint firstItem="uQm-73-kgg" firstAttribute="trailing" secondItem="78q-uN-4Gm" secondAttribute="trailing" id="apz-5D-FpE"/>
                                         <constraint firstItem="uQm-73-kgg" firstAttribute="leading" secondItem="78q-uN-4Gm" secondAttribute="leading" id="bDM-8J-ee2"/>
+                                        <constraint firstAttribute="trailing" secondItem="auo-12-n5Q" secondAttribute="trailing" constant="24" id="f5P-c5-W6W"/>
                                         <constraint firstItem="uQm-73-kgg" firstAttribute="top" secondItem="78q-uN-4Gm" secondAttribute="bottom" constant="2" id="fqK-PG-BgS">
                                             <variation key="heightClass=regular-widthClass=regular" constant="10"/>
                                         </constraint>
@@ -89,8 +83,8 @@
                                             <variation key="heightClass=regular-widthClass=regular" constant="18"/>
                                         </constraint>
                                         <constraint firstAttribute="bottom" secondItem="DO6-WY-qK6" secondAttribute="bottom" id="kUx-hF-gPi"/>
-                                        <constraint firstItem="78q-uN-4Gm" firstAttribute="width" secondItem="gDR-Qd-jMj" secondAttribute="width" multiplier="0.67" id="nFy-t6-nBT"/>
-                                        <constraint firstItem="cpX-CN-iVa" firstAttribute="leading" secondItem="78q-uN-4Gm" secondAttribute="trailing" constant="8" id="wun-T6-Fcr"/>
+                                        <constraint firstItem="auo-12-n5Q" firstAttribute="centerY" secondItem="gDR-Qd-jMj" secondAttribute="centerY" id="km9-B1-zrQ"/>
+                                        <constraint firstItem="78q-uN-4Gm" firstAttribute="width" secondItem="gDR-Qd-jMj" secondAttribute="width" multiplier="0.67" priority="999" id="nFy-t6-nBT"/>
                                     </constraints>
                                     <variation key="heightClass=regular-widthClass=regular">
                                         <mask key="constraints">
@@ -103,9 +97,9 @@
                                     <constraint firstItem="DO6-WY-qK6" firstAttribute="width" secondItem="tJI-Qp-dvO" secondAttribute="width" multiplier="0.02" id="jDS-wW-jaZ"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="buttonSwitch" destination="cpX-CN-iVa" id="MfM-NT-q8g"/>
                                     <outlet property="standardIndicatorView" destination="DO6-WY-qK6" id="ucM-wF-vKG"/>
                                     <outlet property="subtitleLabel" destination="uQm-73-kgg" id="Wwa-3j-Tne"/>
+                                    <outlet property="switchButton" destination="auo-12-n5Q" id="EXQ-kv-gZR"/>
                                     <outlet property="titleLabel" destination="78q-uN-4Gm" id="EaQ-yH-rCK"/>
                                 </connections>
                             </tableViewCell>
@@ -122,6 +116,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="onButton.png" width="184" height="80"/>
+        <image name="offButton.png" width="184" height="79"/>
     </resources>
 </document>

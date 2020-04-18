@@ -10,7 +10,7 @@ target 'Simple Instrument Tuner' do
   pod 'PureLayout'
   pod 'AudioKit'
   pod 'Google-Mobile-Ads-SDK'
-  #pod 'iOSDropDown'
+  pod 'SwiftRater'
   pod 'fluid-slider'
   pod 'SwiftGifOrigin'
 

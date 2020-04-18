@@ -12,7 +12,7 @@ class TuningTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
-    @IBOutlet weak var buttonSwitch: UIButton!
+    @IBOutlet weak var switchButton: UIImageView!
     @IBOutlet weak var standardIndicatorView: UIView!
     
     
@@ -27,10 +27,6 @@ class TuningTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-    }
-    
-    @IBAction func buttonSwitchTouched(_ sender: Any) {
-        
     }
     
 }

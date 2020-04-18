@@ -109,13 +109,10 @@ class GaugeViewController: UIViewController {
         let segmentWidth = stackView.arrangedSubviews.first?.frame.size.width ?? 66.5
         let xOffset = 15.0 - 0.5 * (view.frame.size.width - 350.0)
         let p = segmentWidth * CGFloat(x + 10.0)  + xOffset
-        
-        print(freq)
 
         UIView.animate(withDuration: 0.5, animations: {
             self.scrollView.setContentOffset(CGPoint(x: p, y: 0), animated: false)
         })
-        
     }
 }
 

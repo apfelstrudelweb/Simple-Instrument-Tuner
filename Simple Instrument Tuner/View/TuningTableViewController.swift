@@ -115,9 +115,9 @@ class TuningTableViewController: UITableViewController {
         cell.standardIndicatorView.alpha = tuning.isStandard == true ? 1.0 : 0.0
         
         if indexPath.totalRow(tableView: tableView) == Utils().getTuningId() {
-            cell.buttonSwitch.setImage(UIImage(named: "onButton"), for: .normal)
+            cell.switchButton.image = UIImage(named: "onButton")
         } else {
-            cell.buttonSwitch.setImage(UIImage(named: "offButton"), for: .normal)
+            cell.switchButton.image = UIImage(named: "offButton")
         }
         
         return cell
@@ -129,7 +129,7 @@ class TuningTableViewController: UITableViewController {
         let cell: TuningTableViewCell = tableView.dequeueReusableCell(withIdentifier: "tuningCell", for: indexPath) as! TuningTableViewCell
 
         Utils().saveTuning(index: indexPath.totalRow(tableView: tableView))
-        cell.buttonSwitch.setImage(UIImage(named: "onButton"), for: .normal)
+        cell.switchButton.image = UIImage(named: "onButton")
         
         tableView.reloadData()
         
