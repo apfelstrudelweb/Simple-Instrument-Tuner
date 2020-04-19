@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rd5-jM-eby">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Calibration View Controller-->
+        <scene sceneID="nXJ-iM-xcg">
+            <objects>
+                <viewController id="rd5-jM-eby" customClass="CalibrationViewController" customModule="Simple_Instrument_Tuner" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eIv-Aq-fZw"/>
+                        <viewControllerLayoutGuide type="bottom" id="TBr-bs-vgn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SX6-q0-LuL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calibration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSh-dw-bA4">
+                                <rect key="frame" x="10" y="38" width="290" height="24"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="440 Hz" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRx-qM-aBO">
+                                <rect key="frame" x="270" y="38" width="124" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZ9-Fo-LQN">
+                                <rect key="frame" x="303" y="38" width="91" height="39.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="cZ9-Fo-LQN" secondAttribute="height" multiplier="184:80" id="vhk-zb-q3h"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="shoppingCart.png"/>
+                                <connections>
+                                    <segue destination="ret-6n-SQD" kind="presentation" identifier="iapSegue" id="7FZ-Ye-4MX"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NDE-Dt-U2b">
+                                <rect key="frame" x="201" y="107.5" width="2" height="45"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="2" id="QYa-u2-CKB"/>
+                                </constraints>
+                            </view>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="440" minValue="430" maxValue="450" translatesAutoresizingMaskIntoConstraints="NO" id="9qJ-bo-RDw" customClass="CalibrationSlider" customModule="Simple_Instrument_Tuner" customModuleProvider="target">
+                                <rect key="frame" x="8" y="115" width="388" height="31"/>
+                                <color key="tintColor" red="0.73042827070000005" green="0.29231952750000001" blue="0.059315979269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="interval">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="rd5-jM-eby" eventType="valueChanged" id="FvL-M6-a2L"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" red="0.19800920050000001" green="0.19800920050000001" blue="0.19800920050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fSh-dw-bA4" firstAttribute="centerY" secondItem="SX6-q0-LuL" secondAttribute="centerY" multiplier="0.5" id="5OC-yQ-hoL"/>
+                            <constraint firstItem="NDE-Dt-U2b" firstAttribute="centerX" secondItem="9qJ-bo-RDw" secondAttribute="centerX" id="BBx-jD-BD8"/>
+                            <constraint firstItem="9qJ-bo-RDw" firstAttribute="leading" secondItem="fSh-dw-bA4" secondAttribute="leading" id="CDW-hU-7rX"/>
+                            <constraint firstItem="fSh-dw-bA4" firstAttribute="width" secondItem="SX6-q0-LuL" secondAttribute="width" multiplier="0.7" id="F2K-A5-wPG"/>
+                            <constraint firstItem="NDE-Dt-U2b" firstAttribute="centerY" secondItem="9qJ-bo-RDw" secondAttribute="centerY" id="ITc-br-eiW"/>
+                            <constraint firstItem="NDE-Dt-U2b" firstAttribute="height" secondItem="9qJ-bo-RDw" secondAttribute="height" multiplier="1.5" id="LEw-UT-3wO"/>
+                            <constraint firstItem="cZ9-Fo-LQN" firstAttribute="width" secondItem="SX6-q0-LuL" secondAttribute="width" multiplier="0.22" id="OmE-Zy-CCI"/>
+                            <constraint firstItem="zRx-qM-aBO" firstAttribute="trailing" secondItem="cZ9-Fo-LQN" secondAttribute="trailing" id="Pam-bn-N5I"/>
+                            <constraint firstItem="zRx-qM-aBO" firstAttribute="centerY" secondItem="fSh-dw-bA4" secondAttribute="centerY" id="h2L-ua-uSp"/>
+                            <constraint firstItem="9qJ-bo-RDw" firstAttribute="centerY" secondItem="SX6-q0-LuL" secondAttribute="centerY" multiplier="1.3" id="hfS-ca-wve"/>
+                            <constraint firstAttribute="trailing" secondItem="cZ9-Fo-LQN" secondAttribute="trailing" constant="20" id="hve-pd-5Bk"/>
+                            <constraint firstItem="fSh-dw-bA4" firstAttribute="leading" secondItem="SX6-q0-LuL" secondAttribute="leading" constant="10" id="lgk-PA-y8L"/>
+                            <constraint firstItem="zRx-qM-aBO" firstAttribute="width" secondItem="SX6-q0-LuL" secondAttribute="width" multiplier="0.3" id="vXN-Sb-gzr"/>
+                            <constraint firstItem="cZ9-Fo-LQN" firstAttribute="top" secondItem="fSh-dw-bA4" secondAttribute="top" id="xhQ-ka-kzd"/>
+                            <constraint firstItem="9qJ-bo-RDw" firstAttribute="trailing" secondItem="cZ9-Fo-LQN" secondAttribute="trailing" id="ys2-XB-EKk"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="414" height="200"/>
+                    <connections>
+                        <outlet property="frequencyLabel" destination="zRx-qM-aBO" id="gPQ-7b-yWq"/>
+                        <outlet property="shoppingCartButton" destination="cZ9-Fo-LQN" id="Ekg-aT-aix"/>
+                        <outlet property="slider" destination="9qJ-bo-RDw" id="7KN-bk-4po"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y3r-cN-sM0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-368.11594202898556" y="212.27678571428569"/>
+        </scene>
+        <!--InAppPurchase-->
+        <scene sceneID="XRo-uz-7lr">
+            <objects>
+                <viewControllerPlaceholder storyboardName="InAppPurchase" id="ret-6n-SQD" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ish-ap-0eJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="388" y="224"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="shoppingCart.png" width="184" height="80"/>
+    </resources>
+</document>

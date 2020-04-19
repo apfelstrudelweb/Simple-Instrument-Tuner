@@ -336,7 +336,6 @@
                     </view>
                     <connections>
                         <outlet property="amplitudeButton" destination="Bog-oP-HxY" id="26I-zv-esP"/>
-                        <outlet property="calibrationLabel" destination="ekl-pO-cjx" id="2RJ-f4-gAl"/>
                         <outlet property="circleView" destination="RXa-5h-gjY" id="mAJ-4v-uDP"/>
                         <outlet property="displayView" destination="mhP-Xd-8do" id="Xnn-hP-Sjn"/>
                         <outlet property="fftButton" destination="HaD-mg-trs" id="VpY-Y2-UcC"/>
@@ -418,7 +417,7 @@
                                 </variation>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddI-Wq-d4u" customClass="DropDown" customModule="Simple_Instrument_Tuner" customModuleProvider="target">
-                                <rect key="frame" x="107" y="190.5" width="498" height="49"/>
+                                <rect key="frame" x="53.5" y="190.5" width="605" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -458,21 +457,33 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 </variation>
                             </textField>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="440" minValue="430" maxValue="450" translatesAutoresizingMaskIntoConstraints="NO" id="HLR-jh-hUG" customClass="CalibrationSlider" customModule="Simple_Instrument_Tuner" customModuleProvider="target">
-                                <rect key="frame" x="115.5" y="684" width="479.5" height="31"/>
-                                <color key="tintColor" red="0.68902570009999997" green="0.26623564960000001" blue="0.2310875654" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </slider>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="65h-ua-oTY">
-                                <rect key="frame" x="107" y="259.5" width="498" height="344.5"/>
+                                <rect key="frame" x="53.5" y="259.5" width="605" height="344.5"/>
                                 <connections>
                                     <segue destination="GYy-a6-go5" kind="embed" identifier="tuningSegue" id="ast-pB-deg"/>
                                 </connections>
                             </containerView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tuningsGradient.png" translatesAutoresizingMaskIntoConstraints="NO" id="l83-IK-XMu">
-                                <rect key="frame" x="107" y="259.5" width="498" height="344.5"/>
+                                <rect key="frame" x="53.5" y="259.5" width="605" height="344.5"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ywm-kd-16J">
+                                <rect key="frame" x="53.5" y="855" width="271" height="39"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <state key="normal" title="Restore">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="restoreButtonTouched:" destination="hih-AW-H12" eventType="touchUpInside" id="v4M-Hh-ld6"/>
+                                </connections>
+                            </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vCS-I6-YDP">
+                                <rect key="frame" x="54" y="624" width="605" height="148"/>
+                                <connections>
+                                    <segue destination="Gq2-88-hq7" kind="embed" id="7a1-3b-YAV"/>
+                                </connections>
+                            </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qY-ca-Uua">
-                                <rect key="frame" x="107" y="734" width="87" height="39"/>
+                                <rect key="frame" x="53.5" y="794" width="302.5" height="39"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                 <state key="normal" title="Upgrade">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -482,61 +493,51 @@
                                     <segue destination="HUy-zh-lbP" kind="presentation" identifier="iapSegue" id="l2a-vb-4xn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ywm-kd-16J">
-                                <rect key="frame" x="107" y="781" width="78" height="39"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
-                                <state key="normal" title="Restore">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="restoreButtonTouched:" destination="hih-AW-H12" eventType="touchUpInside" id="v4M-Hh-ld6"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1529633105" green="0.16794264319999999" blue="0.18741327520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="1qY-ca-Uua" firstAttribute="width" secondItem="l83-IK-XMu" secondAttribute="width" multiplier="0.5" id="1Uo-Gq-fiw"/>
                             <constraint firstItem="mCn-UK-uyd" firstAttribute="top" secondItem="rcZ-Nt-Eve" secondAttribute="bottom" constant="30" id="3Hy-Ud-oBt"/>
                             <constraint firstItem="l83-IK-XMu" firstAttribute="top" secondItem="65h-ua-oTY" secondAttribute="top" id="3jt-HB-wJn"/>
-                            <constraint firstItem="ddI-Wq-d4u" firstAttribute="width" secondItem="UEY-sm-vof" secondAttribute="width" multiplier="0.7" id="61H-Tx-tgv"/>
+                            <constraint firstItem="Ywm-kd-16J" firstAttribute="top" secondItem="1qY-ca-Uua" secondAttribute="bottom" constant="22" id="53o-K6-zH8"/>
+                            <constraint firstItem="ddI-Wq-d4u" firstAttribute="width" secondItem="UEY-sm-vof" secondAttribute="width" multiplier="0.85" id="61H-Tx-tgv"/>
                             <constraint firstItem="65h-ua-oTY" firstAttribute="trailing" secondItem="ddI-Wq-d4u" secondAttribute="trailing" id="9wA-Re-TuR"/>
-                            <constraint firstItem="HLR-jh-hUG" firstAttribute="top" secondItem="65h-ua-oTY" secondAttribute="bottom" constant="60" id="AwG-r6-zLD">
-                                <variation key="heightClass=regular-widthClass=regular" constant="80"/>
-                            </constraint>
                             <constraint firstItem="ddI-Wq-d4u" firstAttribute="centerX" secondItem="UEY-sm-vof" secondAttribute="centerX" id="CD5-HJ-Xfh"/>
                             <constraint firstItem="l83-IK-XMu" firstAttribute="trailing" secondItem="65h-ua-oTY" secondAttribute="trailing" id="FUR-G9-gBj"/>
-                            <constraint firstItem="Ywm-kd-16J" firstAttribute="top" secondItem="1qY-ca-Uua" secondAttribute="bottom" constant="8" id="GLL-b7-U7l"/>
                             <constraint firstItem="l83-IK-XMu" firstAttribute="leading" secondItem="65h-ua-oTY" secondAttribute="leading" id="Ikh-gL-aQb"/>
-                            <constraint firstItem="Ywm-kd-16J" firstAttribute="leading" secondItem="1qY-ca-Uua" secondAttribute="leading" id="K5R-54-E8b"/>
                             <constraint firstItem="ddI-Wq-d4u" firstAttribute="top" secondItem="mCn-UK-uyd" secondAttribute="bottom" constant="20" id="Knd-0B-nA2"/>
+                            <constraint firstItem="vCS-I6-YDP" firstAttribute="leading" secondItem="l83-IK-XMu" secondAttribute="leading" id="Mcw-rs-eWg"/>
                             <constraint firstItem="rcZ-Nt-Eve" firstAttribute="trailing" secondItem="xqv-pn-s16" secondAttribute="trailing" id="NAq-d4-gVC"/>
                             <constraint firstItem="65h-ua-oTY" firstAttribute="top" secondItem="ddI-Wq-d4u" secondAttribute="bottom" constant="20" id="PFW-bv-vZE"/>
+                            <constraint firstItem="1qY-ca-Uua" firstAttribute="leading" secondItem="l83-IK-XMu" secondAttribute="leading" id="QZf-KK-usK"/>
                             <constraint firstItem="65h-ua-oTY" firstAttribute="leading" secondItem="ddI-Wq-d4u" secondAttribute="leading" id="Rin-RX-oUJ"/>
                             <constraint firstItem="mCn-UK-uyd" firstAttribute="leading" secondItem="xqv-pn-s16" secondAttribute="leading" id="RsT-eD-093"/>
                             <constraint firstItem="l83-IK-XMu" firstAttribute="bottom" secondItem="65h-ua-oTY" secondAttribute="bottom" id="TSt-NI-AYt"/>
                             <constraint firstItem="65h-ua-oTY" firstAttribute="height" secondItem="UEY-sm-vof" secondAttribute="height" multiplier="0.35" id="VHu-jl-eq6"/>
                             <constraint firstItem="rcZ-Nt-Eve" firstAttribute="leading" secondItem="xqv-pn-s16" secondAttribute="leading" id="XIM-GK-zC6"/>
-                            <constraint firstItem="1qY-ca-Uua" firstAttribute="top" secondItem="HLR-jh-hUG" secondAttribute="bottom" constant="20" id="XKw-9X-2TZ"/>
-                            <constraint firstItem="HLR-jh-hUG" firstAttribute="trailing" secondItem="65h-ua-oTY" secondAttribute="trailing" multiplier="0.98" id="afn-Ym-NP8"/>
                             <constraint firstItem="rcZ-Nt-Eve" firstAttribute="top" secondItem="xqv-pn-s16" secondAttribute="top" id="bqn-wZ-4In"/>
                             <constraint firstItem="ddI-Wq-d4u" firstAttribute="height" secondItem="UEY-sm-vof" secondAttribute="height" multiplier="0.05" id="c5B-f7-4ZZ"/>
                             <constraint firstItem="mCn-UK-uyd" firstAttribute="centerX" secondItem="UEY-sm-vof" secondAttribute="centerX" id="dLE-nH-nI4"/>
-                            <constraint firstItem="HLR-jh-hUG" firstAttribute="leading" secondItem="65h-ua-oTY" secondAttribute="leading" multiplier="1.1" id="gQV-98-gjo"/>
                             <constraint firstItem="rcZ-Nt-Eve" firstAttribute="height" secondItem="UEY-sm-vof" secondAttribute="height" multiplier="0.1" id="hPg-hy-gRA"/>
+                            <constraint firstItem="Ywm-kd-16J" firstAttribute="leading" secondItem="l83-IK-XMu" secondAttribute="leading" id="i7Q-sj-I2m"/>
                             <constraint firstItem="xqv-pn-s16" firstAttribute="trailing" secondItem="mCn-UK-uyd" secondAttribute="trailing" id="kct-ba-Wlh"/>
-                            <constraint firstItem="1qY-ca-Uua" firstAttribute="leading" secondItem="l83-IK-XMu" secondAttribute="leading" id="wny-sZ-U6p"/>
+                            <constraint firstItem="1qY-ca-Uua" firstAttribute="top" secondItem="vCS-I6-YDP" secondAttribute="bottom" constant="22.5" id="nkD-Sf-tw5"/>
+                            <constraint firstItem="vCS-I6-YDP" firstAttribute="height" secondItem="UEY-sm-vof" secondAttribute="height" multiplier="0.15" id="nkW-0U-wEW"/>
+                            <constraint firstItem="vCS-I6-YDP" firstAttribute="top" secondItem="65h-ua-oTY" secondAttribute="bottom" constant="20" id="uCf-b2-Cho"/>
+                            <constraint firstItem="Ywm-kd-16J" firstAttribute="width" secondItem="1qY-ca-Uua" secondAttribute="width" multiplier="0.896552" id="wyf-rw-IAA"/>
+                            <constraint firstItem="vCS-I6-YDP" firstAttribute="trailing" secondItem="l83-IK-XMu" secondAttribute="trailing" id="xAr-WZ-U3S"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xqv-pn-s16"/>
                     </view>
                     <navigationItem key="navigationItem" id="Aqa-Uu-GU6"/>
                     <connections>
-                        <outlet property="calibrationSlider" destination="HLR-jh-hUG" id="MbK-AG-jR1"/>
                         <outlet property="closeButton" destination="rcZ-Nt-Eve" id="JgD-7K-X1b"/>
                         <outlet property="instrumentDropDown" destination="ddI-Wq-d4u" id="Apb-Pz-RHr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OHs-an-K8k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1304.3478260869567" y="208.92857142857142"/>
+            <point key="canvasLocation" x="1303.90625" y="208.59375"/>
         </scene>
         <!--Tuning-->
         <scene sceneID="7ud-f2-Ee7">
@@ -545,6 +546,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ric-dB-dIX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1914" y="303"/>
+        </scene>
+        <!--Calibration-->
+        <scene sceneID="OXO-xI-KFM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Calibration" id="Gq2-88-hq7" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3qO-cL-vxN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2120" y="387"/>
         </scene>
         <!--InAppPurchase-->
         <scene sceneID="8cF-eS-IJS">
