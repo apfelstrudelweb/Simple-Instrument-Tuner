@@ -152,6 +152,11 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     }
     
     func handleAd() {
+        
+        if IAPHandler().displayAd() == false {
+            return
+        }
+        
         guard let path = Bundle.main.path(forResource: "Info", ofType: "plist"), let dict = NSDictionary(contentsOfFile: path) else { return }
         
         bannerView = GADBannerView(adSize: kGADAdSizeBanner)

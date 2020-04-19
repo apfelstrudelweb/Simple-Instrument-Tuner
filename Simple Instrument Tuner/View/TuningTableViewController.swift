@@ -18,8 +18,12 @@ class TuningTableViewController: UITableViewController {
     
     weak var tuningDelegate: TuningTableViewControllerDelegate?
     
+    var activeIndexPath = IndexPath(item: 0, section: 0)
+    
     var sections = [GroupedSection<Int, Tuning>]()
     
+    
+    var instrument: Instrument!
     var tunings: [Tuning]?  {
         didSet {
             
@@ -28,7 +32,27 @@ class TuningTableViewController: UITableViewController {
             self.sections = GroupedSection.group(rows: tunings!, by: { $0.notes!.count })
             self.sections.sort { lhs, rhs in lhs.sectionItem < rhs.sectionItem }
             
-            //tableView.scrollToRow(at: IndexPath(item: 0, section: 1), at: .middle, animated: true)
+//            let activeTuning = Utils().getTuningId()
+//
+//            var activeRow = 0
+//            for (indexS, section) in self.sections.enumerated() {
+//                for (indexR, _) in section.rows.enumerated() {
+//
+//                    if activeTuning == activeRow {
+//                        activeIndexPath = IndexPath(item: indexR, section: indexS)
+//
+//                        if activeRow == 0 {
+//                            tableView.scrollToTop()
+//                        } else if activeRow == (Utils().getInstrument()?.tunings!.count)! - 1 {
+//                            tableView.scrollToBottom()
+//                        } else {
+//                            tableView.scrollToRow(at: activeIndexPath, at: .middle, animated: true)
+//                        }
+//                        return
+//                    }
+//                    activeRow += 1
+//                }
+//            }
         }
     }
     
@@ -36,6 +60,7 @@ class TuningTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+   
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -93,6 +118,7 @@ class TuningTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: TuningTableViewCell = tableView.dequeueReusableCell(withIdentifier: "tuningCell", for: indexPath) as! TuningTableViewCell
+        cell.selectionStyle = .none
         
         let section = self.sections[indexPath.section]
         
@@ -116,8 +142,18 @@ class TuningTableViewController: UITableViewController {
         
         if indexPath.totalRow(tableView: tableView) == Utils().getTuningId() {
             cell.switchButton.image = UIImage(named: "onButton")
+            activeIndexPath = indexPath
         } else {
             cell.switchButton.image = UIImage(named: "offButton")
+        }
+        
+        guard let instrumentName = instrument.name, let dict = dictIAP[instrumentName], let isOpenInstrument = dict[instrumentName] else {
+            return cell
+        }
+        
+        if isOpenInstrument() == false && tuning.isStandard == false  {
+            cell.switchButton.image = UIImage(named: "shoppingCart")
+            cell.isLocked = true
         }
         
         return cell
@@ -127,6 +163,17 @@ class TuningTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let cell: TuningTableViewCell = tableView.dequeueReusableCell(withIdentifier: "tuningCell", for: indexPath) as! TuningTableViewCell
+        
+        let section = self.sections[indexPath.section]
+        let tuning = section.rows[indexPath.row]
+        guard let instrumentName = instrument.name, let dict = dictIAP[instrumentName], let isOpenInstrument = dict[instrumentName] else {
+            return
+        }
+        
+        if isOpenInstrument() == false && tuning.isStandard == false  {
+            performSegue(withIdentifier: "iapSegue", sender: true)
+            return
+        }
 
         Utils().saveTuning(index: indexPath.totalRow(tableView: tableView))
         cell.switchButton.image = UIImage(named: "onButton")
@@ -134,6 +181,21 @@ class TuningTableViewController: UITableViewController {
         tableView.reloadData()
         
         tuningDelegate?.didChangeTuning()
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+
+        if identifier == "iapSegue" {
+            guard let _ = sender as? Bool else { return false }
+            return true
+        }
+        return false
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? InAppPurchaseViewController {
+            vc.instrument = instrument
+        }
     }
 }
 
@@ -166,5 +228,25 @@ extension IndexPath {
             rowNumber += tableView.numberOfRows(inSection: i)
         }
         return rowNumber
+    }
+}
+
+extension UITableView {
+    
+
+    func scrollToBottom(){
+
+        DispatchQueue.main.async {
+            let pointsFromTop = CGPoint(x: 0, y: CGFloat.greatestFiniteMagnitude)
+            self.setContentOffset(pointsFromTop, animated: true)
+        }
+    }
+
+    func scrollToTop() {
+
+        DispatchQueue.main.async {
+            let indexPath = IndexPath(row: 0, section: 0)
+            self.scrollToRow(at: indexPath, at: .top, animated: false)
+        }
     }
 }

@@ -19,12 +19,20 @@ enum DisplayMode {
   case amplitude
 }
 
-var KEYCHAIN_CURRENT_INSTRUMENT_ID = "currentInstrumentId"
-// TODO: different tuning Ids for different instruments!
-var KEYCHAIN_CURRENT_TUNING_ID = "currentTuningId"
+// In App Purchase
+var KEYCHAIN_IAP_CALIBRATION    = "iapCalibration"  // Tier 1
+var KEYCHAIN_IAP_GUITAR         = "iapGuitar"       // Tier 1
+var KEYCHAIN_IAP_BANJO          = "iapBanjo"        // Tier 1
+var KEYCHAIN_IAP_UKULELE        = "iapUkulele"      // Tier 1
+var KEYCHAIN_IAP_MANDOLIN       = "iapMandolin"     // Tier 1
+var KEYCHAIN_IAP_BALALAIKA      = "iapBalalaika"    // Tier 1
+var KEYCHAIN_IAP_PREMIUM        = "iapPremium"      // Tier 4
+
+var KEYCHAIN_CURRENT_INSTRUMENT_ID  = "currentInstrumentId"
+var KEYCHAIN_CURRENT_TUNING_ID      = "currentTuningId"
+var KEYCHAIN_CURRENT_CALIBRATION    = "currentCalibration"
 
 
-var KEYCHAIN_CURRENT_CALIBRATION = "currentCalibration"
 var INSTRUMENTS_PLIST_FILE = "Instruments"
 
 var mode : Mode = .silent

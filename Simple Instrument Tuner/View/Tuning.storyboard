@@ -101,6 +101,7 @@
                                     <outlet property="subtitleLabel" destination="uQm-73-kgg" id="Wwa-3j-Tne"/>
                                     <outlet property="switchButton" destination="auo-12-n5Q" id="EXQ-kv-gZR"/>
                                     <outlet property="titleLabel" destination="78q-uN-4Gm" id="EaQ-yH-rCK"/>
+                                    <segue destination="mFQ-OG-Jcf" kind="presentation" identifier="iapSegue" id="tDN-zg-JjM"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -113,6 +114,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jtq-Dw-ScV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2.34375" y="227.92968749999997"/>
+        </scene>
+        <!--InAppPurchase-->
+        <scene sceneID="cBN-cm-41P">
+            <objects>
+                <viewControllerPlaceholder storyboardName="InAppPurchase" id="mFQ-OG-Jcf" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ehg-qr-sR2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="339" y="204"/>
         </scene>
     </scenes>
     <resources>

@@ -15,6 +15,7 @@ class TuningTableViewCell: UITableViewCell {
     @IBOutlet weak var switchButton: UIImageView!
     @IBOutlet weak var standardIndicatorView: UIView!
     
+    var isLocked: Bool = false
     
     
     override func awakeFromNib() {

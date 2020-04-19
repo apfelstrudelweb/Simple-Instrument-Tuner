@@ -21,10 +21,9 @@ protocol SettingsViewControllerDelegate: AnyObject {
 
 class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, TuningTableViewControllerDelegate {
     
-
+    
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var instrumentDropDown: DropDown!
-    @IBOutlet weak var productTableView: UITableView!
     @IBOutlet weak var calibrationSlider: CalibrationSlider!
     
     private var embeddedTuningViewViewController: TuningTableViewController!
@@ -40,14 +39,14 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     weak var settingsDelegate: SettingsViewControllerDelegate?
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-           if let vc = segue.destination as? TuningTableViewController,
-               segue.identifier == "tuningSegue" {
-               embeddedTuningViewViewController = vc
-               embeddedTuningViewViewController.tuningDelegate = self
-           }
+        if let vc = segue.destination as? TuningTableViewController,
+            segue.identifier == "tuningSegue" {
+            embeddedTuningViewViewController = vc
+            embeddedTuningViewViewController.tuningDelegate = self
+        }
     }
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,27 +57,27 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         embeddedTuningViewViewController.tableView.layer.borderWidth = 2.0
         embeddedTuningViewViewController.tableView.layer.masksToBounds = true
         embeddedTuningViewViewController.tableView.layer.cornerRadius = 4
-
-        // In App Purchase
-        // TODO - put them into constants
-        PKIAPHandler.shared.setProductIds(ids: ["ch.vormbrock.simpleukuleletuner.alluke", "ch.vormbrock.simpleukuleletuner.premium", "ch.vormbrock.simpleukuleletuner.signalplus"])
-        PKIAPHandler.shared.fetchAvailableProducts { [weak self](products)   in
-            
-            DispatchQueue.main.async {
-                self?.productsArray = products
-                self?.productTableView.reloadData()
-            }
-        }
+        
+        //        // In App Purchase
+        //        // TODO - put them into constants
+        //        PKIAPHandler.shared.setProductIds(ids: ["ch.vormbrock.simpleukuleletuner.alluke", "ch.vormbrock.simpleukuleletuner.premium", "ch.vormbrock.simpleukuleletuner.signalplus"])
+        //        PKIAPHandler.shared.fetchAvailableProducts { [weak self](products)   in
+        //
+        //            DispatchQueue.main.async {
+        //                self?.productsArray = products
+        //                self?.productTableView.reloadData()
+        //            }
+        //        }
     }
     
     fileprivate func handleInstrumentsList() {
- 
+        
         let options = Utils().getInstrumentsArray()
         
         instrumentDropDown.optionIds = options.ids
         instrumentDropDown.optionArray = options.names!
         instrumentDropDown.optionImageArray = options.images!
-    
+        
         if let receivedData = KeyChain.load(key: KEYCHAIN_CURRENT_INSTRUMENT_ID) {
             let currentInstrumentId = receivedData.to(type: Int.self)
             instrumentDropDown.selectedIndex = currentInstrumentId
@@ -86,7 +85,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         
         instrumentDropDown.didSelect{(selectedText , index ,id) in
-
+            
             Utils().saveInstrument(index: index)
             self.settingsDelegate?.didChangeInstrument()
             self.handleTuningsList()
@@ -100,6 +99,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     fileprivate func handleTuningsList() {
         
+        embeddedTuningViewViewController.instrument = Utils().getInstrument()
         embeddedTuningViewViewController.tunings = Utils().getInstrument()?.tunings
         embeddedTuningViewViewController.tableView.reloadData()
     }
@@ -121,8 +121,17 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         return cell
     }
     
+    
     @IBAction func closeButtonTouched(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func upgradeButtonTouched(_ sender: Any) {
+        //performSegue(withIdentifier: "iapSegue", sender: self)
+    }
+    
+    @IBAction func restoreButtonTouched(_ sender: Any) {
+        
     }
     
 }

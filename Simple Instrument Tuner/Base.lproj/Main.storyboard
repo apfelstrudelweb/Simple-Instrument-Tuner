@@ -458,37 +458,8 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 </variation>
                             </textField>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fea-lr-uCU">
-                                <rect key="frame" x="107" y="767" width="498" height="209"/>
-                                <color key="backgroundColor" red="0.17991855740000001" green="0.2035782039" blue="0.2313624024" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="productCell" textLabel="51p-Zc-1xS" style="IBUITableViewCellStyleDefault" id="gG7-Bg-Fsf">
-                                        <rect key="frame" x="0.0" y="28" width="498" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gG7-Bg-Fsf" id="hrx-JA-6Lh">
-                                            <rect key="frame" x="0.0" y="0.0" width="498" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="51p-Zc-1xS">
-                                                    <rect key="frame" x="15" y="0.0" width="468" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.17969004399999999" green="0.2031518249" blue="0.2304651412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </tableViewCell>
-                                </prototypes>
-                                <sections/>
-                                <connections>
-                                    <outlet property="dataSource" destination="hih-AW-H12" id="ckU-3Y-8vD"/>
-                                    <outlet property="delegate" destination="hih-AW-H12" id="8wk-7s-FPx"/>
-                                </connections>
-                            </tableView>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="440" minValue="430" maxValue="450" translatesAutoresizingMaskIntoConstraints="NO" id="HLR-jh-hUG" customClass="CalibrationSlider" customModule="Simple_Instrument_Tuner" customModuleProvider="target">
-                                <rect key="frame" x="105" y="684" width="502" height="31"/>
+                                <rect key="frame" x="115.5" y="684" width="479.5" height="31"/>
                                 <color key="tintColor" red="0.68902570009999997" green="0.26623564960000001" blue="0.2310875654" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </slider>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="65h-ua-oTY">
@@ -500,22 +471,42 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tuningsGradient.png" translatesAutoresizingMaskIntoConstraints="NO" id="l83-IK-XMu">
                                 <rect key="frame" x="107" y="259.5" width="498" height="344.5"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qY-ca-Uua">
+                                <rect key="frame" x="107" y="734" width="87" height="39"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <state key="normal" title="Upgrade">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="upgradeButtonTouched:" destination="hih-AW-H12" eventType="touchUpInside" id="P3D-I7-JbQ"/>
+                                    <segue destination="HUy-zh-lbP" kind="presentation" identifier="iapSegue" id="l2a-vb-4xn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ywm-kd-16J">
+                                <rect key="frame" x="107" y="781" width="78" height="39"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <state key="normal" title="Restore">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="restoreButtonTouched:" destination="hih-AW-H12" eventType="touchUpInside" id="v4M-Hh-ld6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1529633105" green="0.16794264319999999" blue="0.18741327520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="mCn-UK-uyd" firstAttribute="top" secondItem="rcZ-Nt-Eve" secondAttribute="bottom" constant="30" id="3Hy-Ud-oBt"/>
                             <constraint firstItem="l83-IK-XMu" firstAttribute="top" secondItem="65h-ua-oTY" secondAttribute="top" id="3jt-HB-wJn"/>
                             <constraint firstItem="ddI-Wq-d4u" firstAttribute="width" secondItem="UEY-sm-vof" secondAttribute="width" multiplier="0.7" id="61H-Tx-tgv"/>
-                            <constraint firstItem="fea-lr-uCU" firstAttribute="leading" secondItem="ddI-Wq-d4u" secondAttribute="leading" id="9Fc-oN-BNK"/>
                             <constraint firstItem="65h-ua-oTY" firstAttribute="trailing" secondItem="ddI-Wq-d4u" secondAttribute="trailing" id="9wA-Re-TuR"/>
-                            <constraint firstItem="HLR-jh-hUG" firstAttribute="leading" secondItem="fea-lr-uCU" secondAttribute="leading" id="ARz-so-g5L"/>
-                            <constraint firstItem="HLR-jh-hUG" firstAttribute="top" secondItem="65h-ua-oTY" secondAttribute="bottom" constant="50" id="AwG-r6-zLD">
+                            <constraint firstItem="HLR-jh-hUG" firstAttribute="top" secondItem="65h-ua-oTY" secondAttribute="bottom" constant="60" id="AwG-r6-zLD">
                                 <variation key="heightClass=regular-widthClass=regular" constant="80"/>
                             </constraint>
                             <constraint firstItem="ddI-Wq-d4u" firstAttribute="centerX" secondItem="UEY-sm-vof" secondAttribute="centerX" id="CD5-HJ-Xfh"/>
-                            <constraint firstItem="fea-lr-uCU" firstAttribute="trailing" secondItem="ddI-Wq-d4u" secondAttribute="trailing" id="Dho-Wz-Ghi"/>
                             <constraint firstItem="l83-IK-XMu" firstAttribute="trailing" secondItem="65h-ua-oTY" secondAttribute="trailing" id="FUR-G9-gBj"/>
+                            <constraint firstItem="Ywm-kd-16J" firstAttribute="top" secondItem="1qY-ca-Uua" secondAttribute="bottom" constant="8" id="GLL-b7-U7l"/>
                             <constraint firstItem="l83-IK-XMu" firstAttribute="leading" secondItem="65h-ua-oTY" secondAttribute="leading" id="Ikh-gL-aQb"/>
+                            <constraint firstItem="Ywm-kd-16J" firstAttribute="leading" secondItem="1qY-ca-Uua" secondAttribute="leading" id="K5R-54-E8b"/>
                             <constraint firstItem="ddI-Wq-d4u" firstAttribute="top" secondItem="mCn-UK-uyd" secondAttribute="bottom" constant="20" id="Knd-0B-nA2"/>
                             <constraint firstItem="rcZ-Nt-Eve" firstAttribute="trailing" secondItem="xqv-pn-s16" secondAttribute="trailing" id="NAq-d4-gVC"/>
                             <constraint firstItem="65h-ua-oTY" firstAttribute="top" secondItem="ddI-Wq-d4u" secondAttribute="bottom" constant="20" id="PFW-bv-vZE"/>
@@ -524,14 +515,15 @@
                             <constraint firstItem="l83-IK-XMu" firstAttribute="bottom" secondItem="65h-ua-oTY" secondAttribute="bottom" id="TSt-NI-AYt"/>
                             <constraint firstItem="65h-ua-oTY" firstAttribute="height" secondItem="UEY-sm-vof" secondAttribute="height" multiplier="0.35" id="VHu-jl-eq6"/>
                             <constraint firstItem="rcZ-Nt-Eve" firstAttribute="leading" secondItem="xqv-pn-s16" secondAttribute="leading" id="XIM-GK-zC6"/>
+                            <constraint firstItem="1qY-ca-Uua" firstAttribute="top" secondItem="HLR-jh-hUG" secondAttribute="bottom" constant="20" id="XKw-9X-2TZ"/>
+                            <constraint firstItem="HLR-jh-hUG" firstAttribute="trailing" secondItem="65h-ua-oTY" secondAttribute="trailing" multiplier="0.98" id="afn-Ym-NP8"/>
                             <constraint firstItem="rcZ-Nt-Eve" firstAttribute="top" secondItem="xqv-pn-s16" secondAttribute="top" id="bqn-wZ-4In"/>
                             <constraint firstItem="ddI-Wq-d4u" firstAttribute="height" secondItem="UEY-sm-vof" secondAttribute="height" multiplier="0.05" id="c5B-f7-4ZZ"/>
                             <constraint firstItem="mCn-UK-uyd" firstAttribute="centerX" secondItem="UEY-sm-vof" secondAttribute="centerX" id="dLE-nH-nI4"/>
-                            <constraint firstItem="fea-lr-uCU" firstAttribute="height" secondItem="UEY-sm-vof" secondAttribute="height" multiplier="0.212589" id="hMg-mS-E80"/>
+                            <constraint firstItem="HLR-jh-hUG" firstAttribute="leading" secondItem="65h-ua-oTY" secondAttribute="leading" multiplier="1.1" id="gQV-98-gjo"/>
                             <constraint firstItem="rcZ-Nt-Eve" firstAttribute="height" secondItem="UEY-sm-vof" secondAttribute="height" multiplier="0.1" id="hPg-hy-gRA"/>
                             <constraint firstItem="xqv-pn-s16" firstAttribute="trailing" secondItem="mCn-UK-uyd" secondAttribute="trailing" id="kct-ba-Wlh"/>
-                            <constraint firstItem="HLR-jh-hUG" firstAttribute="trailing" secondItem="fea-lr-uCU" secondAttribute="trailing" id="qMs-DT-IHm"/>
-                            <constraint firstItem="fea-lr-uCU" firstAttribute="top" secondItem="HLR-jh-hUG" secondAttribute="bottom" constant="53" id="tbo-wL-3PX"/>
+                            <constraint firstItem="1qY-ca-Uua" firstAttribute="leading" secondItem="l83-IK-XMu" secondAttribute="leading" id="wny-sZ-U6p"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xqv-pn-s16"/>
                     </view>
@@ -540,7 +532,6 @@
                         <outlet property="calibrationSlider" destination="HLR-jh-hUG" id="MbK-AG-jR1"/>
                         <outlet property="closeButton" destination="rcZ-Nt-Eve" id="JgD-7K-X1b"/>
                         <outlet property="instrumentDropDown" destination="ddI-Wq-d4u" id="Apb-Pz-RHr"/>
-                        <outlet property="productTableView" destination="fea-lr-uCU" id="SZm-S8-Djc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OHs-an-K8k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -554,6 +545,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ric-dB-dIX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1914" y="303"/>
+        </scene>
+        <!--InAppPurchase-->
+        <scene sceneID="8cF-eS-IJS">
+            <objects>
+                <viewControllerPlaceholder storyboardName="InAppPurchase" id="HUy-zh-lbP" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0ka-GK-ZdM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1783" y="435"/>
         </scene>
         <!--DeviationMeter-->
         <scene sceneID="P0Q-aw-KCq">
