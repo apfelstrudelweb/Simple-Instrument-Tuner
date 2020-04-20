@@ -336,6 +336,7 @@
                     </view>
                     <connections>
                         <outlet property="amplitudeButton" destination="Bog-oP-HxY" id="26I-zv-esP"/>
+                        <outlet property="calibrationLabel" destination="ekl-pO-cjx" id="vxa-Qm-DNI"/>
                         <outlet property="circleView" destination="RXa-5h-gjY" id="mAJ-4v-uDP"/>
                         <outlet property="displayView" destination="mhP-Xd-8do" id="Xnn-hP-Sjn"/>
                         <outlet property="fftButton" destination="HaD-mg-trs" id="VpY-Y2-UcC"/>
@@ -407,8 +408,8 @@
                                     <action selector="closeButtonTouched:" destination="hih-AW-H12" eventType="touchUpInside" id="z08-gA-dpD"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select an instrument:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCn-UK-uyd">
-                                <rect key="frame" x="0.0" y="128.5" width="712" height="42"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select an instrument" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCn-UK-uyd">
+                                <rect key="frame" x="61.5" y="128.5" width="597" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -477,9 +478,9 @@
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vCS-I6-YDP">
-                                <rect key="frame" x="54" y="624" width="605" height="148"/>
+                                <rect key="frame" x="53.5" y="624" width="605" height="147.5"/>
                                 <connections>
-                                    <segue destination="Gq2-88-hq7" kind="embed" id="7a1-3b-YAV"/>
+                                    <segue destination="Gq2-88-hq7" kind="embed" identifier="calibrationSegue" id="7a1-3b-YAV"/>
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qY-ca-Uua">
@@ -511,18 +512,17 @@
                             <constraint firstItem="65h-ua-oTY" firstAttribute="top" secondItem="ddI-Wq-d4u" secondAttribute="bottom" constant="20" id="PFW-bv-vZE"/>
                             <constraint firstItem="1qY-ca-Uua" firstAttribute="leading" secondItem="l83-IK-XMu" secondAttribute="leading" id="QZf-KK-usK"/>
                             <constraint firstItem="65h-ua-oTY" firstAttribute="leading" secondItem="ddI-Wq-d4u" secondAttribute="leading" id="Rin-RX-oUJ"/>
-                            <constraint firstItem="mCn-UK-uyd" firstAttribute="leading" secondItem="xqv-pn-s16" secondAttribute="leading" id="RsT-eD-093"/>
                             <constraint firstItem="l83-IK-XMu" firstAttribute="bottom" secondItem="65h-ua-oTY" secondAttribute="bottom" id="TSt-NI-AYt"/>
                             <constraint firstItem="65h-ua-oTY" firstAttribute="height" secondItem="UEY-sm-vof" secondAttribute="height" multiplier="0.35" id="VHu-jl-eq6"/>
+                            <constraint firstItem="mCn-UK-uyd" firstAttribute="leading" secondItem="l83-IK-XMu" secondAttribute="leading" multiplier="1.15" id="VfU-fR-bNZ"/>
                             <constraint firstItem="rcZ-Nt-Eve" firstAttribute="leading" secondItem="xqv-pn-s16" secondAttribute="leading" id="XIM-GK-zC6"/>
                             <constraint firstItem="rcZ-Nt-Eve" firstAttribute="top" secondItem="xqv-pn-s16" secondAttribute="top" id="bqn-wZ-4In"/>
                             <constraint firstItem="ddI-Wq-d4u" firstAttribute="height" secondItem="UEY-sm-vof" secondAttribute="height" multiplier="0.05" id="c5B-f7-4ZZ"/>
-                            <constraint firstItem="mCn-UK-uyd" firstAttribute="centerX" secondItem="UEY-sm-vof" secondAttribute="centerX" id="dLE-nH-nI4"/>
                             <constraint firstItem="rcZ-Nt-Eve" firstAttribute="height" secondItem="UEY-sm-vof" secondAttribute="height" multiplier="0.1" id="hPg-hy-gRA"/>
                             <constraint firstItem="Ywm-kd-16J" firstAttribute="leading" secondItem="l83-IK-XMu" secondAttribute="leading" id="i7Q-sj-I2m"/>
-                            <constraint firstItem="xqv-pn-s16" firstAttribute="trailing" secondItem="mCn-UK-uyd" secondAttribute="trailing" id="kct-ba-Wlh"/>
                             <constraint firstItem="1qY-ca-Uua" firstAttribute="top" secondItem="vCS-I6-YDP" secondAttribute="bottom" constant="22.5" id="nkD-Sf-tw5"/>
                             <constraint firstItem="vCS-I6-YDP" firstAttribute="height" secondItem="UEY-sm-vof" secondAttribute="height" multiplier="0.15" id="nkW-0U-wEW"/>
+                            <constraint firstItem="mCn-UK-uyd" firstAttribute="trailing" secondItem="l83-IK-XMu" secondAttribute="trailing" id="txm-gj-h2z"/>
                             <constraint firstItem="vCS-I6-YDP" firstAttribute="top" secondItem="65h-ua-oTY" secondAttribute="bottom" constant="20" id="uCf-b2-Cho"/>
                             <constraint firstItem="Ywm-kd-16J" firstAttribute="width" secondItem="1qY-ca-Uua" secondAttribute="width" multiplier="0.896552" id="wyf-rw-IAA"/>
                             <constraint firstItem="vCS-I6-YDP" firstAttribute="trailing" secondItem="l83-IK-XMu" secondAttribute="trailing" id="xAr-WZ-U3S"/>
@@ -532,6 +532,7 @@
                     <navigationItem key="navigationItem" id="Aqa-Uu-GU6"/>
                     <connections>
                         <outlet property="closeButton" destination="rcZ-Nt-Eve" id="JgD-7K-X1b"/>
+                        <outlet property="embeddedCalibrationView" destination="vCS-I6-YDP" id="sWe-Vl-v0e"/>
                         <outlet property="instrumentDropDown" destination="ddI-Wq-d4u" id="Apb-Pz-RHr"/>
                     </connections>
                 </viewController>

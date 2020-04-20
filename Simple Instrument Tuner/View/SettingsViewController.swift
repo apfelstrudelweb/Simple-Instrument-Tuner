@@ -24,9 +24,11 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var instrumentDropDown: DropDown!
-    @IBOutlet weak var calibrationSlider: CalibrationSlider!
+    @IBOutlet weak var embeddedCalibrationView: UIView!
     
-    private var embeddedTuningViewViewController: TuningTableViewController!
+    
+    private var embeddedTuningViewController: TuningTableViewController!
+    var embeddedCalibrationViewController: CalibrationViewController!
     
     var productsArray = [SKProduct]()
     
@@ -41,8 +43,12 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? TuningTableViewController,
             segue.identifier == "tuningSegue" {
-            embeddedTuningViewViewController = vc
-            embeddedTuningViewViewController.tuningDelegate = self
+            embeddedTuningViewController = vc
+            embeddedTuningViewController.tuningDelegate = self
+        }
+        if let vc = segue.destination as? CalibrationViewController,
+            segue.identifier == "calibrationSegue" {
+            embeddedCalibrationViewController = vc
         }
     }
     
@@ -53,10 +59,10 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         handleInstrumentsList()
         handleTuningsList()
         
-        embeddedTuningViewViewController.tableView.layer.borderColor = #colorLiteral(red: 0.1529633105, green: 0.1679426432, blue: 0.1874132752, alpha: 1)
-        embeddedTuningViewViewController.tableView.layer.borderWidth = 2.0
-        embeddedTuningViewViewController.tableView.layer.masksToBounds = true
-        embeddedTuningViewViewController.tableView.layer.cornerRadius = 4
+        embeddedTuningViewController.tableView.layer.borderColor = #colorLiteral(red: 0.1529633105, green: 0.1679426432, blue: 0.1874132752, alpha: 1)
+        embeddedTuningViewController.tableView.layer.borderWidth = 2.0
+        embeddedTuningViewController.tableView.layer.masksToBounds = true
+        embeddedTuningViewController.tableView.layer.cornerRadius = 4
         
         //        // In App Purchase
         //        // TODO - put them into constants
@@ -99,9 +105,9 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     fileprivate func handleTuningsList() {
         
-        embeddedTuningViewViewController.instrument = Utils().getInstrument()
-        embeddedTuningViewViewController.tunings = Utils().getInstrument()?.tunings
-        embeddedTuningViewViewController.tableView.reloadData()
+        embeddedTuningViewController.instrument = Utils().getInstrument()
+        embeddedTuningViewController.tunings = Utils().getInstrument()?.tunings
+        embeddedTuningViewController.tableView.reloadData()
     }
     
     // MARK: TuningTableViewControllerDelegate
@@ -120,7 +126,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.textLabel?.textColor = .white
         return cell
     }
-    
+
     
     @IBAction func closeButtonTouched(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)

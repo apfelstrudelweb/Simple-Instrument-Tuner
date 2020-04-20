@@ -9,10 +9,7 @@
 import UIKit
 import PureLayout
 
-protocol CalibrationSliderDelegate: AnyObject {
 
-    func didChangeCalibration()
-}
 
 @IBDesignable
 class CalibrationSlider: UISlider {
@@ -23,7 +20,7 @@ class CalibrationSlider: UISlider {
 //    let fontSize: CGFloat = 22.0
 //    let color440Hz = UIColor(red: 0, green: 0.7373, blue: 0.3451, alpha: 1.0)
     
-    weak var calibrationDelegate: CalibrationSliderDelegate?
+    
 
     override func trackRect(forBounds bounds: CGRect) -> CGRect {
         let point = CGPoint(x: bounds.minX, y: bounds.midY)
@@ -106,7 +103,7 @@ class CalibrationSlider: UISlider {
         
         //setLabel()
         
-        self.calibrationDelegate?.didChangeCalibration()
+        
     }
     
 //    private func setLabel() {

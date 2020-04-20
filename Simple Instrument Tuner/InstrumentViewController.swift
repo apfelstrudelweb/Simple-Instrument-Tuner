@@ -21,6 +21,7 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     
     @IBOutlet weak var circleView: UIView!
     @IBOutlet weak var frequencyLabel: FrequencyLabel!
+    @IBOutlet weak var calibrationLabel: CalibrationLabel!
     @IBOutlet weak var tuningLabel: UILabel!
     @IBOutlet weak var octaveLabel: UILabel!
     
@@ -140,7 +141,7 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     
     // MARK: CalibrationSliderDelegate
     func didChangeCalibration() {
-        //calibrationLabel.updateValueFromKeychain()
+        calibrationLabel.updateValueFromKeychain()
         embeddedGaugeViewController.updateCalibration()
         embeddedDeviationMeterController.updateCalibration()
     }
@@ -276,7 +277,7 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
             settingsViewController.closeButton.backgroundColor = headerView.backgroundColor
             
             settingsViewController.settingsDelegate = self
-            //settingsViewController.calibrationSlider.calibrationDelegate = self
+            settingsViewController.embeddedCalibrationViewController.calibrationDelegate = self 
         }
         
     }

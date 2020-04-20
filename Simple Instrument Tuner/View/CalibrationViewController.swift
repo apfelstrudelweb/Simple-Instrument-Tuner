@@ -8,12 +8,19 @@
 
 import UIKit
 
+protocol CalibrationSliderDelegate: AnyObject {
+
+    func didChangeCalibration()
+}
+
 class CalibrationViewController: UIViewController {
 
     @IBOutlet weak var frequencyLabel: UILabel!
     @IBOutlet weak var shoppingCartButton: UIButton!
     
     @IBOutlet weak var slider: CalibrationSlider!
+    
+    weak var calibrationDelegate: CalibrationSliderDelegate?
     
     var interval: Int = 1
     
@@ -29,15 +36,12 @@ class CalibrationViewController: UIViewController {
     @IBAction func sliderValueChanged(_ sender: UISlider) {
         
         let newValue =  (sender.value / Float(interval)).rounded() * Float(interval)
-//        setValue(Float(newValue), animated: false)
-//
-//        let data = Data(from: Int(self.value))
-//        let _ = KeyChain.save(key: KEYCHAIN_CURRENT_CALIBRATION, data: data)
-        
         frequencyLabel.text = "\(Int(newValue)) Hz"
         
-        //self.calibrationDelegate?.didChangeCalibration()
+        let data = Data(from: Int(newValue))
+        let _ = KeyChain.save(key: KEYCHAIN_CURRENT_CALIBRATION, data: data)
         
+        self.calibrationDelegate?.didChangeCalibration()
     }
     
     private func setValueFromKeychain() {
