@@ -13,5 +13,6 @@ target 'Simple Instrument Tuner' do
   pod 'SwiftRater'
   pod 'fluid-slider'
   pod 'SwiftGifOrigin'
+  pod 'KeychainAccess'
 
 end

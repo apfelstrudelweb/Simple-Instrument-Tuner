@@ -25,6 +25,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var instrumentDropDown: DropDown!
     @IBOutlet weak var embeddedCalibrationView: UIView!
+    @IBOutlet weak var iapButtonView: UIView!
     
     
     private var embeddedTuningViewController: TuningTableViewController!
@@ -63,6 +64,23 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         embeddedTuningViewController.tableView.layer.borderWidth = 2.0
         embeddedTuningViewController.tableView.layer.masksToBounds = true
         embeddedTuningViewController.tableView.layer.cornerRadius = 4
+        
+        instrumentDropDown.layer.borderColor = embeddedTuningViewController.tableView.layer.borderColor
+        instrumentDropDown.layer.borderWidth = embeddedTuningViewController.tableView.layer.borderWidth
+        instrumentDropDown.layer.masksToBounds = embeddedTuningViewController.tableView.layer.masksToBounds
+        instrumentDropDown.layer.cornerRadius = embeddedTuningViewController.tableView.layer.cornerRadius
+        
+        embeddedCalibrationView.layer.borderColor = embeddedTuningViewController.tableView.layer.borderColor
+        embeddedCalibrationView.layer.borderWidth = embeddedTuningViewController.tableView.layer.borderWidth
+        embeddedCalibrationView.layer.masksToBounds = embeddedTuningViewController.tableView.layer.masksToBounds
+        embeddedCalibrationView.layer.cornerRadius = embeddedTuningViewController.tableView.layer.cornerRadius
+        
+        iapButtonView.layer.borderColor = embeddedTuningViewController.tableView.layer.borderColor
+        iapButtonView.layer.borderWidth = embeddedTuningViewController.tableView.layer.borderWidth
+        iapButtonView.layer.masksToBounds = embeddedTuningViewController.tableView.layer.masksToBounds
+        iapButtonView.layer.cornerRadius = embeddedTuningViewController.tableView.layer.cornerRadius
+        
+        iapButtonView.backgroundColor = UIColor(patternImage: UIImage(named: "settingsPattern.png")!)
         
         //        // In App Purchase
         //        // TODO - put them into constants

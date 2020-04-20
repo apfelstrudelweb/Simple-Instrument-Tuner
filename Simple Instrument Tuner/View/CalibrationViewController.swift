@@ -24,11 +24,26 @@ class CalibrationViewController: UIViewController {
     
     var interval: Int = 1
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "settingsPattern.png")!)
         frequencyLabel.textColor = UIColor(displayP3Red: 105/225, green: 221/225, blue: 52/225, alpha: 1)
+        
+        handleGuiElements()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        handleGuiElements()
+    }
+    
+    fileprivate func handleGuiElements() {
+        slider.isEnabled = IAPHandler().isOpenCalibration() == true
+        frequencyLabel.isHidden = IAPHandler().isOpenCalibration() == false
+        shoppingCartButton.isHidden = IAPHandler().isOpenCalibration() == true
         
         setValueFromKeychain()
     }

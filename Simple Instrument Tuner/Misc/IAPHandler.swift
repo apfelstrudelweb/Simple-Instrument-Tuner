@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KeychainAccess
 
 typealias isOpenGuitar = () -> Bool
 typealias isOpenBanjo = () -> Bool
@@ -31,100 +32,110 @@ var dictIAP : Dictionary = ["Guitar" : dictGuitar,
                             "Balalaika" : dictBalalaika,
                             "Premium" : dictPremium]
 
+let keychain = Keychain(service: KEYCHAIN_IAP_SERVICE)
+let PURCHASED = "purchased"
+
 class IAPHandler: NSObject {
     
     override init() {
-        dictGuitar["Guitar"] = openGuitar
-        dictBanjo["Banjo"] = openBanjo
-        dictUkulele["Ukulele"] = openUkulele
-        dictMandolin["Mandolin"] = openMandolin
-        dictBalalaika["Balalaika"] = openBalalaika
+        dictGuitar["Guitar"] = isOpenGuitar
+        dictBanjo["Banjo"] = isOpenBanjo
+        dictUkulele["Ukulele"] = isOpenUkulele
+        dictMandolin["Mandolin"] = isOpenMandolin
+        dictBalalaika["Balalaika"] = isOpenBalalaika
         dictPremium["Premium"] = premium
     }
+    
     
     // Getter
     
     func displayAd() -> Bool {
         
-        if let _ = KeyChain.load(key: KEYCHAIN_IAP_CALIBRATION) {
+        if let _ = try? keychain.get(IDENTIFIER_IAP_CALIBRATION){
             return false
         }
-        if let _ = KeyChain.load(key: KEYCHAIN_IAP_GUITAR) {
+        if let _ = try? keychain.get(IDENTIFIER_IAP_GUITAR) {
             return false
         }
-        if let _ = KeyChain.load(key: KEYCHAIN_IAP_BANJO) {
+        if let _ = try? keychain.get(IDENTIFIER_IAP_BANJO) {
             return false
         }
-        if let _ = KeyChain.load(key: KEYCHAIN_IAP_UKULELE) {
+        if let _ = try? keychain.get(IDENTIFIER_IAP_UKULELE) {
             return false
         }
-        if let _ = KeyChain.load(key: KEYCHAIN_IAP_MANDOLIN) {
+        if let _ = try? keychain.get(IDENTIFIER_IAP_MANDOLIN) {
             return false
         }
-        if let _ = KeyChain.load(key: KEYCHAIN_IAP_BALALAIKA) {
+        if let _ = try? keychain.get(IDENTIFIER_IAP_BALALAIKA) {
             return false
         }
-        if let _ = KeyChain.load(key: KEYCHAIN_IAP_PREMIUM) {
+        if let _ = try? keychain.get(IDENTIFIER_IAP_PREMIUM) {
             return false
         }
         return true
     }
     
     func isOpenCalibration() -> Bool {
-        if let _ = KeyChain.load(key: KEYCHAIN_IAP_CALIBRATION) {
+        
+        if let _ = try? keychain.get(IDENTIFIER_IAP_CALIBRATION) {
             return true
         }
-        if let _ = KeyChain.load(key: KEYCHAIN_IAP_PREMIUM) {
-            return true
-        }
-        return false
-    }
-    
-    let openGuitar : isOpenGuitar = {
-        if let _ = KeyChain.load(key: KEYCHAIN_IAP_GUITAR) {
-            return true
-        }
-        if let _ = KeyChain.load(key: KEYCHAIN_IAP_PREMIUM) {
+        if let _ = try? keychain.get(IDENTIFIER_IAP_PREMIUM) {
             return true
         }
         return false
     }
     
-    let openBanjo : isOpenBanjo = {
-        if let _ = KeyChain.load(key: KEYCHAIN_IAP_BANJO) {
+    let isOpenGuitar : isOpenGuitar = {
+        
+        if let _ = try? keychain.get(IDENTIFIER_IAP_GUITAR) {
             return true
         }
-        if let _ = KeyChain.load(key: KEYCHAIN_IAP_PREMIUM) {
-            return true
-        }
-        return false
-    }
-    
-    let openUkulele : isOpenUkulele = {
-        if let _ = KeyChain.load(key: KEYCHAIN_IAP_UKULELE) {
-            return true
-        }
-        if let _ = KeyChain.load(key: KEYCHAIN_IAP_PREMIUM) {
+        if let _ = try? keychain.get(IDENTIFIER_IAP_PREMIUM) {
             return true
         }
         return false
     }
     
-    let openMandolin : isOpenMandolin = {
-        if let _ = KeyChain.load(key: KEYCHAIN_IAP_MANDOLIN) {
+    let isOpenBanjo : isOpenBanjo = {
+        
+        if let _ = try? keychain.get(IDENTIFIER_IAP_BANJO) {
             return true
         }
-        if let _ = KeyChain.load(key: KEYCHAIN_IAP_PREMIUM) {
+        if let _ = try? keychain.get(IDENTIFIER_IAP_PREMIUM) {
             return true
         }
         return false
     }
     
-    let openBalalaika : isOpenBalalaika = {
-        if let _ = KeyChain.load(key: KEYCHAIN_IAP_BALALAIKA) {
+    let isOpenUkulele : isOpenUkulele = {
+        
+        if let _ = try? keychain.get(IDENTIFIER_IAP_UKULELE) {
             return true
         }
-        if let _ = KeyChain.load(key: KEYCHAIN_IAP_PREMIUM) {
+        if let _ = try? keychain.get(IDENTIFIER_IAP_PREMIUM) {
+            return true
+        }
+        return false
+    }
+    
+    let isOpenMandolin : isOpenMandolin = {
+        
+        if let _ = try? keychain.get(IDENTIFIER_IAP_MANDOLIN) {
+            return true
+        }
+        if let _ = try? keychain.get(IDENTIFIER_IAP_PREMIUM) {
+            return true
+        }
+        return false
+    }
+    
+    let isOpenBalalaika : isOpenBalalaika = {
+        
+        if let _ = try? keychain.get(IDENTIFIER_IAP_BALALAIKA) {
+            return true
+        }
+        if let _ = try? keychain.get(IDENTIFIER_IAP_PREMIUM) {
             return true
         }
         return false
@@ -132,7 +143,8 @@ class IAPHandler: NSObject {
     
     
     let premium : isPremium = {
-        if let _ = KeyChain.load(key: KEYCHAIN_IAP_PREMIUM) {
+        
+        if let _ = try? keychain.get(IDENTIFIER_IAP_PREMIUM) {
             return true
         }
         return false
@@ -143,30 +155,65 @@ class IAPHandler: NSObject {
     // Setter
     
     func unlockCalibration() {
-        let _ = KeyChain.save(key: KEYCHAIN_IAP_CALIBRATION, data: Data(from: true))
+        do {
+            try keychain.set(PURCHASED, key: IDENTIFIER_IAP_CALIBRATION)
+        } catch let error {
+            print("setting keychain to purchased failed")
+            print(error)
+        }
     }
     
     func unlockGuitar() {
-        let _ = KeyChain.save(key: KEYCHAIN_IAP_GUITAR, data: Data(from: true))
+        do {
+            try keychain.set(PURCHASED, key: IDENTIFIER_IAP_GUITAR)
+        } catch let error {
+            print("setting keychain to purchased failed")
+            print(error)
+        }
     }
     
     func unlockBanjo() {
-        let _ = KeyChain.save(key: KEYCHAIN_IAP_BANJO, data: Data(from: true))
+        do {
+            try keychain.set(PURCHASED, key: IDENTIFIER_IAP_BANJO)
+        } catch let error {
+            print("setting keychain to purchased failed")
+            print(error)
+        }
     }
     
     func unlockUkulele() {
-        let _ = KeyChain.save(key: KEYCHAIN_IAP_UKULELE, data: Data(from: true))
+        do {
+            try keychain.set(PURCHASED, key: IDENTIFIER_IAP_UKULELE)
+        } catch let error {
+            print("setting keychain to purchased failed")
+            print(error)
+        }
     }
     
     func unlockMandolin() {
-        let _ = KeyChain.save(key: KEYCHAIN_IAP_MANDOLIN, data: Data(from: true))
+        do {
+            try keychain.set(PURCHASED, key: IDENTIFIER_IAP_MANDOLIN)
+        } catch let error {
+            print("setting keychain to purchased failed")
+            print(error)
+        }
     }
     
     func unlockBalalaika() {
-        let _ = KeyChain.save(key: KEYCHAIN_IAP_BALALAIKA, data: Data(from: true))
+        do {
+            try keychain.set(PURCHASED, key: IDENTIFIER_IAP_BALALAIKA)
+        } catch let error {
+            print("setting keychain to purchased failed")
+            print(error)
+        }
     }
     
     func unlockPremium() {
-        let _ = KeyChain.save(key: KEYCHAIN_IAP_PREMIUM, data: Data(from: true))
+        do {
+            try keychain.set(PURCHASED, key: IDENTIFIER_IAP_PREMIUM)
+        } catch let error {
+            print("setting keychain to purchased failed")
+            print(error)
+        }
     }
 }

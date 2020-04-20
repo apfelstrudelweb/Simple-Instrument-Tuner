@@ -20,13 +20,15 @@ enum DisplayMode {
 }
 
 // In App Purchase
-var KEYCHAIN_IAP_CALIBRATION    = "iapCalibration"  // Tier 1
-var KEYCHAIN_IAP_GUITAR         = "iapGuitar"       // Tier 1
-var KEYCHAIN_IAP_BANJO          = "iapBanjo"        // Tier 1
-var KEYCHAIN_IAP_UKULELE        = "iapUkulele"      // Tier 1
-var KEYCHAIN_IAP_MANDOLIN       = "iapMandolin"     // Tier 1
-var KEYCHAIN_IAP_BALALAIKA      = "iapBalalaika"    // Tier 1
-var KEYCHAIN_IAP_PREMIUM        = "iapPremium"      // Tier 4
+var KEYCHAIN_IAP_SERVICE        = "ch.vormbrock.simpleinstrumenttuner.iapService"
+
+var IDENTIFIER_IAP_CALIBRATION    = "ch.vormbrock.simpleinstrumenttuner.calibration"  // Tier 1
+var IDENTIFIER_IAP_GUITAR         = "ch.vormbrock.simpleinstrumenttuner.guitar"       // Tier 1
+var IDENTIFIER_IAP_BANJO          = "ch.vormbrock.simpleinstrumenttuner.banjo"        // Tier 1
+var IDENTIFIER_IAP_UKULELE        = "ch.vormbrock.simpleinstrumenttuner.ukulele"      // Tier 1
+var IDENTIFIER_IAP_MANDOLIN       = "ch.vormbrock.simpleinstrumenttuner.mandolin"     // Tier 1
+var IDENTIFIER_IAP_BALALAIKA      = "ch.vormbrock.simpleinstrumenttuner.balalaika"    // Tier 1
+var IDENTIFIER_IAP_PREMIUM        = "ch.vormbrock.simpleinstrumenttuner.premium"      // Tier 4
 
 var KEYCHAIN_CURRENT_INSTRUMENT_ID  = "currentInstrumentId"
 var KEYCHAIN_CURRENT_TUNING_ID      = "currentTuningId"
