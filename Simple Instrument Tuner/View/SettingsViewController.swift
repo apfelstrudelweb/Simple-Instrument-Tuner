@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import StoreKit
 
 import fluid_slider
 import PureLayout
@@ -19,7 +18,7 @@ protocol SettingsViewControllerDelegate: AnyObject {
 }
 
 
-class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, TuningTableViewControllerDelegate {
+class SettingsViewController: UIViewController, TuningTableViewControllerDelegate {
     
     
     @IBOutlet weak var closeButton: UIButton!
@@ -31,7 +30,6 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     private var embeddedTuningViewController: TuningTableViewController!
     var embeddedCalibrationViewController: CalibrationViewController!
     
-    var productsArray = [SKProduct]()
     
     var backgroundColor = UIColor.black {
         didSet {
@@ -82,16 +80,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         
         iapButtonView.backgroundColor = UIColor(patternImage: UIImage(named: "settingsPattern.png")!)
         
-        //        // In App Purchase
-        //        // TODO - put them into constants
-        //        PKIAPHandler.shared.setProductIds(ids: ["ch.vormbrock.simpleukuleletuner.alluke", "ch.vormbrock.simpleukuleletuner.premium", "ch.vormbrock.simpleukuleletuner.signalplus"])
-        //        PKIAPHandler.shared.fetchAvailableProducts { [weak self](products)   in
-        //
-        //            DispatchQueue.main.async {
-        //                self?.productsArray = products
-        //                self?.productTableView.reloadData()
-        //            }
-        //        }
+
     }
     
     fileprivate func handleInstrumentsList() {
@@ -133,17 +122,6 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         self.settingsDelegate?.didChangeTuning()
     }
     
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return productsArray.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "productCell", for: indexPath)
-        cell.textLabel?.text = productsArray[indexPath.row].localizedTitle
-        cell.textLabel?.textColor = .white
-        return cell
-    }
 
     
     @IBAction func closeButtonTouched(_ sender: Any) {

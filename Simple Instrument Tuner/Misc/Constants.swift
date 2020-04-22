@@ -30,6 +30,8 @@ var IDENTIFIER_IAP_MANDOLIN       = "ch.vormbrock.simpleinstrumenttuner.mandolin
 var IDENTIFIER_IAP_BALALAIKA      = "ch.vormbrock.simpleinstrumenttuner.balalaika"    // Tier 1
 var IDENTIFIER_IAP_PREMIUM        = "ch.vormbrock.simpleinstrumenttuner.premium"      // Tier 4
 
+let productIds = [IDENTIFIER_IAP_CALIBRATION, IDENTIFIER_IAP_GUITAR, IDENTIFIER_IAP_BANJO, IDENTIFIER_IAP_UKULELE, IDENTIFIER_IAP_MANDOLIN, IDENTIFIER_IAP_BALALAIKA, IDENTIFIER_IAP_PREMIUM]
+
 var KEYCHAIN_CURRENT_INSTRUMENT_ID  = "currentInstrumentId"
 var KEYCHAIN_CURRENT_TUNING_ID      = "currentTuningId"
 var KEYCHAIN_CURRENT_CALIBRATION    = "currentCalibration"

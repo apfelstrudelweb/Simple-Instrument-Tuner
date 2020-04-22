@@ -27,6 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SwiftRater.debugMode = false
         SwiftRater.appLaunched()
         
+        // TODO: IMPORTANT: comment out when submitting to the AppStore
+        //IAPHandler().unlockAll()
+        //IAPHandler().lockAll()
+        
         return true
     }
 

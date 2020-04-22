@@ -216,4 +216,33 @@ class IAPHandler: NSObject {
             print(error)
         }
     }
+    
+    // for testing purposes only
+    
+    func unlockAll() {
+        
+        unlockCalibration()
+        unlockGuitar()
+        unlockBanjo()
+        unlockUkulele()
+        unlockMandolin()
+        unlockBalalaika()
+        //unlockPremium()
+    }
+    
+    func lockAll() {
+        
+        do {
+            try keychain.remove(IDENTIFIER_IAP_CALIBRATION)
+            try keychain.remove(IDENTIFIER_IAP_GUITAR)
+            try keychain.remove(IDENTIFIER_IAP_BANJO)
+            try keychain.remove(IDENTIFIER_IAP_UKULELE)
+            try keychain.remove(IDENTIFIER_IAP_MANDOLIN)
+            try keychain.remove(IDENTIFIER_IAP_BALALAIKA)
+            try keychain.remove(IDENTIFIER_IAP_PREMIUM)
+        } catch let error {
+            print("setting keychain to purchased failed")
+            print(error)
+        }
+    }
 }
