@@ -18,6 +18,19 @@ typealias isOpenBalalaika = () -> Bool
 typealias isPremium = () -> Bool
 
 
+let arrayString = ["get different tunings for your balalaika", "removal of ads"]
+
+let balalaikaDict =     ["Balalaika" :  ["get different tunings for your balalaika", "removal of ads"]]
+let banjaDict =         ["Banjo" :  ["get different tunings for your banjo", "removal of ads"]]
+let guitarDict =        ["Guitar" :  ["get different tunings for your guitar", "removal of ads"]]
+let mandolinDict =      ["Mandolin" :  ["get different tunings for your mandolin", "removal of ads"]]
+let ukuleleDict =       ["Ukulele" :  ["get different tunings for your ukulele", "removal of ads"]]
+let calibrationDict =   ["Calibration" :  ["tune your instruments from 430-450 Hz", "removal of ads"]]
+let premiumDict =       ["Premium" :  ["get different tunings for all your instruments", "tune your instruments from 430-450 Hz", "removal of ads"]]
+
+let iapOptionsArray = [balalaikaDict, banjaDict, guitarDict, mandolinDict, ukuleleDict, calibrationDict, premiumDict]
+
+
 var dictGuitar : Dictionary = [String : isOpenGuitar]()
 var dictBanjo : Dictionary = [String : isOpenBanjo]()
 var dictUkulele : Dictionary = [String : isOpenUkulele]()
@@ -245,4 +258,5 @@ class IAPHandler: NSObject {
             print(error)
         }
     }
+    
 }

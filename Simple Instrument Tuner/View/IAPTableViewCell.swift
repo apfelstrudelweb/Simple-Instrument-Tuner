@@ -15,6 +15,7 @@ class IAPTableViewCell: UITableViewCell {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var symbolImageView: UIImageView!
     
+    @IBOutlet weak var textViewHeight: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()

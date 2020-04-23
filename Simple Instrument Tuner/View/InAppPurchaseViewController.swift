@@ -9,6 +9,12 @@
 import UIKit
 import StoreKit
 
+struct Product {
+    var title: String?
+    var description: [String]?
+    var price: String?
+    var symbol: UIImage?
+}
 
 
 class InAppPurchaseViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -17,7 +23,7 @@ class InAppPurchaseViewController: UIViewController, UITableViewDataSource, UITa
     @IBOutlet var productTableView: UITableView!
     
     var instrument: Instrument?
-    var productsArray = [SKProduct]()
+    var productsArray = [Product]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +33,15 @@ class InAppPurchaseViewController: UIViewController, UITableViewDataSource, UITa
         PKIAPHandler.shared.fetchAvailableProducts { [weak self](products)   in
             
             DispatchQueue.main.async {
-                self?.productsArray = products.sorted(by: { $0.price.decimalValue < $1.price.decimalValue })
+               
+                for option in iapOptionsArray {
+                    let name = option.keys.first
+                    if let skProduct = products.first(where: {$0.localizedTitle == name}) {
+                        let price =  "\(skProduct.price.stringValue) \(skProduct.priceLocale.currencySymbol ?? "$")"
+                        let product = Product(title: name, description: option.values.first, price: price, symbol: UIImage(named: name?.lowercased() ?? ""))
+                        self?.productsArray.append(product)
+                    }
+                }
                 self?.productTableView.reloadData()
             }
         }
@@ -45,15 +59,68 @@ class InAppPurchaseViewController: UIViewController, UITableViewDataSource, UITa
         
         let product = productsArray[indexPath.row]
 
-        cell.productLabel.text = product.localizedTitle
-        cell.descriptionTextView.text = "Rookie ist frech und schwul"
-        cell.priceLabel.text = "\(product.price.stringValue) \(product.priceLocale.currencySymbol ?? "$")"
+        cell.productLabel.text = product.title
+        cell.descriptionTextView.attributedText = add(stringList: product.description!, font: cell.descriptionTextView.font!, bullet: "")//product.description
+        cell.priceLabel.text = product.price
+        cell.symbolImageView.image = product.symbol
         
-        let imageName = "\(product.localizedTitle.lowercased())Symbol"
-        cell.symbolImageView.image = UIImage(named: imageName)
-        cell.symbolImageView.transform = cell.symbolImageView.transform.rotated(by: -.pi/5)
+        if indexPath.row % 2 == 1 {
+            cell.symbolImageView.transform = CGAffineTransform(scaleX: -1, y: 1)
+        }
+        
+        if product.title == "Premium" {
+            cell.textViewHeight.constant = 250
+        } else  {
+            cell.textViewHeight.constant = 200
+        }
         
         return cell
+    }
+    
+    func add(stringList: [String],
+             font: UIFont,
+             bullet: String = "\u{2022}",
+             indentation: CGFloat = 20,
+             lineSpacing: CGFloat = 2,
+             paragraphSpacing: CGFloat = 2,
+             textColor: UIColor = .white,
+             bulletColor: UIColor = .white) -> NSAttributedString {
+
+        let textAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: font, NSAttributedString.Key.foregroundColor: textColor]
+        let bulletAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: font, NSAttributedString.Key.foregroundColor: bulletColor]
+
+        let paragraphStyle = NSMutableParagraphStyle()
+        let nonOptions = [NSTextTab.OptionKey: Any]()
+        paragraphStyle.tabStops = [
+            NSTextTab(textAlignment: .left, location: indentation, options: nonOptions)]
+        paragraphStyle.defaultTabInterval = indentation
+        //paragraphStyle.firstLineHeadIndent = 0
+        //paragraphStyle.headIndent = 20
+        //paragraphStyle.tailIndent = 1
+        paragraphStyle.lineSpacing = lineSpacing
+        paragraphStyle.paragraphSpacing = paragraphSpacing
+        paragraphStyle.headIndent = indentation
+
+        let bulletList = NSMutableAttributedString()
+        for string in stringList {
+            let formattedString = "\(bullet)\t\(string)\n"
+            let attributedString = NSMutableAttributedString(string: formattedString)
+
+            attributedString.addAttributes(
+                [NSAttributedString.Key.paragraphStyle : paragraphStyle],
+                range: NSMakeRange(0, attributedString.length))
+
+            attributedString.addAttributes(
+                textAttributes,
+                range: NSMakeRange(0, attributedString.length))
+
+            let string:NSString = NSString(string: formattedString)
+            let rangeForBullet:NSRange = string.range(of: bullet)
+            attributedString.addAttributes(bulletAttributes, range: rangeForBullet)
+            bulletList.append(attributedString)
+        }
+
+        return bulletList
     }
     
 }
