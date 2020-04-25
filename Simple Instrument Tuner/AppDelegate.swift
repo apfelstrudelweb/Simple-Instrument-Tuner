@@ -29,11 +29,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SwiftRater.appLaunched()
         
         // TODO: IMPORTANT: comment out when submitting to the AppStore
-        //IAPHandler().unlockAll()
+        IAPHandler().unlockAll()
         //IAPHandler().lockAll()
-        IAPHandler().unlockBanjo()
+        //IAPHandler().unlockBanjo()
         //IAPHandler().unlockPremium()
-        IAPHandler().unlockCalibration()
+        //IAPHandler().unlockCalibration()
         
         // In App Purchase
         PKIAPHandler.shared.setProductIds(ids: productIds)

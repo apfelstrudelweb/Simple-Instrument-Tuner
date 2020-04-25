@@ -593,7 +593,6 @@
         <true/>
 		<key>tunings</key>
 		<array>
-            <!-- http://www.tabwritebymusicatt.com/tunings_mandolin.html -->
 			<dict>
 				<key>tuningName</key>
 				<string>Standard</string>
@@ -607,6 +606,123 @@
 					<string>E5</string>
 				</array>
 			</dict>
+            <dict>
+                <key>tuningName</key>
+                <string>Piccolo</string>
+                <key>standard</key>
+                <false/>
+                <key>notes</key>
+                <array>
+                    <string>C4</string>
+                    <string>G4</string>
+                    <string>D5</string>
+                    <string>A5</string>
+                </array>
+            </dict>
+            <dict>
+                <key>tuningName</key>
+                <string>Calico</string>
+                <key>standard</key>
+                <false/>
+                <key>notes</key>
+                <array>
+                    <string>A3</string>
+                    <string>E4</string>
+                    <string>A4</string>
+                    <string>C5</string>
+                </array>
+            </dict>
+            <dict>
+                <key>tuningName</key>
+                <string>Cajun</string>
+                <key>standard</key>
+                <false/>
+                <key>notes</key>
+                <array>
+                    <string>F3</string>
+                    <string>C4</string>
+                    <string>G4</string>
+                    <string>D5</string>
+                </array>
+            </dict>
+            <dict>
+                <key>tuningName</key>
+                <string>Cross</string>
+                <key>standard</key>
+                <false/>
+                <key>notes</key>
+                <array>
+                    <string>A3</string>
+                    <string>E4</string>
+                    <string>A4</string>
+                    <string>E5</string>
+                </array>
+            </dict>
+            <dict>
+                <key>tuningName</key>
+                <string>G</string>
+                <key>standard</key>
+                <false/>
+                <key>notes</key>
+                <array>
+                    <string>G3</string>
+                    <string>D4</string>
+                    <string>A4</string>
+                    <string>D5</string>
+                </array>
+            </dict>
+            <dict>
+                <key>tuningName</key>
+                <string>Oldtimey D</string>
+                <key>standard</key>
+                <false/>
+                <key>notes</key>
+                <array>
+                    <string>A3</string>
+                    <string>D4</string>
+                    <string>A4</string>
+                    <string>E5</string>
+                </array>
+            </dict>
+            <dict>
+                <key>tuningName</key>
+                <string>Open D</string>
+                <key>standard</key>
+                <false/>
+                <key>notes</key>
+                <array>
+                    <string>D3</string>
+                    <string>D4</string>
+                    <string>A4</string>
+                    <string>D5</string>
+                </array>
+            </dict>
+            <dict>
+                <key>tuningName</key>
+                <string>Open G</string>
+                <key>standard</key>
+                <false/>
+                <key>notes</key>
+                <array>
+                    <string>G3</string>
+                    <string>D4</string>
+                    <string>G4</string>
+                    <string>B4</string>
+                </array>
+            </dict>
+            <dict>
+                <key>tuningName</key>
+                <string>Sawmill</string>
+                <key>standard</key>
+                <false/>
+                <key>notes</key>
+                <array>
+                    <string>G3</string>
+                    <string>D4</string>
+                    <string>G4</string>
+                    <string>D5</string>
+                </array>
+            </dict>
 		</array>
 	</dict>
 	<dict>
