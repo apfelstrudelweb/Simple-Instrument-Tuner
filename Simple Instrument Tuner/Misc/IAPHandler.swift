@@ -9,6 +9,7 @@
 import UIKit
 import KeychainAccess
 
+
 typealias isOpenGuitar = () -> Bool
 typealias isOpenBanjo = () -> Bool
 typealias isOpenUkulele = () -> Bool
@@ -50,13 +51,23 @@ let PURCHASED = "purchased"
 
 class IAPHandler: NSObject {
     
-    override init() {
-        dictGuitar["Guitar"] = isOpenGuitar
-        dictBanjo["Banjo"] = isOpenBanjo
-        dictUkulele["Ukulele"] = isOpenUkulele
-        dictMandolin["Mandolin"] = isOpenMandolin
-        dictBalalaika["Balalaika"] = isOpenBalalaika
-        dictPremium["Premium"] = premium
+    var productsArray: [Product]?
+    
+    private static var sharedIAPHandler: IAPHandler = {
+        let iapManager = IAPHandler()
+        
+        dictGuitar["Guitar"] = iapManager.isOpenGuitar
+        dictBanjo["Banjo"] = iapManager.isOpenBanjo
+        dictUkulele["Ukulele"] = iapManager.isOpenUkulele
+        dictMandolin["Mandolin"] = iapManager.isOpenMandolin
+        dictBalalaika["Balalaika"] = iapManager.isOpenBalalaika
+        dictPremium["Premium"] = iapManager.premium
+        
+        return iapManager
+    }()
+    
+    class func shared() -> IAPHandler {
+        return sharedIAPHandler
     }
     
     
@@ -86,6 +97,13 @@ class IAPHandler: NSObject {
             return false
         }
         return true
+    }
+    
+    func isOpenPremium() -> Bool {
+        if let _ = try? keychain.get(IDENTIFIER_IAP_PREMIUM) {
+            return true
+        }
+        return false
     }
     
     func isOpenCalibration() -> Bool {

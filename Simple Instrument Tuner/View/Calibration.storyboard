@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rd5-jM-eby">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,23 +19,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calibration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSh-dw-bA4">
-                                <rect key="frame" x="10" y="38" width="290" height="24"/>
+                                <rect key="frame" x="10" y="38" width="289.66666666666669" height="24"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 </variation>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="440 Hz" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRx-qM-aBO">
-                                <rect key="frame" x="270" y="38" width="124" height="24"/>
+                                <rect key="frame" x="269.66666666666669" y="38" width="124.33333333333331" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZ9-Fo-LQN">
-                                <rect key="frame" x="303" y="38" width="91" height="39.5"/>
+                                <rect key="frame" x="303" y="38" width="91" height="39.666666666666657"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="cZ9-Fo-LQN" secondAttribute="height" multiplier="184:80" id="vhk-zb-q3h"/>
                                 </constraints>
@@ -82,10 +82,22 @@
                             <constraint firstItem="fSh-dw-bA4" firstAttribute="leading" secondItem="SX6-q0-LuL" secondAttribute="leading" constant="10" id="lgk-PA-y8L">
                                 <variation key="heightClass=regular-widthClass=regular" constant="20"/>
                             </constraint>
+                            <constraint firstItem="cZ9-Fo-LQN" firstAttribute="width" secondItem="SX6-q0-LuL" secondAttribute="width" multiplier="0.18" id="uR1-sQ-AVf"/>
                             <constraint firstItem="zRx-qM-aBO" firstAttribute="width" secondItem="SX6-q0-LuL" secondAttribute="width" multiplier="0.3" id="vXN-Sb-gzr"/>
                             <constraint firstItem="cZ9-Fo-LQN" firstAttribute="top" secondItem="fSh-dw-bA4" secondAttribute="top" id="xhQ-ka-kzd"/>
                             <constraint firstItem="9qJ-bo-RDw" firstAttribute="trailing" secondItem="cZ9-Fo-LQN" secondAttribute="trailing" id="ys2-XB-EKk"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="uR1-sQ-AVf"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="OmE-Zy-CCI"/>
+                                <include reference="uR1-sQ-AVf"/>
+                            </mask>
+                        </variation>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="414" height="200"/>

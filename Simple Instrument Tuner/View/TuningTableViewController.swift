@@ -31,28 +31,6 @@ class TuningTableViewController: UITableViewController {
             
             self.sections = GroupedSection.group(rows: tunings!, by: { $0.notes!.count })
             self.sections.sort { lhs, rhs in lhs.sectionItem < rhs.sectionItem }
-            
-//            let activeTuning = Utils().getTuningId()
-//
-//            var activeRow = 0
-//            for (indexS, section) in self.sections.enumerated() {
-//                for (indexR, _) in section.rows.enumerated() {
-//
-//                    if activeTuning == activeRow {
-//                        activeIndexPath = IndexPath(item: indexR, section: indexS)
-//
-//                        if activeRow == 0 {
-//                            tableView.scrollToTop()
-//                        } else if activeRow == (Utils().getInstrument()?.tunings!.count)! - 1 {
-//                            tableView.scrollToBottom()
-//                        } else {
-//                            tableView.scrollToRow(at: activeIndexPath, at: .middle, animated: true)
-//                        }
-//                        return
-//                    }
-//                    activeRow += 1
-//                }
-//            }
         }
     }
     
