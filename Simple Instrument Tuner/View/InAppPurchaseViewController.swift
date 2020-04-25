@@ -7,16 +7,26 @@
 //
 
 import UIKit
+import StoreKit
 
 struct Product {
     var title: String?
     var description: [String]?
     var price: String?
     var symbol: UIImage?
+    var skProduct: SKProduct?
+}
+
+protocol IAPDelegate: class {
+
+    func updateAvailableProducts()
 }
 
 
+
 class InAppPurchaseViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    weak var iapDelegate: IAPDelegate?
     
     
     @IBOutlet var productTableView: UITableView!
@@ -52,7 +62,7 @@ class InAppPurchaseViewController: UIViewController, UITableViewDataSource, UITa
         cell.selectionStyle = .default
         
         let product = productsArray![indexPath.row]
-        
+
         cell.productLabel.text = product.title
         cell.descriptionTextView.attributedText = Utils().generateBulletList(stringList: product.description!, font: cell.descriptionTextView.font!, bullet: "⮕")
         cell.priceLabel.text = product.price
@@ -70,30 +80,37 @@ class InAppPurchaseViewController: UIViewController, UITableViewDataSource, UITa
         cell.textViewHeight.constant = fact * heightOfText
         cell.descriptionTextView.layer.cornerRadius = UIDevice.current.userInterfaceIdiom == .phone ? 10 : 15
         
-        print(product.title)
-        
         if let dict = dictIAP[product.title!], let isOpenInstrument = dict[product.title!]  {
             if isOpenInstrument() == true || IAPHandler().isOpenPremium() {
                 cell.glassView.isHidden = false
                 cell.selectionStyle = .none
             }
         }
-        
-        if IAPHandler().isOpenPremium() {
-            cell.glassView.isHidden = false
-            cell.selectionStyle = .none
-        }
-        
-        if product.title == "Calibration" && IAPHandler().isOpenCalibration() {
-            cell.glassView.isHidden = false
-            cell.selectionStyle = .none
-        }
-        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("selected")
+
+        guard let product = productsArray?[indexPath.row], let skProduct = product.skProduct, let title = product.title else { return }
+        
+   
+        // TEST
+        IAPHandler().dictUnlockMethods[title]!()
+        self.iapDelegate?.updateAvailableProducts()
+        self.dismiss(animated: true, completion: nil)
+
+    
+        
+        PKIAPHandler.shared.purchase(product: skProduct) { (alert, product, transaction) in
+
+            if let tran = transaction, let prod = product {
+                //let _ = dictSetIAP[prod.localizedTitle]
+
+            }
+            
+            print(alert.message)
+            //Globals.shared.showWarnigMessage(alert.message)
+        }
     }
     
     

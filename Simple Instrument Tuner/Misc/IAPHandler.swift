@@ -9,13 +9,12 @@
 import UIKit
 import KeychainAccess
 
-
+typealias isOpenCalibration = () -> Bool
 typealias isOpenGuitar = () -> Bool
 typealias isOpenBanjo = () -> Bool
 typealias isOpenUkulele = () -> Bool
 typealias isOpenMandolin = () -> Bool
 typealias isOpenBalalaika = () -> Bool
-
 typealias isPremium = () -> Bool
 
 
@@ -32,14 +31,17 @@ let premiumDict =       ["Premium" :  ["get different tunings for all your instr
 let iapOptionsArray = [balalaikaDict, banjaDict, guitarDict, mandolinDict, ukuleleDict, calibrationDict, premiumDict]
 
 
-var dictGuitar : Dictionary = [String : isOpenGuitar]()
-var dictBanjo : Dictionary = [String : isOpenBanjo]()
-var dictUkulele : Dictionary = [String : isOpenUkulele]()
-var dictMandolin : Dictionary = [String : isOpenMandolin]()
-var dictBalalaika : Dictionary = [String : isOpenBalalaika]()
-var dictPremium : Dictionary = [String : isPremium]()
+var dictCalibration: Dictionary = [String : isOpenCalibration]()
+var dictGuitar: Dictionary = [String : isOpenGuitar]()
+var dictBanjo: Dictionary = [String : isOpenBanjo]()
+var dictUkulele: Dictionary = [String : isOpenUkulele]()
+var dictMandolin: Dictionary = [String : isOpenMandolin]()
+var dictBalalaika: Dictionary = [String : isOpenBalalaika]()
+var dictPremium: Dictionary = [String : isPremium]()
 
-var dictIAP : Dictionary = ["Guitar" : dictGuitar,
+
+var dictIAP : Dictionary = ["Calibration": dictCalibration,
+                            "Guitar" : dictGuitar,
                             "Banjo" : dictBanjo,
                             "Ukulele" : dictUkulele,
                             "Mandolin" : dictMandolin,
@@ -51,11 +53,28 @@ let PURCHASED = "purchased"
 
 class IAPHandler: NSObject {
     
+    var dictUnlockMethods : Dictionary<String, ()->()> = [ : ]
+    
+    override init() {
+        super.init()
+        
+        dictUnlockMethods = ["Calibration": unlockCalibration,
+                                 "Guitar" : unlockGuitar,
+                                 "Banjo" : unlockBanjo,
+                                 "Ukulele" : unlockUkulele,
+                                 "Mandolin" : unlockMandolin,
+                                 "Balalaika" : unlockBalalaika,
+                                 "Premium" : unlockPremium]
+    }
+    
+    
+    
     var productsArray: [Product]?
     
     private static var sharedIAPHandler: IAPHandler = {
         let iapManager = IAPHandler()
         
+        dictCalibration["Calibration"] = iapManager.isOpenCalibration
         dictGuitar["Guitar"] = iapManager.isOpenGuitar
         dictBanjo["Banjo"] = iapManager.isOpenBanjo
         dictUkulele["Ukulele"] = iapManager.isOpenUkulele
@@ -103,6 +122,10 @@ class IAPHandler: NSObject {
         if let _ = try? keychain.get(IDENTIFIER_IAP_PREMIUM) {
             return true
         }
+        if isOpenCalibration() && isOpenBanjo() && isOpenGuitar() && isOpenUkulele() && isOpenMandolin() && isOpenBalalaika() {
+            return true
+        }
+        
         return false
     }
     
@@ -252,7 +275,7 @@ class IAPHandler: NSObject {
     
     func unlockAll() {
         
-        unlockCalibration()
+        //unlockCalibration()
         unlockGuitar()
         unlockBanjo()
         unlockUkulele()

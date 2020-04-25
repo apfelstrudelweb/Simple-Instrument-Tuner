@@ -13,7 +13,7 @@ protocol CalibrationSliderDelegate: AnyObject {
     func didChangeCalibration()
 }
 
-class CalibrationViewController: UIViewController {
+class CalibrationViewController: UIViewController, IAPDelegate {
 
     @IBOutlet weak var frequencyLabel: UILabel!
     @IBOutlet weak var shoppingCartButton: UIButton!
@@ -69,6 +69,19 @@ class CalibrationViewController: UIViewController {
             slider.value = Float(440)
         }
         frequencyLabel.text = "\(Int(slider.value)) Hz"
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           if let vc = segue.destination as? InAppPurchaseViewController {
+               vc.iapDelegate = self
+           }
+       }
+
+    
+    func updateAvailableProducts() {
+        DispatchQueue.main.async {
+            self.handleGuiElements()
+        }
     }
     
 

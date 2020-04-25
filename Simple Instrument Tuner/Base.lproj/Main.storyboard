@@ -559,6 +559,7 @@
                         <outlet property="embeddedCalibrationView" destination="vCS-I6-YDP" id="sWe-Vl-v0e"/>
                         <outlet property="iapButtonView" destination="slN-ec-FqL" id="Abf-Es-Ja1"/>
                         <outlet property="instrumentDropDown" destination="ddI-Wq-d4u" id="Apb-Pz-RHr"/>
+                        <outlet property="upgradeButton" destination="1qY-ca-Uua" id="x3b-iO-LNO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OHs-an-K8k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

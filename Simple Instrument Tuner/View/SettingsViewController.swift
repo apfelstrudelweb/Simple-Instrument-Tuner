@@ -19,12 +19,12 @@ protocol SettingsViewControllerDelegate: AnyObject {
 
 
 class SettingsViewController: UIViewController, TuningTableViewControllerDelegate {
-    
-    
+  
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var instrumentDropDown: DropDown!
     @IBOutlet weak var embeddedCalibrationView: UIView!
     @IBOutlet weak var iapButtonView: UIView!
+    @IBOutlet weak var upgradeButton: UIButton!
     
     
     private var embeddedTuningViewController: TuningTableViewController!
@@ -80,6 +80,10 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
         
         iapButtonView.backgroundColor = UIColor(patternImage: UIImage(named: "settingsPattern.png")!)
         
+        if IAPHandler().isOpenPremium() == true {
+            upgradeButton.isEnabled = false
+        }
+        
 
     }
     
@@ -122,6 +126,9 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
         self.settingsDelegate?.didChangeTuning()
     }
     
+    func updateCalibration() {
+        embeddedCalibrationViewController.updateAvailableProducts()
+    }
 
     
     @IBAction func closeButtonTouched(_ sender: Any) {

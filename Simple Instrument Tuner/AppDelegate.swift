@@ -29,11 +29,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SwiftRater.appLaunched()
         
         // TODO: IMPORTANT: comment out when submitting to the AppStore
-        IAPHandler().unlockAll()
-        //IAPHandler().lockAll()
-        //IAPHandler().unlockBanjo()
-        //IAPHandler().unlockPremium()
-        //IAPHandler().unlockCalibration()
+        //IAPHandler().unlockAll()
+        IAPHandler().lockAll()
+//        IAPHandler().unlockBanjo()
+//        IAPHandler().unlockGuitar()
+//        IAPHandler().unlockUkulele()
+//        IAPHandler().unlockMandolin()
+//        IAPHandler().unlockBalalaika()
+//        IAPHandler().unlockCalibration()
         
         // In App Purchase
         PKIAPHandler.shared.setProductIds(ids: productIds)
@@ -43,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let name = option.keys.first
                 if let skProduct = products.first(where: {$0.localizedTitle == name}) {
                     let price =  "\(skProduct.price.stringValue) \(skProduct.priceLocale.currencySymbol ?? "$")"
-                    let product = Product(title: name, description: option.values.first, price: price, symbol: UIImage(named: name?.lowercased() ?? ""))
+                    let product = Product(title: name, description: option.values.first, price: price, symbol: UIImage(named: name?.lowercased() ?? ""), skProduct: skProduct)
                     self?.productsArray.append(product)
                 }
             }

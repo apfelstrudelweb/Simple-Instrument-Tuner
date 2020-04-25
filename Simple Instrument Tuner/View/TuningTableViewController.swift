@@ -12,11 +12,13 @@ import PureLayout
 protocol TuningTableViewControllerDelegate: AnyObject {
     
     func didChangeTuning()
+    func updateCalibration()
 }
 
-class TuningTableViewController: UITableViewController {
-    
+class TuningTableViewController: UITableViewController, IAPDelegate {
+
     weak var tuningDelegate: TuningTableViewControllerDelegate?
+    var iapController: InAppPurchaseViewController?
     
     var activeIndexPath = IndexPath(item: 0, section: 0)
     
@@ -172,7 +174,17 @@ class TuningTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? InAppPurchaseViewController {
-            vc.instrument = instrument
+            iapController = vc
+            iapController?.instrument = instrument
+            iapController?.iapDelegate = self
+        }
+    }
+    
+    func updateAvailableProducts() {
+
+        DispatchQueue.main.async {
+            self.tuningDelegate?.updateCalibration()
+            self.tableView.reloadData()
         }
     }
 }
