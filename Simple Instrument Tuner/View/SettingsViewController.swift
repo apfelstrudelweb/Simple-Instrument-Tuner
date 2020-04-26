@@ -10,15 +10,17 @@ import UIKit
 
 import fluid_slider
 import PureLayout
+import StoreKit
 
-protocol SettingsViewControllerDelegate: AnyObject {
+protocol SettingsViewControllerDelegate: class {
     
     func didChangeInstrument()
     func didChangeTuning()
 }
 
 
-class SettingsViewController: UIViewController, TuningTableViewControllerDelegate {
+class SettingsViewController: UIViewController, TuningTableViewControllerDelegate, PKIAPHandlerDelegate {
+
   
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var instrumentDropDown: DropDown!
@@ -54,6 +56,8 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        PKIAPHandler.shared.pkiDelegate = self
         
         handleInstrumentsList()
         handleTuningsList()
@@ -140,7 +144,26 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
     }
     
     @IBAction func restoreButtonTouched(_ sender: Any) {
+        PKIAPHandler.shared.restorePurchase()
+    }
+    
+    // MARK
+    func productsRestored(products: [String]) {
         
+        var alertText = "The follwing products have been restored:"
+        
+        for product in products {
+            if let productTitle = iapIdentifierDict[product] {
+                alertText += "\n- \(productTitle)"
+                
+                IAPHandler().dictUnlockMethods[productTitle]!()
+            }
+        }
+        
+        embeddedTuningViewController.tableView.reloadData()
+        embeddedCalibrationViewController.updateAvailableProducts()
+        
+        self.showAlert(title:"Success", msg: alertText)
     }
     
 }

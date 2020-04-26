@@ -25,8 +25,15 @@ enum PKIAPHandlerAlertType {
     }
 }
 
+protocol PKIAPHandlerDelegate: class {
+
+    func productsRestored(products: [String])
+}
+
 
 class PKIAPHandler: NSObject {
+    
+    weak var pkiDelegate: PKIAPHandlerDelegate?
     
     //MARK:- Shared Object
     //MARK:-
@@ -38,10 +45,11 @@ class PKIAPHandler: NSObject {
     fileprivate var productIds = [String]()
     fileprivate var productID = ""
     fileprivate var productsRequest = SKProductsRequest()
-    fileprivate var fetchProductComplition: (([SKProduct])->Void)?
+    fileprivate var fetchProductCompletion: (([SKProduct])->Void)?
     
     fileprivate var productToPurchase: SKProduct?
     fileprivate var purchaseProductComplition: ((PKIAPHandlerAlertType, SKProduct?, SKPaymentTransaction?)->Void)?
+    fileprivate var restoredProductIdentifiers = [String]()
     
     //MARK:- Public
     var isLogEnabled: Bool = true
@@ -76,7 +84,8 @@ class PKIAPHandler: NSObject {
     }
     
     // RESTORE PURCHASE
-    func restorePurchase(){
+    func restorePurchase() {
+        restoredProductIdentifiers = [String]()
         SKPaymentQueue.default().add(self)
         SKPaymentQueue.default().restoreCompletedTransactions()
     }
@@ -85,7 +94,7 @@ class PKIAPHandler: NSObject {
     // FETCH AVAILABLE IAP PRODUCTS
     func fetchAvailableProducts(complition: @escaping (([SKProduct])->Void)){
         
-        self.fetchProductComplition = complition
+        self.fetchProductCompletion = complition
         // Put here your IAP Products ID's
         if self.productIds.isEmpty {
             log(PKIAPHandlerAlertType.setProductIds.message)
@@ -114,16 +123,15 @@ extension PKIAPHandler: SKProductsRequestDelegate, SKPaymentTransactionObserver{
     func productsRequest (_ request:SKProductsRequest, didReceive response:SKProductsResponse) {
         
         if (response.products.count > 0) {
-            if let complition = self.fetchProductComplition {
+            if let complition = self.fetchProductCompletion {
                 complition(response.products)
             }
         }
     }
     
     func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
-        if let complition = self.purchaseProductComplition {
-            complition(PKIAPHandlerAlertType.restored, nil, nil)
-        }
+
+        pkiDelegate?.productsRestored(products: self.restoredProductIdentifiers)
     }
     
     // IAP PAYMENT QUEUE
@@ -146,6 +154,11 @@ extension PKIAPHandler: SKProductsRequestDelegate, SKPaymentTransactionObserver{
                 case .restored:
                     log("Product restored")
                     SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
+                    
+                    if let payment = transaction.payment {
+                        restoredProductIdentifiers.append(payment.productIdentifier)
+                    }
+                    
                     break
                     
                 default: break

@@ -93,23 +93,14 @@ class InAppPurchaseViewController: UIViewController, UITableViewDataSource, UITa
 
         guard let product = productsArray?[indexPath.row], let skProduct = product.skProduct, let title = product.title else { return }
         
-   
-        // TEST
-        IAPHandler().dictUnlockMethods[title]!()
-        self.iapDelegate?.updateAvailableProducts()
-        self.dismiss(animated: true, completion: nil)
-
-    
-        
         PKIAPHandler.shared.purchase(product: skProduct) { (alert, product, transaction) in
 
-            if let tran = transaction, let prod = product {
-                //let _ = dictSetIAP[prod.localizedTitle]
-
+            if let _ = transaction, let _ = product {
+                
+                  IAPHandler().dictUnlockMethods[title]!()
+                  self.iapDelegate?.updateAvailableProducts()
+                  self.dismiss(animated: true, completion: nil)
             }
-            
-            print(alert.message)
-            //Globals.shared.showWarnigMessage(alert.message)
         }
     }
     

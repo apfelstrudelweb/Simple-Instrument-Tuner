@@ -30,6 +30,16 @@ var IDENTIFIER_IAP_MANDOLIN       = "ch.vormbrock.simpleinstrumenttuner.mandolin
 var IDENTIFIER_IAP_BALALAIKA      = "ch.vormbrock.simpleinstrumenttuner.balalaika"    // Tier 1
 var IDENTIFIER_IAP_PREMIUM        = "ch.vormbrock.simpleinstrumenttuner.premium"      // Tier 4
 
+// TODO: create constants
+var iapIdentifierDict = [IDENTIFIER_IAP_CALIBRATION : "Calibration",
+    IDENTIFIER_IAP_GUITAR : "Guitar",
+    IDENTIFIER_IAP_BANJO : "Banjo",
+    IDENTIFIER_IAP_UKULELE : "Ukulele",
+    IDENTIFIER_IAP_MANDOLIN : "Mandolin",
+    IDENTIFIER_IAP_BALALAIKA : "Balalaika",
+    IDENTIFIER_IAP_PREMIUM : "Premium"
+    ]
+
 let productIds = [IDENTIFIER_IAP_CALIBRATION, IDENTIFIER_IAP_GUITAR, IDENTIFIER_IAP_BANJO, IDENTIFIER_IAP_UKULELE, IDENTIFIER_IAP_MANDOLIN, IDENTIFIER_IAP_BALALAIKA, IDENTIFIER_IAP_PREMIUM]
 
 var KEYCHAIN_CURRENT_INSTRUMENT_ID  = "currentInstrumentId"
