@@ -18,10 +18,8 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     let indexOfLastInfo = 13
     var activeInfo = 0
     
-    @IBAction func infoButton(_ sender: Any) {
-        
-    }
     
+    @IBOutlet weak var infoButton: UIButton!
     @IBOutlet weak var instrumentButton: UIButton!
     @IBOutlet weak var mainContainerView: UIView!
     @IBOutlet weak var headerView: UIView!
@@ -65,9 +63,65 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     private var embeddedBridgeViewController: BridgeViewController!
     private var embeddedDisplayViewController: DisplayViewController!
     private var settingsViewController: SettingsViewController!
+
+    var preferencesRed = EasyTipView.Preferences()
+    var preferencesGreen = EasyTipView.Preferences()
+    
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    func initTooltips() {
+        
+        let fact: CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 0.04 : 0.02
+        let arrowSize = fact * self.view.bounds.size.width
+        
+        preferencesRed.drawing.font = calibrationLabel.font
+        preferencesRed.drawing.foregroundColor = .white
+        preferencesRed.drawing.backgroundColor = headerView.backgroundColor ?? .red
+        preferencesRed.drawing.shadowColor = .darkGray
+        preferencesRed.drawing.shadowOpacity = 0.3
+        preferencesRed.drawing.arrowPosition = EasyTipView.ArrowPosition.any
+        preferencesRed.drawing.arrowHeight = arrowSize
+        preferencesRed.drawing.arrowWidth = arrowSize
+        preferencesRed.positioning.maxWidth = 0.6 * self.view.bounds.size.width
+        EasyTipView.globalPreferences = preferencesRed
+        
+        preferencesGreen.drawing.font = calibrationLabel.font
+        preferencesGreen.drawing.foregroundColor = .white
+        preferencesGreen.drawing.backgroundColor = UIColor(red: 0, green: 0.5569, blue: 0.2588, alpha: 1.0)
+        preferencesGreen.drawing.shadowColor = .darkGray
+        preferencesGreen.drawing.shadowOpacity = 0.3
+        preferencesGreen.drawing.arrowPosition = EasyTipView.ArrowPosition.any
+        preferencesGreen.drawing.arrowHeight = arrowSize
+        preferencesGreen.drawing.arrowWidth = arrowSize
+        preferencesGreen.positioning.maxWidth = 0.6 * self.view.bounds.size.width
+        
+        // only made for screenshots
+        if false {
+            EasyTipView.show(forView: calibrationLabel,
+            withinSuperview: self.view,
+            text: "The chamber tone is about 440 Hz. You can calibrate your instrument. After doing  so, the new frequency will be displayed here.",
+            preferences: preferencesGreen,
+            delegate: self)
+            EasyTipView.show(forView: fftButton,
+            withinSuperview: self.view,
+            text: "Tap this button in order to see the spectrum of the plucked strings - you will see the harmonics as well.",
+            preferences: preferencesRed,
+            delegate: self)
+            EasyTipView.show(forView: embeddedBridgeViewController.buttonCollection.first!,
+            withinSuperview: self.view,
+            text: "Tap the single string button in order to tune a predetermined string by ear. A second tap will silence the signal sound. By the way, the number located behind the note indicates the octave.",
+            preferences: preferencesRed,
+            delegate: self)
+            EasyTipView.show(forView: settingsButton,
+            withinSuperview: self.view,
+            text: "Tap this button if you would like to change the instrument and/or the tuning.",
+            preferences: preferencesRed,
+            delegate: self)
+
+        }
     }
     
     
@@ -79,11 +133,20 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
         self.view.setNeedsLayout()
         self.view.layoutIfNeeded()
         
+        initTooltips()
+        
         let instrument = Utils().getInstrument()
         
+        //if true {
         if instrument == nil {
             DispatchQueue.main.async {
                 self.performSegue(withIdentifier: "settingsSegue", sender: nil)
+                
+                EasyTipView.show(forView: self.infoButton,
+                                 withinSuperview: self.view,
+                                 text: "Tap this info button if you would like further information about all displays and buttons in this view. Repeat tapping in order to go through all elements.",
+                                 preferences: self.preferencesGreen,
+                                 delegate: self)
             }
         } else {
             let image = instrument?.symbol
@@ -425,33 +488,7 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     }
     
     fileprivate func showTipView(index: Int) {
-        
-        let fact: CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 0.04 : 0.02
-        let arrowSize = fact * self.view.bounds.size.width
-        
-        var preferencesRed = EasyTipView.Preferences()
-        preferencesRed.drawing.font = calibrationLabel.font
-        preferencesRed.drawing.foregroundColor = .white
-        preferencesRed.drawing.backgroundColor = headerView.backgroundColor ?? .red
-        preferencesRed.drawing.shadowColor = .darkGray
-        preferencesRed.drawing.shadowOpacity = 0.8
-        preferencesRed.drawing.arrowPosition = EasyTipView.ArrowPosition.any
-        preferencesRed.drawing.arrowHeight = arrowSize
-        preferencesRed.drawing.arrowWidth = arrowSize
-        preferencesRed.positioning.maxWidth = 0.5 * self.view.bounds.size.width
-        EasyTipView.globalPreferences = preferencesRed
-        
-        var preferencesGreen = EasyTipView.Preferences()
-        preferencesGreen.drawing.font = calibrationLabel.font
-        preferencesGreen.drawing.foregroundColor = .white
-        preferencesGreen.drawing.backgroundColor = UIColor(red: 0, green: 0.5569, blue: 0.2588, alpha: 1.0)
-        preferencesGreen.drawing.shadowColor = .darkGray
-        preferencesGreen.drawing.shadowOpacity = 0.8
-        preferencesGreen.drawing.arrowPosition = EasyTipView.ArrowPosition.any
-        preferencesGreen.drawing.arrowHeight = arrowSize
-        preferencesGreen.drawing.arrowWidth = arrowSize
-        preferencesGreen.positioning.maxWidth = 0.5 * self.view.bounds.size.width
-        
+
         switch index {
         case 0:        EasyTipView.show(forView: instrumentButton,
                                         withinSuperview: self.view,
