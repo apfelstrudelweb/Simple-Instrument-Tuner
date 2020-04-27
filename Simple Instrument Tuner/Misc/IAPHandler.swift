@@ -275,7 +275,7 @@ class IAPHandler: NSObject {
     
     func unlockAll() {
         
-        //unlockCalibration()
+        unlockCalibration()
         unlockGuitar()
         unlockBanjo()
         unlockUkulele()

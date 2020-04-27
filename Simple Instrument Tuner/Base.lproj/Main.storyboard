@@ -62,6 +62,17 @@
                                                     <segue destination="hih-AW-H12" kind="showDetail" identifier="settingsSegue" id="nbe-le-W7L"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQA-SA-AYI">
+                                                <rect key="frame" x="458" y="37.5" width="39.5" height="39.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="KQA-SA-AYI" secondAttribute="height" id="4cf-yJ-hrG"/>
+                                                </constraints>
+                                                <state key="normal" image="info.png"/>
+                                                <connections>
+                                                    <action selector="infoButton:" destination="Zh9-0E-QVY" eventType="touchUpInside" id="u3l-HT-h1R"/>
+                                                    <action selector="infoButtonTouched:" destination="Zh9-0E-QVY" eventType="touchUpInside" id="CbV-ZG-iWp"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.68902570009999997" green="0.26623564960000001" blue="0.2310875654" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -70,9 +81,11 @@
                                             <constraint firstItem="ekl-pO-cjx" firstAttribute="trailing" secondItem="vqR-9h-0vg" secondAttribute="trailing" id="Or7-BG-KX3"/>
                                             <constraint firstItem="sCt-hx-VNR" firstAttribute="height" secondItem="HmZ-41-X8f" secondAttribute="height" multiplier="0.6" id="Q3a-2d-hVZ"/>
                                             <constraint firstItem="ekl-pO-cjx" firstAttribute="leading" secondItem="vqR-9h-0vg" secondAttribute="leading" id="ZC1-0F-DXV"/>
+                                            <constraint firstItem="KQA-SA-AYI" firstAttribute="centerY" secondItem="sCt-hx-VNR" secondAttribute="centerY" multiplier="1.1" id="f9a-n3-gwv"/>
                                             <constraint firstItem="sCt-hx-VNR" firstAttribute="height" secondItem="HmZ-41-X8f" secondAttribute="height" multiplier="0.6" id="hwD-Qa-DRl"/>
                                             <constraint firstItem="ekl-pO-cjx" firstAttribute="centerY" secondItem="HmZ-41-X8f" secondAttribute="centerY" multiplier="0.8" id="sZl-Qe-4q4"/>
                                             <constraint firstItem="sCt-hx-VNR" firstAttribute="height" secondItem="HmZ-41-X8f" secondAttribute="height" multiplier="0.8" id="u93-iU-6vY"/>
+                                            <constraint firstItem="KQA-SA-AYI" firstAttribute="height" secondItem="HmZ-41-X8f" secondAttribute="height" multiplier="0.35" id="wI1-yf-KvC"/>
                                             <constraint firstAttribute="bottom" secondItem="vqR-9h-0vg" secondAttribute="bottom" constant="15.5" id="xe5-P6-Oes"/>
                                             <constraint firstItem="vqR-9h-0vg" firstAttribute="centerX" secondItem="HmZ-41-X8f" secondAttribute="centerX" id="zD0-IW-2nZ"/>
                                         </constraints>
@@ -276,6 +289,7 @@
                                     <constraint firstItem="rPp-IO-99f" firstAttribute="leading" secondItem="pej-Cn-rxy" secondAttribute="leading" id="Alj-tm-SYB"/>
                                     <constraint firstItem="HmZ-41-X8f" firstAttribute="height" secondItem="iwQ-5l-fUH" secondAttribute="height" multiplier="0.13" id="DvQ-qk-qMJ"/>
                                     <constraint firstItem="DmA-vC-Mtb" firstAttribute="top" secondItem="Tyh-Vq-PuI" secondAttribute="bottom" constant="8" symbolic="YES" id="EFu-hK-AdL"/>
+                                    <constraint firstItem="KQA-SA-AYI" firstAttribute="trailing" secondItem="pej-Cn-rxy" secondAttribute="trailing" id="HPf-E1-MSN"/>
                                     <constraint firstItem="yFw-fg-sHu" firstAttribute="top" secondItem="Tyh-Vq-PuI" secondAttribute="top" id="HSv-pa-CwH"/>
                                     <constraint firstItem="mhP-Xd-8do" firstAttribute="top" secondItem="HmZ-41-X8f" secondAttribute="bottom" id="IF0-FG-iSd"/>
                                     <constraint firstItem="AdA-7t-Bka" firstAttribute="top" secondItem="TaP-bL-MlF" secondAttribute="bottom" id="IYm-E5-SgD"/>
@@ -606,6 +620,7 @@
         <image name="btnActive.png" width="675" height="128"/>
         <image name="btnPassive.png" width="669" height="128"/>
         <image name="guitarSymbol.png" width="380" height="360"/>
+        <image name="info.png" width="74" height="73"/>
         <image name="microphoneOn.png" width="179" height="183"/>
         <image name="restoreButton.png" width="250" height="80"/>
         <image name="settings.png" width="141" height="146"/>

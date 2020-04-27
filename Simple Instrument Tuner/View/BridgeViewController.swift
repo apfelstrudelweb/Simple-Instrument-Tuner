@@ -61,14 +61,14 @@ class BridgeViewController: UIViewController, AKMIDIListener {
 
         if flag == true {
             
-            stringCollection.forEach {
-                
-                if $0.frequency == frequency {
-                    $0.image = UIImage.gif(name: "animatedString")
-                } else {
-                    $0.image = UIImage(named: "string")
-                }
-            }
+//            stringCollection.forEach {
+//                
+//                if $0.frequency == frequency {
+//                    $0.image = UIImage.gif(name: "string")
+//                } else {
+//                    $0.image = UIImage(named: "string")
+//                }
+//            }
             
             buttonCollection.forEach {
                 if $0.note.frequency == frequency {
@@ -138,7 +138,7 @@ class BridgeViewController: UIViewController, AKMIDIListener {
             stringView.image = instrument?.doubleStrings == true ? UIImage(named: "doubleString") : UIImage(named: "string")
             stringView.frequency = note.frequency
             containerView.addSubview(stringView)
-            
+ 
             let button = NoteButton()
             button.setBackgroundImage(UIImage(named: "noteButtonPassive"), for: .normal)
             button.tag = index
@@ -146,6 +146,11 @@ class BridgeViewController: UIViewController, AKMIDIListener {
             button.addTarget(self, action:#selector(self.buttonTouched), for: .touchUpInside)
             buttonCollection.append(button)
             containerView.addSubview(button)
+            
+            // because disabled buttons are semi-transparent
+            let buttonLayerView = UIImageView()
+            buttonLayerView.image = UIImage(named: "noteButtonPassive")
+            containerView.insertSubview(buttonLayerView, belowSubview: button)
             
             stringView.autoCenterInSuperview()
             stringView.autoPinEdge(toSuperviewEdge: .top)
@@ -158,6 +163,11 @@ class BridgeViewController: UIViewController, AKMIDIListener {
             button.autoAlignAxis(toSuperviewMarginAxis: .vertical)
             button.autoMatch(.width, to: .width, of: containerView, withMultiplier: widthMultiplier*0.8)
             button.autoMatch(.height, to: .width, of: button)
+            
+            buttonLayerView.autoPinEdge(.top, to: .top, of: button)
+            buttonLayerView.autoPinEdge(.bottom, to: .bottom, of: button)
+            buttonLayerView.autoPinEdge(.left, to: .left, of: button)
+            buttonLayerView.autoPinEdge(.right, to: .right, of: button)
             
             let noteLabel = NoteLabel()
             noteLabel.localizedText = note.noteName

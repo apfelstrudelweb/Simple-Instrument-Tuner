@@ -19,7 +19,8 @@
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>GADApplicationIdentifier</key>
-	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<!--<string>ca-app-pub-3940256099942544/2934735716</string>-->
+    <string>ca-app-pub-1849205192643985~6675663068</string>
 	<key>GADIsAdManagerApp</key>
 	<true/>
 	<key>LSRequiresIPhoneOS</key>
@@ -72,7 +73,7 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
-    <key>NSMicrophoneUsageDescription</key>
-    <string>Need microphone access to perform frequency detection</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Need microphone access to perform frequency detection</string>
 </dict>
 </plist>
