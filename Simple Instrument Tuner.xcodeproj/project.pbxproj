@@ -900,6 +900,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Simple Instrument Tuner/Simple Instrument Tuner.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = P2EQM7YAFH;
 				INFOPLIST_FILE = "Simple Instrument Tuner/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -924,6 +925,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Simple Instrument Tuner/Simple Instrument Tuner.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = P2EQM7YAFH;
 				INFOPLIST_FILE = "Simple Instrument Tuner/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;

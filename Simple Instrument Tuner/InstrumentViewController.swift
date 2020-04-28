@@ -64,7 +64,7 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     private var embeddedDisplayViewController: DisplayViewController!
     private var settingsViewController: SettingsViewController!
 
-    var preferencesRed = EasyTipView.Preferences()
+
     var preferencesGreen = EasyTipView.Preferences()
     
     
@@ -74,19 +74,9 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     
     func initTooltips() {
         
-        let fact: CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 0.04 : 0.02
-        let arrowSize = fact * self.view.bounds.size.width
-        
-        preferencesRed.drawing.font = calibrationLabel.font
-        preferencesRed.drawing.foregroundColor = .white
-        preferencesRed.drawing.backgroundColor = headerView.backgroundColor ?? .red
-        preferencesRed.drawing.shadowColor = .darkGray
-        preferencesRed.drawing.shadowOpacity = 0.3
-        preferencesRed.drawing.arrowPosition = EasyTipView.ArrowPosition.any
-        preferencesRed.drawing.arrowHeight = arrowSize
-        preferencesRed.drawing.arrowWidth = arrowSize
-        preferencesRed.positioning.maxWidth = 0.6 * self.view.bounds.size.width
-        EasyTipView.globalPreferences = preferencesRed
+        let fact1: CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 0.04 : 0.02
+        let arrowSize = fact1 * self.view.bounds.size.width
+        let fact2: CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 0.6 : 0.4
         
         preferencesGreen.drawing.font = calibrationLabel.font
         preferencesGreen.drawing.foregroundColor = .white
@@ -96,32 +86,7 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
         preferencesGreen.drawing.arrowPosition = EasyTipView.ArrowPosition.any
         preferencesGreen.drawing.arrowHeight = arrowSize
         preferencesGreen.drawing.arrowWidth = arrowSize
-        preferencesGreen.positioning.maxWidth = 0.6 * self.view.bounds.size.width
-        
-        // only made for screenshots
-        if false {
-            EasyTipView.show(forView: calibrationLabel,
-            withinSuperview: self.view,
-            text: "The chamber tone is about 440 Hz. You can calibrate your instrument. After doing  so, the new frequency will be displayed here.",
-            preferences: preferencesGreen,
-            delegate: self)
-            EasyTipView.show(forView: fftButton,
-            withinSuperview: self.view,
-            text: "Tap this button in order to see the spectrum of the plucked strings - you will see the harmonics as well.",
-            preferences: preferencesRed,
-            delegate: self)
-            EasyTipView.show(forView: embeddedBridgeViewController.buttonCollection.first!,
-            withinSuperview: self.view,
-            text: "Tap the single string button in order to tune a predetermined string by ear. A second tap will silence the signal sound. By the way, the number located behind the note indicates the octave.",
-            preferences: preferencesRed,
-            delegate: self)
-            EasyTipView.show(forView: settingsButton,
-            withinSuperview: self.view,
-            text: "Tap this button if you would like to change the instrument and/or the tuning.",
-            preferences: preferencesRed,
-            delegate: self)
-
-        }
+        preferencesGreen.positioning.maxWidth = fact2 * self.view.bounds.size.width
     }
     
     
@@ -511,68 +476,68 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
         case 3:      EasyTipView.show(forView: fftButton,
                                       withinSuperview: self.view,
                                       text: "Tap this button in order to see the spectrum of the plucked strings - you will see the harmonics as well.",
-                                      preferences: preferencesRed,
+                                      preferences: preferencesGreen,
                                       delegate: self)
             break
             
         case 4:       EasyTipView.show(forView: amplitudeButton,
                                        withinSuperview: self.view,
                                        text: "Tap this button in order to see the amplitude of the plucked strings.",
-                                       preferences: preferencesRed,
+                                       preferences: preferencesGreen,
                                        delegate: self)
             break
         case 5:        EasyTipView.show(forView: embeddedBridgeViewController.buttonCollection.first!,
                                         withinSuperview: self.view,
                                         text: "Tap the single string button in order to tune a predetermined string by ear. A second tap will silence the signal sound. By the way, the number located behind the note indicates the octave.",
-                                        preferences: preferencesRed,
+                                        preferences: preferencesGreen,
                                         delegate: self)
             break
         case 6:   EasyTipView.show(forView: tuningForkButton,
                                    withinSuperview: self.view,
                                    text: "Tap this button if you would like to tune your instrument by ear. Repeat tapping in order to go through all strings.",
-                                   preferences: preferencesRed,
+                                   preferences: preferencesGreen,
                                    delegate: self)
             break
         case 7:         EasyTipView.show(forView: tuningLabel,
                                          withinSuperview: self.view,
                                          text: "Display of the tuning of the instrument you chose in 'Settings'. For guitar, the standard tuning is 'classical / acoustic'.",
-                                         preferences: preferencesRed,
+                                         preferences: preferencesGreen,
                                          delegate: self)
         case 8:    EasyTipView.show(forView: embeddedVolumeMeterController.view,
                                     withinSuperview: self.view,
                                     text: "Display of the volume.",
-                                    preferences: preferencesRed,
+                                    preferences: preferencesGreen,
                                     delegate: self)
             break
             
         case 9:         EasyTipView.show(forView: embeddedDeviationMeterController.view,
                                          withinSuperview: self.view,
                                          text: "Display of the deviation of the plucked string from the next likely note recognized by the sound system. Tune your string until only the green LED  is displayed. Red LEDs to the left indicate that you need to turn the peg away from you to avoid sounding  sharp - red LEDs to the right indicate that you need to turn the peg toward you to avoid sounding flat.",
-                                         preferences: preferencesRed,
+                                         preferences: preferencesGreen,
                                          delegate: self)
             break
         case 10:        EasyTipView.show(forView: octaveLabel,
                                          withinSuperview: self.view,
                                          text: "Display of the octave of the plucked string. An octave played by any instrument is always a pitch that is double the frequency of the first note when going up an octave and halved when going down.",
-                                         preferences: preferencesRed,
+                                         preferences: preferencesGreen,
                                          delegate: self)
             break
         case 11:         EasyTipView.show(forView: embeddedGaugeViewController.view,
                                           withinSuperview: self.view,
                                           text: "Display of the note or half-note of the plucked string. This info is very useful in conjunction with the octave displayed above. Take as an example, the 'thick' E string of a guitar - in order to tune the E2 string, notice how both the tone 'E' within this gauge, and the octave '2' above are displayed.",
-                                          preferences: preferencesRed,
+                                          preferences: preferencesGreen,
                                           delegate: self)
             break
         case 12:  EasyTipView.show(forView: microphoneButton,
                                    withinSuperview: self.view,
                                    text: "Tap this button in order to tune your instrument with the integrated frequency detection engine.",
-                                   preferences: preferencesRed,
+                                   preferences: preferencesGreen,
                                    delegate: self)
             break
         case 13:  EasyTipView.show(forView: settingsButton,
                                    withinSuperview: self.view,
                                    text: "Tap this button if you would like to change the instrument and/or the tuning.",
-                                   preferences: preferencesRed,
+                                   preferences: preferencesGreen,
                                    delegate: self)
         default: print("no")
             
