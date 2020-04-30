@@ -63,8 +63,8 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     private var embeddedBridgeViewController: BridgeViewController!
     private var embeddedDisplayViewController: DisplayViewController!
     private var settingsViewController: SettingsViewController!
-
-
+    
+    
     var preferencesGreen = EasyTipView.Preferences()
     
     
@@ -146,10 +146,13 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
             self.disableAudio()
         }
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didPerformIAP), name: .didPerformIAP, object: nil)
+        
         setAudioMode()
         
         handleAd()
     }
+    
     
     // TODO: didChangeTuning
     func didChangeInstrument() {
@@ -184,6 +187,13 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     // MARK: DeviationDelegate
     func hitNote(frequency: Float, flag: Bool) {
         embeddedBridgeViewController.animateString(frequency: frequency, flag: flag)
+    }
+    
+    @objc func didPerformIAP(_ notification: Notification) {
+        
+       if IAPHandler().displayAd() == false {
+            bannerView.removeFromSuperview()
+        }
     }
     
     func handleAd() {
@@ -453,7 +463,7 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     }
     
     fileprivate func showTipView(index: Int) {
-
+        
         switch index {
         case 0:        EasyTipView.show(forView: instrumentButton,
                                         withinSuperview: self.view,

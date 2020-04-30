@@ -129,10 +129,6 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
     func didChangeTuning() {
         self.settingsDelegate?.didChangeTuning()
     }
-    
-    func updateCalibration() {
-        embeddedCalibrationViewController.updateAvailableProducts()
-    }
 
     
     @IBAction func closeButtonTouched(_ sender: Any) {
@@ -160,8 +156,7 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
             }
         }
         
-        embeddedTuningViewController.tableView.reloadData()
-        embeddedCalibrationViewController.updateAvailableProducts()
+        NotificationCenter.default.post(name: .didPerformIAP, object: nil)
         
         self.showAlert(title:"Success", msg: alertText)
     }

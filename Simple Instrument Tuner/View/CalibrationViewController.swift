@@ -9,12 +9,12 @@
 import UIKit
 
 protocol CalibrationSliderDelegate: AnyObject {
-
+    
     func didChangeCalibration()
 }
 
-class CalibrationViewController: UIViewController, IAPDelegate {
-
+class CalibrationViewController: UIViewController {
+    
     @IBOutlet weak var frequencyLabel: UILabel!
     @IBOutlet weak var shoppingCartButton: UIButton!
     
@@ -31,12 +31,14 @@ class CalibrationViewController: UIViewController, IAPDelegate {
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "settingsPattern.png")!)
         frequencyLabel.textColor = UIColor(displayP3Red: 105/225, green: 221/225, blue: 52/225, alpha: 1)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didPerformIAP), name: .didPerformIAP, object: nil)
+        
         handleGuiElements()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
+        
         handleGuiElements()
     }
     
@@ -64,25 +66,22 @@ class CalibrationViewController: UIViewController, IAPDelegate {
             let currentCalibration = receivedData.to(type: Int.self)
             slider.value = Float(currentCalibration)
         } else {
-            let data = Data(from: Int(440))
+            let data = Data(from: Int(chambertone))
             let _ = KeyChain.save(key: KEYCHAIN_CURRENT_CALIBRATION, data: data)
-            slider.value = Float(440)
+            slider.value = Float(chambertone)
         }
         frequencyLabel.text = "\(Int(slider.value)) Hz"
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-           if let vc = segue.destination as? InAppPurchaseViewController {
-               vc.iapDelegate = self
-           }
-       }
-
-    
-    func updateAvailableProducts() {
+    @objc func didPerformIAP(_ notification: Notification) {
+        
         DispatchQueue.main.async {
             self.handleGuiElements()
         }
     }
     
-
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
 }

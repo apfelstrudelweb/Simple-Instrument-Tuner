@@ -17,16 +17,7 @@ struct Product {
     var skProduct: SKProduct?
 }
 
-protocol IAPDelegate: class {
-
-    func updateAvailableProducts()
-}
-
-
-
 class InAppPurchaseViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
-    weak var iapDelegate: IAPDelegate?
     
     
     @IBOutlet var productTableView: UITableView!
@@ -62,7 +53,7 @@ class InAppPurchaseViewController: UIViewController, UITableViewDataSource, UITa
         cell.selectionStyle = .default
         
         let product = productsArray![indexPath.row]
-
+        
         cell.productLabel.text = product.title
         cell.descriptionTextView.attributedText = Utils().generateBulletList(stringList: product.description!, font: cell.descriptionTextView.font!, bullet: "⮕")
         cell.priceLabel.text = product.price
@@ -90,21 +81,20 @@ class InAppPurchaseViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        
         guard let product = productsArray?[indexPath.row], let skProduct = product.skProduct, let title = product.title else { return }
         
         PKIAPHandler.shared.purchase(product: skProduct) { (alert, product, transaction) in
-
+            
             if let _ = transaction, let _ = product {
-                
-                  IAPHandler().dictUnlockMethods[title]!()
-                  self.iapDelegate?.updateAvailableProducts()
-                  self.dismiss(animated: true, completion: nil)
+            
+                IAPHandler().dictUnlockMethods[title]!()
+                //self.iapDelegate?.updateAvailableProducts()
+                NotificationCenter.default.post(name: .didPerformIAP, object: nil)
+                self.dismiss(animated: true, completion: nil)
             }
         }
     }
-    
-    
 }
 
 extension UIViewController {
@@ -115,4 +105,9 @@ extension UIViewController {
             self.present(alert, animated: true, completion: nil)
         }
     }
+}
+
+
+extension Notification.Name {
+    static let didPerformIAP = Notification.Name("didPerformIAP")
 }

@@ -21,7 +21,7 @@ public class Note: NSObject {
             
            self.noteName = noteName
            self.frequency = frequency
-           let n = Int(round(12 * log2(2 * frequency / 440))) + 69
+           let n = Int(round(12 * log2(2 * frequency / chambertone))) + 69
            self.number = MIDINoteNumber(n)
      }
 

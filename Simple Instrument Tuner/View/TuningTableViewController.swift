@@ -12,10 +12,9 @@ import PureLayout
 protocol TuningTableViewControllerDelegate: AnyObject {
     
     func didChangeTuning()
-    func updateCalibration()
 }
 
-class TuningTableViewController: UITableViewController, IAPDelegate {
+class TuningTableViewController: UITableViewController {
 
     weak var tuningDelegate: TuningTableViewControllerDelegate?
     var iapController: InAppPurchaseViewController?
@@ -41,6 +40,7 @@ class TuningTableViewController: UITableViewController, IAPDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
    
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didPerformIAP), name: .didPerformIAP, object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -176,16 +176,16 @@ class TuningTableViewController: UITableViewController, IAPDelegate {
         if let vc = segue.destination as? InAppPurchaseViewController {
             iapController = vc
             iapController?.instrument = instrument
-            iapController?.iapDelegate = self
         }
     }
-    
-    func updateAvailableProducts() {
 
-        DispatchQueue.main.async {
-            self.tuningDelegate?.updateCalibration()
-            self.tableView.reloadData()
-        }
+    @objc func didPerformIAP(_ notification: Notification) {
+        
+        self.tableView.reloadData()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 }
 
@@ -218,25 +218,5 @@ extension IndexPath {
             rowNumber += tableView.numberOfRows(inSection: i)
         }
         return rowNumber
-    }
-}
-
-extension UITableView {
-    
-
-    func scrollToBottom(){
-
-        DispatchQueue.main.async {
-            let pointsFromTop = CGPoint(x: 0, y: CGFloat.greatestFiniteMagnitude)
-            self.setContentOffset(pointsFromTop, animated: true)
-        }
-    }
-
-    func scrollToTop() {
-
-        DispatchQueue.main.async {
-            let indexPath = IndexPath(row: 0, section: 0)
-            self.scrollToRow(at: indexPath, at: .top, animated: false)
-        }
     }
 }

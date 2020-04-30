@@ -18,7 +18,7 @@ class NoteButton: UIButton {
         }
     }
     
-    var note = Note(noteName: "", frequency: 440) {
+    var note = Note(noteName: "", frequency: chambertone) {
         didSet {
             
             self.setNeedsLayout()

@@ -87,9 +87,9 @@ class CalibrationSlider: UISlider {
             let currentCalibration = receivedData.to(type: Int.self)
             self.value = Float(currentCalibration)
         } else {
-            let data = Data(from: Int(440))
+            let data = Data(from: Int(chambertone))
             let _ = KeyChain.save(key: KEYCHAIN_CURRENT_CALIBRATION, data: data)
-            self.value = Float(440)
+            self.value = Float(chambertone)
         }
         //setLabel()
     }
@@ -105,11 +105,5 @@ class CalibrationSlider: UISlider {
         
         
     }
-    
-//    private func setLabel() {
-//        label2?.text = "\(Int(self.value)) Hz"
-//        label2?.textColor = self.value == 440 ? color440Hz : self.tintColor
-//        label2?.font = self.value == 440 ? UIFont.systemFont(ofSize: fontSize, weight: .medium) : UIFont.systemFont(ofSize: fontSize, weight: .bold)
-//    }
     
 }
