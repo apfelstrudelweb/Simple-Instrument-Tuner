@@ -191,7 +191,7 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     
     @objc func didPerformIAP(_ notification: Notification) {
         
-       if IAPHandler().displayAd() == false {
+        if IAPHandler().displayAd() == false {
             bannerView.removeFromSuperview()
         }
     }
@@ -326,9 +326,17 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     }
     
     fileprivate func disableAudio() {
+        
+        UIApplication.shared.isIdleTimerDisabled = false
+        
+        do {
+            try AudioKit.stop()
+        } catch {
+            AKLog("AudioKit did not start!")
+        }
+        
         mode = .silent
         handleMicrophoneButton()
-        UIApplication.shared.isIdleTimerDisabled = false
     }
     
     
@@ -403,17 +411,14 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
         setAudioMode()
         UIApplication.shared.isIdleTimerDisabled = mode == .record
         handleMicrophoneButton()
-        
-        for button in self.embeddedBridgeViewController.buttonCollection {
-            button.isEnabled = mode == .silent
-        }
-        tuningForkButton.isEnabled = mode == .silent
-        settingsButton.isEnabled = mode == .silent
     }
     
     fileprivate func handleMicrophoneButton() {
+        
+        // TODO: put this logic into the button class
         let buttonImage = mode == .record ? UIImage(named: "microphoneOff") : UIImage(named: "microphoneOn")
         microphoneButton.setImage(buttonImage, for: .normal)
+        microphoneButton.isEnabled = mode == .silent
         
         if mode == .record {
             self.timer = Timer.scheduledTimer(timeInterval: 0.01,
@@ -426,6 +431,13 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
             self.timer?.invalidate()
             UIApplication.shared.isIdleTimerDisabled = false
         }
+        
+        for button in self.embeddedBridgeViewController.buttonCollection {
+            button.isEnabled = mode == .silent
+        }
+        
+        tuningForkButton.isEnabled = mode == .silent
+        settingsButton.isEnabled = mode == .silent
     }
     
     

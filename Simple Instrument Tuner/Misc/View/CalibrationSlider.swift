@@ -44,41 +44,6 @@ class CalibrationSlider: UISlider {
 
     private func setUpSlider() {
         
-        //self.backgroundColor = UIColor(patternImage: UIImage(named: "settingsPatternDark.png")!)
-        
-        
-//        label1 = UILabel()
-//        label1?.textColor = .white
-//        label1?.font = UIFont.systemFont(ofSize: fontSize, weight: .medium)
-//        label1?.text = "Calibration"
-//        self.addSubview(label1!)
-//        label1?.autoPinEdge(.left, to: .left, of: self)
-//        label1?.autoMatch(.width, to: .width, of: self, withMultiplier: 0.5)
-//        label1?.autoMatch(.height, to: .height, of: self)
-//        label1?.autoPinEdge(.bottom, to: .top, of: self, withOffset: -10.0)
-        
-        if IAPHandler().isOpenCalibration() == false {
-//            let shoppingCartImageView = UIImageView(image: UIImage(named: "shoppingCart2"))
-//            self.addSubview(shoppingCartImageView)
-//            shoppingCartImageView.autoPinEdge(.right, to: .right, of: self)
-//            shoppingCartImageView.autoPinEdge(.top, to: .top, of: label1 ?? self)
-//            shoppingCartImageView.autoMatch(.width, to: .width, of: self, withMultiplier: 0.25)
-//            let aspectRatioConstraint = NSLayoutConstraint(item: shoppingCartImageView, attribute: .height, relatedBy: .equal, toItem: shoppingCartImageView, attribute: .width, multiplier: 80/184, constant: 0)
-//            shoppingCartImageView.addConstraint(aspectRatioConstraint)
-        } else {
-//            label2 = UILabel()
-//            label2?.textColor = .white
-//            label2?.font = UIFont.systemFont(ofSize: fontSize, weight: .medium)
-//            label2?.textAlignment = .right
-//            self.addSubview(label2!)
-//            label2?.autoPinEdge(.right, to: .right, of: self)
-//            label2?.autoMatch(.width, to: .width, of: self, withMultiplier: 0.5)
-//            label2?.autoMatch(.height, to: .height, of: self)
-//            label2?.autoAlignAxis(.horizontal, toSameAxisOf: label1!)
-        }
-        
-
-        
         addTarget(self, action: #selector(handleValueChange(sender:)), for: .valueChanged)
     }
     
@@ -100,10 +65,7 @@ class CalibrationSlider: UISlider {
 
         let data = Data(from: Int(self.value))
         let _ = KeyChain.save(key: KEYCHAIN_CURRENT_CALIBRATION, data: data)
-        
-        //setLabel()
-        
-        
+
     }
     
 }

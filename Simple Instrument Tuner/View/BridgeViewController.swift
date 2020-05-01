@@ -55,20 +55,17 @@ class BridgeViewController: UIViewController, AKMIDIListener {
         self.view.layoutIfNeeded()
         
         loadElements()
+        
+        NotificationCenter.default.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: nil) { (notification) in
+            print("app did enter background 2")
+            
+            self.loadElements()
+        }
     }
     
     func animateString(frequency: Float, flag: Bool) {
-
+        
         if flag == true {
-            
-//            stringCollection.forEach {
-//                
-//                if $0.frequency == frequency {
-//                    $0.image = UIImage.gif(name: "string")
-//                } else {
-//                    $0.image = UIImage(named: "string")
-//                }
-//            }
             
             buttonCollection.forEach {
                 if $0.note.frequency == frequency {
@@ -138,7 +135,7 @@ class BridgeViewController: UIViewController, AKMIDIListener {
             stringView.image = instrument?.doubleStrings == true ? UIImage(named: "doubleString") : UIImage(named: "string")
             stringView.frequency = note.frequency
             containerView.addSubview(stringView)
- 
+            
             let button = NoteButton()
             button.setBackgroundImage(UIImage(named: "noteButtonPassive"), for: .normal)
             button.tag = index
