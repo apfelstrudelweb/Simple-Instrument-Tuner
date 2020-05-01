@@ -146,6 +146,11 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
     // MARK
     func productsRestored(products: [String]) {
         
+        if products.count == 0 {
+            self.showAlert(title:"Info", msg: " You've made no in-app purchases yet. Thus no item can be restored.")
+            return
+        }
+        
         var alertText = "The follwing products have been restored:"
         
         for product in products {
