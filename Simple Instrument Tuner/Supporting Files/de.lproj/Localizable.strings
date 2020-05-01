@@ -1,0 +1,25 @@
+/* 
+  Localizable.strings .strings
+  Simple Instrument Tuner
+
+  Created by Ullrich Vormbrock on 01.05.20.
+  Copyright © 2020 Ullrich Vormbrock. All rights reserved.
+*/
+
+
+// Info Button
+"Info.intro" = "Betätigen Sie diesen Button, wenn Sie mehr über alle Elemente in dieser Ansicht erfahren möchten. Tippe Sie mehrmals drauf, um durch alle Elemente zu gehen";
+"Info.instrumentButton" = "Anzeige des Instruments, welches Sie unter 'Einstellungen' ausgewählt haben - dieser Einstellungs-Button befindet sich ganz unten rechts. Wenn man auf das Instrument tippt, öffnet sich ebenfalls der Settings-Dialog, bei dem man das Instrument ändern kann";
+"Info.frequencyLabel" = "Anzeige der Frequenz (in Hz) der angeschlagenen Saite. Diese Info ist nützlich für fortgeschrittene Benutzer ...";
+"Info.calibrationLabel" = "Der Kammerton liegt bei 440 Hz. Sie können Ihr Instrument kalibrieren. Nach dem Kalibrieren wird die neue Frequenz hier angezeigt.";
+"Info.fftButton" = "Tippen Sie auf diese Schaltfläche, um das Spektrum der gezupften Saiten zu sehen - Sie sehen auch die Obertöne.";
+"Info.amplitudeButton" = "Tippen Sie auf diese Schaltfläche, um die Amplitude der gezupften Saiten zu sehen.";
+"Info.toneButton" = "Tippen Sie auf den Einzelsaiten-Knopf, um eine vorgegebene Saite nach Gehör zu stimmen. Ein zweites Antippen bringt den Signalton zum Schweigen. Übrigens, die Zahl hinter der Note gibt die Oktave an.";
+"Info.tuningForkButton" = "Tippen Sie auf diese Schaltfläche, wenn Sie Ihr Instrument nach Gehör stimmen möchten. Wiederholen Sie das Tippen, um durch alle Saiten zu gehen.";
+"Info.tuningLabel" = "Anzeige der Stimmung des Instruments, das Sie unter 'Einstellungen' gewählt haben. Für Gitarre ist die Standard-Stimmung 'classical / acoustic'.";
+"Info.volumeView" = "Anzeige der Lautstärke";
+"Info.deviationView" = "Anzeige der Abweichung der gezupften Saite von der nächsten wahrscheinlichen Note, die vom Tonsystem erkannt wird. Stimmen Sie Ihre Saite, bis nur noch die grüne LED angezeigt wird. Rote LEDs auf der linken Seite zeigen an, dass Sie den Wirbel von sich weg drehen müssen, um nicht zu hoch zu klingen - rote LEDs auf der rechten Seite zeigen an, dass Sie den Wirbel zu sich hin drehen müssen, um nicht zu tief zu klingen.";
+"Info.octaveLabel" = "Anzeige der Oktave der gezupften Saite. Eine Oktave, die von einem beliebigen Instrument gespielt wird, ist immer eine Tonhöhe, die beim Aufsteigen um eine Oktave doppelt so hoch ist wie die Frequenz der ersten Note und beim Absteigen halbiert wird.";
+"Info.gaugeView" = "Anzeige der Note oder des Halbtons der gezupften Saite. Diese Information ist sehr nützlich in Verbindung mit der oben angezeigten Oktave. Nehmen wir als Beispiel die 'dicke' E-Saite einer Gitarre - um die E2-Saite zu stimmen, beachten Sie, dass sowohl der Ton 'E' im Rädchen, als auch die Oktave '2' oberhalb davon angezeigt wird.";
+"Info.microphoneButton" = "Tippen Sie auf diese Schaltfläche, um Ihr Instrument mit dem integrierten Frequenzerkennungs-Algorithmus zu stimmen.";
+"Info.settingsButton" = "Tippen Sie auf diese Schaltfläche, wenn Sie das Instrument und/oder die Stimmung ändern möchten.";

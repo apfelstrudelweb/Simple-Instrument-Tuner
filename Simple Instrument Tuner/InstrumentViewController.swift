@@ -109,7 +109,7 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
                 
                 EasyTipView.show(forView: self.infoButton,
                                  withinSuperview: self.view,
-                                 text: "Tap this info button if you would like further information about all displays and buttons in this view. Repeat tapping in order to go through all elements.",
+                                 text: NSLocalizedString("Info.intro", comment: ""),
                                  preferences: self.preferencesGreen,
                                  delegate: self)
             }
@@ -192,7 +192,9 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     @objc func didPerformIAP(_ notification: Notification) {
         
         if IAPHandler().displayAd() == false {
-            bannerView.removeFromSuperview()
+            if bannerView != nil {
+                bannerView.removeFromSuperview()
+            }
         }
     }
     
@@ -479,86 +481,86 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
         switch index {
         case 0:        EasyTipView.show(forView: instrumentButton,
                                         withinSuperview: self.view,
-                                        text: "Display of the instrument you selected  in 'Settings' ( the button can be found at the bottom right). Tapping on the symbol opens the settings dialogue where you can change the instrument.",
+                                        text: NSLocalizedString("Info.instrumentButton", comment: ""),
                                         preferences: preferencesGreen,
                                         delegate: self)
             break
         case 1:  EasyTipView.show(forView: frequencyLabel,
                                   withinSuperview: self.view,
-                                  text: "Display of the frequency of the plucked string in Hz. This info is useful for professionals ...",
+                                  text: NSLocalizedString("Info.frequencyLabel", comment: ""),
                                   preferences: preferencesGreen,
                                   delegate: self)
             break
         case 2: EasyTipView.show(forView: calibrationLabel,
                                  withinSuperview: self.view,
-                                 text: "The chamber tone is about 440 Hz. You can calibrate your instrument. After doing  so, the new frequency will be displayed here.",
+                                 text: NSLocalizedString("Info.calibrationLabel", comment: ""),
                                  preferences: preferencesGreen,
                                  delegate: self)
             break
         case 3:      EasyTipView.show(forView: fftButton,
                                       withinSuperview: self.view,
-                                      text: "Tap this button in order to see the spectrum of the plucked strings - you will see the harmonics as well.",
+                                      text: NSLocalizedString("Info.fftButton", comment: ""),
                                       preferences: preferencesGreen,
                                       delegate: self)
             break
             
         case 4:       EasyTipView.show(forView: amplitudeButton,
                                        withinSuperview: self.view,
-                                       text: "Tap this button in order to see the amplitude of the plucked strings.",
+                                       text: NSLocalizedString("Info.amplitudeButton", comment: ""),
                                        preferences: preferencesGreen,
                                        delegate: self)
             break
         case 5:        EasyTipView.show(forView: embeddedBridgeViewController.buttonCollection.first!,
                                         withinSuperview: self.view,
-                                        text: "Tap the single string button in order to tune a predetermined string by ear. A second tap will silence the signal sound. By the way, the number located behind the note indicates the octave.",
+                                        text: NSLocalizedString("Info.toneButton", comment: ""),
                                         preferences: preferencesGreen,
                                         delegate: self)
             break
         case 6:   EasyTipView.show(forView: tuningForkButton,
                                    withinSuperview: self.view,
-                                   text: "Tap this button if you would like to tune your instrument by ear. Repeat tapping in order to go through all strings.",
+                                   text: NSLocalizedString("Info.tuningForkButton", comment: ""),
                                    preferences: preferencesGreen,
                                    delegate: self)
             break
         case 7:         EasyTipView.show(forView: tuningLabel,
                                          withinSuperview: self.view,
-                                         text: "Display of the tuning of the instrument you chose in 'Settings'. For guitar, the standard tuning is 'classical / acoustic'.",
+                                         text: NSLocalizedString("Info.tuningLabel", comment: ""),
                                          preferences: preferencesGreen,
                                          delegate: self)
         case 8:    EasyTipView.show(forView: embeddedVolumeMeterController.view,
                                     withinSuperview: self.view,
-                                    text: "Display of the volume.",
+                                    text: NSLocalizedString("Info.volumeView", comment: ""),
                                     preferences: preferencesGreen,
                                     delegate: self)
             break
             
         case 9:         EasyTipView.show(forView: embeddedDeviationMeterController.view,
                                          withinSuperview: self.view,
-                                         text: "Display of the deviation of the plucked string from the next likely note recognized by the sound system. Tune your string until only the green LED  is displayed. Red LEDs to the left indicate that you need to turn the peg away from you to avoid sounding  sharp - red LEDs to the right indicate that you need to turn the peg toward you to avoid sounding flat.",
+                                         text: NSLocalizedString("Info.deviationView", comment: ""),
                                          preferences: preferencesGreen,
                                          delegate: self)
             break
         case 10:        EasyTipView.show(forView: octaveLabel,
                                          withinSuperview: self.view,
-                                         text: "Display of the octave of the plucked string. An octave played by any instrument is always a pitch that is double the frequency of the first note when going up an octave and halved when going down.",
+                                         text: NSLocalizedString("Info.octaveLabel", comment: ""),
                                          preferences: preferencesGreen,
                                          delegate: self)
             break
         case 11:         EasyTipView.show(forView: embeddedGaugeViewController.view,
                                           withinSuperview: self.view,
-                                          text: "Display of the note or half-note of the plucked string. This info is very useful in conjunction with the octave displayed above. Take as an example, the 'thick' E string of a guitar - in order to tune the E2 string, notice how both the tone 'E' within this gauge, and the octave '2' above are displayed.",
+                                          text: NSLocalizedString("Info.gaugeView", comment: ""),
                                           preferences: preferencesGreen,
                                           delegate: self)
             break
         case 12:  EasyTipView.show(forView: microphoneButton,
                                    withinSuperview: self.view,
-                                   text: "Tap this button in order to tune your instrument with the integrated frequency detection engine.",
+                                   text: NSLocalizedString("Info.microphoneButton", comment: ""),
                                    preferences: preferencesGreen,
                                    delegate: self)
             break
         case 13:  EasyTipView.show(forView: settingsButton,
                                    withinSuperview: self.view,
-                                   text: "Tap this button if you would like to change the instrument and/or the tuning.",
+                                   text: NSLocalizedString("Info.settingsButton", comment: ""),
                                    preferences: preferencesGreen,
                                    delegate: self)
         default: print("no")

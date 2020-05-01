@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings .strings
+  Simple Instrument Tuner
+
+  Created by Ullrich Vormbrock on 01.05.20.
+  Copyright © 2020 Ullrich Vormbrock. All rights reserved.
+*/
+
+
+// Info Button
+"Info.intro" = "Tap this info button if you would like further information about all displays and buttons in this view. Repeat tapping in order to go through all elements.";
+"Info.instrumentButton" = "Display of the instrument you selected  in 'Settings' ( the button can be found at the bottom right). Tapping on the symbol opens the settings dialogue where you can change the instrument.";
+"Info.frequencyLabel" = "Display of the frequency of the plucked string in Hz. This info is useful for professionals ...";
+"Info.calibrationLabel" = "The chamber tone is about 440 Hz. You can calibrate your instrument. After doing  so, the new frequency will be displayed here.";
+
+"Info.fftButton" = "Tap this button in order to see the spectrum of the plucked strings - you will see the harmonics as well.";
+"Info.amplitudeButton" = "Tap this button in order to see the amplitude of the plucked strings.";
+"Info.toneButton" = "Tap the single string button in order to tune a predetermined string by ear. A second tap will silence the signal sound. By the way, the number located behind the note indicates the octave.";
+"Info.tuningForkButton" = "Tap this button if you would like to tune your instrument by ear. Repeat tapping in order to go through all strings.";
+"Info.tuningLabel" = "Display of the tuning of the instrument you chose in 'Settings'. For guitar, the standard tuning is 'classical / acoustic'.";
+"Info.volumeView" = "Display of the volume.";
+"Info.deviationView" = "Display of the deviation of the plucked string from the next likely note recognized by the sound system. Tune your string until only the green LED  is displayed. Red LEDs to the left indicate that you need to turn the peg away from you to avoid sounding  sharp - red LEDs to the right indicate that you need to turn the peg toward you to avoid sounding flat.";
+"Info.octaveLabel" = "Display of the octave of the plucked string. An octave played by any instrument is always a pitch that is double the frequency of the first note when going up an octave and halved when going down.";
+"Info.gaugeView" = "Display of the note or half-note of the plucked string. This info is very useful in conjunction with the octave displayed above. Take as an example, the 'thick' E string of a guitar - in order to tune the E2 string, notice how both the tone 'E' within this gauge, and the octave '2' above are displayed.";
+"Info.microphoneButton" = "Tap this button in order to tune your instrument with the integrated frequency detection engine.";
+"Info.settingsButton" = "Tap this button if you would like to change the instrument and/or the tuning.";

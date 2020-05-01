@@ -1,0 +1,24 @@
+/* 
+  Localizable.strings .strings
+  Simple Instrument Tuner
+
+  Created by Ullrich Vormbrock on 01.05.20.
+  Copyright © 2020 Ullrich Vormbrock. All rights reserved.
+*/
+
+// Info Button
+"Info.intro" = "Toque este botón de información si desea obtener más información sobre todas las pantallas y botones de esta vista. Repita los toques para pasar por todos los elementos.";
+"Info.instrumentButton" = "Visualización del instrumento seleccionado en 'Ajustes' (el botón se encuentra en la parte inferior derecha). Pulsando sobre el símbolo se abre el diálogo de ajustes donde puede cambiar el instrumento.";
+"Info.frequencyLabel" = "Visualización de la frecuencia de la cuerda pulsada en Hz. Esta información es útil para los profesionales ...";
+"Info.calibrationLabel" = "El tono de la cámara es de unos 440 Hz. Puede calibrar su instrumento. Después de hacerlo, la nueva frecuencia se mostrará aquí.";
+"Info.fftButton" = "Toque este botón para ver el espectro de las cuerdas pulsadas, también verá los armónicos.";
+"Info.amplitudeButton" = "Toque este botón para ver la amplitud de las cuerdas pulsadas.";
+"Info.toneButton" = "Toca el botón de una sola cuerda para afinar una cuerda predeterminada por el oído. Un segundo toque silenciará el sonido de la señal. Por cierto, el número situado detrás de la nota indica la octava.";
+"Info.tuningForkButton" = "Toque este botón si desea afinar su instrumento de oído. Repita los golpecitos para pasar por todas las cuerdas.";
+"Info.tuningLabel" = "Visualización de la afinación del instrumento elegido en 'Ajustes'. Para la guitarra, la afinación estándar es 'classical / acoustic'.";
+"Info.volumeView" = "Visualización del volumen.";
+"Info.deviationView" = "Visualización de la desviación de la cuerda pulsada de la siguiente nota probable reconocida por el sistema de sonido. Afine la cuerda hasta que sólo aparezca el LED verde. Los LED rojos de la izquierda indican que debe girar la clavija en dirección contraria a usted para evitar que suene agudo - los LEDs rojos de la derecha indican que tiene que girar la clavija hacia usted para evitar que suene plana.";
+"Info.octaveLabel" = "Visualización de la octava de la cuerda pulsada. Una octava tocada por cualquier instrumento es siempre un tono que es el doble de la frecuencia de la primera nota cuando sube una octava y la mitad cuando baja.";
+"Info.gaugeView" = "Visualización de la nota o media nota de la cuerda arrancada. Esta información es muy útil en conjunción con la octava mostrada arriba. Tomemos como ejemplo la cuerda 'grues' de E (mi) de una guitarra. Para afinar la cuerda de E2, observe cómo se muestra tanto el tono de E dentro de este indicador, como la octava 2 de arriba.";
+"Info.microphoneButton" = "Toque este botón para afinar su instrumento con el motor de detección de frecuencias integrado.";
+"Info.settingsButton" = "Toque este botón si desea cambiar el instrumento y/o la afinación.";

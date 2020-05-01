@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5ABBED16C8B37502230B35C0 /* Pods_Simple_Instrument_Tuner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB0DCBFF1BA7BD84F7379A50 /* Pods_Simple_Instrument_Tuner.framework */; };
 		6509D1B124557CAD005D2351 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6509D1B024557CAD005D2351 /* StoreKit.framework */; };
+		65142638245C87EF002E7E82 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6514263A245C87EF002E7E82 /* Localizable.strings */; };
 		652BC0DB242A2C0D00F60B83 /* VolumeMeterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC0D9242A2C0C00F60B83 /* VolumeMeterViewController.swift */; };
 		652BC0DE242A2C0D00F60B83 /* VolumeMeter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652BC0DA242A2C0C00F60B83 /* VolumeMeter.storyboard */; };
 		652BC0E2242A2C6F00F60B83 /* volumeMeterPattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 652BC0E1242A2C6E00F60B83 /* volumeMeterPattern.png */; };
@@ -127,6 +128,13 @@
 /* Begin PBXFileReference section */
 		457E6052D443CDAE029DEBF4 /* Pods-Simple Instrument Tuner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simple Instrument Tuner.release.xcconfig"; path = "Target Support Files/Pods-Simple Instrument Tuner/Pods-Simple Instrument Tuner.release.xcconfig"; sourceTree = "<group>"; };
 		6509D1B024557CAD005D2351 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		65142634245C8769002E7E82 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		65142635245C8772002E7E82 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		65142639245C87EF002E7E82 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6514263B245C87F3002E7E82 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6514263C245C87F4002E7E82 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6514263D245C8F7F002E7E82 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		6514263E245C8F7F002E7E82 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		652BC0D9242A2C0C00F60B83 /* VolumeMeterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeMeterViewController.swift; sourceTree = "<group>"; };
 		652BC0DA242A2C0C00F60B83 /* VolumeMeter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VolumeMeter.storyboard; sourceTree = "<group>"; };
 		652BC0E1242A2C6E00F60B83 /* volumeMeterPattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volumeMeterPattern.png; sourceTree = "<group>"; };
@@ -166,7 +174,6 @@
 		65585A792433508B002CD214 /* DisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
 		65585A7D243350A7002CD214 /* Display.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Display.storyboard; sourceTree = "<group>"; };
 		65585A812433A793002CD214 /* DisplayModeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayModeButton.swift; sourceTree = "<group>"; };
-		65585A8924371B6A002CD214 /* loudspeaker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loudspeaker.png; sourceTree = "<group>"; };
 		6559D82C244D856900863CE7 /* CalibrationLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationLabel.swift; sourceTree = "<group>"; };
 		6559D85D244E20AE00863CE7 /* upgradeButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upgradeButton.png; sourceTree = "<group>"; };
 		6559D85F244E20B800863CE7 /* restoreButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = restoreButton.png; sourceTree = "<group>"; };
@@ -263,6 +270,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65142630245C8663002E7E82 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				65CCBF5E24260DA100F518D8 /* Assets.xcassets */,
+				6514263A245C87EF002E7E82 /* Localizable.strings */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		652BC0ED242A698E00F60B83 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
@@ -356,6 +372,7 @@
 		65CCBF5424260D9E00F518D8 /* Simple Instrument Tuner */ = {
 			isa = PBXGroup;
 			children = (
+				65142630245C8663002E7E82 /* Supporting Files */,
 				652BC123242CDABF00F60B83 /* Simple Instrument Tuner.entitlements */,
 				652BC11F242CDA3400F60B83 /* Sounds */,
 				652BC10A242CC38200F60B83 /* AudioSystem */,
@@ -365,8 +382,6 @@
 				65CCBF5524260D9E00F518D8 /* AppDelegate.swift */,
 				65CCBF5724260D9E00F518D8 /* SceneDelegate.swift */,
 				65CCBF5924260D9E00F518D8 /* InstrumentViewController.swift */,
-				65CCBF5E24260DA100F518D8 /* Assets.xcassets */,
-				65585A8924371B6A002CD214 /* loudspeaker.png */,
 				65CCBF6024260DA100F518D8 /* LaunchScreen.storyboard */,
 				65B603302438D49C00BBA23D /* Main.storyboard */,
 				65CCBF6324260DA100F518D8 /* Info.plist */,
@@ -553,6 +568,9 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
+				de,
+				ru,
 			);
 			mainGroup = 65CCBF4924260D9E00F518D8;
 			productRefGroup = 65CCBF5324260D9E00F518D8 /* Products */;
@@ -613,6 +631,7 @@
 				6573CE04245211C800C10A3C /* banjo.png in Resources */,
 				65FCB7B9244792EC005E142A /* settingsPattern.png in Resources */,
 				6573CDF92452115500C10A3C /* calibration.png in Resources */,
+				65142638245C87EF002E7E82 /* Localizable.strings in Resources */,
 				65CCBFFD242621D200F518D8 /* btnPassive.png in Resources */,
 				65558604243A5706004A94C0 /* banjoSymbol.png in Resources */,
 				65CCBFFA242621D200F518D8 /* btnActive.png in Resources */,
@@ -765,6 +784,17 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		6514263A245C87EF002E7E82 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				65142639245C87EF002E7E82 /* en */,
+				6514263B245C87F3002E7E82 /* de */,
+				6514263C245C87F4002E7E82 /* es */,
+				6514263E245C8F7F002E7E82 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		65B603302438D49C00BBA23D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -777,6 +807,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				65CCBF6124260DA100F518D8 /* Base */,
+				65142634245C8769002E7E82 /* es */,
+				65142635245C8772002E7E82 /* de */,
+				6514263D245C8F7F002E7E82 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -789,6 +822,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -850,6 +884,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
