@@ -20,8 +20,8 @@ protocol SettingsViewControllerDelegate: class {
 
 
 class SettingsViewController: UIViewController, TuningTableViewControllerDelegate, PKIAPHandlerDelegate {
-
-  
+    
+    
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var instrumentDropDown: DropDown!
     @IBOutlet weak var embeddedCalibrationView: UIView!
@@ -88,7 +88,7 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
             upgradeButton.isEnabled = false
         }
         
-
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didPerformIAP), name: .didPerformIAP, object: nil)
     }
     
     fileprivate func handleInstrumentsList() {
@@ -129,7 +129,7 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
     func didChangeTuning() {
         self.settingsDelegate?.didChangeTuning()
     }
-
+    
     
     @IBAction func closeButtonTouched(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -159,6 +159,21 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
         NotificationCenter.default.post(name: .didPerformIAP, object: nil)
         
         self.showAlert(title:"Success", msg: alertText)
+        
+        if IAPHandler().isOpenPremium() == true {
+            upgradeButton.isEnabled = false
+        }
+    }
+    
+    @objc func didPerformIAP(_ notification: Notification) {
+        
+        if IAPHandler().isOpenPremium() == true {
+            upgradeButton.isEnabled = false
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
 }

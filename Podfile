@@ -15,5 +15,6 @@ target 'Simple Instrument Tuner' do
   pod 'SwiftGifOrigin'
   pod 'KeychainAccess'
   pod 'EasyTipView', '~> 2.0.4'
+  pod 'NVActivityIndicatorView'
 
 end

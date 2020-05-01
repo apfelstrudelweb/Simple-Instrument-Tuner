@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ActivityIndicatorView" customModule="Simple_Instrument_Tuner" customModuleProvider="target">
+            <connections>
+                <outlet property="animatorLabel" destination="c8Z-qp-lpj" id="gbz-BL-88S"/>
+                <outlet property="animatorView" destination="Wgd-ql-9bx" id="Zoa-zm-gl4"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view alpha="0.80000000000000004" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="346" height="429"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wgd-ql-9bx" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                    <rect key="frame" x="147" y="188.5" width="52" height="52"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Wgd-ql-9bx" secondAttribute="height" id="XDP-MN-S8f"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="... waiting for the AppStore" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8Z-qp-lpj">
+                    <rect key="frame" x="0.0" y="284.5" width="346" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="RKO-fK-BTd"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Wgd-ql-9bx" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="CLU-dh-Zue"/>
+                <constraint firstItem="c8Z-qp-lpj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Mgu-7I-97Z"/>
+                <constraint firstItem="Wgd-ql-9bx" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Vjx-5w-gZM"/>
+                <constraint firstAttribute="trailing" secondItem="c8Z-qp-lpj" secondAttribute="trailing" id="bBI-ru-xbf"/>
+                <constraint firstItem="Wgd-ql-9bx" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.15" id="dkl-zd-X2e"/>
+                <constraint firstItem="c8Z-qp-lpj" firstAttribute="top" secondItem="Wgd-ql-9bx" secondAttribute="bottom" constant="44" id="kRc-KY-7ht"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="62.318840579710148" y="-27.790178571428569"/>
+        </view>
+    </objects>
+</document>

@@ -9,6 +9,7 @@
 import UIKit
 import StoreKit
 
+
 struct Product {
     var title: String?
     var description: [String]?
@@ -21,12 +22,15 @@ class InAppPurchaseViewController: UIViewController, UITableViewDataSource, UITa
     
     
     @IBOutlet var productTableView: UITableView!
+    @IBOutlet weak var activityIndicatorView: UIView!
     
     var instrument: Instrument?
     var productsArray: [Product]? = IAPHandler.shared().productsArray
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        activityIndicatorView.isHidden = true
         
         productTableView.rowHeight = UITableView.automaticDimension
         productTableView.estimatedRowHeight = 200
@@ -82,19 +86,31 @@ class InAppPurchaseViewController: UIViewController, UITableViewDataSource, UITa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        activityIndicatorView.isHidden = false
+
         guard let product = productsArray?[indexPath.row], let skProduct = product.skProduct, let title = product.title else { return }
         
         PKIAPHandler.shared.purchase(product: skProduct) { (alert, product, transaction) in
             
-            if let _ = transaction, let _ = product {
+            DispatchQueue.main.async {
+                self.activityIndicatorView.isHidden = true
+            }
+            
+            if let transaction = transaction, let _ = product {
+                
+                // for example when user aborts a transaction
+                if transaction.error != nil {
+                    self.showAlert(title: "Error", msg: transaction.error?.localizedDescription ?? "unknown error")
+                    return
+                }
             
                 IAPHandler().dictUnlockMethods[title]!()
-                //self.iapDelegate?.updateAvailableProducts()
                 NotificationCenter.default.post(name: .didPerformIAP, object: nil)
                 self.dismiss(animated: true, completion: nil)
             }
         }
     }
+
 }
 
 extension UIViewController {

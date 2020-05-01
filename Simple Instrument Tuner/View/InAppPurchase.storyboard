@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3j4-TF-FJl">
     <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -43,12 +44,19 @@
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                 </variation>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yTe-Ij-V3P" customClass="ActivityIndicatorView" customModule="Simple_Instrument_Tuner" customModuleProvider="target">
+                                <rect key="frame" x="60" y="114" width="648" height="866"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.19800920050000001" green="0.19800920050000001" blue="0.19800920050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="yTe-Ij-V3P" firstAttribute="trailing" secondItem="U23-qH-JGa" secondAttribute="trailing" id="0sa-UT-9ff"/>
                             <constraint firstItem="nA1-zW-WY5" firstAttribute="trailing" secondItem="5qh-M8-Epd" secondAttribute="trailing" constant="20" id="6I6-pv-mv6">
                                 <variation key="heightClass=regular-widthClass=regular" constant="60"/>
                             </constraint>
+                            <constraint firstItem="yTe-Ij-V3P" firstAttribute="leading" secondItem="U23-qH-JGa" secondAttribute="leading" id="8Kw-xD-SQk"/>
+                            <constraint firstItem="yTe-Ij-V3P" firstAttribute="top" secondItem="U23-qH-JGa" secondAttribute="top" id="EKY-wP-QiL"/>
+                            <constraint firstItem="yTe-Ij-V3P" firstAttribute="bottom" secondItem="U23-qH-JGa" secondAttribute="bottom" id="JMk-gB-vIG"/>
                             <constraint firstItem="5qh-M8-Epd" firstAttribute="leading" secondItem="nA1-zW-WY5" secondAttribute="leading" constant="20" id="Q4F-uk-0C5">
                                 <variation key="heightClass=regular-widthClass=regular" constant="60"/>
                             </constraint>
@@ -61,12 +69,13 @@
                         <viewLayoutGuide key="safeArea" id="nA1-zW-WY5"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="yTe-Ij-V3P" id="xBk-R0-sfP"/>
                         <outlet property="productTableView" destination="U23-qH-JGa" id="61l-0R-tnT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NsI-nV-uXP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-592.75362318840587" y="65.625"/>
+            <point key="canvasLocation" x="-592.96875" y="65.625"/>
         </scene>
     </scenes>
 </document>
