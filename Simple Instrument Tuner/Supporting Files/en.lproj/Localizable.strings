@@ -24,3 +24,4 @@
 "Info.gaugeView" = "Display of the note or half-note of the plucked string. This info is very useful in conjunction with the octave displayed above. Take as an example, the 'thick' E string of a guitar - in order to tune the E2 string, notice how both the tone 'E' within this gauge, and the octave '2' above are displayed.";
 "Info.microphoneButton" = "Tap this button in order to tune your instrument with the integrated frequency detection engine.";
 "Info.settingsButton" = "Tap this button if you would like to change the instrument and/or the tuning.";
+"Info.selectInstrument" = "Please choose your instrument here!";

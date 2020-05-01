@@ -320,7 +320,9 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
             guard let backgroundColor = self.view.backgroundColor else { return }
             settingsViewController.backgroundColor = backgroundColor
             settingsViewController.closeButton.backgroundColor = headerView.backgroundColor
-            
+            if Utils().getInstrument() == nil {
+                settingsViewController.modalPresentationStyle = .fullScreen
+            }
             settingsViewController.settingsDelegate = self
             settingsViewController.embeddedCalibrationViewController.calibrationDelegate = self 
         }

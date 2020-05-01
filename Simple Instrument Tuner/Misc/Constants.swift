@@ -61,3 +61,6 @@ let notesDict: NSDictionary = ["C" : 16.35, "C♯" : 17.32, "D" : 18.35, "D♯" 
 
 let chambertone: Float = 440.0
 let freqMultFact: Float = 1.0595
+
+
+// Info Tooltips

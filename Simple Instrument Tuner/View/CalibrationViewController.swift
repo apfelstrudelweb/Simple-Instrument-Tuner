@@ -28,6 +28,8 @@ class CalibrationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        shoppingCartButton.isEnabled = Utils().getInstrument() == nil ? false : true
+        
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "settingsPattern.png")!)
         frequencyLabel.textColor = UIColor(displayP3Red: 105/225, green: 221/225, blue: 52/225, alpha: 1)
         

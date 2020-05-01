@@ -22,3 +22,4 @@
 "Info.gaugeView" = "Visualización de la nota o media nota de la cuerda arrancada. Esta información es muy útil en conjunción con la octava mostrada arriba. Tomemos como ejemplo la cuerda 'grues' de E (mi) de una guitarra. Para afinar la cuerda de E2, observe cómo se muestra tanto el tono de E dentro de este indicador, como la octava 2 de arriba.";
 "Info.microphoneButton" = "Toque este botón para afinar su instrumento con el motor de detección de frecuencias integrado.";
 "Info.settingsButton" = "Toque este botón si desea cambiar el instrumento y/o la afinación.";
+"Info.selectInstrument" = "¡Por favor, elija su instrumento aquí!";

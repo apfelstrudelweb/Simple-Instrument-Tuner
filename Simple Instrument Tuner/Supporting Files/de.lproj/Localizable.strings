@@ -23,3 +23,4 @@
 "Info.gaugeView" = "Anzeige der Note oder des Halbtons der gezupften Saite. Diese Information ist sehr nützlich in Verbindung mit der oben angezeigten Oktave. Nehmen wir als Beispiel die 'dicke' E-Saite einer Gitarre - um die E2-Saite zu stimmen, beachten Sie, dass sowohl der Ton 'E' im Rädchen, als auch die Oktave '2' oberhalb davon angezeigt wird.";
 "Info.microphoneButton" = "Tippen Sie auf diese Schaltfläche, um Ihr Instrument mit dem integrierten Frequenzerkennungs-Algorithmus zu stimmen.";
 "Info.settingsButton" = "Tippen Sie auf diese Schaltfläche, wenn Sie das Instrument und/oder die Stimmung ändern möchten.";
+"Info.selectInstrument" = "Bitte wählen Sie Ihr Instrument hier!";
