@@ -23,3 +23,10 @@
 "Info.microphoneButton" = "Toque este botón para afinar su instrumento con el motor de detección de frecuencias integrado.";
 "Info.settingsButton" = "Toque este botón si desea cambiar el instrumento y/o la afinación.";
 "Info.selectInstrument" = "¡Por favor, elija su instrumento aquí!";
+
+// Labels
+"Label.hertz %.2f" = "%.2f Hz";
+"Label.octave %d" = "Oktava: %d";
+"Label.fft" = "FFT";
+"Label.amplitude" = "Amplitude";
+

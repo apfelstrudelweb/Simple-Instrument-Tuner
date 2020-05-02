@@ -24,7 +24,7 @@ class CalibrationLabel: UILabel {
 
      func updateValueFromKeychain() {
 
-        let calibration: Int = Int(Utils().getCurrentCalibration())
-        self.text = "\(calibration) Hz"
+        let calibration: Float = Float(Utils().getCurrentCalibration())
+        self.text = String(format: NSLocalizedString("Label.hertz %.2f", comment: ""), calibration)
     }
 }

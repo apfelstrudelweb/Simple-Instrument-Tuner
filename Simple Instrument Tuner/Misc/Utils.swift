@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EasyTipView
 
 struct Tuning {
     var name: String?
@@ -282,6 +283,14 @@ class Utils: NSObject {
 
         return bulletList
     }
+    
+    func dismisAllTooltips(view: UIView) {
+         for subview in view.subviews {
+             if let tipView = subview as? EasyTipView {
+                 tipView.dismiss()
+             }
+         }
+     }
     
 }
 

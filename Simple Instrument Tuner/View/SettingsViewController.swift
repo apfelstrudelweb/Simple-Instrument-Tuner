@@ -58,25 +58,11 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
     
     
     fileprivate func showTooltip() {
-        let fact1: CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 0.04 : 0.02
-        let arrowSize = fact1 * self.view.bounds.size.width
-        let fact2: CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 0.6 : 0.4
-        
-        var preferencesGreen = EasyTipView.Preferences()
-        preferencesGreen.drawing.font = instrumentDropdownLabel.font
-        preferencesGreen.drawing.foregroundColor = .white
-        preferencesGreen.drawing.backgroundColor = UIColor(red: 0, green: 0.5569, blue: 0.2588, alpha: 1.0)
-        preferencesGreen.drawing.shadowColor = .darkGray
-        preferencesGreen.drawing.shadowOpacity = 0.3
-        preferencesGreen.drawing.arrowPosition = EasyTipView.ArrowPosition.any
-        preferencesGreen.drawing.arrowHeight = arrowSize
-        preferencesGreen.drawing.arrowWidth = arrowSize
-        preferencesGreen.positioning.maxWidth = fact2 * self.view.bounds.size.width
-        
+
         EasyTipView.show(forView: self.instrumentDropDown,
                          withinSuperview: self.view,
                          text: NSLocalizedString("Info.selectInstrument", comment: ""),
-                         preferences: preferencesGreen,
+                         preferences: EasyTipView.globalPreferences,
                          delegate: self)
     }
     
@@ -143,6 +129,7 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
         instrumentDropDown.didSelect{(selectedText , index ,id) in
             
             self.closeButton.isEnabled = true
+            Utils().dismisAllTooltips(view: self.view)
             
             Utils().saveInstrument(index: index)
             self.settingsDelegate?.didChangeInstrument()

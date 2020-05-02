@@ -14,13 +14,6 @@ import PureLayout
 @IBDesignable
 class CalibrationSlider: UISlider {
     
-//    var label1: UILabel?
-//    var label2: UILabel?
-//
-//    let fontSize: CGFloat = 22.0
-//    let color440Hz = UIColor(red: 0, green: 0.7373, blue: 0.3451, alpha: 1.0)
-    
-    
 
     override func trackRect(forBounds bounds: CGRect) -> CGRect {
         let point = CGPoint(x: bounds.minX, y: bounds.midY)

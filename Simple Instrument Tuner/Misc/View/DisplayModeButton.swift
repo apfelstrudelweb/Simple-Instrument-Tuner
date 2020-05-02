@@ -13,7 +13,7 @@ class DisplayModeButton: UIButton {
     
     let modeLabel = UILabel()
 
-    var text : String = "FFT" {
+    var text : String = NSLocalizedString("Label.fft", comment: "") {
         didSet {
             
             self.setNeedsLayout()

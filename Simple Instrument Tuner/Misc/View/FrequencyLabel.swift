@@ -12,7 +12,7 @@ class FrequencyLabel: UILabel {
     
     var frequency: Float = 0.0 {
         didSet {
-            self.text = String(format: "%.2f Hz", frequency)
+            self.text = String(format: NSLocalizedString("Label.hertz %.2f", comment: ""), frequency)
             layoutIfNeeded()
         }
     }

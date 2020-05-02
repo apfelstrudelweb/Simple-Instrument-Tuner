@@ -80,13 +80,14 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
         
         preferencesGreen.drawing.font = calibrationLabel.font
         preferencesGreen.drawing.foregroundColor = .white
-        preferencesGreen.drawing.backgroundColor = UIColor(red: 0, green: 0.5569, blue: 0.2588, alpha: 1.0)
+        preferencesGreen.drawing.backgroundColor = UIColor(red: 0, green: 0.5137, blue: 0.6275, alpha: 1.0)
         preferencesGreen.drawing.shadowColor = .darkGray
         preferencesGreen.drawing.shadowOpacity = 0.3
         preferencesGreen.drawing.arrowPosition = EasyTipView.ArrowPosition.any
         preferencesGreen.drawing.arrowHeight = arrowSize
         preferencesGreen.drawing.arrowWidth = arrowSize
         preferencesGreen.positioning.maxWidth = fact2 * self.view.bounds.size.width
+        EasyTipView.globalPreferences = preferencesGreen
     }
     
     
@@ -101,6 +102,9 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
         initTooltips()
         
         let instrument = Utils().getInstrument()
+        
+        octaveLabel.text = String(format: NSLocalizedString("Label.octave %d", comment: ""), 0)
+        frequencyLabel.text = String(format: NSLocalizedString("Label.hertz %.2f", comment: ""), 0.0)
         
         //if true {
         if instrument == nil {
@@ -128,8 +132,8 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
         circleView.layer.cornerRadius = 0.5*circleView.frame.size.width
         displayView.roundCorners([.bottomLeft, .bottomRight], radius: 0.15*circleView.layer.cornerRadius)
         
-        fftButton.text = "FFT"
-        amplitudeButton.text = "Amplitude"
+        fftButton.text = NSLocalizedString("Label.fft", comment: "")
+        amplitudeButton.text = NSLocalizedString("Label.amplitude", comment: "")
         tuningLabel.text = Utils().getCurrentTuningName()
         
         
@@ -355,8 +359,7 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
             let frequency: Float = Float(frequencyTracker.frequency)
             
             frequencyLabel.frequency = frequency
-            octaveLabel.text = "Octave: \(Utils().getOctaveFrom(frequency: frequency))"
-            // Gauge
+            octaveLabel.text = String(format: NSLocalizedString("Label.octave %d", comment: ""), Utils().getOctaveFrom(frequency: frequency))
             embeddedGaugeViewController.displayFrequency(frequency: frequency, soundGenerator: false)
             embeddedVolumeMeterController.displayVolume(volume: frequencyTracker.amplitude)
             embeddedDeviationMeterController.displayDeviation(frequency: frequency)
@@ -422,7 +425,7 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
         // TODO: put this logic into the button class
         let buttonImage = mode == .record ? UIImage(named: "microphoneOff") : UIImage(named: "microphoneOn")
         microphoneButton.setImage(buttonImage, for: .normal)
-        microphoneButton.isEnabled = mode == .silent
+        microphoneButton.isEnabled = (mode == .silent || mode == .record)
         
         if mode == .record {
             self.timer = Timer.scheduledTimer(timeInterval: 0.01,
@@ -455,7 +458,7 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     // **********************************************************
     @IBAction func infoButtonTouched(_ sender: Any) {
         
-        dismissAllTooltips()
+        Utils().dismisAllTooltips(view: self.view)
         
         if activeInfo > indexOfLastInfo {
             activeInfo = 0
@@ -468,14 +471,6 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     
     func easyTipViewDidDismiss(_ tipView: EasyTipView) {
         //print("dismiss")
-    }
-    
-    fileprivate func dismissAllTooltips() {
-        for view in self.view.subviews {
-            if let tipView = view as? EasyTipView {
-                tipView.dismiss()
-            }
-        }
     }
     
     fileprivate func showTipView(index: Int) {
@@ -594,7 +589,7 @@ extension InstrumentViewController: AKKeyboardDelegate {
         
         
         frequencyLabel.frequency = frequency
-        octaveLabel.text = "Octave: \(Utils().getOctaveFrom(frequency: frequency))"
+        octaveLabel.text = String(format: NSLocalizedString("Label.octave %d", comment: ""), Utils().getOctaveFrom(frequency: frequency))
         embeddedGaugeViewController.displayFrequency(frequency: frequency, soundGenerator: true)
         embeddedDeviationMeterController.displayExactMatch(on: true)
         
