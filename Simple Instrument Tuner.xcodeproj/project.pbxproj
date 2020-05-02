@@ -183,6 +183,9 @@
 		656A8412245E0AA000CC0419 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		656A8413245E0AA000CC0419 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		656A8414245E0AA000CC0419 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		656A8415245E132A00CC0419 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		656A8416245E132A00CC0419 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		656A8417245E132B00CC0419 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		656E9E33245C259B00B06582 /* ActivityIndicatorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityIndicatorView.xib; sourceTree = "<group>"; };
 		656E9E35245C265600B06582 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		6573CDF62452115500C10A3C /* premium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = premium.png; sourceTree = "<group>"; };
@@ -579,6 +582,7 @@
 				ru,
 				"pt-BR",
 				ja,
+				"zh-Hans",
 			);
 			mainGroup = 65CCBF4924260D9E00F518D8;
 			productRefGroup = 65CCBF5324260D9E00F518D8 /* Products */;
@@ -801,6 +805,7 @@
 				6514263E245C8F7F002E7E82 /* ru */,
 				656A8411245E066700CC0419 /* pt-BR */,
 				656A8414245E0AA000CC0419 /* ja */,
+				656A8417245E132B00CC0419 /* zh-Hans */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -811,6 +816,7 @@
 				65B603312438D49C00BBA23D /* Base */,
 				656A8410245E066600CC0419 /* pt-BR */,
 				656A8413245E0AA000CC0419 /* ja */,
+				656A8416245E132A00CC0419 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -824,6 +830,7 @@
 				6514263D245C8F7F002E7E82 /* ru */,
 				656A840F245E066600CC0419 /* pt-BR */,
 				656A8412245E0AA000CC0419 /* ja */,
+				656A8415245E132A00CC0419 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

@@ -1,0 +1,69 @@
+/* 
+  Localizable.strings .strings
+  Simple Instrument Tuner
+
+  Created by Ullrich Vormbrock on 01.05.20.
+  Copyright © 2020 Ullrich Vormbrock. All rights reserved.
+*/
+
+
+// Info Button
+"Info.intro" = "如果您想进一步了解此视图中的所有显示和按钮的信息，请轻点此信息按钮。重复轻点，以查看所有元素。";
+"Info.instrumentButton" = "在 \"设置 \"中显示您所选择的仪器（按钮位于右下角）。轻点该符号会打开设置对话框，您可以在其中更改仪器。";
+"Info.frequencyLabel" = "显示弹拨弦的频率，单位为Hz。此信息对专业人士来说是有用的.....";
+"Info.calibrationLabel" = "室音约为440Hz。您可以对您的仪器进行校准。这样做后，新的频率将在这里显示。";
+"Info.fftButton" = "点击这个按钮以查看弹拨弦的频谱 - 你会看到和声。";
+"Info.amplitudeButton" = "点击这个按钮，可以看到弹拨弦的振幅。";
+"Info.toneButton" = "轻点单弦按钮，以便用耳朵给预定的弦调音。再点第二下，信号声音就会消失。顺便说一下，位于音符后面的数字表示八度。";
+"Info.tuningForkButton" = "如果你想用耳朵给乐器调音，请轻点这个按钮。重复轻点，以完成所有的弦线。";
+"Info.tuningLabel" = "显示您在 \"设置 \"中选择的乐器的调音。对于吉他，标准调音是 \"古典/原声\"。";
+"Info.volumeView" = "量的显示。";
+"Info.deviationView" = "显示弹拨的琴弦与下一个可能被音响系统识别的音符的偏差。将琴弦调到只显示绿色LED灯为止。左边的红色LED灯表示你需要将琴弦转到远离你的地方，以避免发出尖锐的声音 - 右边的红色LED灯表示你需要将琴弦转到你的方向，以避免发出平坦的声音。";
+"Info.octaveLabel" = "弹拨弦的八度的显示。任何乐器所演奏的八度，在上行一个八度时，其频率总是第一个音符的两倍，下行一个八度时，其频率减半。";
+"Info.gaugeView" = "显示弹拨弦的音符或半音。此信息与上面显示的八度音符结合起来非常有用。以吉他的 \"厚 \"E弦为例----为了给E2弦调音，请注意这个弦的 \"E \"和上面的八度 \"2 \"都会显示。";
+"Info.microphoneButton" = "点击这个按钮，就可以用集成的频率检测引擎为您的仪器调音。";
+"Info.settingsButton" = "如果你想改变乐器和/或调音，请点击这个按钮。";
+"Info.selectInstrument" = "请在这里选择你的乐器!";
+
+// Labels
+// main view
+"Label.hertz %.2f" = "%.2f 赫兹";
+"Label.octave %d" = "八度: %d";
+"Label.fft" = "快速傅里叶变换";
+"Label.amplitude" = "振幅";
+// settings view
+"Button.close" = "关闭";
+"Label.instrumentDropdown" = "请选择一个仪器";
+"%d Label.strings" = "%d 琴弦";
+"Label.calibration" = "校准";
+
+
+// Instruments and IAP
+"Guitar" = "吉他";
+"Banjo" = "班卓琴";
+"Ukulele" = "尤克里里琴";
+"Violin" = "小提琴";
+"Mandolin" = "曼陀林";
+"Balalaika" = "巴拉莱卡";
+"Calibration" = "校准";
+"Premium" = "高级版";
+
+"Label.iap.title" = "应用内购买";
+"Balalaika.iap1" = "为您的巴拉拉皮卡获得不同的调音";
+"Balalaika.iap2" = "移除广告";
+"Banjo.iap1" = "为你的班卓琴调音";
+"Banjo.iap2" = "移除广告";
+"Guitar.iap1" = "为你的吉他获得不同的调音";
+"Guitar.iap2" = "移除广告";
+"Mandolin.iap1" = "为你的曼陀林换个调音";
+"Mandolin.iap2" = "移除广告";
+"Ukulele.iap1" = "为你的尤克里里琴获得不同的调音";
+"Ukulele.iap2" = "移除广告";
+"Calibration.iap1" = "430-450赫兹之间的乐器调音";
+"Calibration.iap2" = "移除广告";
+"Premium.iap1" = "为你的所有乐器获得不同的调音";
+"Premium.iap2" = "430-450赫兹之间的乐器调音";
+"Premium.iap3" = "移除广告";
+
+
+
