@@ -25,8 +25,41 @@
 "Info.selectInstrument" = "¡Por favor, elija su instrumento aquí!";
 
 // Labels
+// main view
 "Label.hertz %.2f" = "%.2f Hz";
 "Label.octave %d" = "Oktava: %d";
 "Label.fft" = "FFT";
 "Label.amplitude" = "Amplitude";
+// settings view
+"Button.close" = "Cerrar";
+"Label.instrumentDropdown" = "Por favor, seleccione un instrumento";
+"%d Label.strings" = "%d cuerdas";
+"Label.calibration" = "Calibración";
 
+
+// Instruments and IAP
+"Guitar" = "Guitarra";
+"Banjo" = "Banjo";
+"Ukulele" = "Ukulele";
+"Violin" = "Violín";
+"Mandolin" = "Mandolina";
+"Balalaika" = "Balalaika";
+"Calibration" = "Calibración";
+"Premium" = "Premium";
+
+"Label.iap.title" = "Compras dentro de la app";
+"Balalaika.iap1" = "obtener diferentes afinaciones para su balalaika";
+"Balalaika.iap2" = "eliminación de anuncios";
+"Banjo.iap1" = "obtener diferentes afinaciones para su banjo";
+"Banjo.iap2" = "eliminación de anuncios";
+"Guitar.iap1" = "obtener diferentes afinaciones para su guitarra";
+"Guitar.iap2" = "eliminación de anuncios";
+"Mandolin.iap1" = "obtener diferentes afinaciones para su mandolina";
+"Mandolin.iap2" = "eliminación de anuncios";
+"Ukulele.iap1" = "obtener diferentes afinaciones para su ukelele";
+"Ukulele.iap2" = "eliminación de anuncios";
+"Calibration.iap1" = "afinar sus instrumentos de 430-450 Hz";
+"Calibration.iap2" = "eliminación de anuncios";
+"Premium.iap1" = "obtener diferentes afinaciones para todos los instrumentos";
+"Premium.iap2" = "afinar sus instrumentos de 430-450 Hz";
+"Premium.iap3" = "eliminación de anuncios";

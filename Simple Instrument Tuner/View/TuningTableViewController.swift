@@ -63,7 +63,7 @@ class TuningTableViewController: UITableViewController {
         headerView.backgroundColor = UIColor(patternImage: UIImage(named: "settingsPatternLight.png")!)
         
         let section = self.sections[section]
-        let text = "\(section.sectionItem) Strings"
+        let text = String(format: NSLocalizedString("%d Label.strings", comment: ""), section.sectionItem) 
         
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 20)

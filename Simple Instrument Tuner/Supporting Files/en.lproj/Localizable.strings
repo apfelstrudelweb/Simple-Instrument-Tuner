@@ -27,7 +27,44 @@
 "Info.selectInstrument" = "Please choose your instrument here!";
 
 // Labels
+// main view
 "Label.hertz %.2f" = "%.2f Hz";
 "Label.octave %d" = "Octave: %d";
 "Label.fft" = "FFT";
 "Label.amplitude" = "Amplitude";
+// settings view
+"Button.close" = "Close";
+"Label.instrumentDropdown" = "Please select an instrument";
+"%d Label.strings" = "%d Strings";
+"Label.calibration" = "Calibration";
+
+
+// Instruments and IAP
+"Guitar" = "Guitar";
+"Banjo" = "Banjo";
+"Ukulele" = "Ukulele";
+"Violin" = "Violin";
+"Mandolin" = "Mandolin";
+"Balalaika" = "Balalaika";
+"Calibration" = "Calibration";
+"Premium" = "Premium";
+
+"Label.iap.title" = "In-App Purchase";
+"Balalaika.iap1" = "get different tunings for your balalaika";
+"Balalaika.iap2" = "removal of ads";
+"Banjo.iap1" = "get different tunings for your banjo";
+"Banjo.iap2" = "removal of ads";
+"Guitar.iap1" = "get different tunings for your guitar";
+"Guitar.iap2" = "removal of ads";
+"Mandolin.iap1" = "get different tunings for your mandolin";
+"Mandolin.iap2" = "removal of ads";
+"Ukulele.iap1" = "get different tunings for your ukulele";
+"Ukulele.iap2" = "removal of ads";
+"Calibration.iap1" = "tune your instruments from 430-450 Hz";
+"Calibration.iap2" = "removal of ads";
+"Premium.iap1" = "get different tunings for all your instruments";
+"Premium.iap2" = "tune your instruments from 430-450 Hz";
+"Premium.iap3" = "removal of ads";
+
+
+

@@ -26,7 +26,42 @@
 "Info.selectInstrument" = "Пожалуйста, выберите Ваш инструмент здесь!";
 
 // Labels
+// main view
 "Label.hertz %.2f" = "%.2f Гц";
 "Label.octave %d" = "Октава: %d";
 "Label.fft" = "БПФ";
 "Label.amplitude" = "Амплитуда";
+// settings view
+"Button.close" = "Закрыть";
+"Label.instrumentDropdown" = "Пожалуйста, выберите инструмент";
+"%d Label.strings" = "%d строки";
+"Label.calibration" = "калибровка";
+
+
+
+// Instruments and IAP
+"Guitar" = "Гитара";
+"Banjo" = "Банджо";
+"Ukulele" = "Укулеле";
+"Violin" = "Скрипка";
+"Mandolin" = "Мандолина";
+"Balalaika" = "Балалайка";
+"Calibration" = "калибровка";
+"Premium" = "премиум версия";
+
+"Label.iap.title" = "покупок в приложении";
+"Balalaika.iap1" = "получить разные настройки для вашей балалайки";
+"Balalaika.iap2" = "удаление рекламы";
+"Banjo.iap1" = "получить различные настройки для вашего банджо";
+"Banjo.iap2" = "удаление рекламы";
+"Guitar.iap1" = "получить различные настройки для вашей гитары";
+"Guitar.iap2" = "удаление рекламы";
+"Mandolin.iap1" = "получить различные настройки для вашей мандолины";
+"Mandolin.iap2" = "удаление рекламы";
+"Ukulele.iap1" = "получить различные настройки для вашего укулелеле";
+"Ukulele.iap2" = "удаление рекламы"; 
+"Calibration.iap1" = "Откалибруйте Ваш инструмент от 430 до 450 Гц";
+"Calibration.iap2" = "удаление рекламы";
+"Premium.iap1" = "получить различные настройки для всех ваших инструментов";
+"Premium.iap2" = "Откалибруйте Ваш инструмент от 430 до 450 Гц";
+"Premium.iap3" = "удаление рекламы";

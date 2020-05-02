@@ -69,6 +69,9 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        instrumentDropdownLabel.text =  NSLocalizedString("Label.instrumentDropdown", comment: "")
+        closeButton.setTitle(NSLocalizedString("Button.close", comment: ""), for: .normal)
+        
         PKIAPHandler.shared.pkiDelegate = self
         
         closeButton.isEnabled = Utils().getInstrument() == nil ? false : true

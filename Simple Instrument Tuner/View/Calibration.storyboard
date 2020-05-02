@@ -102,6 +102,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="414" height="200"/>
                     <connections>
+                        <outlet property="calibrationLabel" destination="fSh-dw-bA4" id="kCt-RO-Fvr"/>
                         <outlet property="frequencyLabel" destination="zRx-qM-aBO" id="gPQ-7b-yWq"/>
                         <outlet property="shoppingCartButton" destination="cZ9-Fo-LQN" id="Ekg-aT-aix"/>
                         <outlet property="slider" destination="9qJ-bo-RDw" id="7KN-bk-4po"/>

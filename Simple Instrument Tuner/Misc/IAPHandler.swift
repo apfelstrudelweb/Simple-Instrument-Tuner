@@ -18,17 +18,15 @@ typealias isOpenBalalaika = () -> Bool
 typealias isPremium = () -> Bool
 
 
-let arrayString = ["get different tunings for your balalaika", "removal of ads"]
+let balalaikaDict =     ["Balalaika" :  [NSLocalizedString("Balalaika.iap1", comment: ""), NSLocalizedString("Balalaika.iap2", comment: "")]]
+let banjoDict =         ["Banjo" :  [NSLocalizedString("Banjo.iap1", comment: ""), NSLocalizedString("Banjo.iap2", comment: "")]]
+let guitarDict =        ["Guitar" :  [NSLocalizedString("Guitar.iap1", comment: ""), NSLocalizedString("Guitar.iap2", comment: "")]]
+let mandolinDict =      ["Mandolin" :  [NSLocalizedString("Mandolin.iap1", comment: ""), NSLocalizedString("Mandolin.iap2", comment: "")]]
+let ukuleleDict =       ["Ukulele" :  [NSLocalizedString("Ukulele.iap1", comment: ""), NSLocalizedString("Ukulele.iap2", comment: "")]]
+let calibrationDict =   ["Calibration" :  [NSLocalizedString("Calibration.iap1", comment: ""), NSLocalizedString("Calibration.iap2", comment: "")]]
+let premiumDict =       ["Premium" :  [NSLocalizedString("Premium.iap1", comment: ""), NSLocalizedString("Premium.iap2", comment: ""), NSLocalizedString("Premium.iap3", comment: "")]]
 
-let balalaikaDict =     ["Balalaika" :  ["get different tunings for your balalaika", "removal of ads"]]
-let banjaDict =         ["Banjo" :  ["get different tunings for your banjo", "removal of ads"]]
-let guitarDict =        ["Guitar" :  ["get different tunings for your guitar", "removal of ads"]]
-let mandolinDict =      ["Mandolin" :  ["get different tunings for your mandolin", "removal of ads"]]
-let ukuleleDict =       ["Ukulele" :  ["get different tunings for your ukulele", "removal of ads"]]
-let calibrationDict =   ["Calibration" :  ["tune your instruments from 430-450 Hz", "removal of ads"]]
-let premiumDict =       ["Premium" :  ["get different tunings for all your instruments", "tune your instruments from 430-450 Hz", "removal of ads"]]
-
-let iapOptionsArray = [balalaikaDict, banjaDict, guitarDict, mandolinDict, ukuleleDict, calibrationDict, premiumDict]
+let iapOptionsArray = [balalaikaDict, banjoDict, guitarDict, mandolinDict, ukuleleDict, calibrationDict, premiumDict]
 
 
 var dictCalibration: Dictionary = [String : isOpenCalibration]()

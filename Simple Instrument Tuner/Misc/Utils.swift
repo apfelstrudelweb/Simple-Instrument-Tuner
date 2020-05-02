@@ -57,7 +57,9 @@ class Utils: NSObject {
                 tunings.append(Tuning(name: name, isStandard: isStandard, notes: notes, frequencies: frequencies))
             }
             
-            return Instrument(name: name, symbol: UIImage(named: image), doubleStrings: doubleStrings, tunings: tunings)
+            let localizedInstrumentName = NSLocalizedString(name, comment: "")
+            
+            return Instrument(name: localizedInstrumentName, symbol: UIImage(named: image), doubleStrings: doubleStrings, tunings: tunings)
             
         }
         return nil
@@ -96,8 +98,10 @@ class Utils: NSObject {
             
             guard let name = dict.value(forKey: "name") as? String, let image = dict.value(forKey: "image") as? String, let id = dict.value(forKey: "id") as? Int else { continue }
             
+            let localizedInstrumentName = NSLocalizedString(name, comment: "")
+            
             idArray.append(id)
-            nameArray.append(name)
+            nameArray.append(localizedInstrumentName)
             imageArray.append(image)
         }
     

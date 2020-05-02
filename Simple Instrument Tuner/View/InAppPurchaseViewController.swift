@@ -21,6 +21,7 @@ struct Product {
 class InAppPurchaseViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet var productTableView: UITableView!
     @IBOutlet weak var activityIndicatorView: UIView!
     
@@ -29,6 +30,8 @@ class InAppPurchaseViewController: UIViewController, UITableViewDataSource, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        titleLabel.text = NSLocalizedString("Label.iap.title", comment: "")
         
         activityIndicatorView.isHidden = true
         
@@ -58,8 +61,8 @@ class InAppPurchaseViewController: UIViewController, UITableViewDataSource, UITa
         
         let product = productsArray![indexPath.row]
         
-        cell.productLabel.text = product.title
-        cell.descriptionTextView.attributedText = Utils().generateBulletList(stringList: product.description!, font: cell.descriptionTextView.font!, bullet: "⮕")
+        cell.title = product.title
+        cell.descriptionText = product.description
         cell.priceLabel.text = product.price
         cell.symbolImageView.image = product.symbol
         

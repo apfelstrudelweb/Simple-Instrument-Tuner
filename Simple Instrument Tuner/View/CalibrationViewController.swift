@@ -15,6 +15,7 @@ protocol CalibrationSliderDelegate: AnyObject {
 
 class CalibrationViewController: UIViewController {
     
+    @IBOutlet weak var calibrationLabel: UILabel!
     @IBOutlet weak var frequencyLabel: UILabel!
     @IBOutlet weak var shoppingCartButton: UIButton!
     
@@ -27,6 +28,8 @@ class CalibrationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        calibrationLabel.text = NSLocalizedString("Label.calibration", comment: "")
         
         shoppingCartButton.isEnabled = Utils().getInstrument() == nil ? false : true
         
@@ -55,7 +58,7 @@ class CalibrationViewController: UIViewController {
     @IBAction func sliderValueChanged(_ sender: UISlider) {
         
         let newValue =  (sender.value / Float(interval)).rounded() * Float(interval)
-        frequencyLabel.text = "\(Int(newValue)) Hz"
+        frequencyLabel.text = String(format: NSLocalizedString("Label.hertz %.2f", comment: ""), Int(newValue))
         
         let data = Data(from: Int(newValue))
         let _ = KeyChain.save(key: KEYCHAIN_CURRENT_CALIBRATION, data: data)
@@ -72,7 +75,7 @@ class CalibrationViewController: UIViewController {
             let _ = KeyChain.save(key: KEYCHAIN_CURRENT_CALIBRATION, data: data)
             slider.value = Float(chambertone)
         }
-        frequencyLabel.text = "\(Int(slider.value)) Hz"
+        frequencyLabel.text = String(format: NSLocalizedString("Label.hertz %.2f", comment: ""), Int(slider.value))
     }
     
     @objc func didPerformIAP(_ notification: Notification) {

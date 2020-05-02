@@ -62,10 +62,15 @@ let chambertone: Float = 440.0
 let freqMultFact: Float = 1.0595
 
 let notesArray: [String] = {
-    if String(Locale.preferredLanguages[0].prefix(2)) == "de" {
+    
+    let countryCode = String(Locale.preferredLanguages[0].prefix(2))
+    
+    if countryCode == "de" {
         return ["C", "C♯", "D", "E♭", "E", "F", "F♯", "G", "A♭", "A", "H♭", "H"]
-    } else if String(Locale.preferredLanguages[0].prefix(2)) == "ru" {
+    } else if countryCode == "ru" {
         return ["До" ,"До♯","Ре", "Ми♭", "Ми" ,"Фа", "Фа♯", "Соль" ,"Ля♭", "Ля", "Си♭", "Си"]
+    } else if countryCode == "es" || countryCode == "fr" || countryCode == "it" || countryCode == "pt" {
+        return ["Do", "Do♯", "Re", "Mi♭", "Mi", "Fa", "Fa♯", "Sol", "La♭", "La", "Si♭", "Si"]
     } else {
         return ["C", "C♯", "D", "E♭", "E", "F", "F♯", "G", "A♭", "A", "B♭", "B"]
     }
