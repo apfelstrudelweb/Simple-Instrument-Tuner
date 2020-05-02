@@ -71,6 +71,8 @@ let notesArray: [String] = {
         return ["До" ,"До♯","Ре", "Ми♭", "Ми" ,"Фа", "Фа♯", "Соль" ,"Ля♭", "Ля", "Си♭", "Си"]
     } else if countryCode == "es" || countryCode == "fr" || countryCode == "it" || countryCode == "pt" {
         return ["Do", "Do♯", "Re", "Mi♭", "Mi", "Fa", "Fa♯", "Sol", "La♭", "La", "Si♭", "Si"]
+    } else if countryCode == "ja" {
+        return ["ド", "ド♯", "レ", "ミ♭", "ミ", "ファ", "ファ♯", "ソ", "ラ♭", "ラ", "シ♭", "シ"]
     } else {
         return ["C", "C♯", "D", "E♭", "E", "F", "F♯", "G", "A♭", "A", "B♭", "B"]
     }

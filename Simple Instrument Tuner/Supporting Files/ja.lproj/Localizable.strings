@@ -1,0 +1,66 @@
+/* 
+  Localizable.strings .strings
+  Simple Instrument Tuner
+
+  Created by Ullrich Vormbrock on 01.05.20.
+  Copyright © 2020 Ullrich Vormbrock. All rights reserved.
+*/
+
+
+// Info Button
+"Info.intro" = "このビューのすべての表示やボタンについての詳細な情報を知りたい場合は、この情報ボタンをタップしてください。タップを繰り返すことで、すべての要素が表示されます。";
+"Info.instrumentButton" = "設定」で選択した楽器の表示（右下にボタンがあります）。マークをタップすると設定ダイアログが表示され、楽器を変更することができます。";
+"Info.frequencyLabel" = "弦を弾いたときの周波数をHzで表示します。この情報は、プロの方に役立つ情報です。";
+"Info.calibrationLabel" = "チャンバートーンは約440Hzです。楽器を校正することができます。そうすると、新しい周波数がここに表示されます。";
+"Info.fftButton" = "このボタンをタップすると、弦を弾いたときのスペクトルを見ることができます - ハーモニクスも見ることができます。";
+"Info.amplitudeButton" = "このボタンをタップすると、弾いた弦の振幅を見ることができます。";
+"Info.toneButton" = "一弦ボタンをタップすると、あらかじめ設定した弦を耳で調整することができます。2回目のタップで信号音が消えます。ちなみに、音符の後ろにある数字はオクターブを表しています。";
+"Info.tuningForkButton" = "耳で楽器をチューニングしたい場合は、このボタンをタップします。タップを繰り返して、すべての弦を通します。";
+"Info.tuningLabel" = "設定」で選択した楽器のチューニングを表示します。ギターの場合、標準チューニングは「クラシック/アコースティック」です。";
+"Info.volumeView" = "ボリュームの表示。";
+"Info.deviationView" = "弦を弾いたときの、サウンドシステムが認識する次の音からのずれを表示します。緑のLEDだけが表示されるまで弦をチューニングします。左側の赤いLEDは、シャープな音を避けるためにペグを遠ざける必要があることを示し、右側の赤いLEDは、フラットな音を避けるためにペグを自分の方に向ける必要があることを示しています。";
+"Info.octaveLabel" = "摘んだ弦のオクターブを表示します。どんな楽器でも演奏されるオクターブとは、オクターブを上るときは常に最初の音の倍の周波数、下がるときは半分の周波数になる音程のことです";
+"Info.gaugeView" = "弦を弾いたときの音符や半音を表示します。この情報は、上に表示されているオクターブと合わせて非常に便利です。例えば、ギターの「太い」E弦を例にしてみましょう。E2弦をチューニングするためには、このゲージ内の「E」の音と、上のオクターブ「2」の両方が表示されていることに注目してください";
+"Info.microphoneButton" = "このボタンをタップすると、統合された周波数検出エンジンで楽器をチューニングすることができます。";
+"Info.settingsButton" = "楽器やチューニングを変更したい場合は、このボタンをタップしてください。";
+"Info.selectInstrument" = "楽器はこちらでお選びください";
+
+// Labels
+// main view
+"Label.hertz %.2f" = "%.2f ヘルツ";
+"Label.octave %d" = "オクターブ: %d";
+"Label.fft" = "高速フーリエ変換";
+"Label.amplitude" = "振幅";
+// settings view
+"Button.close" = "クローズ";
+"Label.instrumentDropdown" = "楽器をお選びください";
+"%d Label.strings" = "%d 弦楽器";
+"Label.calibration" = "キャリブレーション";
+
+
+// Instruments and IAP
+"Guitar" = "ギター";
+"Banjo" = "バンジョー";
+"Ukulele" = "ウクレレ";
+"Violin" = "ヴァイオリン";
+"Mandolin" = "マンドリン";
+"Balalaika" = "バラライカ";
+"Calibration" = "キャリブレーション";
+"Premium" = "プレミアム版";
+
+"Label.iap.title" = "アプリ内課金";
+"Balalaika.iap1" = "バラライカのチューニングを変える";
+"Balalaika.iap2" = "広告除去";
+"Banjo.iap1" = "バンジョーのために別のチューニングを得る";
+"Banjo.iap2" = "広告除去";
+"Guitar.iap1" = "ギターのチューニングを変える";
+"Guitar.iap2" = "広告除去";
+"Mandolin.iap1" = "マンドリンの調律を変える";
+"Mandolin.iap2" = "広告除去";
+"Ukulele.iap1" = "ウクレレのチューニングを変える";
+"Ukulele.iap2" = "広告除去";
+"Calibration.iap1" = "430～450ヘルツの楽器のチューニング";
+"Calibration.iap2" = "広告除去";
+"Premium.iap1" = "音色を変える";
+"Premium.iap2" = "430～450ヘルツの楽器のチューニング";
+"Premium.iap3" = "広告除去";

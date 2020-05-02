@@ -1,0 +1,66 @@
+/* 
+  Localizable.strings .strings
+  Simple Instrument Tuner
+
+  Created by Ullrich Vormbrock on 01.05.20.
+  Copyright © 2020 Ullrich Vormbrock. All rights reserved.
+*/
+
+
+// Info Button
+"Info.intro" = "Toque neste botão de informação se desejar mais informações sobre todos os monitores e botões desta vista. Toque novamente para passar por todos os elementos.";
+"Info.instrumentButton" = "Exibição do instrumento selecionado em 'Configurações' (o botão pode ser encontrado no canto inferior direito). Ao tocar no símbolo abre o diálogo de ajustes onde você pode modificar o instrumento.";
+"Info.frequencyLabel" = "Exibição da freqüência do fio depenado em Hz. Esta informação é útil para profissionais ...";
+"Info.calibrationLabel" = "O tom da câmara é cerca de 440 Hz. Você pode calibrar o seu instrumento. Após fazer isso, a nova freqüência será exibida aqui.";
+"Info.fftButton" = "Toque neste botão para ver o espectro das cordas depenadas - você verá também os harmônicos.";
+"Info.amplitudeButton" = "Toque neste botão para ver a amplitude das cordas depenadas.";
+"Info.toneButton" = "Toque no botão de corda única para afinar uma corda pré-determinada por ouvido. Um segundo toque irá silenciar o som do sinal. A propósito, o número localizado atrás da nota indica a oitava.";
+"Info.tuningForkButton" = "Toque neste botão se você gostaria de afinar seu instrumento por ouvido. Repita a batida para passar por todas as cordas.";
+"Info.tuningLabel" = "Visualização da afinação do instrumento que você escolheu em 'Configurações'. Para violão, a afinação padrão é 'clássico/acústico'.";
+"Info.volumeView" = "Exibição do volume.";
+"Info.deviationView" = "Exibição do desvio da corda arrancada da próxima nota provável reconhecida pelo sistema sonoro. Sintonize sua corda até que somente o LED verde seja exibido. Os LEDs vermelhos à esquerda indicam que você precisa virar a cavilha para longe de você para evitar o som nítido - os LEDs vermelhos à direita indicam que você precisa virar a cavilha para você para evitar o som plano.";
+"Info.octaveLabel" = "Exibição da oitava do fio depenado. Uma oitava tocada por qualquer instrumento é sempre um tom que é o dobro da frequência da primeira nota quando se sobe uma oitava e se reduz pela metade quando se desce.";
+"Info.gaugeView" = "Exibição da nota ou meia nota da corda depenada. Esta informação é muito útil em conjunto com a oitava exibida acima. Tomemos como exemplo, a corda E 'grossa' de um violão - para afinar a corda E2, observe como tanto o tom 'E' dentro desta bitola, quanto a oitava '2' acima são exibidos.";
+"Info.microphoneButton" = "Toque neste botão para sintonizar seu instrumento com o motor de detecção de freqüência integrado.";
+"Info.settingsButton" = "Toque neste botão se você quiser mudar o instrumento e/ou a afinação.";
+"Info.selectInstrument" = "Por favor escolha aqui o seu instrumento!";
+
+// Labels
+// main view
+"Label.hertz %.2f" = "%.2f Hz";
+"Label.octave %d" = "Oitava: %d";
+"Label.fft" = "FFT";
+"Label.amplitude" = "Amplitude";
+// settings view
+"Button.close" = "Fechar";
+"Label.instrumentDropdown" = "Por favor escolha aqui o seu instrumento!";
+"%d Label.strings" = "%d cordas";
+"Label.calibration" = "Calibração";
+
+
+// Instruments and IAP
+"Guitar" = "Violão";
+"Banjo" = "Banjo";
+"Ukulele" = "Ukulele";
+"Violin" = "Violino";
+"Mandolin" = "Bandolim";
+"Balalaika" = "Balalaika";
+"Calibration" = "Calibração";
+"Premium" = "Premium";
+
+"Label.iap.title" = "Compras In-App";
+"Balalaika.iap1" = "obtenha diferentes afinações para o seu balalaika";
+"Balalaika.iap2" = "remoção de anúncios";
+"Banjo.iap1" = "obtenha diferentes afinações para o seu banjo";
+"Banjo.iap2" = "remoção de anúncios";
+"Guitar.iap1" = "obtenha afinações diferentes para o seu violão";
+"Guitar.iap2" = "remoção de anúncios";
+"Mandolin.iap1" = "obtenha diferentes afinações para o seu bandolim";
+"Mandolin.iap2" = "remoção de anúncios";
+"Ukulele.iap1" = "obtenha diferentes afinações para o seu ukulele";
+"Ukulele.iap2" = "remoção de anúncios";
+"Calibration.iap1" = "sintonize seus instrumentos de 430-450 Hz";
+"Calibration.iap2" = "remoção de anúncios";
+"Premium.iap1" = "obtenha afinações diferentes para todos os seus instrumentos";
+"Premium.iap2" = "sintonize seus instrumentos de 430-450 Hz";
+"Premium.iap3" = "remoção de anúncios";
