@@ -174,15 +174,15 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
     func productsRestored(products: [String]) {
         
         if products.count == 0 {
-            self.showAlert(title:"Info", msg: " You've made no in-app purchases yet. Thus no item can be restored.")
+            self.showAlert(title: NSLocalizedString("Info", comment: ""), msg: NSLocalizedString("IAP.alert.noitems", comment: "") )
             return
         }
         
-        var alertText = "The follwing products have been restored:"
+        var alertText = NSLocalizedString("IAP.alert.items", comment: "")
         
         for product in products {
             if let productTitle = iapIdentifierDict[product] {
-                alertText += "\n- \(productTitle)"
+                alertText += "\n- \(productTitle) -"
                 
                 IAPHandler().dictUnlockMethods[productTitle]!()
             }
@@ -190,7 +190,7 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
         
         NotificationCenter.default.post(name: .didPerformIAP, object: nil)
         
-        self.showAlert(title:"Success", msg: alertText)
+        self.showAlert(title: NSLocalizedString("Success", comment: ""), msg: alertText)
         
         if IAPHandler().isOpenPremium() == true {
             upgradeButton.isEnabled = false

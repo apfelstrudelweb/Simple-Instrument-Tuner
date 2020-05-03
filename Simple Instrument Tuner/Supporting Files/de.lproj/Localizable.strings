@@ -6,6 +6,9 @@
   Copyright © 2020 Ullrich Vormbrock. All rights reserved.
 */
 
+// General
+"Info" = "Info";
+"Success" = "Erfolg";
 
 // Info Button
 "Info.intro" = "Betätigen Sie diesen Button, wenn Sie mehr über alle Elemente in dieser Ansicht erfahren möchten. Tippe Sie mehrmals drauf, um durch alle Elemente zu gehen";
@@ -65,3 +68,10 @@
 "Premium.iap1" = "verschiedene Stimmungen für alle Instrumente";
 "Premium.iap2" = "kalibrieren Sie Ihr Instrument von 430 bis 450 Hz";
 "Premium.iap3" = "keine Werbung mehr";
+
+// IAP
+"IAP.alert.error.title" = "Keine In-App-Purchase-Optionen gefunden";
+"IAP.alert.error.text" = "Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut! Es ist auch möglich, dass der AppStore im Moment nicht erreichbar ist. Versuchen Sie es in einem solchen Fall später erneut. Da die Verbindung zum AppStore beim Start hergestellt wird, starten Sie Ihre App neu!";
+
+"IAP.alert.items" = "Die folgenden Produkte wurden wiederhergestellt:";
+"IAP.alert.noitems" = "Sie haben noch keine In-App-Käufe getätigt. Daher kann kein Artikel wiederhergestellt werden.";

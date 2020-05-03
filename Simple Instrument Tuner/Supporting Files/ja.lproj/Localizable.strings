@@ -6,6 +6,9 @@
   Copyright © 2020 Ullrich Vormbrock. All rights reserved.
 */
 
+// General
+"Info" = "情報";
+"Success" = "成功";
 
 // Info Button
 "Info.intro" = "このビューのすべての表示やボタンについての詳細な情報を知りたい場合は、この情報ボタンをタップしてください。タップを繰り返すことで、すべての要素が表示されます。";
@@ -65,3 +68,10 @@
 "Premium.iap1" = "音色を変える";
 "Premium.iap2" = "430～450ヘルツの楽器のチューニング";
 "Premium.iap3" = "広告除去";
+
+// IAP
+"IAP.alert.error.title" = "アプリ内課金オプションが見つかりませんでした";
+"IAP.alert.error.text" = "インターネット接続をご確認の上、再度お試しください また、現在AppStoreにアクセスできない可能性もあります。その場合は、後ほどリトライしてください。AppStoreへの接続は起動時に行われますので、アプリを再起動してください";
+
+"IAP.alert.items" = "以下の商品が復活しました";
+"IAP.alert.noitems" = "まだアプリ内での購入はしていません。したがって、アイテムを復元することはできません";

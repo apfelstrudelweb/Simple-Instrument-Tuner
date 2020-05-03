@@ -6,6 +6,9 @@
   Copyright © 2020 Ullrich Vormbrock. All rights reserved.
 */
 
+// General
+"Info" = "Info";
+"Success" = "Success";
 
 // Info Button
 "Info.intro" = "Tap this info button if you would like further information about all displays and buttons in this view. Repeat tapping in order to go through all elements.";
@@ -68,4 +71,9 @@
 "Premium.iap3" = "removal of ads";
 
 
+// IAP
+"IAP.alert.error.title" = "No In-App-Purchase options found";
+"IAP.alert.error.text" = "Please check your internet connection and try again! It is also possible that the AppStore is unreachable at this moment. In such case, retry later. As the connection to the AppStore is performed at startup, restart your app!";
 
+"IAP.alert.items" = "The follwing products have been restored:";
+"IAP.alert.noitems" = "You've made no in-app purchases yet. Thus no item can be restored.";

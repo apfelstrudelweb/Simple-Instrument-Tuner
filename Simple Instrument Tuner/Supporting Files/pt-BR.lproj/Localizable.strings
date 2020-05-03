@@ -6,6 +6,9 @@
   Copyright © 2020 Ullrich Vormbrock. All rights reserved.
 */
 
+// General
+"Info" = "Info";
+"Success" = "Sucesso";
 
 // Info Button
 "Info.intro" = "Toque neste botão de informação se desejar mais informações sobre todos os monitores e botões desta vista. Toque novamente para passar por todos os elementos.";
@@ -65,3 +68,10 @@
 "Premium.iap1" = "obtenha afinações diferentes para todos os seus instrumentos";
 "Premium.iap2" = "sintonize seus instrumentos de 430-450 Hz";
 "Premium.iap3" = "remoção de anúncios";
+
+// IAP
+"IAP.alert.error.title" = "Não foram encontradas opções de compra In-App-Purchase";
+"IAP.alert.error.text" = "Por favor, verifique sua conexão de internet e tente novamente! Também é possível que a AppStore esteja inatingível neste momento. Nesse caso, tente novamente mais tarde. Como a conexão com a AppStore é realizada na inicialização, reinicie seu aplicativo!";
+
+"IAP.alert.items" = "Os produtos seguintes foram restaurados:";
+"IAP.alert.noitems" = "Você ainda não fez nenhuma compra noapp. Portanto, nenhum item pode ser restaurado.";

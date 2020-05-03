@@ -6,6 +6,9 @@
   Copyright © 2020 Ullrich Vormbrock. All rights reserved.
 */
 
+// General
+"Info" = "信息";
+"Success" = "成功";
 
 // Info Button
 "Info.intro" = "如果您想进一步了解此视图中的所有显示和按钮的信息，请轻点此信息按钮。重复轻点，以查看所有元素。";
@@ -67,4 +70,9 @@
 "Premium.iap3" = "移除广告";
 
 
+// IAP
+"IAP.alert.error.title" = "没有找到内购选项";
+"IAP.alert.error.text" = "请检查你的网络连接，然后再试一次! 也有可能是AppStore目前无法访问。在这种情况下，请稍后重试。由于AppStore的连接是在启动时进行的，请重新启动您的应用程序!";
 
+"IAP.alert.items" = "后面的产品已经恢复了";
+"IAP.alert.noitems" = "你还没有进行过应用内购买。因此不能恢复任何物品";
