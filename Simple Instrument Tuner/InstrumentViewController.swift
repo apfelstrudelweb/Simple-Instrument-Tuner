@@ -65,7 +65,7 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     private var settingsViewController: SettingsViewController!
     
     
-    var preferencesGreen = EasyTipView.Preferences()
+    var tipViewPreferences = EasyTipView.Preferences()
     
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -78,16 +78,18 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
         let arrowSize = fact1 * self.view.bounds.size.width
         let fact2: CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 0.6 : 0.4
         
-        preferencesGreen.drawing.font = calibrationLabel.font
-        preferencesGreen.drawing.foregroundColor = .white
-        preferencesGreen.drawing.backgroundColor = UIColor(red: 0, green: 0.5137, blue: 0.6275, alpha: 1.0)
-        preferencesGreen.drawing.shadowColor = .darkGray
-        preferencesGreen.drawing.shadowOpacity = 0.3
-        preferencesGreen.drawing.arrowPosition = EasyTipView.ArrowPosition.any
-        preferencesGreen.drawing.arrowHeight = arrowSize
-        preferencesGreen.drawing.arrowWidth = arrowSize
-        preferencesGreen.positioning.maxWidth = fact2 * self.view.bounds.size.width
-        EasyTipView.globalPreferences = preferencesGreen
+        tipViewPreferences.drawing.font = calibrationLabel.font
+        tipViewPreferences.drawing.foregroundColor = .white
+        tipViewPreferences.drawing.backgroundColor = UIColor(red: 0, green: 0.5137, blue: 0.6275, alpha: 1.0)
+        tipViewPreferences.drawing.shadowColor = .darkGray
+        tipViewPreferences.drawing.shadowOpacity = 0.3
+        tipViewPreferences.drawing.arrowPosition = EasyTipView.ArrowPosition.any
+        tipViewPreferences.drawing.arrowHeight = arrowSize
+        tipViewPreferences.drawing.arrowWidth = arrowSize
+        tipViewPreferences.positioning.maxWidth = fact2 * self.view.bounds.size.width
+        tipViewPreferences.animating.showDuration = 1.5
+        tipViewPreferences.animating.dismissDuration = 1.5
+        EasyTipView.globalPreferences = tipViewPreferences
     }
     
     
@@ -114,7 +116,7 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
                 EasyTipView.show(forView: self.infoButton,
                                  withinSuperview: self.view,
                                  text: NSLocalizedString("Info.intro", comment: ""),
-                                 preferences: self.preferencesGreen,
+                                 preferences: self.tipViewPreferences,
                                  delegate: self)
             }
         } else {
@@ -374,12 +376,14 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
         fftButton.setImage(UIImage(named: "btnActive"), for: .normal)
         amplitudeButton.setImage(UIImage(named: "btnPassive"), for: .normal)
         embeddedDisplayViewController.setDisplayMode(mode: .fft)
+        embeddedDisplayViewController.mode = .fft
     }
     
     @IBAction func amplitudeButtonTouched(_ sender: Any) {
         amplitudeButton.setImage(UIImage(named: "btnActive"), for: .normal)
         fftButton.setImage(UIImage(named: "btnPassive"), for: .normal)
         embeddedDisplayViewController.setDisplayMode(mode: .amplitude)
+        embeddedDisplayViewController.mode = .amplitude
     }
     
     @IBAction func tuningforkButtonTouched(_ sender: Any) {
@@ -414,6 +418,8 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
         } else {
             mode = .silent
         }
+        
+        embeddedDisplayViewController.clear()
         
         setAudioMode()
         UIApplication.shared.isIdleTimerDisabled = mode == .record
@@ -470,7 +476,7 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     
     
     func easyTipViewDidDismiss(_ tipView: EasyTipView) {
-        //print("dismiss")
+        //print(tipView)
     }
     
     fileprivate func showTipView(index: Int) {
@@ -479,86 +485,86 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
         case 0:        EasyTipView.show(forView: instrumentButton,
                                         withinSuperview: self.view,
                                         text: NSLocalizedString("Info.instrumentButton", comment: ""),
-                                        preferences: preferencesGreen,
+                                        preferences: tipViewPreferences,
                                         delegate: self)
             break
         case 1:  EasyTipView.show(forView: frequencyLabel,
                                   withinSuperview: self.view,
                                   text: NSLocalizedString("Info.frequencyLabel", comment: ""),
-                                  preferences: preferencesGreen,
+                                  preferences: tipViewPreferences,
                                   delegate: self)
             break
         case 2: EasyTipView.show(forView: calibrationLabel,
                                  withinSuperview: self.view,
                                  text: NSLocalizedString("Info.calibrationLabel", comment: ""),
-                                 preferences: preferencesGreen,
+                                 preferences: tipViewPreferences,
                                  delegate: self)
             break
         case 3:      EasyTipView.show(forView: fftButton,
                                       withinSuperview: self.view,
                                       text: NSLocalizedString("Info.fftButton", comment: ""),
-                                      preferences: preferencesGreen,
+                                      preferences: tipViewPreferences,
                                       delegate: self)
             break
             
         case 4:       EasyTipView.show(forView: amplitudeButton,
                                        withinSuperview: self.view,
                                        text: NSLocalizedString("Info.amplitudeButton", comment: ""),
-                                       preferences: preferencesGreen,
+                                       preferences: tipViewPreferences,
                                        delegate: self)
             break
         case 5:        EasyTipView.show(forView: embeddedBridgeViewController.buttonCollection.first!,
                                         withinSuperview: self.view,
                                         text: NSLocalizedString("Info.toneButton", comment: ""),
-                                        preferences: preferencesGreen,
+                                        preferences: tipViewPreferences,
                                         delegate: self)
             break
         case 6:   EasyTipView.show(forView: tuningForkButton,
                                    withinSuperview: self.view,
                                    text: NSLocalizedString("Info.tuningForkButton", comment: ""),
-                                   preferences: preferencesGreen,
+                                   preferences: tipViewPreferences,
                                    delegate: self)
             break
         case 7:         EasyTipView.show(forView: tuningLabel,
                                          withinSuperview: self.view,
                                          text: NSLocalizedString("Info.tuningLabel", comment: ""),
-                                         preferences: preferencesGreen,
+                                         preferences: tipViewPreferences,
                                          delegate: self)
         case 8:    EasyTipView.show(forView: embeddedVolumeMeterController.view,
                                     withinSuperview: self.view,
                                     text: NSLocalizedString("Info.volumeView", comment: ""),
-                                    preferences: preferencesGreen,
+                                    preferences: tipViewPreferences,
                                     delegate: self)
             break
             
         case 9:         EasyTipView.show(forView: embeddedDeviationMeterController.view,
                                          withinSuperview: self.view,
                                          text: NSLocalizedString("Info.deviationView", comment: ""),
-                                         preferences: preferencesGreen,
+                                         preferences: tipViewPreferences,
                                          delegate: self)
             break
         case 10:        EasyTipView.show(forView: octaveLabel,
                                          withinSuperview: self.view,
                                          text: NSLocalizedString("Info.octaveLabel", comment: ""),
-                                         preferences: preferencesGreen,
+                                         preferences: tipViewPreferences,
                                          delegate: self)
             break
         case 11:         EasyTipView.show(forView: embeddedGaugeViewController.view,
                                           withinSuperview: self.view,
                                           text: NSLocalizedString("Info.gaugeView", comment: ""),
-                                          preferences: preferencesGreen,
+                                          preferences: tipViewPreferences,
                                           delegate: self)
             break
         case 12:  EasyTipView.show(forView: microphoneButton,
                                    withinSuperview: self.view,
                                    text: NSLocalizedString("Info.microphoneButton", comment: ""),
-                                   preferences: preferencesGreen,
+                                   preferences: tipViewPreferences,
                                    delegate: self)
             break
         case 13:  EasyTipView.show(forView: settingsButton,
                                    withinSuperview: self.view,
                                    text: NSLocalizedString("Info.settingsButton", comment: ""),
-                                   preferences: preferencesGreen,
+                                   preferences: tipViewPreferences,
                                    delegate: self)
         default: print("no")
             

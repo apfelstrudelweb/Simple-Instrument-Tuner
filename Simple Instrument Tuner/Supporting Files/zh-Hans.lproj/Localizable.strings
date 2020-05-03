@@ -28,6 +28,7 @@
 // Labels
 // main view
 "Label.hertz %.2f" = "%.2f 赫兹";
+"Label.hertz %d" = "%d 赫兹";
 "Label.octave %d" = "八度: %d";
 "Label.fft" = "快速傅里叶变换";
 "Label.amplitude" = "振幅";

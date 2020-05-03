@@ -28,6 +28,7 @@
 // Labels
 // main view
 "Label.hertz %.2f" = "%.2f ヘルツ";
+"Label.hertz %d" = "%d ヘルツ";
 "Label.octave %d" = "オクターブ: %d";
 "Label.fft" = "高速フーリエ変換";
 "Label.amplitude" = "振幅";

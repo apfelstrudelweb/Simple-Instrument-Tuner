@@ -146,6 +146,11 @@ class TuningTableViewController: UITableViewController {
         
         let section = self.sections[indexPath.section]
         let tuning = section.rows[indexPath.row]
+        
+        
+        let test1 = instrument.name!
+        let test2 = dictIAP[test1]
+        
         guard let instrumentName = instrument.name, let dict = dictIAP[instrumentName], let isOpenInstrument = dict[instrumentName] else {
             return
         }

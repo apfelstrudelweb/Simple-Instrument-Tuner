@@ -57,12 +57,22 @@ class IAPHandler: NSObject {
         super.init()
         
         dictUnlockMethods = ["Calibration": unlockCalibration,
-                                 "Guitar" : unlockGuitar,
-                                 "Banjo" : unlockBanjo,
-                                 "Ukulele" : unlockUkulele,
-                                 "Mandolin" : unlockMandolin,
-                                 "Balalaika" : unlockBalalaika,
-                                 "Premium" : unlockPremium]
+                             "Guitar" : unlockGuitar,
+                             "Banjo" : unlockBanjo,
+                             "Ukulele" : unlockUkulele,
+                             "Mandolin" : unlockMandolin,
+                             "Balalaika" : unlockBalalaika,
+                             "Premium" : unlockPremium]
+        
+        
+        dictCalibration["Calibration"] = self.isOpenCalibration
+        dictGuitar["Guitar"] = self.isOpenGuitar
+        dictBanjo["Banjo"] = self.isOpenBanjo
+        dictUkulele["Ukulele"] = self.isOpenUkulele
+        dictMandolin["Mandolin"] = self.isOpenMandolin
+        dictBalalaika["Balalaika"] = self.isOpenBalalaika
+        dictPremium["Premium"] = self.premium
+        
     }
     
     

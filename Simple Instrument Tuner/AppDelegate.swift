@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // TODO: IMPORTANT: comment out when submitting to the AppStore
 //        IAPHandler().unlockAll()
-//        IAPHandler().lockAll()
+        IAPHandler().lockAll()
 //        IAPHandler().unlockBanjo()
 //        IAPHandler().unlockGuitar()
 //        IAPHandler().unlockUkulele()

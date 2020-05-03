@@ -19,6 +19,8 @@ class DisplayViewController: UIViewController {
     let binCount = 50
     var timer: Timer?
     
+    var mode: DisplayMode?
+    
     var nodeOutputPlot: AKNodeOutputPlot = AKNodeOutputPlot()
     var nodeFFTPlot: AKNodeFFTPlot?
     

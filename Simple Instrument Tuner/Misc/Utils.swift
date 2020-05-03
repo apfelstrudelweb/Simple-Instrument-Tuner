@@ -57,9 +57,7 @@ class Utils: NSObject {
                 tunings.append(Tuning(name: name, isStandard: isStandard, notes: notes, frequencies: frequencies))
             }
             
-            let localizedInstrumentName = NSLocalizedString(name, comment: "")
-            
-            return Instrument(name: localizedInstrumentName, symbol: UIImage(named: image), doubleStrings: doubleStrings, tunings: tunings)
+            return Instrument(name: name, symbol: UIImage(named: image), doubleStrings: doubleStrings, tunings: tunings)
             
         }
         return nil
@@ -104,7 +102,7 @@ class Utils: NSObject {
             nameArray.append(localizedInstrumentName)
             imageArray.append(image)
         }
-    
+        
         return InstrumentsOptions(ids: idArray, names: nameArray, images: imageArray)
     }
     
@@ -245,57 +243,56 @@ class Utils: NSObject {
     }
     
     func generateBulletList(stringList: [String],
-             font: UIFont,
-             bullet: String = "\u{2022}",
-             indentation: CGFloat = 20,
-             lineSpacing: CGFloat = 2,
-             paragraphSpacing: CGFloat = 4,
-             textColor: UIColor = .white,
-             bulletColor: UIColor = .white) -> NSAttributedString {
-
+                            font: UIFont,
+                            bullet: String = "\u{2022}",
+                            indentation: CGFloat = 20,
+                            lineSpacing: CGFloat = 2,
+                            paragraphSpacing: CGFloat = 4,
+                            textColor: UIColor = .white,
+                            bulletColor: UIColor = .white) -> NSAttributedString {
+        
         let textAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: font, NSAttributedString.Key.foregroundColor: textColor]
         let bulletAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: font, NSAttributedString.Key.foregroundColor: bulletColor]
-
+        
         let paragraphStyle = NSMutableParagraphStyle()
         let nonOptions = [NSTextTab.OptionKey: Any]()
         paragraphStyle.tabStops = [
             NSTextTab(textAlignment: .left, location: indentation, options: nonOptions)]
         paragraphStyle.defaultTabInterval = indentation
-
+        
         paragraphStyle.lineSpacing = lineSpacing
         paragraphStyle.paragraphSpacing = paragraphSpacing
         paragraphStyle.headIndent = indentation
-
+        
         let bulletList = NSMutableAttributedString()
         for string in stringList {
             let formattedString = "\(bullet)\t\(string)\n"
             let attributedString = NSMutableAttributedString(string: formattedString)
-
+            
             attributedString.addAttributes(
                 [NSAttributedString.Key.paragraphStyle : paragraphStyle],
                 range: NSMakeRange(0, attributedString.length))
-
+            
             attributedString.addAttributes(
                 textAttributes,
                 range: NSMakeRange(0, attributedString.length))
-
+            
             let string:NSString = NSString(string: formattedString)
             let rangeForBullet:NSRange = string.range(of: bullet)
             attributedString.addAttributes(bulletAttributes, range: rangeForBullet)
             bulletList.append(attributedString)
         }
-
+        
         return bulletList
     }
     
     func dismisAllTooltips(view: UIView) {
-         for subview in view.subviews {
-             if let tipView = subview as? EasyTipView {
-                 tipView.dismiss()
-             }
-         }
-     }
-    
+        for subview in view.subviews {
+            if let tipView = subview as? EasyTipView {
+                tipView.dismiss(withCompletion: nil)
+            }
+        }
+    }
 }
 
 extension Array where Element: FloatingPoint {
@@ -338,21 +335,21 @@ extension UIView {
         border.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: width)
         self.layer.addSublayer(border)
     }
-
+    
     func addRightBorderWithColor(color: UIColor, width: CGFloat) {
         let border = CALayer()
         border.backgroundColor = color.cgColor
         border.frame = CGRect(x: self.frame.size.width - width, y: 0, width: width, height: self.frame.size.height)
         self.layer.addSublayer(border)
     }
-
+    
     func addBottomBorderWithColor(color: UIColor, width: CGFloat) {
         let border = CALayer()
         border.backgroundColor = color.cgColor
         border.frame = CGRect(x: 0, y: self.frame.size.height - width, width: self.frame.size.width, height: width)
         self.layer.addSublayer(border)
     }
-
+    
     func addLeftBorderWithColor(color: UIColor, width: CGFloat) {
         let border = CALayer()
         border.backgroundColor = color.cgColor

@@ -27,6 +27,7 @@
 // Labels
 // main view
 "Label.hertz %.2f" = "%.2f Hz";
+"Label.hertz %d" = "%d Hz";
 "Label.octave %d" = "Oktava: %d";
 "Label.fft" = "FFT";
 "Label.amplitude" = "Amplitude";

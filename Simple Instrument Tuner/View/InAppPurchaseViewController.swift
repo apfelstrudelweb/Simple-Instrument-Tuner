@@ -38,8 +38,8 @@ class InAppPurchaseViewController: UIViewController, UITableViewDataSource, UITa
         productTableView.rowHeight = UITableView.automaticDimension
         productTableView.estimatedRowHeight = 200
         
-        if productsArray?.count == 0 {
-            self.showAlert(title:"No In-App-Purchase options found", msg:"Please check your internet connection and try again!")
+        if productsArray == nil || productsArray?.count == 0 {
+            self.showAlert(title:"No In-App-Purchase options found", msg:"Please check your internet connection and try again! It is also possible that the AppStore is unreachable at this moment. In such case, retry later. As the connection to the AppStore is performed at startup, restart your app!")
             return
         }
         

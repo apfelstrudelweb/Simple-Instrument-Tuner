@@ -28,6 +28,7 @@
 // Labels
 // main view
 "Label.hertz %.2f" = "%.2f Гц";
+"Label.hertz %d" = "%d Гц";
 "Label.octave %d" = "Октава: %d";
 "Label.fft" = "БПФ";
 "Label.amplitude" = "Амплитуда";

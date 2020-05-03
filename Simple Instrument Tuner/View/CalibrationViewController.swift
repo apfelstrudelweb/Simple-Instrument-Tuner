@@ -58,7 +58,7 @@ class CalibrationViewController: UIViewController {
     @IBAction func sliderValueChanged(_ sender: UISlider) {
         
         let newValue =  (sender.value / Float(interval)).rounded() * Float(interval)
-        frequencyLabel.text = String(format: NSLocalizedString("Label.hertz %.2f", comment: ""), Int(newValue))
+        frequencyLabel.text = String(format: NSLocalizedString("Label.hertz %d", comment: ""), Int(newValue))
         
         let data = Data(from: Int(newValue))
         let _ = KeyChain.save(key: KEYCHAIN_CURRENT_CALIBRATION, data: data)
@@ -75,7 +75,7 @@ class CalibrationViewController: UIViewController {
             let _ = KeyChain.save(key: KEYCHAIN_CURRENT_CALIBRATION, data: data)
             slider.value = Float(chambertone)
         }
-        frequencyLabel.text = String(format: NSLocalizedString("Label.hertz %.2f", comment: ""), Int(slider.value))
+        frequencyLabel.text = String(format: NSLocalizedString("Label.hertz %d", comment: ""), Int(slider.value))
     }
     
     @objc func didPerformIAP(_ notification: Notification) {
