@@ -73,7 +73,10 @@ let notesArray: [String] = {
         return ["Do", "Do♯", "Re", "Mi♭", "Mi", "Fa", "Fa♯", "Sol", "La♭", "La", "Si♭", "Si"]
     } else if countryCode == "ja" {
         return ["ド", "ド♯", "レ", "ミ♭", "ミ", "ファ", "ファ♯", "ソ", "ラ♭", "ラ", "シ♭", "シ"]
+    } else if countryCode == "ar" {
+        return ["سي", "سي#" ,"دي", "إي♭", "إي", "إف", "إف#", "جي", "جي#", "إيه", "بي♭", "بي"]
     } else {
         return ["C", "C♯", "D", "E♭", "E", "F", "F♯", "G", "A♭", "A", "B♭", "B"]
     }
 }()
+
