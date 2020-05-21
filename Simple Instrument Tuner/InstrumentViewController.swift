@@ -96,6 +96,15 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // for Banjo Tuner
+        if Utils().getInstrumentsArray().ids?.count == 1 {
+            Utils().saveInstrument(index: 0)
+            didChangeInstrument()
+
+            Utils().saveStandardTuning()
+            didChangeTuning() 
+        }
+        
         SwiftRater.check()
         
         self.view.setNeedsLayout()
@@ -277,6 +286,10 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
             //mixer.volume = 0.0 // silence sound feeback on loudspeaker
             AudioKit.output = mixer
             
+//            amplitudeTracker.avAudioNode.installTap(onBus: 0, bufferSize: 1024, format: AudioKit.format) { [weak self] (buffer, time) -> Void in
+//                self?.signalTracker(didReceivedBuffer: buffer, atTime: time)
+//            }
+            
             embeddedDisplayViewController.plotAmplitude(trackedAmplitude: self.amplitudeTracker)
             embeddedDisplayViewController.plotFFT(fftTap: fftTap, amplitudeTracker: amplitudeTracker)
             
@@ -291,6 +304,21 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
         } catch {
             AKLog("AudioKit did not start!")
         }
+    }
+    
+    func signalTracker(didReceivedBuffer buffer: AVAudioPCMBuffer, atTime time: AVAudioTime){
+        
+         let elements = UnsafeBufferPointer(start: buffer.floatChannelData?[0], count:8192)
+               
+               var sample = [Float]()
+               
+               for i in 0..<8192 {
+                   sample.append(elements[i])
+               }
+
+               print (sample)
+               print(sample.count)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

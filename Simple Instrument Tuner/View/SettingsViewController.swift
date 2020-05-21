@@ -30,6 +30,12 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
     @IBOutlet weak var upgradeButton: UIButton!
     @IBOutlet weak var restoreButton: UIButton!
     @IBOutlet weak var instrumentDropdownLabel: UILabel!
+    @IBOutlet weak var instrumentInfoView: UIView!
+    @IBOutlet weak var colorSettingsView: UIView!
+    @IBOutlet weak var colorSettingsLabel: UILabel!
+    @IBOutlet weak var colorSettingsButton: UIButton!
+    
+    
     
     
     private var embeddedTuningViewController: TuningTableViewController!
@@ -69,7 +75,14 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        instrumentDropdownLabel.text =  NSLocalizedString("Label.instrumentDropdown", comment: "")
+        //labelMarginTop.constant = 1.2 * closeButton.frame.height
+        
+        if Bundle.appTarget == "Simple Banjo Tuner" {
+            instrumentInfoView.isHidden = false
+        } else {
+            instrumentInfoView.isHidden = true
+        }
+
         closeButton.setTitle(NSLocalizedString("Button.close", comment: ""), for: .normal)
         
         PKIAPHandler.shared.pkiDelegate = self
@@ -100,8 +113,18 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
         iapButtonView.layer.borderWidth = embeddedTuningViewController.tableView.layer.borderWidth
         iapButtonView.layer.masksToBounds = embeddedTuningViewController.tableView.layer.masksToBounds
         iapButtonView.layer.cornerRadius = embeddedTuningViewController.tableView.layer.cornerRadius
-        
         iapButtonView.backgroundColor = UIColor(patternImage: UIImage(named: "settingsPattern.png")!)
+        
+        colorSettingsView.layer.borderColor = embeddedTuningViewController.tableView.layer.borderColor
+        colorSettingsView.layer.borderWidth = embeddedTuningViewController.tableView.layer.borderWidth
+        colorSettingsView.layer.masksToBounds = embeddedTuningViewController.tableView.layer.masksToBounds
+        colorSettingsView.layer.cornerRadius = embeddedTuningViewController.tableView.layer.cornerRadius
+        colorSettingsView.backgroundColor = UIColor(patternImage: UIImage(named: "settingsPattern.png")!)
+        
+        colorSettingsButton.layer.cornerRadius = embeddedTuningViewController.tableView.layer.cornerRadius
+        colorSettingsButton.layer.masksToBounds = true
+        
+        colorSettingsButton.applyGradient(colors: [UIColor.green.cgColor, UIColor.yellow.cgColor, UIColor.orange.cgColor, UIColor.red.cgColor, UIColor.purple.cgColor, UIColor.blue.cgColor])
         
         if IAPHandler().isOpenPremium() == true {
             upgradeButton.isEnabled = false
@@ -112,6 +135,16 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
         if Utils().getInstrument() == nil {
             showTooltip()
         }
+    }
+    
+    func makeGradientLayer(`for` object : UIView, startPoint : CGPoint, endPoint : CGPoint, gradientColors : [Any]) -> CAGradientLayer {
+        let gradient: CAGradientLayer = CAGradientLayer()
+        gradient.colors = gradientColors
+        gradient.locations = [0.0 , 1.0]
+        gradient.startPoint = startPoint
+        gradient.endPoint = endPoint
+        gradient.frame = CGRect(x: 0, y: 0, width: object.frame.size.width, height: object.frame.size.height)
+        return gradient
     }
     
     
@@ -212,4 +245,54 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
         NotificationCenter.default.removeObserver(self)
     }
     
+}
+
+
+extension Bundle {
+
+    public static var appVersion: String? {
+        return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
+    }
+
+    public static var appBuild: String? {
+        return Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String) as? String
+    }
+
+    public static func _version() -> String {
+        let dictionary = Bundle.main.infoDictionary!
+        let version = dictionary["CFBundleShortVersionString"] as! String
+        let build = dictionary["CFBundleVersion"] as! String
+        return "\(version) build \(build)"
+    }
+
+    public static var appTarget: String? {
+        if let targetName = Bundle.main.object(forInfoDictionaryKey: "CFBundleExecutable") as? String {
+            return targetName
+        }
+        return nil
+    }
+}
+
+
+extension UIButton {
+    func applyGradient(colors: [CGColor]) {
+        self.backgroundColor = nil
+        self.layoutIfNeeded()
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = colors
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 0)
+        gradientLayer.frame = self.bounds
+        gradientLayer.cornerRadius = self.frame.height/2
+
+        gradientLayer.shadowColor = UIColor.black.cgColor
+        gradientLayer.shadowOffset = CGSize(width: 2.5, height: 2.5)
+        gradientLayer.shadowRadius = 5.0
+        gradientLayer.shadowOpacity = 1
+        gradientLayer.masksToBounds = true
+
+        self.layer.insertSublayer(gradientLayer, at: 0)
+        self.contentVerticalAlignment = .center
+
+    }
 }

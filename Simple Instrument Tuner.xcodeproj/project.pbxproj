@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5ABBED16C8B37502230B35C0 /* Pods_Simple_Instrument_Tuner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB0DCBFF1BA7BD84F7379A50 /* Pods_Simple_Instrument_Tuner.framework */; };
 		6509D1B124557CAD005D2351 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6509D1B024557CAD005D2351 /* StoreKit.framework */; };
 		65142638245C87EF002E7E82 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6514263A245C87EF002E7E82 /* Localizable.strings */; };
 		652BC0DB242A2C0D00F60B83 /* VolumeMeterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC0D9242A2C0C00F60B83 /* VolumeMeterViewController.swift */; };
@@ -65,15 +64,113 @@
 		6576A17B244397E700970132 /* animatedString.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6576A17A244397E700970132 /* animatedString.gif */; };
 		6589227A2450C4FB008F871B /* IAPTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658922782450C4FB008F871B /* IAPTableViewCell.swift */; };
 		6589227B2450C4FB008F871B /* IAPTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 658922792450C4FB008F871B /* IAPTableViewCell.xib */; };
+		658DCA88247680430083ADA7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658DCA87247680430083ADA7 /* SceneDelegate.swift */; };
+		658DCA8F247680460083ADA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 658DCA8E247680460083ADA7 /* Assets.xcassets */; };
+		658DCA97247680D50083ADA7 /* InstrumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBF5924260D9E00F518D8 /* InstrumentViewController.swift */; };
+		658DCA99247681450083ADA7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6514263A245C87EF002E7E82 /* Localizable.strings */; };
+		658DCA9A247681540083ADA7 /* AutoPan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC10F242CC39900F60B83 /* AutoPan.swift */; };
+		658DCA9B247681540083ADA7 /* Conductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC10B242CC39900F60B83 /* Conductor.swift */; };
+		658DCA9C247681540083ADA7 /* Fatten.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC10C242CC39900F60B83 /* Fatten.swift */; };
+		658DCA9D247681540083ADA7 /* FilterSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC10E242CC39900F60B83 /* FilterSection.swift */; };
+		658DCA9E247681540083ADA7 /* PingPongDelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC10D242CC39900F60B83 /* PingPongDelay.swift */; };
+		658DCA9F247681590083ADA7 /* BezierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576A169243FA85200970132 /* BezierView.swift */; };
+		658DCAA0247681590083ADA7 /* NoteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653216EB242FB93A00BE1CAE /* NoteButton.swift */; };
+		658DCAA1247681590083ADA7 /* FrequencyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653216F52430E7CD00BE1CAE /* FrequencyLabel.swift */; };
+		658DCAA2247681590083ADA7 /* DisplayModeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585A812433A793002CD214 /* DisplayModeButton.swift */; };
+		658DCAA3247681590083ADA7 /* NoteLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C871C7243D09DD0047DB8F /* NoteLabel.swift */; };
+		658DCAA4247681590083ADA7 /* CalibrationSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576A170244254B100970132 /* CalibrationSlider.swift */; };
+		658DCAA5247681590083ADA7 /* StringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576A1742443312400970132 /* StringView.swift */; };
+		658DCAA6247681590083ADA7 /* iOSDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654FE607244496E30046AFCC /* iOSDropDown.swift */; };
+		658DCAA7247681590083ADA7 /* CalibrationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6559D82C244D856900863CE7 /* CalibrationLabel.swift */; };
+		658DCAA82476815E0083ADA7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC0EE242A69A300F60B83 /* Constants.swift */; };
+		658DCAA92476815E0083ADA7 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653216EF242FC38200BE1CAE /* Note.swift */; };
+		658DCAAA2476815E0083ADA7 /* PKIAPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65325229243B36420004005C /* PKIAPHandler.swift */; };
+		658DCAAB2476815E0083ADA7 /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6532522D243C6C990004005C /* KeyChain.swift */; };
+		658DCAAC2476815E0083ADA7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6532522F243C7A640004005C /* Utils.swift */; };
+		658DCAAD2476815E0083ADA7 /* IAPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A893C1244C97C900B2AB97 /* IAPHandler.swift */; };
+		658DCAAE247681650083ADA7 /* Bridge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652BC0FA242BECFB00F60B83 /* Bridge.storyboard */; };
+		658DCAAF247681650083ADA7 /* BridgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC0FE242BED0F00F60B83 /* BridgeViewController.swift */; };
+		658DCAB0247681650083ADA7 /* DeviationMeter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652BC0E5242A582400F60B83 /* DeviationMeter.storyboard */; };
+		658DCAB1247681650083ADA7 /* DeviationMeterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC0E9242A583C00F60B83 /* DeviationMeterViewController.swift */; };
+		658DCAB2247681650083ADA7 /* Gauge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC03224266C0B00F518D8 /* Gauge.storyboard */; };
+		658DCAB3247681650083ADA7 /* GaugeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCC03624266CAA00F518D8 /* GaugeViewController.swift */; };
+		658DCAB4247681650083ADA7 /* VolumeMeter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652BC0DA242A2C0C00F60B83 /* VolumeMeter.storyboard */; };
+		658DCAB5247681650083ADA7 /* VolumeMeterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC0D9242A2C0C00F60B83 /* VolumeMeterViewController.swift */; };
+		658DCAB6247681650083ADA7 /* DisplayContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585A6D24334A74002CD214 /* DisplayContainer.swift */; };
+		658DCAB7247681650083ADA7 /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585A792433508B002CD214 /* DisplayViewController.swift */; };
+		658DCAB8247681650083ADA7 /* Display.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65585A7D243350A7002CD214 /* Display.storyboard */; };
+		658DCAB9247681650083ADA7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655585F6243A25BC004A94C0 /* SettingsViewController.swift */; };
+		658DCABA247681650083ADA7 /* Tuning.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65FCB7A324478EC3005E142A /* Tuning.storyboard */; };
+		658DCABB247681650083ADA7 /* TuningTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FCB7A724478F22005E142A /* TuningTableViewController.swift */; };
+		658DCABC247681650083ADA7 /* TuningTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FCB7BB2447934B005E142A /* TuningTableViewCell.swift */; };
+		658DCABD247681650083ADA7 /* Calibration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65A893C9244CD53700B2AB97 /* Calibration.storyboard */; };
+		658DCABE247681650083ADA7 /* CalibrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A893CB244CD54800B2AB97 /* CalibrationViewController.swift */; };
+		658DCABF247681650083ADA7 /* InAppPurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A893C3244CAE6200B2AB97 /* InAppPurchaseViewController.swift */; };
+		658DCAC0247681650083ADA7 /* InAppPurchase.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65A893C5244CB1D700B2AB97 /* InAppPurchase.storyboard */; };
+		658DCAC1247681650083ADA7 /* IAPTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658922782450C4FB008F871B /* IAPTableViewCell.swift */; };
+		658DCAC2247681650083ADA7 /* IAPTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 658922792450C4FB008F871B /* IAPTableViewCell.xib */; };
+		658DCAC3247681650083ADA7 /* ActivityIndicatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 656E9E33245C259B00B06582 /* ActivityIndicatorView.xib */; };
+		658DCAC4247681650083ADA7 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656E9E35245C265600B06582 /* ActivityIndicatorView.swift */; };
+		658DCAC52476816F0083ADA7 /* bridge.png in Resources */ = {isa = PBXBuildFile; fileRef = 652BC0F6242BEC7500F60B83 /* bridge.png */; };
+		658DCAC62476816F0083ADA7 /* tuningsGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CE47A02448E93100E3B2EC /* tuningsGradient.png */; };
+		658DCAC72476816F0083ADA7 /* settingsPattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 65FCB7B7244792EC005E142A /* settingsPattern.png */; };
+		658DCAC82476816F0083ADA7 /* settingsPatternDark.png in Resources */ = {isa = PBXBuildFile; fileRef = 65FCB7B8244792EC005E142A /* settingsPatternDark.png */; };
+		658DCAC92476816F0083ADA7 /* settingsPatternLight.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CE479E2448E5A200E3B2EC /* settingsPatternLight.png */; };
+		658DCACA2476816F0083ADA7 /* offButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 65FCB7B124479246005E142A /* offButton.png */; };
+		658DCACB2476816F0083ADA7 /* onButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 65FCB7B224479246005E142A /* onButton.png */; };
+		658DCACC2476816F0083ADA7 /* shoppingCart.png in Resources */ = {isa = PBXBuildFile; fileRef = 65FCB7B324479246005E142A /* shoppingCart.png */; };
+		658DCACD2476816F0083ADA7 /* btnActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCBFF8242621D100F518D8 /* btnActive.png */; };
+		658DCACE2476816F0083ADA7 /* btnPassive.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCBFF9242621D200F518D8 /* btnPassive.png */; };
+		658DCACF2476816F0083ADA7 /* ledActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC0012426268900F518D8 /* ledActive.png */; };
+		658DCAD02476816F0083ADA7 /* ledPassive.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC0002426268900F518D8 /* ledPassive.png */; };
+		658DCAD12476816F0083ADA7 /* noteButtonActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC009242626BC00F518D8 /* noteButtonActive.png */; };
+		658DCAD22476816F0083ADA7 /* noteButtonPassive.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC008242626BC00F518D8 /* noteButtonPassive.png */; };
+		658DCAD32476816F0083ADA7 /* gaugeBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC02824263B8B00F518D8 /* gaugeBackground.png */; };
+		658DCAD42476816F0083ADA7 /* gaugePattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC0112426318E00F518D8 /* gaugePattern.png */; };
+		658DCAD52476816F0083ADA7 /* gaugePatternGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC0102426318E00F518D8 /* gaugePatternGreen.png */; };
+		658DCAD62476816F0083ADA7 /* restoreButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6559D85F244E20B800863CE7 /* restoreButton.png */; };
+		658DCAD72476816F0083ADA7 /* upgradeButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6559D85D244E20AE00863CE7 /* upgradeButton.png */; };
+		658DCAD82476816F0083ADA7 /* gaugeScale.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC03A2426AD6B00F518D8 /* gaugeScale.png */; };
+		658DCAD92476816F0083ADA7 /* gaugeOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC02D2426683400F518D8 /* gaugeOverlay.png */; };
+		658DCADA2476816F0083ADA7 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC020242637E700F518D8 /* info.png */; };
+		658DCADB2476816F0083ADA7 /* microphoneOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC0182426368600F518D8 /* microphoneOff.png */; };
+		658DCADC2476816F0083ADA7 /* microphoneOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC0192426368600F518D8 /* microphoneOn.png */; };
+		658DCADD2476816F0083ADA7 /* doubleString.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CE479C2448DCFC00E3B2EC /* doubleString.png */; };
+		658DCADE2476816F0083ADA7 /* string.png in Resources */ = {isa = PBXBuildFile; fileRef = 652BC102242BF64B00F60B83 /* string.png */; };
+		658DCADF2476816F0083ADA7 /* animatedString.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6576A17A244397E700970132 /* animatedString.gif */; };
+		658DCAE02476816F0083ADA7 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CCC024242637F400F518D8 /* settings.png */; };
+		658DCAE12476816F0083ADA7 /* tuningfork.png in Resources */ = {isa = PBXBuildFile; fileRef = 65B60322243728B600BBA23D /* tuningfork.png */; };
+		658DCAE22476816F0083ADA7 /* volumeMeterPattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 652BC0E1242A2C6E00F60B83 /* volumeMeterPattern.png */; };
+		658DCAE3247681750083ADA7 /* balalaika.png in Resources */ = {isa = PBXBuildFile; fileRef = 6573CE03245211C800C10A3C /* balalaika.png */; };
+		658DCAE4247681750083ADA7 /* banjo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6573CE02245211C800C10A3C /* banjo.png */; };
+		658DCAE5247681750083ADA7 /* calibration.png in Resources */ = {isa = PBXBuildFile; fileRef = 6573CDF72452115500C10A3C /* calibration.png */; };
+		658DCAE6247681750083ADA7 /* premium.png in Resources */ = {isa = PBXBuildFile; fileRef = 6573CDF62452115500C10A3C /* premium.png */; };
+		658DCAE7247681750083ADA7 /* guitar.png in Resources */ = {isa = PBXBuildFile; fileRef = 6573CDFE245211C100C10A3C /* guitar.png */; };
+		658DCAE8247681750083ADA7 /* ukulele.png in Resources */ = {isa = PBXBuildFile; fileRef = 6573CE06245216A600C10A3C /* ukulele.png */; };
+		658DCAE9247681750083ADA7 /* mandolin.png in Resources */ = {isa = PBXBuildFile; fileRef = 6573CDFF245211C100C10A3C /* mandolin.png */; };
+		658DCAEA247681750083ADA7 /* violin.png in Resources */ = {isa = PBXBuildFile; fileRef = 6573CDFA245211B400C10A3C /* violin.png */; };
+		658DCAEB2476817A0083ADA7 /* guitarSymbol.png in Resources */ = {isa = PBXBuildFile; fileRef = 655585FC243A53ED004A94C0 /* guitarSymbol.png */; };
+		658DCAEC2476817A0083ADA7 /* balalaikaSymbol.png in Resources */ = {isa = PBXBuildFile; fileRef = 655585FE243A5705004A94C0 /* balalaikaSymbol.png */; };
+		658DCAED2476817A0083ADA7 /* banjoSymbol.png in Resources */ = {isa = PBXBuildFile; fileRef = 655585FF243A5705004A94C0 /* banjoSymbol.png */; };
+		658DCAEE2476817A0083ADA7 /* mandolinSymbol.png in Resources */ = {isa = PBXBuildFile; fileRef = 65558600243A5705004A94C0 /* mandolinSymbol.png */; };
+		658DCAEF2476817A0083ADA7 /* ukuleleSymbol.png in Resources */ = {isa = PBXBuildFile; fileRef = 65558601243A5705004A94C0 /* ukuleleSymbol.png */; };
+		658DCAF02476817A0083ADA7 /* violinSymbol.png in Resources */ = {isa = PBXBuildFile; fileRef = 65558602243A5705004A94C0 /* violinSymbol.png */; };
+		658DCAF3247681960083ADA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65CCBF6024260DA100F518D8 /* LaunchScreen.storyboard */; };
+		658DCAF6247681B60083ADA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65CCBF5E24260DA100F518D8 /* Assets.xcassets */; };
+		658DCAF7247683CE0083ADA7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6509D1B024557CAD005D2351 /* StoreKit.framework */; };
+		658DCAF8247683D60083ADA7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 652BC124242CDABF00F60B83 /* AudioToolbox.framework */; };
+		658DCAFE247686190083ADA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBF5524260D9E00F518D8 /* AppDelegate.swift */; };
+		658DCB00247686D70083ADA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBF5524260D9E00F518D8 /* AppDelegate.swift */; };
+		658DCB02247688010083ADA7 /* Instruments.plist in Resources */ = {isa = PBXBuildFile; fileRef = 658DCB01247688010083ADA7 /* Instruments.plist */; };
+		658DCB0624768F180083ADA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65B603302438D49C00BBA23D /* Main.storyboard */; };
+		658DCB0724768F480083ADA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65B603302438D49C00BBA23D /* Main.storyboard */; };
 		65A893C2244C97C900B2AB97 /* IAPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A893C1244C97C900B2AB97 /* IAPHandler.swift */; };
 		65A893C4244CAE6200B2AB97 /* InAppPurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A893C3244CAE6200B2AB97 /* InAppPurchaseViewController.swift */; };
 		65A893C6244CB1D700B2AB97 /* InAppPurchase.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65A893C5244CB1D700B2AB97 /* InAppPurchase.storyboard */; };
 		65A893CA244CD53700B2AB97 /* Calibration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65A893C9244CD53700B2AB97 /* Calibration.storyboard */; };
 		65A893CC244CD54800B2AB97 /* CalibrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A893CB244CD54800B2AB97 /* CalibrationViewController.swift */; };
 		65B60323243728B600BBA23D /* tuningfork.png in Resources */ = {isa = PBXBuildFile; fileRef = 65B60322243728B600BBA23D /* tuningfork.png */; };
-		65B603322438D49D00BBA23D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65B603302438D49C00BBA23D /* Main.storyboard */; };
 		65C871C8243D09DD0047DB8F /* NoteLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C871C7243D09DD0047DB8F /* NoteLabel.swift */; };
-		65CCBF5624260D9E00F518D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBF5524260D9E00F518D8 /* AppDelegate.swift */; };
 		65CCBF5824260D9E00F518D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBF5724260D9E00F518D8 /* SceneDelegate.swift */; };
 		65CCBF5A24260D9E00F518D8 /* InstrumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBF5924260D9E00F518D8 /* InstrumentViewController.swift */; };
 		65CCBF5F24260DA100F518D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65CCBF5E24260DA100F518D8 /* Assets.xcassets */; };
@@ -106,6 +203,8 @@
 		65FCB7B9244792EC005E142A /* settingsPattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 65FCB7B7244792EC005E142A /* settingsPattern.png */; };
 		65FCB7BA244792EC005E142A /* settingsPatternDark.png in Resources */ = {isa = PBXBuildFile; fileRef = 65FCB7B8244792EC005E142A /* settingsPatternDark.png */; };
 		65FCB7BC2447934B005E142A /* TuningTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FCB7BB2447934B005E142A /* TuningTableViewCell.swift */; };
+		9BC8C02F385D7820D07B58CB /* Pods_Simple_Instrument_Tuner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A8A63D1BB5B03615EB3892 /* Pods_Simple_Instrument_Tuner.framework */; };
+		AA5A635164555678DB20D085 /* Pods_Simple_Banjo_Tuner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F644B4304FACD225D96920D /* Pods_Simple_Banjo_Tuner.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,7 +225,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		457E6052D443CDAE029DEBF4 /* Pods-Simple Instrument Tuner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simple Instrument Tuner.release.xcconfig"; path = "Target Support Files/Pods-Simple Instrument Tuner/Pods-Simple Instrument Tuner.release.xcconfig"; sourceTree = "<group>"; };
+		0F644B4304FACD225D96920D /* Pods_Simple_Banjo_Tuner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Simple_Banjo_Tuner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		30A8A63D1BB5B03615EB3892 /* Pods_Simple_Instrument_Tuner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Simple_Instrument_Tuner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		33BD2D430DEB785838B129D3 /* Pods-Simple Banjo Tuner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simple Banjo Tuner.release.xcconfig"; path = "Target Support Files/Pods-Simple Banjo Tuner/Pods-Simple Banjo Tuner.release.xcconfig"; sourceTree = "<group>"; };
 		6509D1B024557CAD005D2351 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		65142634245C8769002E7E82 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		65142635245C8772002E7E82 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -205,6 +306,15 @@
 		6576A17A244397E700970132 /* animatedString.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = animatedString.gif; sourceTree = "<group>"; };
 		658922782450C4FB008F871B /* IAPTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPTableViewCell.swift; sourceTree = "<group>"; };
 		658922792450C4FB008F871B /* IAPTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IAPTableViewCell.xib; sourceTree = "<group>"; };
+		658DCA83247680430083ADA7 /* Simple Banjo Tuner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Banjo Tuner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		658DCA85247680430083ADA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		658DCA87247680430083ADA7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		658DCA89247680430083ADA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		658DCA8C247680430083ADA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		658DCA8E247680460083ADA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		658DCA91247680460083ADA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		658DCA93247680460083ADA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		658DCB01247688010083ADA7 /* Instruments.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Instruments.plist; sourceTree = "<group>"; };
 		65A893C1244C97C900B2AB97 /* IAPHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHandler.swift; sourceTree = "<group>"; };
 		65A893C3244CAE6200B2AB97 /* InAppPurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchaseViewController.swift; sourceTree = "<group>"; };
 		65A893C5244CB1D700B2AB97 /* InAppPurchase.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InAppPurchase.storyboard; sourceTree = "<group>"; };
@@ -213,7 +323,7 @@
 		65B60322243728B600BBA23D /* tuningfork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tuningfork.png; sourceTree = "<group>"; };
 		65B603312438D49C00BBA23D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		65C871C7243D09DD0047DB8F /* NoteLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteLabel.swift; sourceTree = "<group>"; };
-		65CCBF5224260D9E00F518D8 /* Simple Instrument Tuner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Instrument Tuner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		65CCBF5224260D9E00F518D8 /* Instrument Tuner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Instrument Tuner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65CCBF5524260D9E00F518D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65CCBF5724260D9E00F518D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		65CCBF5924260D9E00F518D8 /* InstrumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentViewController.swift; sourceTree = "<group>"; };
@@ -250,18 +360,29 @@
 		65FCB7B7244792EC005E142A /* settingsPattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settingsPattern.png; path = "Simple Instrument Tuner/images/settingsPattern.png"; sourceTree = SOURCE_ROOT; };
 		65FCB7B8244792EC005E142A /* settingsPatternDark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settingsPatternDark.png; path = "Simple Instrument Tuner/images/settingsPatternDark.png"; sourceTree = SOURCE_ROOT; };
 		65FCB7BB2447934B005E142A /* TuningTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuningTableViewCell.swift; sourceTree = "<group>"; };
-		BB0DCBFF1BA7BD84F7379A50 /* Pods_Simple_Instrument_Tuner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Simple_Instrument_Tuner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F70B23FE6B4D62213378CD07 /* Pods-Simple Instrument Tuner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simple Instrument Tuner.debug.xcconfig"; path = "Target Support Files/Pods-Simple Instrument Tuner/Pods-Simple Instrument Tuner.debug.xcconfig"; sourceTree = "<group>"; };
+		784583732BAFA51256DEB78B /* Pods-Simple Instrument Tuner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simple Instrument Tuner.debug.xcconfig"; path = "Target Support Files/Pods-Simple Instrument Tuner/Pods-Simple Instrument Tuner.debug.xcconfig"; sourceTree = "<group>"; };
+		B3465F7B14D273BF644AAC22 /* Pods-Simple Banjo Tuner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simple Banjo Tuner.debug.xcconfig"; path = "Target Support Files/Pods-Simple Banjo Tuner/Pods-Simple Banjo Tuner.debug.xcconfig"; sourceTree = "<group>"; };
+		F33634C1482176C7581EF178 /* Pods-Simple Instrument Tuner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simple Instrument Tuner.release.xcconfig"; path = "Target Support Files/Pods-Simple Instrument Tuner/Pods-Simple Instrument Tuner.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		658DCA80247680430083ADA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				658DCAF8247683D60083ADA7 /* AudioToolbox.framework in Frameworks */,
+				658DCAF7247683CE0083ADA7 /* StoreKit.framework in Frameworks */,
+				AA5A635164555678DB20D085 /* Pods_Simple_Banjo_Tuner.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		65CCBF4F24260D9E00F518D8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				6509D1B124557CAD005D2351 /* StoreKit.framework in Frameworks */,
 				652BC125242CDABF00F60B83 /* AudioToolbox.framework in Frameworks */,
-				5ABBED16C8B37502230B35C0 /* Pods_Simple_Instrument_Tuner.framework in Frameworks */,
+				9BC8C02F385D7820D07B58CB /* Pods_Simple_Instrument_Tuner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,10 +482,26 @@
 			path = settings;
 			sourceTree = "<group>";
 		};
+		658DCA84247680430083ADA7 /* Simple Banjo Tuner */ = {
+			isa = PBXGroup;
+			children = (
+				658DCA85247680430083ADA7 /* AppDelegate.swift */,
+				658DCA87247680430083ADA7 /* SceneDelegate.swift */,
+				658DCA89247680430083ADA7 /* ViewController.swift */,
+				658DCA8B247680430083ADA7 /* Main.storyboard */,
+				658DCA8E247680460083ADA7 /* Assets.xcassets */,
+				658DCA90247680460083ADA7 /* LaunchScreen.storyboard */,
+				658DCA93247680460083ADA7 /* Info.plist */,
+				658DCB01247688010083ADA7 /* Instruments.plist */,
+			);
+			path = "Simple Banjo Tuner";
+			sourceTree = "<group>";
+		};
 		65CCBF4924260D9E00F518D8 = {
 			isa = PBXGroup;
 			children = (
 				65CCBF5424260D9E00F518D8 /* Simple Instrument Tuner */,
+				658DCA84247680430083ADA7 /* Simple Banjo Tuner */,
 				65CCBF5324260D9E00F518D8 /* Products */,
 				B0281B6E1E5D3DE8CC47E754 /* Pods */,
 				9A9C7B4F070DD9E7BE52FEBB /* Frameworks */,
@@ -374,9 +511,10 @@
 		65CCBF5324260D9E00F518D8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				65CCBF5224260D9E00F518D8 /* Simple Instrument Tuner.app */,
+				65CCBF5224260D9E00F518D8 /* Instrument Tuner.app */,
 				65CCBF6824260DA100F518D8 /* Simple Instrument TunerTests.xctest */,
 				65CCBF7324260DA100F518D8 /* Simple Instrument TunerUITests.xctest */,
+				658DCA83247680430083ADA7 /* Simple Banjo Tuner.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -478,7 +616,8 @@
 				655585F8243A4ACF004A94C0 /* iOSDropDown.framework */,
 				653216E9242D18F800BE1CAE /* CoreAudioKit.framework */,
 				652BC124242CDABF00F60B83 /* AudioToolbox.framework */,
-				BB0DCBFF1BA7BD84F7379A50 /* Pods_Simple_Instrument_Tuner.framework */,
+				0F644B4304FACD225D96920D /* Pods_Simple_Banjo_Tuner.framework */,
+				30A8A63D1BB5B03615EB3892 /* Pods_Simple_Instrument_Tuner.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -486,8 +625,10 @@
 		B0281B6E1E5D3DE8CC47E754 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F70B23FE6B4D62213378CD07 /* Pods-Simple Instrument Tuner.debug.xcconfig */,
-				457E6052D443CDAE029DEBF4 /* Pods-Simple Instrument Tuner.release.xcconfig */,
+				B3465F7B14D273BF644AAC22 /* Pods-Simple Banjo Tuner.debug.xcconfig */,
+				33BD2D430DEB785838B129D3 /* Pods-Simple Banjo Tuner.release.xcconfig */,
+				784583732BAFA51256DEB78B /* Pods-Simple Instrument Tuner.debug.xcconfig */,
+				F33634C1482176C7581EF178 /* Pods-Simple Instrument Tuner.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -495,15 +636,34 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		658DCA82247680430083ADA7 /* Simple Banjo Tuner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 658DCA96247680460083ADA7 /* Build configuration list for PBXNativeTarget "Simple Banjo Tuner" */;
+			buildPhases = (
+				03971B16AED8E966CF494A42 /* [CP] Check Pods Manifest.lock */,
+				658DCA7F247680430083ADA7 /* Sources */,
+				658DCA80247680430083ADA7 /* Frameworks */,
+				658DCA81247680430083ADA7 /* Resources */,
+				BF4DB0E8381033D6E5CA5F22 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Simple Banjo Tuner";
+			productName = "Simple Banjo Tuner";
+			productReference = 658DCA83247680430083ADA7 /* Simple Banjo Tuner.app */;
+			productType = "com.apple.product-type.application";
+		};
 		65CCBF5124260D9E00F518D8 /* Simple Instrument Tuner */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 65CCBF7C24260DA100F518D8 /* Build configuration list for PBXNativeTarget "Simple Instrument Tuner" */;
 			buildPhases = (
-				0242195E77EBD7E719225BE7 /* [CP] Check Pods Manifest.lock */,
+				D1C9D436974E457478BC3DFE /* [CP] Check Pods Manifest.lock */,
 				65CCBF4E24260D9E00F518D8 /* Sources */,
 				65CCBF4F24260D9E00F518D8 /* Frameworks */,
 				65CCBF5024260D9E00F518D8 /* Resources */,
-				814A7D3876362CE9760C5B1D /* [CP] Embed Pods Frameworks */,
+				669561378DFBCF98A6324756 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -511,7 +671,7 @@
 			);
 			name = "Simple Instrument Tuner";
 			productName = "Simple Instrument Tuner";
-			productReference = 65CCBF5224260D9E00F518D8 /* Simple Instrument Tuner.app */;
+			productReference = 65CCBF5224260D9E00F518D8 /* Instrument Tuner.app */;
 			productType = "com.apple.product-type.application";
 		};
 		65CCBF6724260DA100F518D8 /* Simple Instrument TunerTests */ = {
@@ -556,10 +716,13 @@
 		65CCBF4A24260D9E00F518D8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Ullrich Vormbrock";
 				TargetAttributes = {
+					658DCA82247680430083ADA7 = {
+						CreatedOnToolsVersion = 11.5;
+					};
 					65CCBF5124260D9E00F518D8 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
@@ -596,11 +759,79 @@
 				65CCBF5124260D9E00F518D8 /* Simple Instrument Tuner */,
 				65CCBF6724260DA100F518D8 /* Simple Instrument TunerTests */,
 				65CCBF7224260DA100F518D8 /* Simple Instrument TunerUITests */,
+				658DCA82247680430083ADA7 /* Simple Banjo Tuner */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		658DCA81247680430083ADA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				658DCAEE2476817A0083ADA7 /* mandolinSymbol.png in Resources */,
+				658DCAD52476816F0083ADA7 /* gaugePatternGreen.png in Resources */,
+				658DCAC3247681650083ADA7 /* ActivityIndicatorView.xib in Resources */,
+				658DCAE3247681750083ADA7 /* balalaika.png in Resources */,
+				658DCAD92476816F0083ADA7 /* gaugeOverlay.png in Resources */,
+				658DCAB2247681650083ADA7 /* Gauge.storyboard in Resources */,
+				658DCAE7247681750083ADA7 /* guitar.png in Resources */,
+				658DCAE12476816F0083ADA7 /* tuningfork.png in Resources */,
+				658DCAC92476816F0083ADA7 /* settingsPatternLight.png in Resources */,
+				658DCACF2476816F0083ADA7 /* ledActive.png in Resources */,
+				658DCADA2476816F0083ADA7 /* info.png in Resources */,
+				658DCAE6247681750083ADA7 /* premium.png in Resources */,
+				658DCAE8247681750083ADA7 /* ukulele.png in Resources */,
+				658DCA99247681450083ADA7 /* Localizable.strings in Resources */,
+				658DCAD12476816F0083ADA7 /* noteButtonActive.png in Resources */,
+				658DCAC0247681650083ADA7 /* InAppPurchase.storyboard in Resources */,
+				658DCAD72476816F0083ADA7 /* upgradeButton.png in Resources */,
+				658DCAB0247681650083ADA7 /* DeviationMeter.storyboard in Resources */,
+				658DCACA2476816F0083ADA7 /* offButton.png in Resources */,
+				658DCAEA247681750083ADA7 /* violin.png in Resources */,
+				658DCAC72476816F0083ADA7 /* settingsPattern.png in Resources */,
+				658DCACE2476816F0083ADA7 /* btnPassive.png in Resources */,
+				658DCACD2476816F0083ADA7 /* btnActive.png in Resources */,
+				658DCAF6247681B60083ADA7 /* Assets.xcassets in Resources */,
+				658DCADE2476816F0083ADA7 /* string.png in Resources */,
+				658DCAD32476816F0083ADA7 /* gaugeBackground.png in Resources */,
+				658DCA8F247680460083ADA7 /* Assets.xcassets in Resources */,
+				658DCADB2476816F0083ADA7 /* microphoneOff.png in Resources */,
+				658DCAD82476816F0083ADA7 /* gaugeScale.png in Resources */,
+				658DCADD2476816F0083ADA7 /* doubleString.png in Resources */,
+				658DCAEC2476817A0083ADA7 /* balalaikaSymbol.png in Resources */,
+				658DCACB2476816F0083ADA7 /* onButton.png in Resources */,
+				658DCAE5247681750083ADA7 /* calibration.png in Resources */,
+				658DCAF3247681960083ADA7 /* LaunchScreen.storyboard in Resources */,
+				658DCABD247681650083ADA7 /* Calibration.storyboard in Resources */,
+				658DCAC62476816F0083ADA7 /* tuningsGradient.png in Resources */,
+				658DCAB8247681650083ADA7 /* Display.storyboard in Resources */,
+				658DCABA247681650083ADA7 /* Tuning.storyboard in Resources */,
+				658DCAEF2476817A0083ADA7 /* ukuleleSymbol.png in Resources */,
+				658DCAEB2476817A0083ADA7 /* guitarSymbol.png in Resources */,
+				658DCAC52476816F0083ADA7 /* bridge.png in Resources */,
+				658DCAB4247681650083ADA7 /* VolumeMeter.storyboard in Resources */,
+				658DCAD22476816F0083ADA7 /* noteButtonPassive.png in Resources */,
+				658DCB02247688010083ADA7 /* Instruments.plist in Resources */,
+				658DCAE9247681750083ADA7 /* mandolin.png in Resources */,
+				658DCAC2247681650083ADA7 /* IAPTableViewCell.xib in Resources */,
+				658DCAED2476817A0083ADA7 /* banjoSymbol.png in Resources */,
+				658DCAE22476816F0083ADA7 /* volumeMeterPattern.png in Resources */,
+				658DCADF2476816F0083ADA7 /* animatedString.gif in Resources */,
+				658DCADC2476816F0083ADA7 /* microphoneOn.png in Resources */,
+				658DCACC2476816F0083ADA7 /* shoppingCart.png in Resources */,
+				658DCB0724768F480083ADA7 /* Main.storyboard in Resources */,
+				658DCAE02476816F0083ADA7 /* settings.png in Resources */,
+				658DCAAE247681650083ADA7 /* Bridge.storyboard in Resources */,
+				658DCAC82476816F0083ADA7 /* settingsPatternDark.png in Resources */,
+				658DCAD02476816F0083ADA7 /* ledPassive.png in Resources */,
+				658DCAD62476816F0083ADA7 /* restoreButton.png in Resources */,
+				658DCAD42476816F0083ADA7 /* gaugePattern.png in Resources */,
+				658DCAF02476817A0083ADA7 /* violinSymbol.png in Resources */,
+				658DCAE4247681750083ADA7 /* banjo.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		65CCBF5024260D9E00F518D8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -618,7 +849,6 @@
 				65CCBF6224260DA100F518D8 /* LaunchScreen.storyboard in Resources */,
 				6573CE07245216A600C10A3C /* ukulele.png in Resources */,
 				656E9E34245C259C00B06582 /* ActivityIndicatorView.xib in Resources */,
-				65B603322438D49D00BBA23D /* Main.storyboard in Resources */,
 				65558606243A5706004A94C0 /* ukuleleSymbol.png in Resources */,
 				65CCC0152426318E00F518D8 /* gaugePattern.png in Resources */,
 				6559D860244E20B800863CE7 /* restoreButton.png in Resources */,
@@ -657,6 +887,7 @@
 				655585FD243A53ED004A94C0 /* guitarSymbol.png in Resources */,
 				65CCC00A242626BC00F518D8 /* noteButtonPassive.png in Resources */,
 				6559D85E244E20AF00863CE7 /* upgradeButton.png in Resources */,
+				658DCB0624768F180083ADA7 /* Main.storyboard in Resources */,
 				652BC0E2242A2C6F00F60B83 /* volumeMeterPattern.png in Resources */,
 				65CCC0022426268900F518D8 /* ledPassive.png in Resources */,
 				6573CDF82452115500C10A3C /* premium.png in Resources */,
@@ -685,7 +916,63 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0242195E77EBD7E719225BE7 /* [CP] Check Pods Manifest.lock */ = {
+		03971B16AED8E966CF494A42 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Simple Banjo Tuner-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		669561378DFBCF98A6324756 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Simple Instrument Tuner/Pods-Simple Instrument Tuner-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Simple Instrument Tuner/Pods-Simple Instrument Tuner-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Simple Instrument Tuner/Pods-Simple Instrument Tuner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF4DB0E8381033D6E5CA5F22 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Simple Banjo Tuner/Pods-Simple Banjo Tuner-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Simple Banjo Tuner/Pods-Simple Banjo Tuner-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Simple Banjo Tuner/Pods-Simple Banjo Tuner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1C9D436974E457478BC3DFE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -707,26 +994,52 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		814A7D3876362CE9760C5B1D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Simple Instrument Tuner/Pods-Simple Instrument Tuner-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Simple Instrument Tuner/Pods-Simple Instrument Tuner-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Simple Instrument Tuner/Pods-Simple Instrument Tuner-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		658DCA7F247680430083ADA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				658DCAAA2476815E0083ADA7 /* PKIAPHandler.swift in Sources */,
+				658DCAA3247681590083ADA7 /* NoteLabel.swift in Sources */,
+				658DCAA82476815E0083ADA7 /* Constants.swift in Sources */,
+				658DCABF247681650083ADA7 /* InAppPurchaseViewController.swift in Sources */,
+				658DCAAD2476815E0083ADA7 /* IAPHandler.swift in Sources */,
+				658DCA9E247681540083ADA7 /* PingPongDelay.swift in Sources */,
+				658DCA9A247681540083ADA7 /* AutoPan.swift in Sources */,
+				658DCABC247681650083ADA7 /* TuningTableViewCell.swift in Sources */,
+				658DCABE247681650083ADA7 /* CalibrationViewController.swift in Sources */,
+				658DCA9D247681540083ADA7 /* FilterSection.swift in Sources */,
+				658DCAC4247681650083ADA7 /* ActivityIndicatorView.swift in Sources */,
+				658DCAA2247681590083ADA7 /* DisplayModeButton.swift in Sources */,
+				658DCAA7247681590083ADA7 /* CalibrationLabel.swift in Sources */,
+				658DCB00247686D70083ADA7 /* AppDelegate.swift in Sources */,
+				658DCA9B247681540083ADA7 /* Conductor.swift in Sources */,
+				658DCAB5247681650083ADA7 /* VolumeMeterViewController.swift in Sources */,
+				658DCAAF247681650083ADA7 /* BridgeViewController.swift in Sources */,
+				658DCAB1247681650083ADA7 /* DeviationMeterViewController.swift in Sources */,
+				658DCAA1247681590083ADA7 /* FrequencyLabel.swift in Sources */,
+				658DCAAB2476815E0083ADA7 /* KeyChain.swift in Sources */,
+				658DCA9C247681540083ADA7 /* Fatten.swift in Sources */,
+				658DCAA4247681590083ADA7 /* CalibrationSlider.swift in Sources */,
+				658DCA97247680D50083ADA7 /* InstrumentViewController.swift in Sources */,
+				658DCAAC2476815E0083ADA7 /* Utils.swift in Sources */,
+				658DCAB9247681650083ADA7 /* SettingsViewController.swift in Sources */,
+				658DCABB247681650083ADA7 /* TuningTableViewController.swift in Sources */,
+				658DCAC1247681650083ADA7 /* IAPTableViewCell.swift in Sources */,
+				658DCAA0247681590083ADA7 /* NoteButton.swift in Sources */,
+				658DCAA92476815E0083ADA7 /* Note.swift in Sources */,
+				658DCAA6247681590083ADA7 /* iOSDropDown.swift in Sources */,
+				658DCAB6247681650083ADA7 /* DisplayContainer.swift in Sources */,
+				658DCAB7247681650083ADA7 /* DisplayViewController.swift in Sources */,
+				658DCAA5247681590083ADA7 /* StringView.swift in Sources */,
+				658DCA88247680430083ADA7 /* SceneDelegate.swift in Sources */,
+				658DCAB3247681650083ADA7 /* GaugeViewController.swift in Sources */,
+				658DCA9F247681590083ADA7 /* BezierView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		65CCBF4E24260D9E00F518D8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -743,6 +1056,7 @@
 				652BC0FF242BED0F00F60B83 /* BridgeViewController.swift in Sources */,
 				652BC0DB242A2C0D00F60B83 /* VolumeMeterViewController.swift in Sources */,
 				65CCBF5A24260D9E00F518D8 /* InstrumentViewController.swift in Sources */,
+				658DCAFE247686190083ADA7 /* AppDelegate.swift in Sources */,
 				654FE608244496E30046AFCC /* iOSDropDown.swift in Sources */,
 				653216F0242FC38200BE1CAE /* Note.swift in Sources */,
 				652BC110242CC39900F60B83 /* Conductor.swift in Sources */,
@@ -753,7 +1067,6 @@
 				652BC113242CC39900F60B83 /* Fatten.swift in Sources */,
 				6559D82D244D856900863CE7 /* CalibrationLabel.swift in Sources */,
 				65585A6E24334A74002CD214 /* DisplayContainer.swift in Sources */,
-				65CCBF5624260D9E00F518D8 /* AppDelegate.swift in Sources */,
 				65A893C4244CAE6200B2AB97 /* InAppPurchaseViewController.swift in Sources */,
 				6532522E243C6C990004005C /* KeyChain.swift in Sources */,
 				652BC0EF242A69A300F60B83 /* Constants.swift in Sources */,
@@ -815,6 +1128,22 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
+		658DCA8B247680430083ADA7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				658DCA8C247680430083ADA7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		658DCA90247680460083ADA7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				658DCA91247680460083ADA7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		65B603302438D49C00BBA23D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -845,6 +1174,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		658DCA94247680460083ADA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3465F7B14D273BF644AAC22 /* Pods-Simple Banjo Tuner.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Simple Banjo Tuner/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ch.vormbrock.simplebanjotuner2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		658DCA95247680460083ADA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33BD2D430DEB785838B129D3 /* Pods-Simple Banjo Tuner.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Simple Banjo Tuner/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ch.vormbrock.simplebanjotuner2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		65CCBF7A24260DA100F518D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -965,7 +1334,7 @@
 		};
 		65CCBF7D24260DA100F518D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F70B23FE6B4D62213378CD07 /* Pods-Simple Instrument Tuner.debug.xcconfig */;
+			baseConfigurationReference = 784583732BAFA51256DEB78B /* Pods-Simple Instrument Tuner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Simple Instrument Tuner/Simple Instrument Tuner.entitlements";
@@ -979,9 +1348,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = ch.vormbrock.simpleinstrumenttuner;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Instrument Tuner";
 				PROVISIONING_PROFILE_SPECIFIER = "Simple Instrument Tuner";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -990,7 +1359,7 @@
 		};
 		65CCBF7E24260DA100F518D8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 457E6052D443CDAE029DEBF4 /* Pods-Simple Instrument Tuner.release.xcconfig */;
+			baseConfigurationReference = F33634C1482176C7581EF178 /* Pods-Simple Instrument Tuner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Simple Instrument Tuner/Simple Instrument Tuner.entitlements";
@@ -1004,9 +1373,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = ch.vormbrock.simpleinstrumenttuner;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Instrument Tuner";
 				PROVISIONING_PROFILE_SPECIFIER = "Simple Instrument Tuner";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1096,6 +1465,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		658DCA96247680460083ADA7 /* Build configuration list for PBXNativeTarget "Simple Banjo Tuner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				658DCA94247680460083ADA7 /* Debug */,
+				658DCA95247680460083ADA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		65CCBF4D24260D9E00F518D8 /* Build configuration list for PBXProject "Simple Instrument Tuner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -135,6 +135,20 @@ class Utils: NSObject {
         return optionArray
     }
     
+    func saveStandardTuning() {
+        
+        guard let instrument = getInstrument(), let tunings = instrument.tunings else { return }
+        
+        for (index, tuning) in tunings.enumerated() {
+            guard let isStandard = tuning.isStandard else { continue }
+            
+            if isStandard == true {
+                saveTuning(index: index)
+                break;
+            }
+        }
+    }
+    
     func saveTuning(index: Int) {
         
         let instrument = getInstrument()
