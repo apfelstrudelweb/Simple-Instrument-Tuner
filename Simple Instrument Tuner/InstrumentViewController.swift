@@ -13,6 +13,9 @@ import GoogleMobileAds
 import SwiftRater
 import EasyTipView
 
+public var defaultHeaderColor = #colorLiteral(red: 0.6890257001, green: 0.2662356496, blue: 0.2310875654, alpha: 1)
+public var defaultMainViewColor = #colorLiteral(red: 0.179690044, green: 0.2031518249, blue: 0.2304651412, alpha: 1)
+
 class InstrumentViewController: UIViewController, SettingsViewControllerDelegate, CalibrationSliderDelegate, DeviationDelegate, EasyTipViewDelegate {
     
     let indexOfLastInfo = 13
@@ -96,6 +99,17 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.headerView.backgroundColor = defaultHeaderColor
+        self.view.backgroundColor = defaultMainViewColor
+        
+        let defaults = UserDefaults.standard
+        if let headerColor = defaults.colorForKey(key: "headerColor") {
+            self.headerView.backgroundColor = headerColor
+        }
+        if let mainViewColor = defaults.colorForKey(key: "mainViewColor") {
+            self.view.backgroundColor = mainViewColor
+        }
+        
         // for Banjo Tuner
         if Utils().getInstrumentsArray().ids?.count == 1 {
             Utils().saveInstrument(index: 0)
@@ -163,9 +177,26 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.didPerformIAP), name: .didPerformIAP, object: nil)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didChangeHeaderColor), name: NSNotification.Name(rawValue: "didChangeHeaderColor"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didChangeMainViewColor), name: NSNotification.Name(rawValue: "didChangeMainViewColor"), object: nil)
+        
         setAudioMode()
         
         handleAd()
+    }
+    
+    @objc func didChangeHeaderColor(_ notification: Notification) {
+        
+        if let color = notification.userInfo?["color"] as? UIColor {
+            self.headerView.backgroundColor = color
+        }
+    }
+    
+    @objc func didChangeMainViewColor(_ notification: Notification) {
+        
+        if let color = notification.userInfo?["color"] as? UIColor {
+            self.view.backgroundColor = color
+        }
     }
     
     
@@ -353,10 +384,11 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
             settingsViewController = vc
             guard let backgroundColor = self.view.backgroundColor else { return }
             settingsViewController.backgroundColor = backgroundColor
-            settingsViewController.closeButton.backgroundColor = headerView.backgroundColor
-            if Utils().getInstrument() == nil {
-                settingsViewController.modalPresentationStyle = .fullScreen
-            }
+            guard let headerColor = self.headerView.backgroundColor else { return }
+            settingsViewController.headerColor = headerColor
+//            if Utils().getInstrument() == nil {
+//                settingsViewController.modalPresentationStyle = .fullScreen
+//            }
             settingsViewController.settingsDelegate = self
             settingsViewController.embeddedCalibrationViewController.calibrationDelegate = self 
         }

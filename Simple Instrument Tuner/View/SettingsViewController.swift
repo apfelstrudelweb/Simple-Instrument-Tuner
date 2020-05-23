@@ -35,16 +35,23 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
     @IBOutlet weak var colorSettingsLabel: UILabel!
     @IBOutlet weak var colorSettingsButton: UIButton!
     
-    
-    
-    
+   
     private var embeddedTuningViewController: TuningTableViewController!
     var embeddedCalibrationViewController: CalibrationViewController!
     
+    var headerColor = UIColor.red {
+        didSet {
+            self.closeButton.backgroundColor = headerColor
+            self.instrumentDropDown.arrowColor = headerColor
+            self.instrumentDropDown.selectedRowColor = headerColor
+        }
+    }
     
     var backgroundColor = UIColor.black {
         didSet {
             self.view.backgroundColor = backgroundColor
+            self.instrumentDropDown.backgroundColor = backgroundColor.darker(by: 10)!
+            self.instrumentDropDown.rowBackgroundColor = self.instrumentDropDown.backgroundColor!
         }
     }
     
@@ -59,6 +66,11 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
         if let vc = segue.destination as? CalibrationViewController,
             segue.identifier == "calibrationSegue" {
             embeddedCalibrationViewController = vc
+        }
+        if let vc = segue.destination as? ColorSettingsViewController,
+            segue.identifier == "colorSettingsSegue" {
+            vc.headerColor = self.closeButton.backgroundColor!
+            vc.backgroundColor = self.view.backgroundColor!
         }
     }
     
@@ -132,8 +144,25 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.didPerformIAP), name: .didPerformIAP, object: nil)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didChangeHeaderColor), name: NSNotification.Name(rawValue: "didChangeHeaderColor"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didChangeMainViewColor), name: NSNotification.Name(rawValue: "didChangeMainViewColor"), object: nil)
+        
         if Utils().getInstrument() == nil {
             showTooltip()
+        }
+    }
+    
+    @objc func didChangeHeaderColor(_ notification: Notification) {
+        
+        if let color = notification.userInfo?["color"] as? UIColor {
+            headerColor = color
+        }
+    }
+    
+    @objc func didChangeMainViewColor(_ notification: Notification) {
+        
+        if let color = notification.userInfo?["color"] as? UIColor {
+            backgroundColor = color
         }
     }
     
@@ -275,6 +304,7 @@ extension Bundle {
 
 
 extension UIButton {
+    
     func applyGradient(colors: [CGColor]) {
         self.backgroundColor = nil
         self.layoutIfNeeded()
@@ -294,5 +324,33 @@ extension UIButton {
         self.layer.insertSublayer(gradientLayer, at: 0)
         self.contentVerticalAlignment = .center
 
+    }
+}
+
+
+extension UIColor {
+
+func lighter(by percentage:CGFloat=30.0) -> UIColor? {
+    return self.adjust(by: abs(percentage) )
+}
+
+func darker(by percentage:CGFloat=30.0) -> UIColor? {
+    return self.adjust(by: -1 * abs(percentage) )
+}
+func adjust(by percentage:CGFloat=30.0) -> UIColor? {
+    var r:CGFloat=0, g:CGFloat=0, b:CGFloat=0, a:CGFloat=0;
+    if self.getRed(&r, green: &g, blue: &b, alpha: &a) {
+        
+        if r < 0.25 && g < 0.25 && b < 0.25 { return self }
+        
+        return UIColor(red: min(r + percentage/100, 1.0),
+                       green: min(g + percentage/100, 1.0),
+                       blue: min(b + percentage/100, 1.0),
+                       alpha: a)
+    }else{
+        return nil
+
+
+     }
     }
 }

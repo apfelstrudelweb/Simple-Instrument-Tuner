@@ -1,9 +1,11 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '12.0'
 
+use_frameworks!
+
 target 'Simple Instrument Tuner' do
   # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
+  #use_frameworks!
 
   # Pods for Simple Instrument Tuner
 
@@ -16,12 +18,13 @@ target 'Simple Instrument Tuner' do
   pod 'KeychainAccess'
   pod 'EasyTipView', '~> 2.0.4'
   pod 'NVActivityIndicatorView'
+  pod 'FlexColorPicker'
 
 end
 
 target 'Simple Banjo Tuner' do
   # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
+  #use_frameworks!
 
   # Pods for Simple Banjo Tuner
 
@@ -34,5 +37,6 @@ target 'Simple Banjo Tuner' do
   pod 'KeychainAccess'
   pod 'EasyTipView', '~> 2.0.4'
   pod 'NVActivityIndicatorView'
+  pod 'FlexColorPicker'
 
 end
