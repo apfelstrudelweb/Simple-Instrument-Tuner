@@ -129,9 +129,17 @@ class TuningTableViewController: UITableViewController {
             cell.switchButton.image = UIImage(named: "offButton")
         }
         
+        #if BANJO
+        let instrumentName = "All Banjo" // HACK, please find a better solution
+        guard let dict = dictIAP[instrumentName], let isOpenInstrument = dict[instrumentName] else {
+            return cell
+        }
+        #endif
+        #if INSTRUMENT
         guard let instrumentName = instrument.name, let dict = dictIAP[instrumentName], let isOpenInstrument = dict[instrumentName] else {
             return cell
         }
+        #endif
         
         if isOpenInstrument() == false && tuning.isStandard == false  {
             cell.switchButton.image = UIImage(named: "shoppingCart")
@@ -149,9 +157,17 @@ class TuningTableViewController: UITableViewController {
         let section = self.sections[indexPath.section]
         let tuning = section.rows[indexPath.row]
         
+        #if BANJO
+        let instrumentName = "All Banjo" // HACK, please find a better solution
+        guard let dict = dictIAP[instrumentName], let isOpenInstrument = dict[instrumentName] else {
+            return
+        }
+        #endif
+        #if INSTRUMENT
         guard let instrumentName = instrument.name, let dict = dictIAP[instrumentName], let isOpenInstrument = dict[instrumentName] else {
             return
         }
+        #endif
         
         if isOpenInstrument() == false && tuning.isStandard == false  {
             performSegue(withIdentifier: "iapSegue", sender: true)

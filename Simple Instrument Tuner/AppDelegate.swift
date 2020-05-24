@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        IAPHandler().unlockBalalaika()
 //        IAPHandler().unlockCalibration()
         
-        IAPHandler().lockAll()
+        IAPHandler().unlockSignal()
         
         // In App Purchase
         PKIAPHandler.shared.setProductIds(ids: productIds)

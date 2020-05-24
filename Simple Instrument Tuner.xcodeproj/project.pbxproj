@@ -321,7 +321,6 @@
 		658922782450C4FB008F871B /* IAPTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPTableViewCell.swift; sourceTree = "<group>"; };
 		658922792450C4FB008F871B /* IAPTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IAPTableViewCell.xib; sourceTree = "<group>"; };
 		658DCA83247680430083ADA7 /* Simple Banjo Tuner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Banjo Tuner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		658DCA85247680430083ADA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		658DCA87247680430083ADA7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		658DCA89247680430083ADA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		658DCA8C247680430083ADA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -512,7 +511,6 @@
 		658DCA84247680430083ADA7 /* Simple Banjo Tuner */ = {
 			isa = PBXGroup;
 			children = (
-				658DCA85247680430083ADA7 /* AppDelegate.swift */,
 				658DCA87247680430083ADA7 /* SceneDelegate.swift */,
 				658DCA89247680430083ADA7 /* ViewController.swift */,
 				658DCA8B247680430083ADA7 /* Main.storyboard */,

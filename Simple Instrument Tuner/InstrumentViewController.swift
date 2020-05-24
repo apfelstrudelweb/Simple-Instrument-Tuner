@@ -16,10 +16,16 @@ import EasyTipView
 public var defaultHeaderColor = #colorLiteral(red: 0.6890257001, green: 0.2662356496, blue: 0.2310875654, alpha: 1)
 public var defaultMainViewColor = #colorLiteral(red: 0.179690044, green: 0.2031518249, blue: 0.2304651412, alpha: 1)
 
-class InstrumentViewController: UIViewController, SettingsViewControllerDelegate, CalibrationSliderDelegate, DeviationDelegate, EasyTipViewDelegate {
+class InstrumentViewController: UIViewController, SettingsViewControllerDelegate, CalibrationSliderDelegate, DeviationDelegate, EasyTipViewDelegate, GADBannerViewDelegate {
     
     let indexOfLastInfo = 13
     var activeInfo = 0
+    
+    var headerColor: UIColor = defaultHeaderColor {
+        didSet {
+            self.headerView.backgroundColor = headerColor
+        }
+    }
     
     var backgroundColor: UIColor = defaultMainViewColor {
         didSet {
@@ -93,7 +99,7 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
         
         tipViewPreferences.drawing.font = calibrationLabel.font
         tipViewPreferences.drawing.foregroundColor = .white
-        tipViewPreferences.drawing.backgroundColor = UIColor(red: 0, green: 0.5137, blue: 0.6275, alpha: 1.0)
+        tipViewPreferences.drawing.backgroundColor = headerColor.darker(by: 10) ?? defaultHeaderColor
         tipViewPreferences.drawing.shadowColor = .darkGray
         tipViewPreferences.drawing.shadowOpacity = 0.3
         tipViewPreferences.drawing.arrowPosition = EasyTipView.ArrowPosition.any
@@ -109,12 +115,12 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.headerView.backgroundColor = defaultHeaderColor
+        headerColor = defaultHeaderColor
         backgroundColor = defaultMainViewColor
         
         let defaults = UserDefaults.standard
-        if let headerColor = defaults.colorForKey(key: "headerColor") {
-            self.headerView.backgroundColor = headerColor
+        if let _headerColor = defaults.colorForKey(key: "headerColor") {
+            headerColor = _headerColor
         }
         if let mainViewColor = defaults.colorForKey(key: "mainViewColor") {
             backgroundColor = mainViewColor
@@ -204,7 +210,8 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     @objc func didChangeHeaderColor(_ notification: Notification) {
         
         if let color = notification.userInfo?["color"] as? UIColor {
-            self.headerView.backgroundColor = color
+            headerColor = color
+            initTooltips()
         }
     }
     
@@ -274,9 +281,13 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
         self.view.insertSubview(bannerView, aboveSubview: displayView)
         bannerView.autoPinEdge(.top, to: .top, of: displayView)
         bannerView.autoAlignAxis(.vertical, toSameAxisOf: displayView)
-        
+        bannerView.delegate = self
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
+    }
+    
+    func adView(_ bannerView: GADBannerView,    didFailToReceiveAdWithError error: GADRequestError) {
+        print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
     }
     
     func setAudioMode() {
@@ -333,9 +344,14 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
             //mixer.volume = 0.0 // silence sound feeback on loudspeaker
             AudioKit.output = mixer
             
-            //            amplitudeTracker.avAudioNode.installTap(onBus: 0, bufferSize: 1024, format: AudioKit.format) { [weak self] (buffer, time) -> Void in
-            //                self?.signalTracker(didReceivedBuffer: buffer, atTime: time)
-            //            }
+            #if BANJO
+            if IAPHandler().isOpenSignal() == true {
+                embeddedDisplayViewController.plotAmplitude(trackedAmplitude: self.amplitudeTracker)
+                embeddedDisplayViewController.plotFFT(fftTap: fftTap, amplitudeTracker: amplitudeTracker)
+            }
+            #endif
+            
+            
             
         } else if mode == .silent {
             
@@ -349,24 +365,21 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
         }
     }
     
-    func signalTracker(didReceivedBuffer buffer: AVAudioPCMBuffer, atTime time: AVAudioTime){
-        
-        let elements = UnsafeBufferPointer(start: buffer.floatChannelData?[0], count:8192)
-        
-        var sample = [Float]()
-        
-        for i in 0..<8192 {
-            sample.append(elements[i])
-        }
-        
-        print (sample)
-        print(sample.count)
-        
-    }
+    //    func signalTracker(didReceivedBuffer buffer: AVAudioPCMBuffer, atTime time: AVAudioTime){
+    //
+    //        let elements = UnsafeBufferPointer(start: buffer.floatChannelData?[0], count:8192)
+    //
+    //        var sample = [Float]()
+    //
+    //        for i in 0..<8192 {
+    //            sample.append(elements[i])
+    //        }
+    //
+    //        print (sample)
+    //        print(sample.count)
+    //
+    //    }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -395,15 +408,11 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
             segue.identifier == "settingsSegue" {
             settingsViewController = vc
             settingsViewController.backgroundColor = backgroundColor
-            guard let headerColor = self.headerView.backgroundColor else { return }
             settingsViewController.headerColor = headerColor
-            //            if Utils().getInstrument() == nil {
-            //                settingsViewController.modalPresentationStyle = .fullScreen
-            //            }
             settingsViewController.settingsDelegate = self
-            settingsViewController.embeddedCalibrationViewController.calibrationDelegate = self 
+            settingsViewController.embeddedCalibrationViewController.calibrationDelegate = self
+            Utils().dismisAllTooltips(view: self.view)
         }
-        
     }
     
     fileprivate func disableAudio() {
