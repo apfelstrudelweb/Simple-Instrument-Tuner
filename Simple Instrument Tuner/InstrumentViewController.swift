@@ -114,7 +114,7 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
         if Utils().getInstrumentsArray().ids?.count == 1 {
             Utils().saveInstrument(index: 0)
             didChangeInstrument()
-
+            
             Utils().saveStandardTuning()
             didChangeTuning() 
         }
@@ -130,6 +130,12 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
         
         octaveLabel.text = String(format: NSLocalizedString("Label.octave %d", comment: ""), 0)
         frequencyLabel.text = String(format: NSLocalizedString("Label.hertz %.2f", comment: ""), 0.0)
+        
+        #if BANJO
+        if IAPHandler().isOpenSignal() == false {
+            frequencyLabel.alpha = 0.5
+        }
+        #endif
         
         //if true {
         if instrument == nil {
@@ -317,13 +323,9 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
             //mixer.volume = 0.0 // silence sound feeback on loudspeaker
             AudioKit.output = mixer
             
-//            amplitudeTracker.avAudioNode.installTap(onBus: 0, bufferSize: 1024, format: AudioKit.format) { [weak self] (buffer, time) -> Void in
-//                self?.signalTracker(didReceivedBuffer: buffer, atTime: time)
-//            }
-            
-            embeddedDisplayViewController.plotAmplitude(trackedAmplitude: self.amplitudeTracker)
-            embeddedDisplayViewController.plotFFT(fftTap: fftTap, amplitudeTracker: amplitudeTracker)
-            
+            //            amplitudeTracker.avAudioNode.installTap(onBus: 0, bufferSize: 1024, format: AudioKit.format) { [weak self] (buffer, time) -> Void in
+            //                self?.signalTracker(didReceivedBuffer: buffer, atTime: time)
+            //            }
             
         } else if mode == .silent {
             
@@ -339,16 +341,16 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     
     func signalTracker(didReceivedBuffer buffer: AVAudioPCMBuffer, atTime time: AVAudioTime){
         
-         let elements = UnsafeBufferPointer(start: buffer.floatChannelData?[0], count:8192)
-               
-               var sample = [Float]()
-               
-               for i in 0..<8192 {
-                   sample.append(elements[i])
-               }
-
-               print (sample)
-               print(sample.count)
+        let elements = UnsafeBufferPointer(start: buffer.floatChannelData?[0], count:8192)
+        
+        var sample = [Float]()
+        
+        for i in 0..<8192 {
+            sample.append(elements[i])
+        }
+        
+        print (sample)
+        print(sample.count)
         
     }
     
@@ -386,9 +388,9 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
             settingsViewController.backgroundColor = backgroundColor
             guard let headerColor = self.headerView.backgroundColor else { return }
             settingsViewController.headerColor = headerColor
-//            if Utils().getInstrument() == nil {
-//                settingsViewController.modalPresentationStyle = .fullScreen
-//            }
+            //            if Utils().getInstrument() == nil {
+            //                settingsViewController.modalPresentationStyle = .fullScreen
+            //            }
             settingsViewController.settingsDelegate = self
             settingsViewController.embeddedCalibrationViewController.calibrationDelegate = self 
         }
@@ -419,8 +421,11 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
             
             
             let frequency: Float = Float(frequencyTracker.frequency)
-            
-            frequencyLabel.frequency = frequency
+            #if BANJO
+            if IAPHandler().isOpenSignal() == true {
+                frequencyLabel.frequency = frequency
+            }
+            #endif
             octaveLabel.text = String(format: NSLocalizedString("Label.octave %d", comment: ""), Utils().getOctaveFrom(frequency: frequency))
             embeddedGaugeViewController.displayFrequency(frequency: frequency, soundGenerator: false)
             embeddedVolumeMeterController.displayVolume(volume: frequencyTracker.amplitude)
@@ -431,8 +436,21 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
         }
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        #if BANJO
+        if identifier == "iapSegue" && IAPHandler().isOpenSignal() == true {
+            return false
+        }
+        return true
+        #endif
+        #if INSTRUMENT
+        return true
+        #endif
+    }
+    
     
     @IBAction func fftButtonTouched(_ sender: Any) {
+        
         fftButton.setImage(UIImage(named: "btnActive"), for: .normal)
         amplitudeButton.setImage(UIImage(named: "btnPassive"), for: .normal)
         embeddedDisplayViewController.setDisplayMode(mode: .fft)
@@ -440,6 +458,7 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     }
     
     @IBAction func amplitudeButtonTouched(_ sender: Any) {
+        
         amplitudeButton.setImage(UIImage(named: "btnActive"), for: .normal)
         fftButton.setImage(UIImage(named: "btnPassive"), for: .normal)
         embeddedDisplayViewController.setDisplayMode(mode: .amplitude)
@@ -654,7 +673,11 @@ extension InstrumentViewController: AKKeyboardDelegate {
         conductor.playNote(note: note.number, velocity: MIDIVelocity(127), channel: midiChannelIn)
         
         
-        frequencyLabel.frequency = frequency
+        #if BANJO
+        if IAPHandler().isOpenSignal() == true {
+            frequencyLabel.frequency = frequency
+        }
+        #endif
         octaveLabel.text = String(format: NSLocalizedString("Label.octave %d", comment: ""), Utils().getOctaveFrom(frequency: frequency))
         embeddedGaugeViewController.displayFrequency(frequency: frequency, soundGenerator: true)
         embeddedDeviationMeterController.displayExactMatch(on: true)

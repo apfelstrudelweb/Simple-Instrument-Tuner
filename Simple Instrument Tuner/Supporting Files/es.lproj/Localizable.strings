@@ -56,7 +56,8 @@
 "Balalaika.iap1" = "obtener diferentes afinaciones para su balalaika";
 "Balalaika.iap2" = "eliminación de anuncios";
 "Banjo.iap1" = "obtener diferentes afinaciones para su banjo";
-"Banjo.iap2" = "eliminación de anuncios";
+"Banjo.iap2" = "recolorear la aplicación con un recolector de color integrado";
+"Banjo.iap3" = "eliminación de anuncios";
 "Guitar.iap1" = "obtener diferentes afinaciones para su guitarra";
 "Guitar.iap2" = "eliminación de anuncios";
 "Mandolin.iap1" = "obtener diferentes afinaciones para su mandolina";

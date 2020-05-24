@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var productsArray = [Product]()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         
         SwiftRater.daysUntilPrompt = 7
@@ -37,6 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        IAPHandler().unlockMandolin()
 //        IAPHandler().unlockBalalaika()
 //        IAPHandler().unlockCalibration()
+        
+        IAPHandler().unlockBanjo()
         
         // In App Purchase
         PKIAPHandler.shared.setProductIds(ids: productIds)

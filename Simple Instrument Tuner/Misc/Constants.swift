@@ -19,33 +19,6 @@ enum DisplayMode {
   case amplitude
 }
 
-// In App Purchase
-var KEYCHAIN_IAP_SERVICE        = "ch.vormbrock.simpleinstrumenttuner.iapService"
-
-var IDENTIFIER_IAP_CALIBRATION    = "ch.vormbrock.simpleinstrumenttuner.calibration"  // Tier 1
-var IDENTIFIER_IAP_GUITAR         = "ch.vormbrock.simpleinstrumenttuner.guitar"       // Tier 1
-var IDENTIFIER_IAP_BANJO          = "ch.vormbrock.simpleinstrumenttuner.banjo"        // Tier 1
-var IDENTIFIER_IAP_UKULELE        = "ch.vormbrock.simpleinstrumenttuner.ukulele"      // Tier 1
-var IDENTIFIER_IAP_MANDOLIN       = "ch.vormbrock.simpleinstrumenttuner.mandolin"     // Tier 1
-var IDENTIFIER_IAP_BALALAIKA      = "ch.vormbrock.simpleinstrumenttuner.balalaika"    // Tier 1
-var IDENTIFIER_IAP_PREMIUM        = "ch.vormbrock.simpleinstrumenttuner.premium"      // Tier 4
-
-// TODO: create constants
-var iapIdentifierDict = [IDENTIFIER_IAP_CALIBRATION : "Calibration",
-    IDENTIFIER_IAP_GUITAR : "Guitar",
-    IDENTIFIER_IAP_BANJO : "Banjo",
-    IDENTIFIER_IAP_UKULELE : "Ukulele",
-    IDENTIFIER_IAP_MANDOLIN : "Mandolin",
-    IDENTIFIER_IAP_BALALAIKA : "Balalaika",
-    IDENTIFIER_IAP_PREMIUM : "Premium"
-    ]
-
-let productIds = [IDENTIFIER_IAP_CALIBRATION, IDENTIFIER_IAP_GUITAR, IDENTIFIER_IAP_BANJO, IDENTIFIER_IAP_UKULELE, IDENTIFIER_IAP_MANDOLIN, IDENTIFIER_IAP_BALALAIKA, IDENTIFIER_IAP_PREMIUM]
-
-var KEYCHAIN_CURRENT_INSTRUMENT_ID  = "currentInstrumentId"
-var KEYCHAIN_CURRENT_TUNING_ID      = "currentTuningId"
-var KEYCHAIN_CURRENT_CALIBRATION    = "currentCalibration"
-
 
 var INSTRUMENTS_PLIST_FILE = "Instruments"
 

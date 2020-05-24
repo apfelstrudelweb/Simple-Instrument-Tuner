@@ -21,7 +21,7 @@ protocol SettingsViewControllerDelegate: class {
 
 
 class SettingsViewController: UIViewController, TuningTableViewControllerDelegate, PKIAPHandlerDelegate, EasyTipViewDelegate {
-
+    
     
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var instrumentDropDown: DropDown!
@@ -30,12 +30,15 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
     @IBOutlet weak var upgradeButton: UIButton!
     @IBOutlet weak var restoreButton: UIButton!
     @IBOutlet weak var instrumentDropdownLabel: UILabel!
-    @IBOutlet weak var instrumentInfoView: UIView!
     @IBOutlet weak var colorSettingsView: UIView!
     @IBOutlet weak var colorSettingsLabel: UILabel!
     @IBOutlet weak var colorSettingsButton: UIButton!
+    @IBOutlet weak var colorPurchaseButton: UIButton!
     
-   
+    @IBOutlet weak var labelHeight: NSLayoutConstraint!
+    @IBOutlet weak var dropdownHeight: NSLayoutConstraint!
+    
+    
     private var embeddedTuningViewController: TuningTableViewController!
     var embeddedCalibrationViewController: CalibrationViewController!
     
@@ -76,7 +79,7 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
     
     
     fileprivate func showTooltip() {
-
+        
         EasyTipView.show(forView: self.instrumentDropDown,
                          withinSuperview: self.view,
                          text: NSLocalizedString("Info.selectInstrument", comment: ""),
@@ -87,14 +90,14 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //labelMarginTop.constant = 1.2 * closeButton.frame.height
         
         if Bundle.appTarget == "Simple Banjo Tuner" {
-            instrumentInfoView.isHidden = false
-        } else {
-            instrumentInfoView.isHidden = true
+            instrumentDropDown.isHidden = true
+            instrumentDropdownLabel.isHidden = true
+            labelHeight.constant = 0
+            dropdownHeight.constant = 0
         }
-
+        
         closeButton.setTitle(NSLocalizedString("Button.close", comment: ""), for: .normal)
         
         PKIAPHandler.shared.pkiDelegate = self
@@ -150,6 +153,12 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
         if Utils().getInstrument() == nil {
             showTooltip()
         }
+        
+        #if BANJO
+            colorSettingsButton.isEnabled = IAPHandler().isOpenBanjo() == true
+            colorSettingsButton.alpha = colorSettingsButton.isEnabled ? 1.0 : 0.6
+            colorPurchaseButton.isHidden = IAPHandler().isOpenBanjo() == true
+        #endif
     }
     
     @objc func didChangeHeaderColor(_ notification: Notification) {
@@ -219,6 +228,13 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
         self.settingsDelegate?.didChangeTuning()
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    @IBAction func colorPurchaseButtonTouched(_ sender: Any) {
+        performSegue(withIdentifier: "iapSegue", sender: true)
+    }
     
     @IBAction func closeButtonTouched(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -278,22 +294,22 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
 
 
 extension Bundle {
-
+    
     public static var appVersion: String? {
         return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
     }
-
+    
     public static var appBuild: String? {
         return Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String) as? String
     }
-
+    
     public static func _version() -> String {
         let dictionary = Bundle.main.infoDictionary!
         let version = dictionary["CFBundleShortVersionString"] as! String
         let build = dictionary["CFBundleVersion"] as! String
         return "\(version) build \(build)"
     }
-
+    
     public static var appTarget: String? {
         if let targetName = Bundle.main.object(forInfoDictionaryKey: "CFBundleExecutable") as? String {
             return targetName
@@ -314,43 +330,41 @@ extension UIButton {
         gradientLayer.endPoint = CGPoint(x: 1, y: 0)
         gradientLayer.frame = self.bounds
         gradientLayer.cornerRadius = self.frame.height/2
-
+        
         gradientLayer.shadowColor = UIColor.black.cgColor
         gradientLayer.shadowOffset = CGSize(width: 2.5, height: 2.5)
         gradientLayer.shadowRadius = 5.0
         gradientLayer.shadowOpacity = 1
         gradientLayer.masksToBounds = true
-
+        
         self.layer.insertSublayer(gradientLayer, at: 0)
         self.contentVerticalAlignment = .center
-
+        
     }
 }
 
 
 extension UIColor {
-
-func lighter(by percentage:CGFloat=30.0) -> UIColor? {
-    return self.adjust(by: abs(percentage) )
-}
-
-func darker(by percentage:CGFloat=30.0) -> UIColor? {
-    return self.adjust(by: -1 * abs(percentage) )
-}
-func adjust(by percentage:CGFloat=30.0) -> UIColor? {
-    var r:CGFloat=0, g:CGFloat=0, b:CGFloat=0, a:CGFloat=0;
-    if self.getRed(&r, green: &g, blue: &b, alpha: &a) {
-        
-        if r < 0.25 && g < 0.25 && b < 0.25 { return self }
-        
-        return UIColor(red: min(r + percentage/100, 1.0),
-                       green: min(g + percentage/100, 1.0),
-                       blue: min(b + percentage/100, 1.0),
-                       alpha: a)
-    }else{
-        return nil
-
-
-     }
+    
+    func lighter(by percentage:CGFloat=30.0) -> UIColor? {
+        return self.adjust(by: abs(percentage) )
+    }
+    
+    func darker(by percentage:CGFloat=30.0) -> UIColor? {
+        return self.adjust(by: -1 * abs(percentage) )
+    }
+    func adjust(by percentage:CGFloat=30.0) -> UIColor? {
+        var r:CGFloat=0, g:CGFloat=0, b:CGFloat=0, a:CGFloat=0;
+        if self.getRed(&r, green: &g, blue: &b, alpha: &a) {
+            
+            if r < 0.25 && g < 0.25 && b < 0.25 { return self }
+            
+            return UIColor(red: min(r + percentage/100, 1.0),
+                           green: min(g + percentage/100, 1.0),
+                           blue: min(b + percentage/100, 1.0),
+                           alpha: a)
+        }else{
+            return nil
+        }
     }
 }

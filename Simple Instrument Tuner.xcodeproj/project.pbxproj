@@ -66,7 +66,6 @@
 		6589227A2450C4FB008F871B /* IAPTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658922782450C4FB008F871B /* IAPTableViewCell.swift */; };
 		6589227B2450C4FB008F871B /* IAPTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 658922792450C4FB008F871B /* IAPTableViewCell.xib */; };
 		658DCA88247680430083ADA7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658DCA87247680430083ADA7 /* SceneDelegate.swift */; };
-		658DCA8F247680460083ADA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 658DCA8E247680460083ADA7 /* Assets.xcassets */; };
 		658DCA97247680D50083ADA7 /* InstrumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBF5924260D9E00F518D8 /* InstrumentViewController.swift */; };
 		658DCA99247681450083ADA7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6514263A245C87EF002E7E82 /* Localizable.strings */; };
 		658DCA9A247681540083ADA7 /* AutoPan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC10F242CC39900F60B83 /* AutoPan.swift */; };
@@ -88,7 +87,6 @@
 		658DCAAA2476815E0083ADA7 /* PKIAPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65325229243B36420004005C /* PKIAPHandler.swift */; };
 		658DCAAB2476815E0083ADA7 /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6532522D243C6C990004005C /* KeyChain.swift */; };
 		658DCAAC2476815E0083ADA7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6532522F243C7A640004005C /* Utils.swift */; };
-		658DCAAD2476815E0083ADA7 /* IAPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A893C1244C97C900B2AB97 /* IAPHandler.swift */; };
 		658DCAAE247681650083ADA7 /* Bridge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652BC0FA242BECFB00F60B83 /* Bridge.storyboard */; };
 		658DCAAF247681650083ADA7 /* BridgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC0FE242BED0F00F60B83 /* BridgeViewController.swift */; };
 		658DCAB0247681650083ADA7 /* DeviationMeter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652BC0E5242A582400F60B83 /* DeviationMeter.storyboard */; };
@@ -177,6 +175,12 @@
 		658DCB16247983B00083ADA7 /* close-thick.png in Resources */ = {isa = PBXBuildFile; fileRef = 658DCB14247983AF0083ADA7 /* close-thick.png */; };
 		658DCB18247984760083ADA7 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 658DCB17247984760083ADA7 /* close.png */; };
 		658DCB19247984760083ADA7 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 658DCB17247984760083ADA7 /* close.png */; };
+		658DCB1B247A719B0083ADA7 /* IAPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658DCB1A247A719B0083ADA7 /* IAPHandler.swift */; };
+		658DCB1C247A81D90083ADA7 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 652BC11F242CDA3400F60B83 /* Sounds */; };
+		658DCB1E247A895B0083ADA7 /* all banjo.png in Resources */ = {isa = PBXBuildFile; fileRef = 658DCB1D247A895B0083ADA7 /* all banjo.png */; };
+		658DCB20247A89770083ADA7 /* signal plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 658DCB1F247A89770083ADA7 /* signal plus.png */; };
+		658DCB22247A898F0083ADA7 /* all in one.png in Resources */ = {isa = PBXBuildFile; fileRef = 658DCB21247A898F0083ADA7 /* all in one.png */; };
+		658DCB26247A908D0083ADA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 658DCB25247A908D0083ADA7 /* Assets.xcassets */; };
 		65A893C2244C97C900B2AB97 /* IAPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A893C1244C97C900B2AB97 /* IAPHandler.swift */; };
 		65A893C4244CAE6200B2AB97 /* InAppPurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A893C3244CAE6200B2AB97 /* InAppPurchaseViewController.swift */; };
 		65A893C6244CB1D700B2AB97 /* InAppPurchase.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65A893C5244CB1D700B2AB97 /* InAppPurchase.storyboard */; };
@@ -323,7 +327,6 @@
 		658DCA87247680430083ADA7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		658DCA89247680430083ADA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		658DCA8C247680430083ADA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		658DCA8E247680460083ADA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		658DCA91247680460083ADA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		658DCA93247680460083ADA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		658DCB01247688010083ADA7 /* Instruments.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Instruments.plist; sourceTree = "<group>"; };
@@ -333,6 +336,11 @@
 		658DCB1124796C340083ADA7 /* iPhoneMockup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iPhoneMockup.png; path = "Simple Instrument Tuner/images/iPhoneMockup.png"; sourceTree = SOURCE_ROOT; };
 		658DCB14247983AF0083ADA7 /* close-thick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close-thick.png"; sourceTree = "<group>"; };
 		658DCB17247984760083ADA7 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		658DCB1A247A719B0083ADA7 /* IAPHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHandler.swift; sourceTree = "<group>"; };
+		658DCB1D247A895B0083ADA7 /* all banjo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "all banjo.png"; sourceTree = "<group>"; };
+		658DCB1F247A89770083ADA7 /* signal plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "signal plus.png"; sourceTree = "<group>"; };
+		658DCB21247A898F0083ADA7 /* all in one.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "all in one.png"; sourceTree = "<group>"; };
+		658DCB25247A908D0083ADA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65A893C1244C97C900B2AB97 /* IAPHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHandler.swift; sourceTree = "<group>"; };
 		65A893C3244CAE6200B2AB97 /* InAppPurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchaseViewController.swift; sourceTree = "<group>"; };
 		65A893C5244CB1D700B2AB97 /* InAppPurchase.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InAppPurchase.storyboard; sourceTree = "<group>"; };
@@ -489,6 +497,9 @@
 		6573CDF52452110F00C10A3C /* settings */ = {
 			isa = PBXGroup;
 			children = (
+				658DCB1D247A895B0083ADA7 /* all banjo.png */,
+				658DCB1F247A89770083ADA7 /* signal plus.png */,
+				658DCB21247A898F0083ADA7 /* all in one.png */,
 				6573CE03245211C800C10A3C /* balalaika.png */,
 				6573CE02245211C800C10A3C /* banjo.png */,
 				6573CDF72452115500C10A3C /* calibration.png */,
@@ -508,10 +519,11 @@
 				658DCA87247680430083ADA7 /* SceneDelegate.swift */,
 				658DCA89247680430083ADA7 /* ViewController.swift */,
 				658DCA8B247680430083ADA7 /* Main.storyboard */,
-				658DCA8E247680460083ADA7 /* Assets.xcassets */,
 				658DCA90247680460083ADA7 /* LaunchScreen.storyboard */,
 				658DCA93247680460083ADA7 /* Info.plist */,
 				658DCB01247688010083ADA7 /* Instruments.plist */,
+				658DCB1A247A719B0083ADA7 /* IAPHandler.swift */,
+				658DCB25247A908D0083ADA7 /* Assets.xcassets */,
 			);
 			path = "Simple Banjo Tuner";
 			sourceTree = "<group>";
@@ -614,7 +626,6 @@
 				65585A6D24334A74002CD214 /* DisplayContainer.swift */,
 				65585A792433508B002CD214 /* DisplayViewController.swift */,
 				65585A7D243350A7002CD214 /* Display.storyboard */,
-				655585F6243A25BC004A94C0 /* SettingsViewController.swift */,
 				65FCB7A324478EC3005E142A /* Tuning.storyboard */,
 				65FCB7A724478F22005E142A /* TuningTableViewController.swift */,
 				65FCB7BB2447934B005E142A /* TuningTableViewCell.swift */,
@@ -627,6 +638,7 @@
 				656E9E33245C259B00B06582 /* ActivityIndicatorView.xib */,
 				656E9E35245C265600B06582 /* ActivityIndicatorView.swift */,
 				658DCB0824791CAF0083ADA7 /* ColorSettings.storyboard */,
+				655585F6243A25BC004A94C0 /* SettingsViewController.swift */,
 				658DCB0B24791CCA0083ADA7 /* ColorSettingsViewController.swift */,
 				658DCB0E247925EE0083ADA7 /* CustomizeColorViewController.swift */,
 			);
@@ -793,10 +805,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				658DCB1C247A81D90083ADA7 /* Sounds in Resources */,
+				658DCB1E247A895B0083ADA7 /* all banjo.png in Resources */,
 				658DCAEE2476817A0083ADA7 /* mandolinSymbol.png in Resources */,
 				658DCAD52476816F0083ADA7 /* gaugePatternGreen.png in Resources */,
 				658DCAC3247681650083ADA7 /* ActivityIndicatorView.xib in Resources */,
 				658DCAE3247681750083ADA7 /* balalaika.png in Resources */,
+				658DCB26247A908D0083ADA7 /* Assets.xcassets in Resources */,
 				658DCAD92476816F0083ADA7 /* gaugeOverlay.png in Resources */,
 				658DCAB2247681650083ADA7 /* Gauge.storyboard in Resources */,
 				658DCAE7247681750083ADA7 /* guitar.png in Resources */,
@@ -822,7 +837,6 @@
 				658DCAF6247681B60083ADA7 /* Assets.xcassets in Resources */,
 				658DCADE2476816F0083ADA7 /* string.png in Resources */,
 				658DCAD32476816F0083ADA7 /* gaugeBackground.png in Resources */,
-				658DCA8F247680460083ADA7 /* Assets.xcassets in Resources */,
 				658DCADB2476816F0083ADA7 /* microphoneOff.png in Resources */,
 				658DCAD82476816F0083ADA7 /* gaugeScale.png in Resources */,
 				658DCADD2476816F0083ADA7 /* doubleString.png in Resources */,
@@ -832,11 +846,13 @@
 				658DCAF3247681960083ADA7 /* LaunchScreen.storyboard in Resources */,
 				658DCABD247681650083ADA7 /* Calibration.storyboard in Resources */,
 				658DCAC62476816F0083ADA7 /* tuningsGradient.png in Resources */,
+				658DCB20247A89770083ADA7 /* signal plus.png in Resources */,
 				658DCAB8247681650083ADA7 /* Display.storyboard in Resources */,
 				658DCABA247681650083ADA7 /* Tuning.storyboard in Resources */,
 				658DCAEF2476817A0083ADA7 /* ukuleleSymbol.png in Resources */,
 				658DCAEB2476817A0083ADA7 /* guitarSymbol.png in Resources */,
 				658DCAC52476816F0083ADA7 /* bridge.png in Resources */,
+				658DCB22247A898F0083ADA7 /* all in one.png in Resources */,
 				658DCAB4247681650083ADA7 /* VolumeMeter.storyboard in Resources */,
 				658DCAD22476816F0083ADA7 /* noteButtonPassive.png in Resources */,
 				658DCB02247688010083ADA7 /* Instruments.plist in Resources */,
@@ -1038,7 +1054,6 @@
 				658DCAA3247681590083ADA7 /* NoteLabel.swift in Sources */,
 				658DCAA82476815E0083ADA7 /* Constants.swift in Sources */,
 				658DCABF247681650083ADA7 /* InAppPurchaseViewController.swift in Sources */,
-				658DCAAD2476815E0083ADA7 /* IAPHandler.swift in Sources */,
 				658DCA9E247681540083ADA7 /* PingPongDelay.swift in Sources */,
 				658DCA9A247681540083ADA7 /* AutoPan.swift in Sources */,
 				658DCABC247681650083ADA7 /* TuningTableViewCell.swift in Sources */,
@@ -1069,6 +1084,7 @@
 				658DCAB7247681650083ADA7 /* DisplayViewController.swift in Sources */,
 				658DCAA5247681590083ADA7 /* StringView.swift in Sources */,
 				658DCA88247680430083ADA7 /* SceneDelegate.swift in Sources */,
+				658DCB1B247A719B0083ADA7 /* IAPHandler.swift in Sources */,
 				658DCAB3247681650083ADA7 /* GaugeViewController.swift in Sources */,
 				658DCA9F247681590083ADA7 /* BezierView.swift in Sources */,
 			);
@@ -1216,6 +1232,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P2EQM7YAFH;
 				INFOPLIST_FILE = "Simple Banjo Tuner/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1223,6 +1240,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.0;
+				OTHER_SWIFT_FLAGS = "$(inherited) -D BANJO";
 				PRODUCT_BUNDLE_IDENTIFIER = ch.vormbrock.simplebanjotuner2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1236,6 +1254,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P2EQM7YAFH;
 				INFOPLIST_FILE = "Simple Banjo Tuner/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1243,6 +1262,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.0;
+				OTHER_SWIFT_FLAGS = "$(inherited) -D BANJO";
 				PRODUCT_BUNDLE_IDENTIFIER = ch.vormbrock.simplebanjotuner2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1374,8 +1394,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Simple Instrument Tuner/Simple Instrument Tuner.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P2EQM7YAFH;
 				INFOPLIST_FILE = "Simple Instrument Tuner/Info.plist";
@@ -1385,9 +1405,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1.1;
+				OTHER_SWIFT_FLAGS = "$(inherited) -D INSTRUMENT";
 				PRODUCT_BUNDLE_IDENTIFIER = ch.vormbrock.simpleinstrumenttuner;
 				PRODUCT_NAME = "Instrument Tuner";
-				PROVISIONING_PROFILE_SPECIFIER = "Simple Instrument Tuner";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1399,8 +1420,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Simple Instrument Tuner/Simple Instrument Tuner.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P2EQM7YAFH;
 				INFOPLIST_FILE = "Simple Instrument Tuner/Info.plist";
@@ -1410,9 +1431,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1.1;
+				OTHER_SWIFT_FLAGS = "$(inherited) -D INSTRUMENT";
 				PRODUCT_BUNDLE_IDENTIFIER = ch.vormbrock.simpleinstrumenttuner;
 				PRODUCT_NAME = "Instrument Tuner";
-				PROVISIONING_PROFILE_SPECIFIER = "Simple Instrument Tuner";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

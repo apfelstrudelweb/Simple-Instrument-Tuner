@@ -48,9 +48,18 @@ class CalibrationViewController: UIViewController {
     }
     
     fileprivate func handleGuiElements() {
-        slider.isEnabled = IAPHandler().isOpenCalibration() == true
-        frequencyLabel.isHidden = IAPHandler().isOpenCalibration() == false
-        shoppingCartButton.isHidden = IAPHandler().isOpenCalibration() == true
+        
+        #if BANJO
+            slider.isEnabled = IAPHandler().isOpenSignal() == true
+            frequencyLabel.isHidden = IAPHandler().isOpenSignal() == false
+            shoppingCartButton.isHidden = IAPHandler().isOpenSignal() == true
+        #endif
+        
+        #if INSTRUMENT
+            slider.isEnabled = IAPHandler().isOpenCalibration() == true
+            frequencyLabel.isHidden = IAPHandler().isOpenCalibration() == false
+            shoppingCartButton.isHidden = IAPHandler().isOpenCalibration() == true
+        #endif
         
         setValueFromKeychain()
     }
