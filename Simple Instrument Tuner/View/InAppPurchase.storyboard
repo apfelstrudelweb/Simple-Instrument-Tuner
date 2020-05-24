@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3j4-TF-FJl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3j4-TF-FJl">
     <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -10,7 +10,7 @@
         <!--In App Purchase-->
         <scene sceneID="qId-ff-T4n">
             <objects>
-                <viewController title="In App Purchase" id="3j4-TF-FJl" customClass="InAppPurchaseViewController" customModule="Simple_Instrument_Tuner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="In App Purchase" id="3j4-TF-FJl" customClass="InAppPurchaseViewController" customModule="Instrument_Tuner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FQH-Ar-oL1">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -19,7 +19,7 @@
                                 <rect key="frame" x="60" y="114" width="648" height="866"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="iapCell" id="vca-xz-sxu" customClass="IAPTableViewCell" customModule="Simple_Instrument_Tuner" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="iapCell" id="vca-xz-sxu" customClass="IAPTableViewCell" customModule="Instrument_Tuner" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="648" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vca-xz-sxu" id="1VU-Yw-bin">
@@ -43,9 +43,21 @@
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                 </variation>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yTe-Ij-V3P" customClass="ActivityIndicatorView" customModule="Simple_Instrument_Tuner" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yTe-Ij-V3P" customClass="ActivityIndicatorView" customModule="Instrument_Tuner" customModuleProvider="target">
                                 <rect key="frame" x="60" y="114" width="648" height="866"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7i-Yn-rlg">
+                                <rect key="frame" x="664" y="10" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="gTv-9q-Zam"/>
+                                    <constraint firstAttribute="width" secondItem="z7i-Yn-rlg" secondAttribute="height" id="zzv-FY-Y3c"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="close.png"/>
+                                <connections>
+                                    <action selector="closeButtonTouched:" destination="3j4-TF-FJl" eventType="touchUpInside" id="HZW-uY-OoV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.19800920050000001" green="0.19800920050000001" blue="0.19800920050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -54,6 +66,7 @@
                                 <variation key="heightClass=regular-widthClass=regular" constant="60"/>
                             </constraint>
                             <constraint firstItem="yTe-Ij-V3P" firstAttribute="leading" secondItem="U23-qH-JGa" secondAttribute="leading" id="8Kw-xD-SQk"/>
+                            <constraint firstItem="z7i-Yn-rlg" firstAttribute="top" secondItem="nA1-zW-WY5" secondAttribute="top" constant="10" id="B4x-R9-eEd"/>
                             <constraint firstItem="yTe-Ij-V3P" firstAttribute="top" secondItem="U23-qH-JGa" secondAttribute="top" id="EKY-wP-QiL"/>
                             <constraint firstItem="yTe-Ij-V3P" firstAttribute="bottom" secondItem="U23-qH-JGa" secondAttribute="bottom" id="JMk-gB-vIG"/>
                             <constraint firstItem="5qh-M8-Epd" firstAttribute="leading" secondItem="nA1-zW-WY5" secondAttribute="leading" constant="20" id="Q4F-uk-0C5">
@@ -64,11 +77,13 @@
                             <constraint firstItem="5qh-M8-Epd" firstAttribute="top" secondItem="nA1-zW-WY5" secondAttribute="top" constant="34" id="ouW-Fe-1qf"/>
                             <constraint firstItem="U23-qH-JGa" firstAttribute="trailing" secondItem="5qh-M8-Epd" secondAttribute="trailing" id="qvm-5w-dki"/>
                             <constraint firstItem="U23-qH-JGa" firstAttribute="leading" secondItem="5qh-M8-Epd" secondAttribute="leading" id="wb8-nI-yFu"/>
+                            <constraint firstItem="z7i-Yn-rlg" firstAttribute="trailing" secondItem="yTe-Ij-V3P" secondAttribute="trailing" id="xQP-PW-IDj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nA1-zW-WY5"/>
                     </view>
                     <connections>
                         <outlet property="activityIndicatorView" destination="yTe-Ij-V3P" id="xBk-R0-sfP"/>
+                        <outlet property="closeButton" destination="z7i-Yn-rlg" id="fkP-dW-dDH"/>
                         <outlet property="productTableView" destination="U23-qH-JGa" id="61l-0R-tnT"/>
                         <outlet property="titleLabel" destination="5qh-M8-Epd" id="U1G-eY-OYA"/>
                     </connections>
@@ -78,4 +93,7 @@
             <point key="canvasLocation" x="-592.96875" y="65.625"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="close.png" width="36" height="36"/>
+    </resources>
 </document>

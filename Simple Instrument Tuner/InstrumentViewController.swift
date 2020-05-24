@@ -21,6 +21,16 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     let indexOfLastInfo = 13
     var activeInfo = 0
     
+    var backgroundColor: UIColor = defaultMainViewColor {
+        didSet {
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                self.mainContainerView.backgroundColor = backgroundColor
+            } else {
+                self.view.backgroundColor = backgroundColor
+            }
+        }
+    }
+    
     
     @IBOutlet weak var infoButton: UIButton!
     @IBOutlet weak var instrumentButton: UIButton!
@@ -100,14 +110,14 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
         super.viewDidLoad()
         
         self.headerView.backgroundColor = defaultHeaderColor
-        self.view.backgroundColor = defaultMainViewColor
+        backgroundColor = defaultMainViewColor
         
         let defaults = UserDefaults.standard
         if let headerColor = defaults.colorForKey(key: "headerColor") {
             self.headerView.backgroundColor = headerColor
         }
         if let mainViewColor = defaults.colorForKey(key: "mainViewColor") {
-            self.view.backgroundColor = mainViewColor
+            backgroundColor = mainViewColor
         }
         
         // for Banjo Tuner
@@ -201,7 +211,7 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     @objc func didChangeMainViewColor(_ notification: Notification) {
         
         if let color = notification.userInfo?["color"] as? UIColor {
-            self.view.backgroundColor = color
+            backgroundColor = color
         }
     }
     
@@ -384,7 +394,6 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
         if let vc = segue.destination as? SettingsViewController,
             segue.identifier == "settingsSegue" {
             settingsViewController = vc
-            guard let backgroundColor = self.view.backgroundColor else { return }
             settingsViewController.backgroundColor = backgroundColor
             guard let headerColor = self.headerView.backgroundColor else { return }
             settingsViewController.headerColor = headerColor

@@ -24,6 +24,7 @@ class InAppPurchaseViewController: UIViewController, UITableViewDataSource, UITa
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet var productTableView: UITableView!
     @IBOutlet weak var activityIndicatorView: UIView!
+    @IBOutlet weak var closeButton: UIButton!
     
     var instrument: Instrument?
     var productsArray: [Product]? = IAPHandler.shared().productsArray
@@ -42,6 +43,10 @@ class InAppPurchaseViewController: UIViewController, UITableViewDataSource, UITa
             self.showAlert(title: NSLocalizedString("IAP.alert.error.title", comment: "") , msg: NSLocalizedString("IAP.alert.error.text", comment: "") )
             return
         }
+        
+        let image = UIImage(named: "close")?.withRenderingMode(.alwaysTemplate)
+        closeButton.setImage(image, for: .normal)
+        closeButton.tintColor = .white
         
         productTableView.reloadData()
     }
@@ -113,7 +118,11 @@ class InAppPurchaseViewController: UIViewController, UITableViewDataSource, UITa
             }
         }
     }
-
+    
+    @IBAction func closeButtonTouched(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 extension UIViewController {

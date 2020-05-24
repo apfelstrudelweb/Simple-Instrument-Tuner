@@ -17,7 +17,7 @@ class IAPTableViewCell: UITableViewCell {
     }
     var descriptionText: [String]? {
         didSet {
-            descriptionTextView.attributedText = Utils().generateBulletList(stringList: descriptionText ?? [], font: descriptionTextView.font!, bullet: "⮕")
+            descriptionTextView.attributedText = Utils().generateBulletList(stringList: descriptionText ?? [], font: descriptionTextView.font!, bullet: " ⮕")
         }
     }
     

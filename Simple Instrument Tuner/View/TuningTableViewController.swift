@@ -66,7 +66,8 @@ class TuningTableViewController: UITableViewController {
         let text = String(format: NSLocalizedString("%d Label.strings", comment: ""), section.sectionItem) 
         
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        let fontSize: CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 20 : 30
+        label.font = UIFont.boldSystemFont(ofSize: fontSize)
         label.textColor = UIColor(red: 73/255, green: 73/255, blue: 73/255, alpha: 1.0)
         label.text = text
         
@@ -92,7 +93,8 @@ class TuningTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
+        
+        return UIDevice.current.userInterfaceIdiom == .phone ? 50 : 80
     }
     
     

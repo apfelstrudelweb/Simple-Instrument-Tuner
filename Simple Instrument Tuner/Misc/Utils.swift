@@ -258,8 +258,8 @@ class Utils: NSObject {
     
     func generateBulletList(stringList: [String],
                             font: UIFont,
-                            bullet: String = "\u{2022}",
-                            indentation: CGFloat = 20,
+                            bullet: String = "\u{2022} ",
+                            indentation: CGFloat = 30,
                             lineSpacing: CGFloat = 2,
                             paragraphSpacing: CGFloat = 4,
                             textColor: UIColor = .white,

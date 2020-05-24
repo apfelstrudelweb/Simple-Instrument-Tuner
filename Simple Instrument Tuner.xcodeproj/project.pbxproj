@@ -171,8 +171,6 @@
 		658DCB10247925EE0083ADA7 /* CustomizeColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658DCB0E247925EE0083ADA7 /* CustomizeColorViewController.swift */; };
 		658DCB1224796C340083ADA7 /* iPhoneMockup.png in Resources */ = {isa = PBXBuildFile; fileRef = 658DCB1124796C340083ADA7 /* iPhoneMockup.png */; };
 		658DCB1324796C340083ADA7 /* iPhoneMockup.png in Resources */ = {isa = PBXBuildFile; fileRef = 658DCB1124796C340083ADA7 /* iPhoneMockup.png */; };
-		658DCB15247983B00083ADA7 /* close-thick.png in Resources */ = {isa = PBXBuildFile; fileRef = 658DCB14247983AF0083ADA7 /* close-thick.png */; };
-		658DCB16247983B00083ADA7 /* close-thick.png in Resources */ = {isa = PBXBuildFile; fileRef = 658DCB14247983AF0083ADA7 /* close-thick.png */; };
 		658DCB18247984760083ADA7 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 658DCB17247984760083ADA7 /* close.png */; };
 		658DCB19247984760083ADA7 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 658DCB17247984760083ADA7 /* close.png */; };
 		658DCB1B247A719B0083ADA7 /* IAPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658DCB1A247A719B0083ADA7 /* IAPHandler.swift */; };
@@ -334,7 +332,6 @@
 		658DCB0B24791CCA0083ADA7 /* ColorSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSettingsViewController.swift; sourceTree = "<group>"; };
 		658DCB0E247925EE0083ADA7 /* CustomizeColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeColorViewController.swift; sourceTree = "<group>"; };
 		658DCB1124796C340083ADA7 /* iPhoneMockup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iPhoneMockup.png; path = "Simple Instrument Tuner/images/iPhoneMockup.png"; sourceTree = SOURCE_ROOT; };
-		658DCB14247983AF0083ADA7 /* close-thick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close-thick.png"; sourceTree = "<group>"; };
 		658DCB17247984760083ADA7 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		658DCB1A247A719B0083ADA7 /* IAPHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHandler.swift; sourceTree = "<group>"; };
 		658DCB1D247A895B0083ADA7 /* all banjo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "all banjo.png"; sourceTree = "<group>"; };
@@ -577,8 +574,6 @@
 				6573CDF52452110F00C10A3C /* settings */,
 				65558608243A570F004A94C0 /* instruments */,
 				652BC0F6242BEC7500F60B83 /* bridge.png */,
-				658DCB17247984760083ADA7 /* close.png */,
-				658DCB14247983AF0083ADA7 /* close-thick.png */,
 				65CE47A02448E93100E3B2EC /* tuningsGradient.png */,
 				65FCB7B7244792EC005E142A /* settingsPattern.png */,
 				65FCB7B8244792EC005E142A /* settingsPatternDark.png */,
@@ -591,6 +586,7 @@
 				65CCC0012426268900F518D8 /* ledActive.png */,
 				65CCC0002426268900F518D8 /* ledPassive.png */,
 				65CCC009242626BC00F518D8 /* noteButtonActive.png */,
+				658DCB17247984760083ADA7 /* close.png */,
 				65CCC008242626BC00F518D8 /* noteButtonPassive.png */,
 				65CCC02824263B8B00F518D8 /* gaugeBackground.png */,
 				65CCC0112426318E00F518D8 /* gaugePattern.png */,
@@ -827,7 +823,6 @@
 				658DCAD72476816F0083ADA7 /* upgradeButton.png in Resources */,
 				658DCB0A24791CAF0083ADA7 /* ColorSettings.storyboard in Resources */,
 				658DCB19247984760083ADA7 /* close.png in Resources */,
-				658DCB16247983B00083ADA7 /* close-thick.png in Resources */,
 				658DCAB0247681650083ADA7 /* DeviationMeter.storyboard in Resources */,
 				658DCACA2476816F0083ADA7 /* offButton.png in Resources */,
 				658DCAEA247681750083ADA7 /* violin.png in Resources */,
@@ -899,7 +894,6 @@
 				652BC0FB242BECFB00F60B83 /* Bridge.storyboard in Resources */,
 				658DCB0924791CAF0083ADA7 /* ColorSettings.storyboard in Resources */,
 				658DCB18247984760083ADA7 /* close.png in Resources */,
-				658DCB15247983B00083ADA7 /* close-thick.png in Resources */,
 				65CCC0122426318E00F518D8 /* gaugePatternGreen.png in Resources */,
 				65585A7E243350A7002CD214 /* Display.storyboard in Resources */,
 				65CCBF5F24260DA100F518D8 /* Assets.xcassets in Resources */,
