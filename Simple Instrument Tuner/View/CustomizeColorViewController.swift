@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FlexColorPicker
+
 
 enum ColorAreas {
     case header
@@ -19,7 +19,7 @@ protocol SetColorDelegate: class {
     func colorSelected(area: ColorAreas, color: UIColor)
 }
 
-class CustomizeColorViewController: DefaultColorPickerViewController {
+class CustomizeColorViewController: UIViewController {
     
     weak var setColorDelegate: SetColorDelegate?
     
@@ -32,46 +32,48 @@ class CustomizeColorViewController: DefaultColorPickerViewController {
         super.viewDidLoad()
         //self.view.backgroundColor = #colorLiteral(red: 0.179690044, green: 0.2031518249, blue: 0.2304651412, alpha: 1)
         
-        if colorArea == .header {
-            selectedColor = headerColor
-        }
-        if colorArea == .mainView {
-            selectedColor = mainViewColor
-        }
-        
-        self.delegate = self
+        self.view.backgroundColor = .clear
+
+//        if colorArea == .header {
+//            selectedColor = headerColor
+//        }
+//        if colorArea == .mainView {
+//            selectedColor = mainViewColor
+//        }
+//
+//        self.delegate = self
     }
     
     
 }
 
-extension CustomizeColorViewController: ColorPickerDelegate {
-    
-    func colorPicker(_: ColorPickerController, selectedColor: UIColor, usingControl: ColorControl) {
-        
-        let defaults = UserDefaults.standard
-        
-        if colorArea == .header {
-            headerColor = selectedColor
-            setColorDelegate?.colorSelected(area: colorArea, color: headerColor)
-            defaults.setColor(color: selectedColor, forKey: "headerColor")
-            
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "didChangeHeaderColor"), object: nil, userInfo: ["color" : headerColor])
-        }
-        if colorArea == .mainView {
-            mainViewColor = selectedColor
-            setColorDelegate?.colorSelected(area: colorArea, color: mainViewColor)
-            defaults.setColor(color: selectedColor, forKey: "mainViewColor")
-            
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "didChangeMainViewColor"), object: nil, userInfo: ["color" : mainViewColor])
-        }
-        
-    }
-    
-    func colorPicker(_: ColorPickerController, confirmedColor: UIColor, usingControl: ColorControl) {
-        dismiss(animated: true, completion: nil)
-    }
-}
+//extension CustomizeColorViewController: ColorPickerDelegate {
+//
+//    func colorPicker(_: ColorPickerController, selectedColor: UIColor, usingControl: ColorControl) {
+//
+//        let defaults = UserDefaults.standard
+//
+//        if colorArea == .header {
+//            headerColor = selectedColor
+//            setColorDelegate?.colorSelected(area: colorArea, color: headerColor)
+//            defaults.setColor(color: selectedColor, forKey: "headerColor")
+//
+//            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "didChangeHeaderColor"), object: nil, userInfo: ["color" : headerColor])
+//        }
+//        if colorArea == .mainView {
+//            mainViewColor = selectedColor
+//            setColorDelegate?.colorSelected(area: colorArea, color: mainViewColor)
+//            defaults.setColor(color: selectedColor, forKey: "mainViewColor")
+//
+//            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "didChangeMainViewColor"), object: nil, userInfo: ["color" : mainViewColor])
+//        }
+//
+//    }
+//
+//    func colorPicker(_: ColorPickerController, confirmedColor: UIColor, usingControl: ColorControl) {
+//        dismiss(animated: true, completion: nil)
+//    }
+//}
 
 
 extension UserDefaults {

@@ -18,7 +18,8 @@ target 'Simple Instrument Tuner' do
   pod 'KeychainAccess'
   pod 'EasyTipView', '~> 2.0.4'
   pod 'NVActivityIndicatorView'
-  pod 'FlexColorPicker'
+  #pod 'FlexColorPicker'
+  pod 'Pikko'
 
 end
 
@@ -37,6 +38,7 @@ target 'Simple Banjo Tuner' do
   pod 'KeychainAccess'
   pod 'EasyTipView', '~> 2.0.4'
   pod 'NVActivityIndicatorView'
-  pod 'FlexColorPicker'
+  #pod 'FlexColorPicker'
+  pod 'Pikko'
 
 end

@@ -9,50 +9,30 @@
 import UIKit
 
 
-
-
-class ColorSettingsViewController: UIViewController, SetColorDelegate {
+class ColorSettingsViewController: UIViewController {
     
-    func colorSelected(area: ColorAreas, color: UIColor) {
-        
-        if area == .header {
-            colorHeaderButton.backgroundColor = color
-        }
-        if area == .mainView {
-            mainViewColorButton.backgroundColor = color
-        }
-    }
     
-    var headerColor = UIColor.red {
-        didSet {
-            if colorHeaderButton != nil {
-                colorHeaderButton.backgroundColor = headerColor
-            }
-        }
-    }
+    public var headerColor = #colorLiteral(red: 0.6890257001, green: 0.2662356496, blue: 0.2310875654, alpha: 1)
+    public var backgroundColor = #colorLiteral(red: 0.179690044, green: 0.2031518249, blue: 0.2304651412, alpha: 1)
     
-    var backgroundColor = UIColor.black {
-        didSet {
-            if mainViewColorButton != nil {
-                mainViewColorButton.backgroundColor = backgroundColor
-            }
-        }
-    }
-
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
     
-    
-    @IBOutlet weak var colorHeaderButton: UIButton! {
+    @IBOutlet weak var headerColorView: HeaderColorView!{
         didSet {
-            colorHeaderButton.backgroundColor = headerColor
- 
+            let defaults = UserDefaults.standard
+            if let headerColor = defaults.colorForKey(key: "headerColor") {
+                headerColorView.backgroundColor = headerColor
+            }
         }
     }
-    @IBOutlet weak var mainViewColorButton: UIButton! {
+    
+    @IBOutlet weak var mainColorView: MainColorView! {
         didSet {
-            mainViewColorButton.backgroundColor = backgroundColor
-            //mainViewColorButton.roundCorners([.bottomLeft, .bottomRight], radius: 70)
+            let defaults = UserDefaults.standard
+            if let mainViewColor = defaults.colorForKey(key: "mainViewColor") {
+                mainColorView.backgroundColor = mainViewColor
+            }
         }
     }
     
@@ -63,23 +43,7 @@ class ColorSettingsViewController: UIViewController, SetColorDelegate {
         resetButton.layer.cornerRadius = 10
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-         if let vc = segue.destination as? CustomizeColorViewController {
-             
-            vc.setColorDelegate = self
-            
-            if segue.identifier == "headerSegue" {
-                vc.colorArea = .header
-                vc.headerColor = colorHeaderButton.backgroundColor ?? .red
-            }
-            
-            if segue.identifier == "mainViewSegue" {
-                vc.colorArea = .mainView
-                vc.mainViewColor = mainViewColorButton.backgroundColor ?? .darkGray
-            }
-         }
-     }
+    
     
     @IBAction func closeButtonTouched(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -89,6 +53,8 @@ class ColorSettingsViewController: UIViewController, SetColorDelegate {
         
         headerColor = defaultHeaderColor
         backgroundColor = defaultMainViewColor
+        headerColorView.backgroundColor = headerColor
+        mainColorView.backgroundColor = backgroundColor
         
         let defaults = UserDefaults.standard
         
