@@ -19,13 +19,25 @@
                                 <rect key="frame" x="51" y="89.5" width="312" height="627.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vgD-tW-lCT" customClass="HeaderColorView" customModule="Instrument_Tuner" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="-1" width="312" height="251"/>
+                                        <rect key="frame" x="0.0" y="-13" width="312" height="251"/>
                                         <color key="backgroundColor" red="0.68902570009999997" green="0.26623564960000001" blue="0.2310875654" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hI9-HN-pkR">
+                                        <rect key="frame" x="0.0" y="-13" width="312" height="251"/>
+                                        <connections>
+                                            <segue destination="MfG-PA-Tzw" kind="embed" identifier="headerSegue" id="WyA-a7-WDk"/>
+                                        </connections>
+                                    </containerView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ads-rX-g8g" customClass="MainColorView" customModule="Instrument_Tuner" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="252" width="312" height="394"/>
+                                        <rect key="frame" x="0.0" y="240" width="312" height="421"/>
                                         <color key="backgroundColor" red="0.19800920050000001" green="0.19800920050000001" blue="0.19800920050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KkR-1X-223">
+                                        <rect key="frame" x="0.0" y="240" width="312" height="421"/>
+                                        <connections>
+                                            <segue destination="QMi-se-8ai" kind="embed" identifier="mainViewSegue" id="kkV-PX-r4b"/>
+                                        </connections>
+                                    </containerView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="iPhone X black.png" translatesAutoresizingMaskIntoConstraints="NO" id="7KY-Up-EU4">
                                         <rect key="frame" x="-10" y="-18" width="332" height="684"/>
                                     </imageView>
@@ -34,16 +46,24 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Ads-rX-g8g" secondAttribute="trailing" id="3jx-Bn-nl6"/>
                                     <constraint firstAttribute="trailing" secondItem="vgD-tW-lCT" secondAttribute="trailing" id="5bX-tX-9bq"/>
+                                    <constraint firstItem="KkR-1X-223" firstAttribute="trailing" secondItem="Ads-rX-g8g" secondAttribute="trailing" id="82Z-DN-qIr"/>
+                                    <constraint firstItem="hI9-HN-pkR" firstAttribute="bottom" secondItem="vgD-tW-lCT" secondAttribute="bottom" id="8Uw-it-Xbh"/>
                                     <constraint firstItem="7KY-Up-EU4" firstAttribute="top" secondItem="0VY-95-bSf" secondAttribute="top" constant="-18" id="CAp-il-UYb"/>
-                                    <constraint firstItem="Ads-rX-g8g" firstAttribute="bottom" secondItem="7KY-Up-EU4" secondAttribute="bottom" multiplier="0.97" id="FXO-Ip-5or"/>
+                                    <constraint firstItem="Ads-rX-g8g" firstAttribute="bottom" secondItem="7KY-Up-EU4" secondAttribute="bottom" constant="-5" id="FXO-Ip-5or"/>
                                     <constraint firstItem="Ads-rX-g8g" firstAttribute="leading" secondItem="0VY-95-bSf" secondAttribute="leading" id="I1v-xp-E5Q"/>
+                                    <constraint firstItem="KkR-1X-223" firstAttribute="bottom" secondItem="Ads-rX-g8g" secondAttribute="bottom" id="MYR-ne-AYy"/>
                                     <constraint firstAttribute="width" secondItem="0VY-95-bSf" secondAttribute="height" multiplier="491:986" id="QBe-Co-dv9"/>
                                     <constraint firstItem="vgD-tW-lCT" firstAttribute="height" secondItem="0VY-95-bSf" secondAttribute="height" multiplier="0.4" id="TYf-M9-qGr"/>
                                     <constraint firstItem="Ads-rX-g8g" firstAttribute="top" secondItem="vgD-tW-lCT" secondAttribute="bottom" constant="2" id="Yjn-vC-QZG"/>
+                                    <constraint firstItem="hI9-HN-pkR" firstAttribute="trailing" secondItem="vgD-tW-lCT" secondAttribute="trailing" id="bci-cy-D3S"/>
+                                    <constraint firstItem="KkR-1X-223" firstAttribute="leading" secondItem="Ads-rX-g8g" secondAttribute="leading" id="ct6-0X-Bbn"/>
+                                    <constraint firstItem="KkR-1X-223" firstAttribute="top" secondItem="Ads-rX-g8g" secondAttribute="top" id="egI-ja-VtC"/>
                                     <constraint firstAttribute="trailing" secondItem="7KY-Up-EU4" secondAttribute="trailing" constant="-10" id="ejP-eT-YYV"/>
-                                    <constraint firstItem="vgD-tW-lCT" firstAttribute="top" secondItem="7KY-Up-EU4" secondAttribute="top" multiplier="0.05" id="jfN-Ni-Qzq"/>
+                                    <constraint firstItem="vgD-tW-lCT" firstAttribute="top" secondItem="7KY-Up-EU4" secondAttribute="top" constant="5" id="jfN-Ni-Qzq"/>
                                     <constraint firstItem="7KY-Up-EU4" firstAttribute="leading" secondItem="0VY-95-bSf" secondAttribute="leading" constant="-10" id="mYh-bn-4ay"/>
                                     <constraint firstItem="vgD-tW-lCT" firstAttribute="leading" secondItem="0VY-95-bSf" secondAttribute="leading" id="qAg-mh-UKs"/>
+                                    <constraint firstItem="hI9-HN-pkR" firstAttribute="leading" secondItem="vgD-tW-lCT" secondAttribute="leading" id="tHS-i7-2Hw"/>
+                                    <constraint firstItem="hI9-HN-pkR" firstAttribute="top" secondItem="vgD-tW-lCT" secondAttribute="top" id="vbc-MZ-vAM"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Back to Default" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kaA-3L-hqH">
@@ -92,17 +112,34 @@
                     <connections>
                         <outlet property="closeButton" destination="4P8-4a-oet" id="jKP-k0-0sw"/>
                         <outlet property="headerColorView" destination="vgD-tW-lCT" id="sYE-gt-eEp"/>
+                        <outlet property="headerContainerView" destination="hI9-HN-pkR" id="sjc-Xh-19G"/>
                         <outlet property="mainColorView" destination="Ads-rX-g8g" id="1sD-8c-UsO"/>
                         <outlet property="resetButton" destination="CEk-Xf-Ouq" id="Mpd-Vc-5SR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QeT-7E-zSS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="21.739130434782609" y="221.65178571428569"/>
+            <point key="canvasLocation" x="112" y="84"/>
+        </scene>
+        <!--HeaderColor-->
+        <scene sceneID="YCa-qG-Z1S">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="HeaderColor" storyboardName="HeaderColor" id="MfG-PA-Tzw" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qfu-6y-746" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="804" y="-68"/>
+        </scene>
+        <!--MainViewColor-->
+        <scene sceneID="Oub-AP-jYY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainViewColor" id="QMi-se-8ai" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aN7-UW-5yD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="840" y="108"/>
         </scene>
     </scenes>
     <resources>
         <image name="close.png" width="36" height="36"/>
-        <image name="iPhone X black.png" width="428" height="870"/>
+        <image name="iPhone X black.png" width="428" height="863"/>
     </resources>
 </document>

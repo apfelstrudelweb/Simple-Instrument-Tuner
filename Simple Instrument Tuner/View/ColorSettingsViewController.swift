@@ -15,6 +15,8 @@ class ColorSettingsViewController: UIViewController {
     public var headerColor = #colorLiteral(red: 0.6890257001, green: 0.2662356496, blue: 0.2310875654, alpha: 1)
     public var backgroundColor = #colorLiteral(red: 0.179690044, green: 0.2031518249, blue: 0.2304651412, alpha: 1)
     
+    @IBOutlet weak var headerContainerView: UIView!
+    
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
     
@@ -33,6 +35,25 @@ class ColorSettingsViewController: UIViewController {
             if let mainViewColor = defaults.colorForKey(key: "mainViewColor") {
                 mainColorView.backgroundColor = mainViewColor
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? HeaderColorViewController,
+            segue.identifier == "headerSegue" {
+            
+            self.view.setNeedsLayout()
+            self.view.layoutIfNeeded()
+            
+            vc.containerFrame = headerContainerView.bounds
+        }
+        if let vc = segue.destination as? MainViewColorViewController,
+            segue.identifier == "mainViewSegue" {
+            
+            self.view.setNeedsLayout()
+            self.view.layoutIfNeeded()
+            
+            vc.containerFrame = headerContainerView.bounds
         }
     }
     
@@ -64,5 +85,7 @@ class ColorSettingsViewController: UIViewController {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "didChangeHeaderColor"), object: nil, userInfo: ["color" : headerColor])
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "didChangeMainViewColor"), object: nil, userInfo: ["color" : backgroundColor])
     }
+    
+    
     
 }

@@ -9,14 +9,20 @@
 /* Begin PBXBuildFile section */
 		6509D1B124557CAD005D2351 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6509D1B024557CAD005D2351 /* StoreKit.framework */; };
 		65142638245C87EF002E7E82 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6514263A245C87EF002E7E82 /* Localizable.strings */; };
-		651ED517248033250036BFD5 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651ED516248033250036BFD5 /* TestViewController.swift */; };
-		651ED518248033250036BFD5 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651ED516248033250036BFD5 /* TestViewController.swift */; };
-		651ED51A248140B30036BFD5 /* HeaderColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651ED519248140B30036BFD5 /* HeaderColorView.swift */; };
-		651ED51B248140B30036BFD5 /* HeaderColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651ED519248140B30036BFD5 /* HeaderColorView.swift */; };
-		651ED51D248148220036BFD5 /* MainColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651ED51C248148220036BFD5 /* MainColorView.swift */; };
-		651ED51E248148220036BFD5 /* MainColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651ED51C248148220036BFD5 /* MainColorView.swift */; };
 		651ED523248155CF0036BFD5 /* iPhone X black.png in Resources */ = {isa = PBXBuildFile; fileRef = 651ED522248155CF0036BFD5 /* iPhone X black.png */; };
 		651ED524248155CF0036BFD5 /* iPhone X black.png in Resources */ = {isa = PBXBuildFile; fileRef = 651ED522248155CF0036BFD5 /* iPhone X black.png */; };
+		651ED527248198910036BFD5 /* HeaderColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651ED525248198910036BFD5 /* HeaderColorViewController.swift */; };
+		651ED528248198910036BFD5 /* HeaderColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651ED525248198910036BFD5 /* HeaderColorViewController.swift */; };
+		651ED52C248198D60036BFD5 /* HeaderColor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 651ED52B248198D60036BFD5 /* HeaderColor.storyboard */; };
+		651ED52D248198D60036BFD5 /* HeaderColor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 651ED52B248198D60036BFD5 /* HeaderColor.storyboard */; };
+		651ED52F2481A2FB0036BFD5 /* MainViewColor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 651ED52E2481A2FA0036BFD5 /* MainViewColor.storyboard */; };
+		651ED5302481A2FB0036BFD5 /* MainViewColor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 651ED52E2481A2FA0036BFD5 /* MainViewColor.storyboard */; };
+		651ED5322481A3290036BFD5 /* MainViewColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651ED5312481A3290036BFD5 /* MainViewColorViewController.swift */; };
+		651ED5332481A3290036BFD5 /* MainViewColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651ED5312481A3290036BFD5 /* MainViewColorViewController.swift */; };
+		651ED5352481A7DD0036BFD5 /* HeaderColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651ED5342481A7DD0036BFD5 /* HeaderColorView.swift */; };
+		651ED5362481A7DD0036BFD5 /* HeaderColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651ED5342481A7DD0036BFD5 /* HeaderColorView.swift */; };
+		651ED5382481A7F20036BFD5 /* MainColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651ED5372481A7F20036BFD5 /* MainColorView.swift */; };
+		651ED5392481A7F20036BFD5 /* MainColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651ED5372481A7F20036BFD5 /* MainColorView.swift */; };
 		652BC0DB242A2C0D00F60B83 /* VolumeMeterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BC0D9242A2C0C00F60B83 /* VolumeMeterViewController.swift */; };
 		652BC0DE242A2C0D00F60B83 /* VolumeMeter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652BC0DA242A2C0C00F60B83 /* VolumeMeter.storyboard */; };
 		652BC0E2242A2C6F00F60B83 /* volumeMeterPattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 652BC0E1242A2C6E00F60B83 /* volumeMeterPattern.png */; };
@@ -258,10 +264,13 @@
 		6514263C245C87F4002E7E82 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6514263D245C8F7F002E7E82 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		6514263E245C8F7F002E7E82 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		651ED516248033250036BFD5 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
-		651ED519248140B30036BFD5 /* HeaderColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderColorView.swift; sourceTree = "<group>"; };
-		651ED51C248148220036BFD5 /* MainColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainColorView.swift; sourceTree = "<group>"; };
 		651ED522248155CF0036BFD5 /* iPhone X black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPhone X black.png"; path = "Simple Instrument Tuner/images/iPhone X black.png"; sourceTree = SOURCE_ROOT; };
+		651ED525248198910036BFD5 /* HeaderColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderColorViewController.swift; sourceTree = "<group>"; };
+		651ED52B248198D60036BFD5 /* HeaderColor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HeaderColor.storyboard; sourceTree = "<group>"; };
+		651ED52E2481A2FA0036BFD5 /* MainViewColor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainViewColor.storyboard; sourceTree = "<group>"; };
+		651ED5312481A3290036BFD5 /* MainViewColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewColorViewController.swift; sourceTree = "<group>"; };
+		651ED5342481A7DD0036BFD5 /* HeaderColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderColorView.swift; sourceTree = "<group>"; };
+		651ED5372481A7F20036BFD5 /* MainColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainColorView.swift; sourceTree = "<group>"; };
 		652BC0D9242A2C0C00F60B83 /* VolumeMeterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeMeterViewController.swift; sourceTree = "<group>"; };
 		652BC0DA242A2C0C00F60B83 /* VolumeMeter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VolumeMeter.storyboard; sourceTree = "<group>"; };
 		652BC0E1242A2C6E00F60B83 /* volumeMeterPattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volumeMeterPattern.png; sourceTree = "<group>"; };
@@ -335,8 +344,6 @@
 		658DCA83247680430083ADA7 /* Simple Banjo Tuner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Banjo Tuner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		658DCA87247680430083ADA7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		658DCA89247680430083ADA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		658DCA8C247680430083ADA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		658DCA91247680460083ADA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		658DCA93247680460083ADA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		658DCB01247688010083ADA7 /* Instruments.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Instruments.plist; sourceTree = "<group>"; };
 		658DCB0824791CAF0083ADA7 /* ColorSettings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ColorSettings.storyboard; sourceTree = "<group>"; };
@@ -526,8 +533,6 @@
 			children = (
 				658DCA87247680430083ADA7 /* SceneDelegate.swift */,
 				658DCA89247680430083ADA7 /* ViewController.swift */,
-				658DCA8B247680430083ADA7 /* Main.storyboard */,
-				658DCA90247680460083ADA7 /* LaunchScreen.storyboard */,
 				658DCA93247680460083ADA7 /* Info.plist */,
 				658DCB01247688010083ADA7 /* Instruments.plist */,
 				658DCB1A247A719B0083ADA7 /* IAPHandler.swift */,
@@ -648,9 +653,12 @@
 				655585F6243A25BC004A94C0 /* SettingsViewController.swift */,
 				658DCB0B24791CCA0083ADA7 /* ColorSettingsViewController.swift */,
 				658DCB0E247925EE0083ADA7 /* CustomizeColorViewController.swift */,
-				651ED516248033250036BFD5 /* TestViewController.swift */,
-				651ED519248140B30036BFD5 /* HeaderColorView.swift */,
-				651ED51C248148220036BFD5 /* MainColorView.swift */,
+				651ED525248198910036BFD5 /* HeaderColorViewController.swift */,
+				651ED5312481A3290036BFD5 /* MainViewColorViewController.swift */,
+				651ED52B248198D60036BFD5 /* HeaderColor.storyboard */,
+				651ED52E2481A2FA0036BFD5 /* MainViewColor.storyboard */,
+				651ED5342481A7DD0036BFD5 /* HeaderColorView.swift */,
+				651ED5372481A7F20036BFD5 /* MainColorView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -873,8 +881,10 @@
 				658DCADF2476816F0083ADA7 /* animatedString.gif in Resources */,
 				658DCADC2476816F0083ADA7 /* microphoneOn.png in Resources */,
 				658DCACC2476816F0083ADA7 /* shoppingCart.png in Resources */,
+				651ED5302481A2FB0036BFD5 /* MainViewColor.storyboard in Resources */,
 				658DCB0724768F480083ADA7 /* Main.storyboard in Resources */,
 				658DCAE02476816F0083ADA7 /* settings.png in Resources */,
+				651ED52D248198D60036BFD5 /* HeaderColor.storyboard in Resources */,
 				658DCAAE247681650083ADA7 /* Bridge.storyboard in Resources */,
 				658DCAC82476816F0083ADA7 /* settingsPatternDark.png in Resources */,
 				658DCAD02476816F0083ADA7 /* ledPassive.png in Resources */,
@@ -946,9 +956,11 @@
 				6559D85E244E20AF00863CE7 /* upgradeButton.png in Resources */,
 				658DCB0624768F180083ADA7 /* Main.storyboard in Resources */,
 				652BC0E2242A2C6F00F60B83 /* volumeMeterPattern.png in Resources */,
+				651ED52C248198D60036BFD5 /* HeaderColor.storyboard in Resources */,
 				65CCC0022426268900F518D8 /* ledPassive.png in Resources */,
 				6573CDF82452115500C10A3C /* premium.png in Resources */,
 				65FCB7B424479246005E142A /* offButton.png in Resources */,
+				651ED52F2481A2FB0036BFD5 /* MainViewColor.storyboard in Resources */,
 				65CE479F2448E5A200E3B2EC /* settingsPatternLight.png in Resources */,
 				652BC0E6242A582400F60B83 /* DeviationMeter.storyboard in Resources */,
 				65A893C6244CB1D700B2AB97 /* InAppPurchase.storyboard in Resources */,
@@ -1063,6 +1075,7 @@
 				658DCB0D24791CCA0083ADA7 /* ColorSettingsViewController.swift in Sources */,
 				658DCAA3247681590083ADA7 /* NoteLabel.swift in Sources */,
 				658DCAA82476815E0083ADA7 /* Constants.swift in Sources */,
+				651ED5362481A7DD0036BFD5 /* HeaderColorView.swift in Sources */,
 				658DCABF247681650083ADA7 /* InAppPurchaseViewController.swift in Sources */,
 				658DCA9E247681540083ADA7 /* PingPongDelay.swift in Sources */,
 				658DCA9A247681540083ADA7 /* AutoPan.swift in Sources */,
@@ -1076,9 +1089,9 @@
 				658DCA9B247681540083ADA7 /* Conductor.swift in Sources */,
 				658DCAB5247681650083ADA7 /* VolumeMeterViewController.swift in Sources */,
 				658DCAAF247681650083ADA7 /* BridgeViewController.swift in Sources */,
+				651ED528248198910036BFD5 /* HeaderColorViewController.swift in Sources */,
 				658DCAB1247681650083ADA7 /* DeviationMeterViewController.swift in Sources */,
 				658DCAA1247681590083ADA7 /* FrequencyLabel.swift in Sources */,
-				651ED51B248140B30036BFD5 /* HeaderColorView.swift in Sources */,
 				658DCAAB2476815E0083ADA7 /* KeyChain.swift in Sources */,
 				658DCA9C247681540083ADA7 /* Fatten.swift in Sources */,
 				658DCAA4247681590083ADA7 /* CalibrationSlider.swift in Sources */,
@@ -1088,16 +1101,16 @@
 				658DCABB247681650083ADA7 /* TuningTableViewController.swift in Sources */,
 				658DCAC1247681650083ADA7 /* IAPTableViewCell.swift in Sources */,
 				658DCAA0247681590083ADA7 /* NoteButton.swift in Sources */,
-				651ED51E248148220036BFD5 /* MainColorView.swift in Sources */,
 				658DCAA92476815E0083ADA7 /* Note.swift in Sources */,
 				658DCAA6247681590083ADA7 /* iOSDropDown.swift in Sources */,
 				658DCAB6247681650083ADA7 /* DisplayContainer.swift in Sources */,
-				651ED518248033250036BFD5 /* TestViewController.swift in Sources */,
+				651ED5392481A7F20036BFD5 /* MainColorView.swift in Sources */,
 				658DCB10247925EE0083ADA7 /* CustomizeColorViewController.swift in Sources */,
 				658DCAB7247681650083ADA7 /* DisplayViewController.swift in Sources */,
 				658DCAA5247681590083ADA7 /* StringView.swift in Sources */,
 				658DCA88247680430083ADA7 /* SceneDelegate.swift in Sources */,
 				658DCB1B247A719B0083ADA7 /* IAPHandler.swift in Sources */,
+				651ED5332481A3290036BFD5 /* MainViewColorViewController.swift in Sources */,
 				658DCAB3247681650083ADA7 /* GaugeViewController.swift in Sources */,
 				658DCA9F247681590083ADA7 /* BezierView.swift in Sources */,
 			);
@@ -1111,6 +1124,7 @@
 				658DCB0C24791CCA0083ADA7 /* ColorSettingsViewController.swift in Sources */,
 				6576A16A243FA85200970132 /* BezierView.swift in Sources */,
 				653216F62430E7CE00BE1CAE /* FrequencyLabel.swift in Sources */,
+				651ED5352481A7DD0036BFD5 /* HeaderColorView.swift in Sources */,
 				65A893C2244C97C900B2AB97 /* IAPHandler.swift in Sources */,
 				655585F7243A25BC004A94C0 /* SettingsViewController.swift in Sources */,
 				652BC11C242CC39900F60B83 /* AutoPan.swift in Sources */,
@@ -1124,9 +1138,9 @@
 				654FE608244496E30046AFCC /* iOSDropDown.swift in Sources */,
 				653216F0242FC38200BE1CAE /* Note.swift in Sources */,
 				652BC110242CC39900F60B83 /* Conductor.swift in Sources */,
+				651ED527248198910036BFD5 /* HeaderColorViewController.swift in Sources */,
 				656E9E36245C265600B06582 /* ActivityIndicatorView.swift in Sources */,
 				652BC119242CC39900F60B83 /* FilterSection.swift in Sources */,
-				651ED51A248140B30036BFD5 /* HeaderColorView.swift in Sources */,
 				65FCB7BC2447934B005E142A /* TuningTableViewCell.swift in Sources */,
 				65585A822433A793002CD214 /* DisplayModeButton.swift in Sources */,
 				652BC113242CC39900F60B83 /* Fatten.swift in Sources */,
@@ -1136,16 +1150,16 @@
 				6532522E243C6C990004005C /* KeyChain.swift in Sources */,
 				652BC0EF242A69A300F60B83 /* Constants.swift in Sources */,
 				652BC116242CC39900F60B83 /* PingPongDelay.swift in Sources */,
-				651ED51D248148220036BFD5 /* MainColorView.swift in Sources */,
 				65585A7A2433508C002CD214 /* DisplayViewController.swift in Sources */,
 				652BC0EA242A583C00F60B83 /* DeviationMeterViewController.swift in Sources */,
 				6576A171244254B100970132 /* CalibrationSlider.swift in Sources */,
-				651ED517248033250036BFD5 /* TestViewController.swift in Sources */,
+				651ED5382481A7F20036BFD5 /* MainColorView.swift in Sources */,
 				65FCB7A824478F22005E142A /* TuningTableViewController.swift in Sources */,
 				658DCB0F247925EE0083ADA7 /* CustomizeColorViewController.swift in Sources */,
 				6532522A243B36420004005C /* PKIAPHandler.swift in Sources */,
 				65CCBF5824260D9E00F518D8 /* SceneDelegate.swift in Sources */,
 				6589227A2450C4FB008F871B /* IAPTableViewCell.swift in Sources */,
+				651ED5322481A3290036BFD5 /* MainViewColorViewController.swift in Sources */,
 				653216EC242FB93A00BE1CAE /* NoteButton.swift in Sources */,
 				65325230243C7A640004005C /* Utils.swift in Sources */,
 			);
@@ -1194,22 +1208,6 @@
 				65647DD8245F2784003F8C17 /* ar */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		658DCA8B247680430083ADA7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				658DCA8C247680430083ADA7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		658DCA90247680460083ADA7 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				658DCA91247680460083ADA7 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 		65B603302438D49C00BBA23D /* Main.storyboard */ = {

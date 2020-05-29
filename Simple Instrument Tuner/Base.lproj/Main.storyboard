@@ -76,10 +76,10 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9T7-U3-Krn">
-                                                <rect key="frame" x="0.0" y="114.33333333333333" width="414" height="2"/>
+                                                <rect key="frame" x="0.0" y="115.33333333333333" width="414" height="1"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="2" id="tAf-3W-ZIS"/>
+                                                    <constraint firstAttribute="height" constant="1" id="tAf-3W-ZIS"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -788,7 +788,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="l2a-vb-4xn"/>
+        <segue reference="dKW-W5-AOn"/>
         <segue reference="toO-fA-taq"/>
     </inferredMetricsTieBreakers>
     <resources>
