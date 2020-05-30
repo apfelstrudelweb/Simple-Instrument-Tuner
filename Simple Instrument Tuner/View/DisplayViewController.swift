@@ -88,8 +88,10 @@ class DisplayViewController: UIViewController {
             }
             if max == 0 { return }
             for y in yArray {
-                //self.dataPoints.append(255.0*(1.0-0.5*y/max))
-                self.dataPoints.append(255.0*(1.0-15*amplitudeTracker.amplitude*y/max))
+                self.dataPoints.append(255.0*(1.0-0.5*y/max))
+                self.dataPoints.append(255.0*(1.0-0.8*y/max))
+                self.dataPoints.append(255.0*(1.0-0.5*y/max))
+                //self.dataPoints.append(255.0*(1.0-15*amplitudeTracker.amplitude*y/max))
             }
             
             self.bezierView.layoutSubviews()
@@ -113,7 +115,7 @@ class DisplayViewController: UIViewController {
         nodeFFTPlot?.alpha = 1.0
         if nodeFFTPlot?.isConnected == true { return }
         
-        nodeFFTPlot = AKNodeFFTPlot(reverbMixer, frame: CGRect(x: 0, y: 0, width: 10*self.view.bounds.size.width, height: self.view.bounds.size.height))
+        nodeFFTPlot = AKNodeFFTPlot(reverbMixer, frame: CGRect(x: 0, y: 0, width: 20*self.view.bounds.size.width, height: self.view.bounds.size.height))
         nodeFFTPlot?.shouldFill = true
         nodeFFTPlot?.shouldMirror = true
         nodeFFTPlot?.shouldCenterYAxis = true

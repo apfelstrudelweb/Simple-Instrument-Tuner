@@ -29,7 +29,7 @@ class HeaderColorViewController: UIViewController {
             self.view.backgroundColor = headerColor
         }
         
-        let h = 0.7 * containerFrame!.size.height
+        let h = UIDevice.current.userInterfaceIdiom == .pad  ? 0.5 * containerFrame!.size.height : 0.7 * containerFrame!.size.height
         let pikko = Pikko(dimension: Int(h), setToColor: self.view.backgroundColor!)
         pikko.delegate = self
         
@@ -37,6 +37,11 @@ class HeaderColorViewController: UIViewController {
         
         pikko.center.x = 0.55 * (containerFrame?.size.width)!
         pikko.center.y = 0.5 * (containerFrame?.size.height)!
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            pikko.center.x = 0.4 * (containerFrame?.size.width)!
+            pikko.center.y = 0.4 * (containerFrame?.size.height)!
+        }
         
         _ = pikko.getColor()
     }

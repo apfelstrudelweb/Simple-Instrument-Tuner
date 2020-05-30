@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rd5-jM-eby">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rd5-jM-eby">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -9,7 +9,7 @@
         <!--Calibration View Controller-->
         <scene sceneID="nXJ-iM-xcg">
             <objects>
-                <viewController id="rd5-jM-eby" customClass="CalibrationViewController" customModule="Simple_Instrument_Tuner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rd5-jM-eby" customClass="CalibrationViewController" customModule="Instrument_Tuner" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eIv-Aq-fZw"/>
                         <viewControllerLayoutGuide type="bottom" id="TBr-bs-vgn"/>
@@ -33,6 +33,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                </variation>
                             </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZ9-Fo-LQN">
                                 <rect key="frame" x="303" y="38" width="91" height="39.666666666666657"/>
@@ -51,7 +54,7 @@
                                     <constraint firstAttribute="width" constant="2" id="QYa-u2-CKB"/>
                                 </constraints>
                             </view>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="440" minValue="430" maxValue="450" translatesAutoresizingMaskIntoConstraints="NO" id="9qJ-bo-RDw" customClass="CalibrationSlider" customModule="Simple_Instrument_Tuner" customModuleProvider="target">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="440" minValue="430" maxValue="450" translatesAutoresizingMaskIntoConstraints="NO" id="9qJ-bo-RDw" customClass="CalibrationSlider" customModule="Instrument_Tuner" customModuleProvider="target">
                                 <rect key="frame" x="8" y="115" width="388" height="31"/>
                                 <color key="tintColor" red="0.73042827070000005" green="0.29231952750000001" blue="0.059315979269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <userDefinedRuntimeAttributes>

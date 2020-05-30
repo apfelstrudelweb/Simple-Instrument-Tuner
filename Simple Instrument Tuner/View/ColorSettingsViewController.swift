@@ -53,7 +53,7 @@ class ColorSettingsViewController: UIViewController {
             self.view.setNeedsLayout()
             self.view.layoutIfNeeded()
             
-            vc.containerFrame = headerContainerView.bounds
+            vc.containerFrame = mainColorView.bounds
         }
     }
     
@@ -84,6 +84,8 @@ class ColorSettingsViewController: UIViewController {
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "didChangeHeaderColor"), object: nil, userInfo: ["color" : headerColor])
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "didChangeMainViewColor"), object: nil, userInfo: ["color" : backgroundColor])
+        
+        self.dismiss(animated: true, completion: nil)
     }
     
     

@@ -37,6 +37,7 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
     
     @IBOutlet weak var labelHeight: NSLayoutConstraint!
     @IBOutlet weak var dropdownHeight: NSLayoutConstraint!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     
     private var embeddedTuningViewController: TuningTableViewController!
@@ -87,6 +88,7 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
                          delegate: self)
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -97,6 +99,8 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
             labelHeight.constant = 0
             dropdownHeight.constant = 0
         }
+        
+        scrollView.delaysContentTouches = false
         
         closeButton.setTitle(NSLocalizedString("Button.close", comment: ""), for: .normal)
         

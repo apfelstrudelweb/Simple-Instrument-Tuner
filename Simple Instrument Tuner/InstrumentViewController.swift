@@ -55,6 +55,7 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     @IBOutlet weak var amplitudeButton: DisplayModeButton!
     @IBOutlet weak var tuningForkButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
+    @IBOutlet weak var displayContainer: UIView!
     
     var bannerView: GADBannerView!
     
@@ -124,7 +125,9 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
         }
         if let mainViewColor = defaults.colorForKey(key: "mainViewColor") {
             backgroundColor = mainViewColor
+            displayContainer.backgroundColor = mainViewColor.withSaturationOffset(offset: -0.5)
         }
+
         
         // for Banjo Tuner
         if Utils().getInstrumentsArray().ids?.count == 1 {
@@ -219,6 +222,7 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
         
         if let color = notification.userInfo?["color"] as? UIColor {
             backgroundColor = color
+            displayContainer.backgroundColor = color.withSaturationOffset(offset: -0.5)
         }
     }
     
@@ -794,5 +798,67 @@ extension UIView {
         let mask = CAShapeLayer()
         mask.path = path.cgPath
         self.layer.mask = mask
+    }
+}
+
+
+extension UIColor {
+
+    var complement: UIColor {
+        return self.withHueOffset(offset: 0.5)
+    }
+
+    var splitComplement0: UIColor {
+        return self.withHueOffset(offset: 150 / 360)
+    }
+
+    var splitComplement1: UIColor {
+        return self.withHueOffset(offset: 210 / 360)
+    }
+
+    var triadic0: UIColor {
+        return self.withHueOffset(offset: 120 / 360)
+    }
+
+    var triadic1: UIColor {
+        return self.withHueOffset(offset: 240 / 360)
+    }
+
+    var tetradic0: UIColor {
+        return self.withHueOffset(offset: 0.25)
+    }
+
+    var tetradic1: UIColor {
+        return self.complement
+    }
+
+    var tetradic2: UIColor {
+        return self.withHueOffset(offset: 0.75)
+    }
+
+    var analagous0: UIColor {
+        return self.withHueOffset(offset: -1 / 12)
+    }
+
+    var analagous1: UIColor {
+        return self.withHueOffset(offset: 1 / 12)
+    }
+
+    func withHueOffset(offset: CGFloat) -> UIColor {
+        var h: CGFloat = 0
+        var s: CGFloat = 0
+        var b: CGFloat = 0
+        var a: CGFloat = 0
+        self.getHue(&h, saturation: &s, brightness: &b, alpha: &a)
+        return UIColor(hue: fmod(h + offset, 1), saturation: s, brightness: b, alpha: a)
+    }
+    
+    func withSaturationOffset(offset: CGFloat) -> UIColor {
+        var h: CGFloat = 0
+        var s: CGFloat = 0
+        var b: CGFloat = 0
+        var a: CGFloat = 0
+        self.getHue(&h, saturation: &s, brightness: &b, alpha: &a)
+        return UIColor(hue: h, saturation: fmod(s + offset, 1), brightness: b, alpha: a)
     }
 }

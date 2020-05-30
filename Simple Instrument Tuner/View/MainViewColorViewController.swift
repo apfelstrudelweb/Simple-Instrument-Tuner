@@ -13,11 +13,10 @@ import Pikko
 class MainViewColorViewController: UIViewController {
     
     var containerFrame: CGRect?
+    var pikko: Pikko?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.view.backgroundColor = .green
         
         setUpPikko()
     }
@@ -30,14 +29,19 @@ class MainViewColorViewController: UIViewController {
             self.view.backgroundColor = mainViewColor
         }
         
-        let h = 0.8 * containerFrame!.size.width
+        let h = UIDevice.current.userInterfaceIdiom == .pad  ? 0.5 * containerFrame!.size.height : 0.8 * containerFrame!.size.width
         let pikko = Pikko(dimension: Int(h), setToColor: self.view.backgroundColor!)
         pikko.delegate = self
         
         self.view.addSubview(pikko)
         
         pikko.center.x = 0.45 * (containerFrame?.size.width)!
-        pikko.center.y = 0.75 * (containerFrame?.size.height)!
+        pikko.center.y = 0.5 * (containerFrame?.size.height)!
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            pikko.center.x = 0.4 * (containerFrame?.size.width)!
+            pikko.center.y = 0.6 * (containerFrame?.size.height)!
+        }
         
         _ = pikko.getColor()
     }
