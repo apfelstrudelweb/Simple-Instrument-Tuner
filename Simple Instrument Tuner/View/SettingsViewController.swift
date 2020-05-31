@@ -93,7 +93,7 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
         super.viewDidLoad()
         
         
-        if Bundle.appTarget == "Simple Banjo Tuner" {
+        if Bundle.appTarget == "Simple Banjo Tuner" || Bundle.appTarget == "Simple Ukulele Tuner" {
             instrumentDropDown.isHidden = true
             instrumentDropdownLabel.isHidden = true
             labelHeight.constant = 0
@@ -162,6 +162,12 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
             colorSettingsButton.isEnabled = IAPHandler().isOpenBanjo() == true
             colorSettingsButton.alpha = colorSettingsButton.isEnabled ? 1.0 : 0.6
             colorPurchaseButton.isHidden = IAPHandler().isOpenBanjo() == true
+        #endif
+        
+        #if UKULELE
+            colorSettingsButton.isEnabled = IAPHandler().isOpenUkulele() == true
+            colorSettingsButton.alpha = colorSettingsButton.isEnabled ? 1.0 : 0.6
+            colorPurchaseButton.isHidden = IAPHandler().isOpenUkulele() == true
         #endif
     }
     

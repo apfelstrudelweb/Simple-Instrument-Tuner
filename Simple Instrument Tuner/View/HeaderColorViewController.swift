@@ -21,12 +21,14 @@ class HeaderColorViewController: UIViewController {
         setUpPikko()
     }
     
-    
+
     private func setUpPikko() {
         
         let defaults = UserDefaults.standard
         if let headerColor = defaults.colorForKey(key: "headerColor") {
             self.view.backgroundColor = headerColor
+        } else {
+            self.view.backgroundColor = #colorLiteral(red: 0.6890257001, green: 0.2662356496, blue: 0.2310875654, alpha: 1)
         }
         
         let h = UIDevice.current.userInterfaceIdiom == .pad  ? 0.5 * containerFrame!.size.height : 0.7 * containerFrame!.size.height

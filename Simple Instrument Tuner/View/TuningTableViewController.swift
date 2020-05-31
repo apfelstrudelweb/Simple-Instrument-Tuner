@@ -135,6 +135,12 @@ class TuningTableViewController: UITableViewController {
             return cell
         }
         #endif
+        #if UKULELE
+        let instrumentName = "All Ukulele" // HACK, please find a better solution
+        guard let dict = dictIAP[instrumentName], let isOpenInstrument = dict[instrumentName] else {
+            return cell
+        }
+        #endif
         #if INSTRUMENT
         guard let instrumentName = instrument.name, let dict = dictIAP[instrumentName], let isOpenInstrument = dict[instrumentName] else {
             return cell
@@ -159,6 +165,12 @@ class TuningTableViewController: UITableViewController {
         
         #if BANJO
         let instrumentName = "All Banjo" // HACK, please find a better solution
+        guard let dict = dictIAP[instrumentName], let isOpenInstrument = dict[instrumentName] else {
+            return
+        }
+        #endif
+        #if UKULELE
+        let instrumentName = "All Ukulele" // HACK, please find a better solution
         guard let dict = dictIAP[instrumentName], let isOpenInstrument = dict[instrumentName] else {
             return
         }

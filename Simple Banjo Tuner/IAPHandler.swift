@@ -10,44 +10,44 @@ import UIKit
 import KeychainAccess
 
 // In App Purchase
-var KEYCHAIN_IAP_SERVICE        = "ch.vormbrock.simplebanjotuner.iapService"
+var KEYCHAIN_IAP_SERVICE        = "ch.vormbrock.simpleukuleletuner.iapService"
 
-var IDENTIFIER_IAP_ALL_BANJO      = "ch.vormbrock.simplebanjotuner.allbanjo"         // Tier 1
-var IDENTIFIER_IAP_SIGNALPLUS     = "ch.vormbrock.simplebanjotuner.signalplus"        // Tier 1
-var IDENTIFIER_IAP_PREMIUM        = "ch.vormbrock.simplebanjotuner.premium"         // Tier 2
+var IDENTIFIER_IAP_ALL_UKULELE      = "ch.vormbrock.simpleukuleletuner.alluke"         // Tier 1
+var IDENTIFIER_IAP_SIGNALPLUS     = "ch.vormbrock.simpleukuleletuner.signalplus"        // Tier 1
+var IDENTIFIER_IAP_PREMIUM        = "ch.vormbrock.simpleukuleletuner.premium"         // Tier 2
 
 // TODO: create constants
-var iapIdentifierDict = [IDENTIFIER_IAP_ALL_BANJO : "All Banjo",
+var iapIdentifierDict = [IDENTIFIER_IAP_ALL_UKULELE : "All Ukulele",
                          IDENTIFIER_IAP_SIGNALPLUS : "Signal Plus",
                          IDENTIFIER_IAP_PREMIUM : "All In One"
 ]
 
-let productIds = [IDENTIFIER_IAP_ALL_BANJO, IDENTIFIER_IAP_SIGNALPLUS, IDENTIFIER_IAP_PREMIUM]
+let productIds = [IDENTIFIER_IAP_ALL_UKULELE, IDENTIFIER_IAP_SIGNALPLUS, IDENTIFIER_IAP_PREMIUM]
 
 var KEYCHAIN_CURRENT_INSTRUMENT_ID  = "currentInstrumentId"
 var KEYCHAIN_CURRENT_TUNING_ID      = "currentTuningId"
 var KEYCHAIN_CURRENT_CALIBRATION    = "currentCalibration"
 
 
-typealias isOpenBanjo = () -> Bool
+typealias isOpenUkulele = () -> Bool
 typealias isOpenSignalPlus = () -> Bool
 typealias isPremium = () -> Bool
 
 
-let banjoDict =         ["All Banjo" :  [NSLocalizedString("Banjo.iap1", comment: ""), NSLocalizedString("Banjo.iap2", comment: ""), NSLocalizedString("Banjo.iap3", comment: "")]]
+let ukuleleDict =       ["All Ukulele" :  [NSLocalizedString("Ukulele.iap1", comment: ""), NSLocalizedString("Ukulele.iap2", comment: ""), NSLocalizedString("Ukulele.iap3", comment: "")]]
 let signalDict =        ["Signal Plus" :  [NSLocalizedString("Calibration.iap1", comment: ""), NSLocalizedString("Calibration.iap2", comment: "")]]
 let premiumDict =       ["All In One" :  [NSLocalizedString("Premium.iap1", comment: ""), NSLocalizedString("Premium.iap2", comment: ""), NSLocalizedString("Premium.iap3", comment: "")]]
 
-let iapOptionsArray = [banjoDict, signalDict, premiumDict]
+let iapOptionsArray = [ukuleleDict, signalDict, premiumDict]
 
 
 var dictSignal: Dictionary = [String : isOpenSignalPlus]()
-var dictBanjo: Dictionary = [String : isOpenBanjo]()
+var dictUkulele: Dictionary = [String : isOpenUkulele]()
 var dictPremium: Dictionary = [String : isPremium]()
 
 
 var dictIAP : Dictionary = ["Signal Plus": dictSignal,
-                            "All Banjo" : dictBanjo,
+                            "All Ukulele" : dictUkulele,
                             "All In One" : dictPremium]
 
 let keychain = Keychain(service: KEYCHAIN_IAP_SERVICE)
@@ -61,12 +61,12 @@ class IAPHandler: NSObject {
         super.init()
         
         dictUnlockMethods = ["Signal Plus": unlockSignal,
-                             "All Banjo" : unlockBanjo,
+                             "All Ukulele" : unlockUkulele,
                              "All In One" : unlockPremium]
         
         
         dictSignal["Signal Plus"] = self.isOpenSignal
-        dictBanjo["All Banjo"] = self.isOpenBanjo
+        dictUkulele["All Ukulele"] = self.isOpenUkulele
         dictPremium["All In One"] = self.premium
     }
     
@@ -78,7 +78,7 @@ class IAPHandler: NSObject {
         let iapManager = IAPHandler()
         
         dictSignal["Signal Plus"] = iapManager.isOpenSignal
-        dictBanjo["All Banjo"] = iapManager.isOpenBanjo
+        dictUkulele["All Ukulele"] = iapManager.isOpenUkulele
         dictPremium["All In One"] = iapManager.premium
         
         return iapManager
@@ -96,7 +96,7 @@ class IAPHandler: NSObject {
         if let _ = try? keychain.get(IDENTIFIER_IAP_SIGNALPLUS){
             return false
         }
-        if let _ = try? keychain.get(IDENTIFIER_IAP_ALL_BANJO) {
+        if let _ = try? keychain.get(IDENTIFIER_IAP_ALL_UKULELE) {
             return false
         }
         if let _ = try? keychain.get(IDENTIFIER_IAP_PREMIUM) {
@@ -109,7 +109,7 @@ class IAPHandler: NSObject {
         if let _ = try? keychain.get(IDENTIFIER_IAP_PREMIUM) {
             return true
         }
-        if isOpenSignal() && isOpenBanjo() {
+        if isOpenSignal() && isOpenUkulele() {
             return true
         }
         
@@ -127,9 +127,9 @@ class IAPHandler: NSObject {
         return false
     }
     
-    let isOpenBanjo : isOpenBanjo = {
+    let isOpenUkulele : isOpenUkulele = {
         
-        if let _ = try? keychain.get(IDENTIFIER_IAP_ALL_BANJO) {
+        if let _ = try? keychain.get(IDENTIFIER_IAP_ALL_UKULELE) {
             return true
         }
         if let _ = try? keychain.get(IDENTIFIER_IAP_PREMIUM) {
@@ -159,9 +159,9 @@ class IAPHandler: NSObject {
         }
     }
     
-    func unlockBanjo() {
+    func unlockUkulele() {
         do {
-            try keychain.set(PURCHASED, key: IDENTIFIER_IAP_ALL_BANJO)
+            try keychain.set(PURCHASED, key: IDENTIFIER_IAP_ALL_UKULELE)
         } catch let error {
             print("setting keychain to purchased failed")
             print(error)
@@ -183,7 +183,7 @@ class IAPHandler: NSObject {
     func unlockAll() {
         
         unlockSignal()
-        unlockBanjo()
+        unlockUkulele()
         //unlockPremium()
     }
     
@@ -191,7 +191,7 @@ class IAPHandler: NSObject {
         
         do {
             try keychain.remove(IDENTIFIER_IAP_SIGNALPLUS)
-            try keychain.remove(IDENTIFIER_IAP_ALL_BANJO)
+            try keychain.remove(IDENTIFIER_IAP_ALL_UKULELE)
             try keychain.remove(IDENTIFIER_IAP_PREMIUM)
         } catch let error {
             print("setting keychain to purchased failed")

@@ -63,7 +63,8 @@
 "Mandolin.iap1" = "obtener diferentes afinaciones para su mandolina";
 "Mandolin.iap2" = "eliminación de anuncios";
 "Ukulele.iap1" = "obtener diferentes afinaciones para su ukelele";
-"Ukulele.iap2" = "eliminación de anuncios";
+"Ukulele.iap2" = "recolorear la aplicación con un recolector de color integrado";
+"Ukulele.iap3" = "eliminación de anuncios";
 "Calibration.iap1" = "afinar sus instrumentos de 430-450 Hz";
 "Calibration.iap2" = "eliminación de anuncios";
 "Premium.iap1" = "obtener diferentes afinaciones para todos los instrumentos";

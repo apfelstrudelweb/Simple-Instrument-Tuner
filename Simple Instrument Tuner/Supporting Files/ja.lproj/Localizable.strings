@@ -52,23 +52,24 @@
 "Calibration" = "キャリブレーション";
 "Premium" = "プレミアム版";
 
-"Label.iap.title" = "アプリ内課金";
-"Balalaika.iap1" = "バラライカのチューニングを変える";
-"Balalaika.iap2" = "統合されたカラーピッカーでアプリを再着色";
-"Balalaika.iap3" = "広告除去";
-"Banjo.iap1" = "バンジョーのために別のチューニングを得る";
-"Banjo.iap2" = "広告除去";
-"Guitar.iap1" = "ギターのチューニングを変える";
-"Guitar.iap2" = "広告除去";
-"Mandolin.iap1" = "マンドリンの調律を変える";
-"Mandolin.iap2" = "広告除去";
-"Ukulele.iap1" = "ウクレレのチューニングを変える";
-"Ukulele.iap2" = "広告除去";
-"Calibration.iap1" = "430～450ヘルツの楽器のチューニング";
-"Calibration.iap2" = "広告除去";
-"Premium.iap1" = "音色を変える";
-"Premium.iap2" = "430～450ヘルツの楽器のチューニング";
-"Premium.iap3" = "広告除去";
+"Label.iap.title" = "In-App Purchase";
+"Balalaika.iap1" = "get different tunings for your balalaika";
+"Balalaika.iap2" = "removal of ads";
+"Banjo.iap1" = "get different tunings for your banjo";
+"Banjo.iap2" = "recolor your app with an integrated color picker";
+"Banjo.iap3" = "removal of ads";
+"Guitar.iap1" = "get different tunings for your guitar";
+"Guitar.iap2" = "removal of ads";
+"Mandolin.iap1" = "get different tunings for your mandolin";
+"Mandolin.iap2" = "removal of ads";
+"Ukulele.iap1" = "get different tunings for your ukulele";
+"Ukulele.iap2" = "recolor your app with an integrated color picker";
+"Ukulele.iap3" = "removal of ads";
+"Calibration.iap1" = "tune your instruments from 430-450 Hz";
+"Calibration.iap2" = "removal of ads";
+"Premium.iap1" = "get different tunings for all your instruments";
+"Premium.iap2" = "tune your instruments from 430-450 Hz";
+"Premium.iap3" = "removal of ads";
 
 // IAP
 "IAP.alert.error.title" = "アプリ内課金オプションが見つかりませんでした";

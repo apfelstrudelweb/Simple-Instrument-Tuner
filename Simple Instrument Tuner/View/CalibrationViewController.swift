@@ -54,6 +54,11 @@ class CalibrationViewController: UIViewController {
             frequencyLabel.isHidden = IAPHandler().isOpenSignal() == false
             shoppingCartButton.isHidden = IAPHandler().isOpenSignal() == true
         #endif
+        #if UKULELE
+            slider.isEnabled = IAPHandler().isOpenSignal() == true
+            frequencyLabel.isHidden = IAPHandler().isOpenSignal() == false
+            shoppingCartButton.isHidden = IAPHandler().isOpenSignal() == true
+        #endif
         
         #if INSTRUMENT
             slider.isEnabled = IAPHandler().isOpenCalibration() == true

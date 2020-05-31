@@ -18,7 +18,6 @@ target 'Simple Instrument Tuner' do
   pod 'KeychainAccess'
   pod 'EasyTipView', '~> 2.0.4'
   pod 'NVActivityIndicatorView'
-  #pod 'FlexColorPicker'
   pod 'Pikko'
 
 end
@@ -38,7 +37,25 @@ target 'Simple Banjo Tuner' do
   pod 'KeychainAccess'
   pod 'EasyTipView', '~> 2.0.4'
   pod 'NVActivityIndicatorView'
-  #pod 'FlexColorPicker'
+  pod 'Pikko'
+
+end
+
+target 'Simple Ukulele Tuner' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  #use_frameworks!
+
+  # Pods for Simple Ukulele Tuner
+
+  pod 'PureLayout'
+  pod 'AudioKit'
+  pod 'Google-Mobile-Ads-SDK'
+  pod 'SwiftRater'
+  pod 'fluid-slider'
+  pod 'SwiftGifOrigin'
+  pod 'KeychainAccess'
+  pod 'EasyTipView', '~> 2.0.4'
+  pod 'NVActivityIndicatorView'
   pod 'Pikko'
 
 end

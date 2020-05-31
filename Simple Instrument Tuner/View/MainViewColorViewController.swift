@@ -20,13 +20,15 @@ class MainViewColorViewController: UIViewController {
         
         setUpPikko()
     }
-    
+
     
     private func setUpPikko() {
         
         let defaults = UserDefaults.standard
         if let mainViewColor = defaults.colorForKey(key: "mainViewColor") {
             self.view.backgroundColor = mainViewColor
+        } else {
+            self.view.backgroundColor = #colorLiteral(red: 0.179690044, green: 0.2031518249, blue: 0.2304651412, alpha: 1)
         }
         
         let h = UIDevice.current.userInterfaceIdiom == .pad  ? 0.5 * containerFrame!.size.height : 0.8 * containerFrame!.size.width

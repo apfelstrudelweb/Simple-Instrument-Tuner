@@ -128,14 +128,15 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
             displayContainer.backgroundColor = mainViewColor.withSaturationOffset(offset: -0.5)
         }
 
-        
-        // for Banjo Tuner
+        // for Banjo and Ukulele Tuner
         if Utils().getInstrumentsArray().ids?.count == 1 {
             Utils().saveInstrument(index: 0)
             didChangeInstrument()
             
-            Utils().saveStandardTuning()
-            didChangeTuning() 
+            if Utils().getCurrentTuningName().count == 0 {
+                Utils().saveStandardTuning()
+                didChangeTuning()
+            }
         }
         
         SwiftRater.check()
@@ -151,6 +152,11 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
         frequencyLabel.text = String(format: NSLocalizedString("Label.hertz %.2f", comment: ""), 0.0)
         
         #if BANJO
+        if IAPHandler().isOpenSignal() == false {
+            frequencyLabel.alpha = 0.5
+        }
+        #endif
+        #if UKULELE
         if IAPHandler().isOpenSignal() == false {
             frequencyLabel.alpha = 0.5
         }
@@ -354,6 +360,12 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
                 embeddedDisplayViewController.plotFFT(fftTap: fftTap, amplitudeTracker: amplitudeTracker)
             }
             #endif
+            #if UKULELE
+            if IAPHandler().isOpenSignal() == true {
+                embeddedDisplayViewController.plotAmplitude(trackedAmplitude: self.amplitudeTracker)
+                embeddedDisplayViewController.plotFFT(fftTap: fftTap, amplitudeTracker: amplitudeTracker)
+            }
+            #endif
             
             
             
@@ -448,6 +460,11 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
                 frequencyLabel.frequency = frequency
             }
             #endif
+            #if UKULELE
+            if IAPHandler().isOpenSignal() == true {
+                frequencyLabel.frequency = frequency
+            }
+            #endif
             octaveLabel.text = String(format: NSLocalizedString("Label.octave %d", comment: ""), Utils().getOctaveFrom(frequency: frequency))
             embeddedGaugeViewController.displayFrequency(frequency: frequency, soundGenerator: false)
             embeddedVolumeMeterController.displayVolume(volume: frequencyTracker.amplitude)
@@ -460,6 +477,12 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         #if BANJO
+        if identifier == "iapSegue" && IAPHandler().isOpenSignal() == true {
+            return false
+        }
+        return true
+        #endif
+        #if UKULELE
         if identifier == "iapSegue" && IAPHandler().isOpenSignal() == true {
             return false
         }
@@ -696,6 +719,11 @@ extension InstrumentViewController: AKKeyboardDelegate {
         
         
         #if BANJO
+        if IAPHandler().isOpenSignal() == true {
+            frequencyLabel.frequency = frequency
+        }
+        #endif
+        #if UKULELE
         if IAPHandler().isOpenSignal() == true {
             frequencyLabel.frequency = frequency
         }
