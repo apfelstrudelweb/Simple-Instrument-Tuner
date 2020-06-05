@@ -33,7 +33,10 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
     @IBOutlet weak var colorSettingsView: UIView!
     @IBOutlet weak var colorSettingsLabel: UILabel!
     @IBOutlet weak var colorSettingsButton: UIButton!
+    @IBOutlet weak var goldSettingsButton: UIButton!
+    @IBOutlet weak var goldGradientImageView: UIImageView!
     @IBOutlet weak var colorPurchaseButton: UIButton!
+    @IBOutlet weak var goldGradientView: UIImageView!
     
     @IBOutlet weak var labelHeight: NSLayoutConstraint!
     @IBOutlet weak var dropdownHeight: NSLayoutConstraint!
@@ -46,16 +49,27 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
     var headerColor = UIColor.red {
         didSet {
             self.closeButton.backgroundColor = headerColor
-            self.instrumentDropDown.arrowColor = headerColor
-            self.instrumentDropDown.selectedRowColor = headerColor
+            
+            if UserDefaults.standard.bool(forKey: "gold") == true {
+                goldGradientView.alpha = 1.0
+                self.closeButton.backgroundColor = .clear
+                setDropdownColor()
+            } else {
+                self.instrumentDropDown.arrowColor = headerColor
+                self.instrumentDropDown.selectedRowColor = headerColor
+                goldGradientView.alpha = 0.0
+            }
         }
     }
     
     var backgroundColor = UIColor.black {
         didSet {
             self.view.backgroundColor = backgroundColor
-            self.instrumentDropDown.backgroundColor = backgroundColor.darker(by: 10)!
-            self.instrumentDropDown.rowBackgroundColor = self.instrumentDropDown.backgroundColor!
+            
+            setDropdownColor()
+            
+//            self.instrumentDropDown.backgroundColor = backgroundColor.darker(by: 10)!
+//            self.instrumentDropDown.rowBackgroundColor = self.instrumentDropDown.backgroundColor!
         }
     }
     
@@ -92,6 +106,8 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.setNeedsLayout()
+        self.view.layoutIfNeeded()
         
         if Bundle.appTarget == "Simple Banjo Tuner" || Bundle.appTarget == "Simple Ukulele Tuner" {
             instrumentDropDown.isHidden = true
@@ -140,8 +156,13 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
         colorSettingsView.layer.cornerRadius = embeddedTuningViewController.tableView.layer.cornerRadius
         colorSettingsView.backgroundColor = UIColor(patternImage: UIImage(named: "settingsPattern.png")!)
         
-        colorSettingsButton.layer.cornerRadius = embeddedTuningViewController.tableView.layer.cornerRadius
-        colorSettingsButton.layer.masksToBounds = true
+        let fact: CGFloat = UIDevice.current.userInterfaceIdiom == .pad ? 0.3 : 0.5
+        
+        colorSettingsButton.layer.cornerRadius = fact * colorSettingsButton.frame.size.height
+        colorSettingsButton.clipsToBounds = true
+        
+        goldGradientImageView.layer.cornerRadius = fact * goldGradientImageView.frame.size.height
+        goldGradientImageView.layer.masksToBounds = true
         
         colorSettingsButton.applyGradient(colors: [UIColor.green.cgColor, UIColor.yellow.cgColor, UIColor.orange.cgColor, UIColor.red.cgColor, UIColor.purple.cgColor, UIColor.blue.cgColor])
         
@@ -158,16 +179,39 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
             showTooltip()
         }
         
+        setDropdownColor()
+        
+        
+        
         #if BANJO
-            colorSettingsButton.isEnabled = IAPHandler().isOpenBanjo() == true
-            colorSettingsButton.alpha = colorSettingsButton.isEnabled ? 1.0 : 0.6
-            colorPurchaseButton.isHidden = IAPHandler().isOpenBanjo() == true
+        colorSettingsButton.isEnabled = IAPHandler().isOpenBanjo() == true
+        colorSettingsButton.alpha = colorSettingsButton.isEnabled ? 1.0 : 0.6
+        
+        goldSettingsButton.isEnabled = IAPHandler().isOpenBanjo() == true
+        goldGradientImageView.alpha = goldSettingsButton.isEnabled ? 1.0 : 0.6
+        
+        colorPurchaseButton.isHidden = IAPHandler().isOpenBanjo() == true
         #endif
         
         #if UKULELE
-            colorSettingsButton.isEnabled = IAPHandler().isOpenUkulele() == true
-            colorSettingsButton.alpha = colorSettingsButton.isEnabled ? 1.0 : 0.6
-            colorPurchaseButton.isHidden = IAPHandler().isOpenUkulele() == true
+        colorSettingsButton.isEnabled = IAPHandler().isOpenUkulele() == true
+        colorSettingsButton.alpha = colorSettingsButton.isEnabled ? 1.0 : 0.6
+        
+        goldSettingsButton.isEnabled = IAPHandler().isOpenBanjo() == true
+        goldGradientImageView.alpha = goldSettingsButton.isEnabled ? 1.0 : 0.6
+        
+        colorPurchaseButton.isHidden = IAPHandler().isOpenUkulele() == true
+        #endif
+        
+        
+        #if INSTRUMENT
+        colorSettingsButton.isEnabled = IAPHandler().isOpenColor() == true
+        colorSettingsButton.alpha = colorSettingsButton.isEnabled ? 1.0 : 0.6
+         
+        goldSettingsButton.isEnabled = IAPHandler().isOpenColor() == true
+        goldGradientImageView.alpha = goldSettingsButton.isEnabled ? 1.0 : 0.6
+         
+        colorPurchaseButton.isHidden = IAPHandler().isOpenColor() == true
         #endif
     }
     
@@ -183,6 +227,21 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
         if let color = notification.userInfo?["color"] as? UIColor {
             backgroundColor = color
         }
+    }
+    
+    fileprivate func setDropdownColor() {
+ 
+        if UserDefaults.standard.bool(forKey: "gold") == true {
+            instrumentDropDown.backgroundColor = UIColor(patternImage: UIImage(named: "goldGradientButton")!)
+            self.instrumentDropDown.arrowColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+            self.instrumentDropDown.selectedRowColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+        } else {
+
+            if let color = UserDefaults.standard.colorForKey(key: "mainViewColor") {
+                instrumentDropDown.backgroundColor = color //.withSaturationOffset(offset: -0.5)
+            }
+        }
+        instrumentDropDown.rowBackgroundColor = instrumentDropDown.backgroundColor!
     }
     
     func makeGradientLayer(`for` object : UIView, startPoint : CGPoint, endPoint : CGPoint, gradientColors : [Any]) -> CAGradientLayer {
@@ -244,6 +303,22 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
     
     @IBAction func colorPurchaseButtonTouched(_ sender: Any) {
         performSegue(withIdentifier: "iapSegue", sender: true)
+    }
+    
+    @IBAction func colorSettingsButtonTouched(_ sender: Any) {
+        UserDefaults.standard.set(false, forKey: "gold")
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "didChangeGold"), object: nil, userInfo: nil)
+        if let _headerColor = UserDefaults.standard.colorForKey(key: "headerColor") {
+            headerColor = _headerColor
+        }
+        goldGradientView.alpha = 0.0
+    }
+    
+    @IBAction func goldSettingsButtonTouched(_ sender: Any) {
+        UserDefaults.standard.set(true, forKey: "gold")
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "didChangeGold"), object: nil, userInfo: nil)
+        self.headerColor = .clear
+        goldGradientView.alpha = 1.0
     }
     
     @IBAction func closeButtonTouched(_ sender: Any) {
@@ -339,7 +414,7 @@ extension UIButton {
         gradientLayer.startPoint = CGPoint(x: 0, y: 0)
         gradientLayer.endPoint = CGPoint(x: 1, y: 0)
         gradientLayer.frame = self.bounds
-        gradientLayer.cornerRadius = self.frame.height/2
+        //gradientLayer.cornerRadius = self.frame.height/2
         
         gradientLayer.shadowColor = UIColor.black.cgColor
         gradientLayer.shadowOffset = CGSize(width: 2.5, height: 2.5)

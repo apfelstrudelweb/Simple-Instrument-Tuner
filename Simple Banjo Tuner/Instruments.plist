@@ -186,6 +186,20 @@
                 <!-- 5 strings -->
                 <dict>
                     <key>tuningName</key>
+                    <string>Tenor</string>
+                    <key>standard</key>
+                    <false/>
+                    <key>notes</key>
+                    <array>
+                        <string>G4</string>
+                        <string>G3</string>
+                        <string>C4</string>
+                        <string>E4</string>
+                        <string>A4</string>
+                    </array>
+                </dict>
+                <dict>
+                    <key>tuningName</key>
                     <string>gG-C-E-A</string>
                     <key>standard</key>
                     <false/>

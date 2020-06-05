@@ -56,6 +56,8 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
     @IBOutlet weak var tuningForkButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var displayContainer: UIView!
+    @IBOutlet weak var goldGradientView: UIImageView!
+    @IBOutlet weak var goldGradientHeaderView: UIImageView!
     
     var bannerView: GADBannerView!
     
@@ -128,6 +130,8 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
             displayContainer.backgroundColor = mainViewColor.withSaturationOffset(offset: -0.5)
         }
 
+        setMainViewColor()
+        
         // for Banjo and Ukulele Tuner
         if Utils().getInstrumentsArray().ids?.count == 1 {
             Utils().saveInstrument(index: 0)
@@ -182,6 +186,8 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
         if UIDevice.current.userInterfaceIdiom == .pad {
             mainContainerView.layer.cornerRadius = 0.05*mainContainerView.bounds.size.width
             headerView.roundCorners([.topLeft, .topRight], radius: mainContainerView.layer.cornerRadius)
+            goldGradientView.roundCorners([.topLeft, .topRight, .bottomLeft, .bottomRight], radius: mainContainerView.layer.cornerRadius)
+            
             mainContainerView.dropShadow()
         }
         
@@ -210,6 +216,7 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.didChangeHeaderColor), name: NSNotification.Name(rawValue: "didChangeHeaderColor"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.didChangeMainViewColor), name: NSNotification.Name(rawValue: "didChangeMainViewColor"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didChangeGold), name: NSNotification.Name(rawValue: "didChangeGold"), object: nil)
         
         setAudioMode()
         
@@ -230,6 +237,28 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
             backgroundColor = color
             displayContainer.backgroundColor = color.withSaturationOffset(offset: -0.5)
         }
+    }
+    
+    fileprivate func setMainViewColor() {
+        
+        if UserDefaults.standard.bool(forKey: "gold") == true {
+            goldGradientView.alpha = 1.0
+            goldGradientHeaderView.alpha = 1.0
+            
+            displayContainer.backgroundColor = UIColor(patternImage: UIImage(named: "goldGradient")!)// #colorLiteral(red: 0.688590575, green: 0.4986970604, blue: 0.1653240368, alpha: 1)
+        } else {
+            goldGradientView.alpha = 0.0
+            goldGradientHeaderView.alpha = 0.0
+            
+            if let mainViewColor = UserDefaults.standard.colorForKey(key: "mainViewColor") {
+                displayContainer.backgroundColor = mainViewColor.withSaturationOffset(offset: -0.5)
+            }
+        }
+    }
+    
+    @objc func didChangeGold(_ notification: Notification) {
+        
+        setMainViewColor()
     }
     
     

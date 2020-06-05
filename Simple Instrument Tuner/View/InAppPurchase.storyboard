@@ -10,7 +10,7 @@
         <!--In App Purchase-->
         <scene sceneID="qId-ff-T4n">
             <objects>
-                <viewController title="In App Purchase" id="3j4-TF-FJl" customClass="InAppPurchaseViewController" customModule="Instrument_Tuner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="In App Purchase" id="3j4-TF-FJl" customClass="InAppPurchaseViewController" customModule="Simple_Banjo_Tuner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FQH-Ar-oL1">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -19,7 +19,7 @@
                                 <rect key="frame" x="60" y="114" width="648" height="866"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="iapCell" id="vca-xz-sxu" customClass="IAPTableViewCell" customModule="Instrument_Tuner" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="iapCell" id="vca-xz-sxu" customClass="IAPTableViewCell" customModule="Simple_Banjo_Tuner" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="648" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vca-xz-sxu" id="1VU-Yw-bin">
@@ -43,7 +43,7 @@
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                 </variation>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yTe-Ij-V3P" customClass="ActivityIndicatorView" customModule="Instrument_Tuner" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yTe-Ij-V3P" customClass="ActivityIndicatorView" customModule="Simple_Banjo_Tuner" customModuleProvider="target">
                                 <rect key="frame" x="60" y="114" width="648" height="866"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7i-Yn-rlg">

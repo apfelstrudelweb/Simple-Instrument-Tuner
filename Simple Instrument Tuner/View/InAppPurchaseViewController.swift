@@ -62,6 +62,7 @@ class InAppPurchaseViewController: UIViewController, UITableViewDataSource, UITa
         cell = (nib[0] as? IAPTableViewCell)!
         
         cell.glassView.isHidden = true
+        cell.checkmark.isHidden = true
         cell.selectionStyle = .default
         
         let product = productsArray![indexPath.row]
@@ -86,6 +87,7 @@ class InAppPurchaseViewController: UIViewController, UITableViewDataSource, UITa
         if let dict = dictIAP[product.title!], let isOpenInstrument = dict[product.title!]  {
             if isOpenInstrument() == true || IAPHandler().isOpenPremium() {
                 cell.glassView.isHidden = false
+                cell.checkmark.isHidden = false
                 cell.selectionStyle = .none
             }
         }

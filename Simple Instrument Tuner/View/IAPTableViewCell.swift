@@ -26,6 +26,7 @@ class IAPTableViewCell: UITableViewCell {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var symbolImageView: UIImageView!
     @IBOutlet weak var glassView: UIView!
+    @IBOutlet weak var checkmark: UIImageView!
     
     
     @IBOutlet weak var textViewHeight: NSLayoutConstraint!

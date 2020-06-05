@@ -54,14 +54,17 @@
 
 "Label.iap.title" = "Compras In-App";
 "Balalaika.iap1" = "obtenha diferentes afinações para o seu balalaika";
-"Balalaika.iap2" = "remoção de anúncios";
+"Balalaika.iap2" = "lembre o seu aplicativo com um seletor de cores integrado";
+"Balalaika.iap3" = "remoção de anúncios";
 "Banjo.iap1" = "obtenha diferentes afinações para o seu banjo";
-"Banjo.iap2" = "remoção de anúncios";
+"Banjo.iap2" = "lembre o seu aplicativo com um seletor de cores integrado";
+"Banjo.iap3" = "remoção de anúncios";
 "Guitar.iap1" = "obtenha afinações diferentes para o seu violão";
 "Guitar.iap2" = "lembre o seu aplicativo com um seletor de cores integrado";
 "Guitar.iap3" = "remoção de anúncios";
 "Mandolin.iap1" = "obtenha diferentes afinações para o seu bandolim";
-"Mandolin.iap2" = "remoção de anúncios";
+"Mandolin.iap2" = "lembre o seu aplicativo com um seletor de cores integrado";
+"Mandolin.iap3" = "remoção de anúncios";
 "Ukulele.iap1" = "obtenha diferentes afinações para o seu ukulele";
 "Ukulele.iap2" = "lembre o seu aplicativo com um seletor de cores integrado";
 "Ukulele.iap3" = "remoção de anúncios";
@@ -69,7 +72,8 @@
 "Calibration.iap2" = "remoção de anúncios";
 "Premium.iap1" = "obtenha afinações diferentes para todos os seus instrumentos";
 "Premium.iap2" = "sintonize seus instrumentos de 430-450 Hz";
-"Premium.iap3" = "remoção de anúncios";
+"Premium.iap3" = "lembre o seu aplicativo com um seletor de cores integrado";
+"Premium.iap4" = "remoção de anúncios";
 
 // IAP
 "IAP.alert.error.title" = "Não foram encontradas opções de compra In-App-Purchase";

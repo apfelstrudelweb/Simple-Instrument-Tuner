@@ -46,13 +46,13 @@ typealias isOpenBalalaika = () -> Bool
 typealias isPremium = () -> Bool
 
 
-let balalaikaDict =     ["Balalaika" :  [NSLocalizedString("Balalaika.iap1", comment: ""), NSLocalizedString("Balalaika.iap2", comment: "")]]
-let banjoDict =         ["Banjo" :  [NSLocalizedString("Banjo.iap1", comment: ""), NSLocalizedString("Banjo.iap2", comment: "")]]
-let guitarDict =        ["Guitar" :  [NSLocalizedString("Guitar.iap1", comment: ""), NSLocalizedString("Guitar.iap2", comment: "")]]
-let mandolinDict =      ["Mandolin" :  [NSLocalizedString("Mandolin.iap1", comment: ""), NSLocalizedString("Mandolin.iap2", comment: "")]]
-let ukuleleDict =       ["Ukulele" :  [NSLocalizedString("Ukulele.iap1", comment: ""), NSLocalizedString("Ukulele.iap2", comment: "")]]
+let balalaikaDict =     ["Balalaika" :  [NSLocalizedString("Balalaika.iap1", comment: ""), NSLocalizedString("Balalaika.iap2", comment: ""), NSLocalizedString("Balalaika.iap3", comment: "")]]
+let banjoDict =         ["Banjo" :  [NSLocalizedString("Banjo.iap1", comment: ""), NSLocalizedString("Banjo.iap2", comment: ""), NSLocalizedString("Banjo.iap3", comment: "")]]
+let guitarDict =        ["Guitar" :  [NSLocalizedString("Guitar.iap1", comment: ""), NSLocalizedString("Guitar.iap2", comment: ""), NSLocalizedString("Guitar.iap3", comment: "")]]
+let mandolinDict =      ["Mandolin" :  [NSLocalizedString("Mandolin.iap1", comment: ""), NSLocalizedString("Mandolin.iap2", comment: ""), NSLocalizedString("Mandolin.iap3", comment: "")]]
+let ukuleleDict =       ["Ukulele" :  [NSLocalizedString("Ukulele.iap1", comment: ""), NSLocalizedString("Ukulele.iap2", comment: ""), NSLocalizedString("Ukulele.iap3", comment: "")]]
 let calibrationDict =   ["Calibration" :  [NSLocalizedString("Calibration.iap1", comment: ""), NSLocalizedString("Calibration.iap2", comment: "")]]
-let premiumDict =       ["Premium" :  [NSLocalizedString("Premium.iap1", comment: ""), NSLocalizedString("Premium.iap2", comment: ""), NSLocalizedString("Premium.iap3", comment: "")]]
+let premiumDict =       ["Premium" :  [NSLocalizedString("Premium.iap1", comment: ""), NSLocalizedString("Premium.iap2", comment: ""), NSLocalizedString("Premium.iap3", comment: ""), NSLocalizedString("Premium.iap4", comment: "")]]
 
 let iapOptionsArray = [balalaikaDict, banjoDict, guitarDict, mandolinDict, ukuleleDict, calibrationDict, premiumDict]
 
@@ -168,6 +168,29 @@ class IAPHandler: NSObject {
     func isOpenCalibration() -> Bool {
         
         if let _ = try? keychain.get(IDENTIFIER_IAP_CALIBRATION) {
+            return true
+        }
+        if let _ = try? keychain.get(IDENTIFIER_IAP_PREMIUM) {
+            return true
+        }
+        return false
+    }
+    
+    func isOpenColor() -> Bool {
+        
+        if let _ = try? keychain.get(IDENTIFIER_IAP_GUITAR) {
+            return true
+        }
+        if let _ = try? keychain.get(IDENTIFIER_IAP_BANJO) {
+            return true
+        }
+        if let _ = try? keychain.get(IDENTIFIER_IAP_UKULELE) {
+            return true
+        }
+        if let _ = try? keychain.get(IDENTIFIER_IAP_MANDOLIN) {
+            return true
+        }
+        if let _ = try? keychain.get(IDENTIFIER_IAP_BALALAIKA) {
             return true
         }
         if let _ = try? keychain.get(IDENTIFIER_IAP_PREMIUM) {

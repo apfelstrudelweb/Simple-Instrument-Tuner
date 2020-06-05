@@ -180,6 +180,9 @@
 		6559D82D244D856900863CE7 /* CalibrationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6559D82C244D856900863CE7 /* CalibrationLabel.swift */; };
 		6559D85E244E20AF00863CE7 /* upgradeButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6559D85D244E20AE00863CE7 /* upgradeButton.png */; };
 		6559D860244E20B800863CE7 /* restoreButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6559D85F244E20B800863CE7 /* restoreButton.png */; };
+		6566EA19248A445500D6B7D5 /* checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 6566EA18248A445500D6B7D5 /* checkmark.png */; };
+		6566EA1A248A445500D6B7D5 /* checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 6566EA18248A445500D6B7D5 /* checkmark.png */; };
+		6566EA1B248A445500D6B7D5 /* checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 6566EA18248A445500D6B7D5 /* checkmark.png */; };
 		656E9E34245C259C00B06582 /* ActivityIndicatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 656E9E33245C259B00B06582 /* ActivityIndicatorView.xib */; };
 		656E9E36245C265600B06582 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656E9E35245C265600B06582 /* ActivityIndicatorView.swift */; };
 		6573CDF82452115500C10A3C /* premium.png in Resources */ = {isa = PBXBuildFile; fileRef = 6573CDF62452115500C10A3C /* premium.png */; };
@@ -314,6 +317,12 @@
 		65A893CC244CD54800B2AB97 /* CalibrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A893CB244CD54800B2AB97 /* CalibrationViewController.swift */; };
 		65B60323243728B600BBA23D /* tuningfork.png in Resources */ = {isa = PBXBuildFile; fileRef = 65B60322243728B600BBA23D /* tuningfork.png */; };
 		65C871C8243D09DD0047DB8F /* NoteLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C871C7243D09DD0047DB8F /* NoteLabel.swift */; };
+		65CBDFFE2484FD3B00539C6F /* goldGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CBDFFD2484FD3B00539C6F /* goldGradient.png */; };
+		65CBDFFF2484FD3B00539C6F /* goldGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CBDFFD2484FD3B00539C6F /* goldGradient.png */; };
+		65CBE0002484FD3B00539C6F /* goldGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CBDFFD2484FD3B00539C6F /* goldGradient.png */; };
+		65CBE0022485121000539C6F /* goldGradientButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CBE0012485121000539C6F /* goldGradientButton.png */; };
+		65CBE0032485121000539C6F /* goldGradientButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CBE0012485121000539C6F /* goldGradientButton.png */; };
+		65CBE0042485121000539C6F /* goldGradientButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CBE0012485121000539C6F /* goldGradientButton.png */; };
 		65CCBF5824260D9E00F518D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBF5724260D9E00F518D8 /* SceneDelegate.swift */; };
 		65CCBF5A24260D9E00F518D8 /* InstrumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CCBF5924260D9E00F518D8 /* InstrumentViewController.swift */; };
 		65CCBF5F24260DA100F518D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65CCBF5E24260DA100F518D8 /* Assets.xcassets */; };
@@ -439,6 +448,7 @@
 		65647DD6245F2783003F8C17 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		65647DD7245F2784003F8C17 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		65647DD8245F2784003F8C17 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6566EA18248A445500D6B7D5 /* checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkmark.png; sourceTree = "<group>"; };
 		656A840F245E066600CC0419 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		656A8410245E066600CC0419 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
 		656A8411245E066700CC0419 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -485,7 +495,9 @@
 		65B60322243728B600BBA23D /* tuningfork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tuningfork.png; sourceTree = "<group>"; };
 		65B603312438D49C00BBA23D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		65C871C7243D09DD0047DB8F /* NoteLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteLabel.swift; sourceTree = "<group>"; };
-		65CCBF5224260D9E00F518D8 /* Instrument Tuner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Instrument Tuner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		65CBDFFD2484FD3B00539C6F /* goldGradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = goldGradient.png; path = "Simple Instrument Tuner/images/goldGradient.png"; sourceTree = SOURCE_ROOT; };
+		65CBE0012485121000539C6F /* goldGradientButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goldGradientButton.png; sourceTree = "<group>"; };
+		65CCBF5224260D9E00F518D8 /* Tunissimo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tunissimo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65CCBF5524260D9E00F518D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65CCBF5724260D9E00F518D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		65CCBF5924260D9E00F518D8 /* InstrumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentViewController.swift; sourceTree = "<group>"; };
@@ -702,7 +714,7 @@
 		65CCBF5324260D9E00F518D8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				65CCBF5224260D9E00F518D8 /* Instrument Tuner.app */,
+				65CCBF5224260D9E00F518D8 /* Tunissimo.app */,
 				65CCBF6824260DA100F518D8 /* Simple Instrument TunerTests.xctest */,
 				65CCBF7324260DA100F518D8 /* Simple Instrument TunerUITests.xctest */,
 				658DCA83247680430083ADA7 /* Simple Banjo Tuner.app */,
@@ -738,6 +750,9 @@
 				6573CDF52452110F00C10A3C /* settings */,
 				65558608243A570F004A94C0 /* instruments */,
 				652BC0F6242BEC7500F60B83 /* bridge.png */,
+				6566EA18248A445500D6B7D5 /* checkmark.png */,
+				65CBDFFD2484FD3B00539C6F /* goldGradient.png */,
+				65CBE0012485121000539C6F /* goldGradientButton.png */,
 				65CE47A02448E93100E3B2EC /* tuningsGradient.png */,
 				65FCB7B7244792EC005E142A /* settingsPattern.png */,
 				65FCB7B8244792EC005E142A /* settingsPatternDark.png */,
@@ -895,7 +910,7 @@
 			);
 			name = "Simple Instrument Tuner";
 			productName = "Simple Instrument Tuner";
-			productReference = 65CCBF5224260D9E00F518D8 /* Instrument Tuner.app */;
+			productReference = 65CCBF5224260D9E00F518D8 /* Tunissimo.app */;
 			productType = "com.apple.product-type.application";
 		};
 		65CCBF6724260DA100F518D8 /* Simple Instrument TunerTests */ = {
@@ -1006,6 +1021,7 @@
 				651ED5CB2483BDC70036BFD5 /* all ukulele.png in Resources */,
 				651ED55C24839EBF0036BFD5 /* offButton.png in Resources */,
 				651ED55624839EB00036BFD5 /* LaunchScreen.storyboard in Resources */,
+				65CBE0042485121000539C6F /* goldGradientButton.png in Resources */,
 				651ED58024839ECC0036BFD5 /* all in one.png in Resources */,
 				651ED57224839EBF0036BFD5 /* animatedString.gif in Resources */,
 				651ED58424839ECC0036BFD5 /* premium.png in Resources */,
@@ -1054,11 +1070,13 @@
 				651ED59C24839ED40036BFD5 /* IAPTableViewCell.xib in Resources */,
 				651ED59324839ED40036BFD5 /* Display.storyboard in Resources */,
 				651ED55A24839EBF0036BFD5 /* settingsPatternDark.png in Resources */,
+				65CBE0002484FD3B00539C6F /* goldGradient.png in Resources */,
 				651ED5BD24839F0B0036BFD5 /* Localizable.strings in Resources */,
 				651ED57D24839EC50036BFD5 /* violinSymbol.png in Resources */,
 				651ED5A524839ED40036BFD5 /* HeaderColor.storyboard in Resources */,
 				651ED56424839EBF0036BFD5 /* close.png in Resources */,
 				651ED56924839EBF0036BFD5 /* restoreButton.png in Resources */,
+				6566EA1B248A445500D6B7D5 /* checkmark.png in Resources */,
 				651ED57F24839ECC0036BFD5 /* signal plus.png in Resources */,
 				651ED5A624839ED40036BFD5 /* MainViewColor.storyboard in Resources */,
 				651ED57724839EC50036BFD5 /* iPhoneMockup.png in Resources */,
@@ -1083,6 +1101,7 @@
 				658DCB26247A908D0083ADA7 /* Assets.xcassets in Resources */,
 				658DCAD92476816F0083ADA7 /* gaugeOverlay.png in Resources */,
 				658DCAB2247681650083ADA7 /* Gauge.storyboard in Resources */,
+				65CBE0032485121000539C6F /* goldGradientButton.png in Resources */,
 				658DCAE7247681750083ADA7 /* guitar.png in Resources */,
 				658DCAE12476816F0083ADA7 /* tuningfork.png in Resources */,
 				658DCAC92476816F0083ADA7 /* settingsPatternLight.png in Resources */,
@@ -1131,11 +1150,13 @@
 				658DCADF2476816F0083ADA7 /* animatedString.gif in Resources */,
 				658DCADC2476816F0083ADA7 /* microphoneOn.png in Resources */,
 				658DCACC2476816F0083ADA7 /* shoppingCart.png in Resources */,
+				65CBDFFF2484FD3B00539C6F /* goldGradient.png in Resources */,
 				651ED5302481A2FB0036BFD5 /* MainViewColor.storyboard in Resources */,
 				658DCB0724768F480083ADA7 /* Main.storyboard in Resources */,
 				651ED5C124839F6C0036BFD5 /* Instruments.plist in Resources */,
 				658DCAE02476816F0083ADA7 /* settings.png in Resources */,
 				651ED52D248198D60036BFD5 /* HeaderColor.storyboard in Resources */,
+				6566EA1A248A445500D6B7D5 /* checkmark.png in Resources */,
 				658DCAAE247681650083ADA7 /* Bridge.storyboard in Resources */,
 				658DCAC82476816F0083ADA7 /* settingsPatternDark.png in Resources */,
 				658DCAD02476816F0083ADA7 /* ledPassive.png in Resources */,
@@ -1180,10 +1201,12 @@
 				65558603243A5706004A94C0 /* balalaikaSymbol.png in Resources */,
 				6576A17B244397E700970132 /* animatedString.gif in Resources */,
 				65CCC03B2426AD6B00F518D8 /* gaugeScale.png in Resources */,
+				65CBE0022485121000539C6F /* goldGradientButton.png in Resources */,
 				65CCC025242637F400F518D8 /* settings.png in Resources */,
 				65CCC01D2426368600F518D8 /* microphoneOn.png in Resources */,
 				65CCC03324266C0B00F518D8 /* Gauge.storyboard in Resources */,
 				65CCC00D242626BC00F518D8 /* noteButtonActive.png in Resources */,
+				65CBDFFE2484FD3B00539C6F /* goldGradient.png in Resources */,
 				6532522C243BB4FD0004005C /* Instruments.plist in Resources */,
 				65FCB7BA244792EC005E142A /* settingsPatternDark.png in Resources */,
 				65A893CA244CD53700B2AB97 /* Calibration.storyboard in Resources */,
@@ -1208,6 +1231,7 @@
 				658DCB0624768F180083ADA7 /* Main.storyboard in Resources */,
 				652BC0E2242A2C6F00F60B83 /* volumeMeterPattern.png in Resources */,
 				651ED52C248198D60036BFD5 /* HeaderColor.storyboard in Resources */,
+				6566EA19248A445500D6B7D5 /* checkmark.png in Resources */,
 				65CCC0022426268900F518D8 /* ledPassive.png in Resources */,
 				6573CDF82452115500C10A3C /* premium.png in Resources */,
 				65FCB7B424479246005E142A /* offButton.png in Resources */,
@@ -1632,6 +1656,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Simple Banjo Tuner/Simple Banjo Tuner.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P2EQM7YAFH;
 				INFOPLIST_FILE = "Simple Banjo Tuner/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1639,7 +1664,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.01;
+				MARKETING_VERSION = 2.2;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D BANJO";
 				PRODUCT_BUNDLE_IDENTIFIER = ch.vormbrock.simplebanjotuner2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1655,6 +1680,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Simple Banjo Tuner/Simple Banjo Tuner.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P2EQM7YAFH;
 				INFOPLIST_FILE = "Simple Banjo Tuner/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1662,7 +1688,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.01;
+				MARKETING_VERSION = 2.2;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D BANJO";
 				PRODUCT_BUNDLE_IDENTIFIER = ch.vormbrock.simplebanjotuner2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1805,10 +1831,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.2;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D INSTRUMENT";
 				PRODUCT_BUNDLE_IDENTIFIER = ch.vormbrock.simpleinstrumenttuner;
-				PRODUCT_NAME = "Instrument Tuner";
+				PRODUCT_NAME = Tunissimo;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1831,10 +1857,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.2;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D INSTRUMENT";
 				PRODUCT_BUNDLE_IDENTIFIER = ch.vormbrock.simpleinstrumenttuner;
-				PRODUCT_NAME = "Instrument Tuner";
+				PRODUCT_NAME = Tunissimo;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
