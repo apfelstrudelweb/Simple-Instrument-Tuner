@@ -850,7 +850,7 @@
         <image name="btnActive.png" width="675" height="128"/>
         <image name="btnPassive.png" width="669" height="128"/>
         <image name="goldGradient.png" width="1242" height="2688"/>
-        <image name="goldGradientButton.png" width="557" height="362"/>
+        <image name="goldGradientButton.png" width="581" height="273"/>
         <image name="guitarSymbol.png" width="380" height="360"/>
         <image name="info.png" width="74" height="73"/>
         <image name="microphoneOn.png" width="179" height="183"/>

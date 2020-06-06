@@ -165,6 +165,11 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
             frequencyLabel.alpha = 0.5
         }
         #endif
+        #if INSTRUMENT
+        if IAPHandler().isOpenSignal() == false {
+            frequencyLabel.alpha = 0.5
+        }
+        #endif
         
         //if true {
         if instrument == nil {
@@ -395,6 +400,12 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
                 embeddedDisplayViewController.plotFFT(fftTap: fftTap, amplitudeTracker: amplitudeTracker)
             }
             #endif
+            #if INSTRUMENT
+            if IAPHandler().isOpenSignal() == true {
+                embeddedDisplayViewController.plotAmplitude(trackedAmplitude: self.amplitudeTracker)
+                embeddedDisplayViewController.plotFFT(fftTap: fftTap, amplitudeTracker: amplitudeTracker)
+            }
+            #endif
             
             
             
@@ -494,6 +505,11 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
                 frequencyLabel.frequency = frequency
             }
             #endif
+            #if INSTRUMENT
+                   if IAPHandler().isOpenSignal() == true {
+                       frequencyLabel.frequency = frequency
+                   }
+                   #endif
             octaveLabel.text = String(format: NSLocalizedString("Label.octave %d", comment: ""), Utils().getOctaveFrom(frequency: frequency))
             embeddedGaugeViewController.displayFrequency(frequency: frequency, soundGenerator: false)
             embeddedVolumeMeterController.displayVolume(volume: frequencyTracker.amplitude)
@@ -518,6 +534,9 @@ class InstrumentViewController: UIViewController, SettingsViewControllerDelegate
         return true
         #endif
         #if INSTRUMENT
+        if identifier == "iapSegue" && IAPHandler().isOpenSignal() == true {
+            return false
+        }
         return true
         #endif
     }
@@ -757,6 +776,13 @@ extension InstrumentViewController: AKKeyboardDelegate {
             frequencyLabel.frequency = frequency
         }
         #endif
+        #if INSTRUMENT
+        if IAPHandler().isOpenSignal() == true {
+            frequencyLabel.frequency = frequency
+        }
+        #endif
+
+        frequencyLabel.frequency = frequency
         octaveLabel.text = String(format: NSLocalizedString("Label.octave %d", comment: ""), Utils().getOctaveFrom(frequency: frequency))
         embeddedGaugeViewController.displayFrequency(frequency: frequency, soundGenerator: true)
         embeddedDeviationMeterController.displayExactMatch(on: true)

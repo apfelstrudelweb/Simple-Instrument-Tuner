@@ -43,6 +43,7 @@ typealias isOpenBanjo = () -> Bool
 typealias isOpenUkulele = () -> Bool
 typealias isOpenMandolin = () -> Bool
 typealias isOpenBalalaika = () -> Bool
+typealias isOpenSignal = () -> Bool
 typealias isPremium = () -> Bool
 
 
@@ -246,6 +247,32 @@ class IAPHandler: NSObject {
     let isOpenBalalaika : isOpenBalalaika = {
         
         if let _ = try? keychain.get(IDENTIFIER_IAP_BALALAIKA) {
+            return true
+        }
+        if let _ = try? keychain.get(IDENTIFIER_IAP_PREMIUM) {
+            return true
+        }
+        return false
+    }
+    
+    let isOpenSignal : isOpenSignal = {
+        
+        if let _ = try? keychain.get(IDENTIFIER_IAP_GUITAR) {
+            return true
+        }
+        if let _ = try? keychain.get(IDENTIFIER_IAP_BANJO) {
+            return true
+        }
+        if let _ = try? keychain.get(IDENTIFIER_IAP_UKULELE) {
+            return true
+        }
+        if let _ = try? keychain.get(IDENTIFIER_IAP_MANDOLIN) {
+            return true
+        }
+        if let _ = try? keychain.get(IDENTIFIER_IAP_BALALAIKA) {
+            return true
+        }
+        if let _ = try? keychain.get(IDENTIFIER_IAP_CALIBRATION) {
             return true
         }
         if let _ = try? keychain.get(IDENTIFIER_IAP_PREMIUM) {
