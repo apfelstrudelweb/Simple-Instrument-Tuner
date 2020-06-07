@@ -54,26 +54,33 @@
 
 "Label.iap.title" = "In-App Purchase";
 "Balalaika.iap1" = "get different tunings for your balalaika";
-"Balalaika.iap2" = "recolor your app with an integrated color picker";
-"Balalaika.iap3" = "removal of ads";
+"Balalaika.iap2" = "get spectrum and exact frequency of the plucked strings";
+"Balalaika.iap3" = "recolor your app with an integrated color picker";
+"Balalaika.iap4" = "removal of ads";
 "Banjo.iap1" = "get different tunings for your banjo";
-"Banjo.iap2" = "recolor your app with an integrated color picker";
-"Banjo.iap3" = "removal of ads";
+"Banjo.iap2" = "get spectrum and exact frequency of the plucked strings";
+"Banjo.iap3" = "recolor your app with an integrated color picker";
+"Banjo.iap4" = "removal of ads";
 "Guitar.iap1" = "get different tunings for your guitar";
-"Guitar.iap2" = "recolor your app with an integrated color picker";
-"Guitar.iap3" = "removal of ads";
+"Guitar.iap2" = "get spectrum and exact frequency of the plucked strings";
+"Guitar.iap3" = "recolor your app with an integrated color picker";
+"Guitar.iap4" = "removal of ads";
 "Mandolin.iap1" = "get different tunings for your mandolin";
-"Mandolin.iap2" = "recolor your app with an integrated color picker";
-"Mandolin.iap3" = "removal of ads";
+"Mandolin.iap2" = "get spectrum and exact frequency of the plucked strings";
+"Mandolin.iap3" = "recolor your app with an integrated color picker";
+"Mandolin.iap4" = "removal of ads";
 "Ukulele.iap1" = "get different tunings for your ukulele";
-"Ukulele.iap2" = "recolor your app with an integrated color picker";
-"Ukulele.iap3" = "removal of ads";
+"Ukulele.iap2" = "get spectrum and exact frequency of the plucked strings";
+"Ukulele.iap3" = "recolor your app with an integrated color picker";
+"Ukulele.iap4" = "removal of ads";
 "Calibration.iap1" = "tune your instruments from 430-450 Hz";
-"Calibration.iap2" = "removal of ads";
+"Calibration.iap2" = "get spectrum and exact frequency of the plucked strings";
+"Calibration.iap3" = "removal of ads";
 "Premium.iap1" = "get different tunings for all your instruments";
-"Premium.iap2" = "tune your instruments from 430-450 Hz";
-"Premium.iap3" = "recolor your app with an integrated color picker";
-"Premium.iap4" = "removal of ads";
+"Premium.iap2" = "get spectrum and exact frequency of the plucked strings";
+"Premium.iap3" = "tune your instruments from 430-450 Hz";
+"Premium.iap4" = "recolor your app with an integrated color picker";
+"Premium.iap5" = "removal of ads";
 
 
 // IAP

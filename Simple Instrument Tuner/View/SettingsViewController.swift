@@ -67,9 +67,6 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
             self.view.backgroundColor = backgroundColor
             
             setDropdownColor()
-            
-//            self.instrumentDropDown.backgroundColor = backgroundColor.darker(by: 10)!
-//            self.instrumentDropDown.rowBackgroundColor = self.instrumentDropDown.backgroundColor!
         }
     }
     
@@ -232,13 +229,13 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
     fileprivate func setDropdownColor() {
  
         if UserDefaults.standard.bool(forKey: "gold") == true {
-            instrumentDropDown.backgroundColor = UIColor(patternImage: UIImage(named: "goldGradientButton")!)
-            self.instrumentDropDown.arrowColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+            instrumentDropDown.backgroundColor = #colorLiteral(red: 0.9867116809, green: 0.8384355307, blue: 0.4552161694, alpha: 1)
+            self.instrumentDropDown.arrowColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
             self.instrumentDropDown.selectedRowColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
         } else {
 
             if let color = UserDefaults.standard.colorForKey(key: "mainViewColor") {
-                instrumentDropDown.backgroundColor = color //.withSaturationOffset(offset: -0.5)
+                instrumentDropDown.backgroundColor = color
             }
         }
         instrumentDropDown.rowBackgroundColor = instrumentDropDown.backgroundColor!

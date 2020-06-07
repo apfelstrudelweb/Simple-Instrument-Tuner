@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SwiftRater.appLaunched()
         
         // TODO: IMPORTANT: comment out when submitting to the AppStore
-        IAPHandler().unlockAll()
+//        IAPHandler().unlockAll()
 //        IAPHandler().lockAll()
 //        IAPHandler().unlockBanjo()
 //        IAPHandler().unlockGuitar()

@@ -54,26 +54,33 @@
 
 "Label.iap.title" = "In-App-Käufe";
 "Balalaika.iap1" = "verschiedene Stimmungen für Ihre Balalaika";
-"Balalaika.iap2" = "Color Picker zum Aufhübschen der App";
-"Balalaika.iap3" = "keine Werbung mehr";
+"Balalaika.iap2" = "Spektrum sowie Anzeige der exakten Frequenz";
+"Balalaika.iap3" = "Color Picker zum Aufhübschen der App";
+"Balalaika.iap4" = "keine Werbung mehr";
 "Banjo.iap1" = "verschiedene Stimmungen für Ihr Banjo";
-"Banjo.iap2" = "Color Picker zum Aufhübschen der App";
-"Banjo.iap3" = "keine Werbung mehr";
+"Banjo.iap2" = "Spektrum sowie Anzeige der exakten Frequenz";
+"Banjo.iap3" = "Color Picker zum Aufhübschen der App";
+"Banjo.iap4" = "keine Werbung mehr";
 "Guitar.iap1" = "verschiedene Stimmungen für Ihre Gitarre";
-"Guitar.iap2" = "Color Picker zum Aufhübschen der App";
-"Guitar.iap3" = "keine Werbung mehr";
+"Guitar.iap2" = "Spektrum sowie Anzeige der exakten Frequenz";
+"Guitar.iap3" = "Color Picker zum Aufhübschen der App";
+"Guitar.iap4" = "keine Werbung mehr";
 "Mandolin.iap1" = "verschiedene Stimmungen für Ihre Mandoline";
-"Mandolin.iap2" = "Color Picker zum Aufhübschen der App";
-"Mandolin.iap3" = "keine Werbung mehr";
+"Mandolin.iap2" = "Spektrum sowie Anzeige der exakten Frequenz";
+"Mandolin.iap3" = "Color Picker zum Aufhübschen der App";
+"Mandolin.iap4" = "keine Werbung mehr";
 "Ukulele.iap1" = "verschiedene Stimmungen für Ihre Ukulele";
-"Ukulele.iap2" = "Color Picker zum Aufhübschen der App";
-"Ukulele.iap3" = "keine Werbung mehr";
+"Ukulele.iap2" = "Spektrum sowie Anzeige der exakten Frequenz";
+"Ukulele.iap3" = "Color Picker zum Aufhübschen der App";
+"Ukulele.iap4" = "keine Werbung mehr";
 "Calibration.iap1" = "kalibrieren Sie Ihr Instrument von 430 bis 450 Hz";
-"Calibration.iap2" = "keine Werbung mehr";
+"Calibration.iap2" = "Spektrum sowie Anzeige der exakten Frequenz";
+"Calibration.iap3" = "keine Werbung mehr";
 "Premium.iap1" = "verschiedene Stimmungen für alle Instrumente";
-"Premium.iap2" = "kalibrieren Sie Ihr Instrument von 430 bis 450 Hz";
-"Premium.iap3" = "Color Picker zum Aufhübschen der App";
-"Premium.iap4" = "keine Werbung mehr";
+"Premium.iap2" = "Spektrum sowie Anzeige der exakten Frequenz";
+"Premium.iap3" = "kalibrieren Sie Ihr Instrument von 430 bis 450 Hz";
+"Premium.iap4" = "Color Picker zum Aufhübschen der App";
+"Premium.iap5" = "keine Werbung mehr";
 
 // IAP
 "IAP.alert.error.title" = "Keine In-App-Purchase-Optionen gefunden";
