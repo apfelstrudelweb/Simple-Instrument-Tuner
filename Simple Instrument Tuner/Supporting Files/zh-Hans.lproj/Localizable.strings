@@ -27,6 +27,7 @@
 "Info.microphoneButton" = "点击这个按钮，就可以用集成的频率检测引擎为您的仪器调音。";
 "Info.settingsButton" = "如果你想改变乐器和/或调音，请点击这个按钮。";
 "Info.selectInstrument" = "请在这里选择你的乐器!";
+"Info.scrollTuning" = "用你的手指向上或向下滚动（在上框内），以获得所有可用的调音";
 
 // Labels
 // main view

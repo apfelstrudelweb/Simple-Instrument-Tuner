@@ -455,9 +455,11 @@
                                                 <rect key="frame" x="-268" y="-100" width="1248" height="1155"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select an instrument" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mCn-UK-uyd">
-                                                <rect key="frame" x="44" y="140.5" width="624" height="28"/>
+                                                <rect key="frame" x="44" y="140.5" width="624" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="27.670000000000002" id="zGs-PG-w4X"/>
+                                                    <constraint firstAttribute="height" constant="27.670000000000002" id="zGs-PG-w4X">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                                    </constraint>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -467,11 +469,13 @@
                                                 </variation>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddI-Wq-d4u" customClass="DropDown" customModule="Instrument_Tuner" customModuleProvider="target">
-                                                <rect key="frame" x="44" y="189" width="624" height="36"/>
+                                                <rect key="frame" x="44" y="211.5" width="624" height="70"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="36" id="fzk-XD-cYO"/>
+                                                    <constraint firstAttribute="height" constant="36" id="fzk-XD-cYO">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="70"/>
+                                                    </constraint>
                                                 </constraints>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -511,7 +515,7 @@
                                                 </variation>
                                             </textField>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="65h-ua-oTY">
-                                                <rect key="frame" x="44" y="269" width="624" height="350"/>
+                                                <rect key="frame" x="44" y="325.5" width="624" height="350"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" priority="999" constant="350" id="IDL-51-AOh"/>
                                                 </constraints>
@@ -520,10 +524,10 @@
                                                 </connections>
                                             </containerView>
                                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tuningsGradient.png" translatesAutoresizingMaskIntoConstraints="NO" id="l83-IK-XMu">
-                                                <rect key="frame" x="44" y="269" width="624" height="350"/>
+                                                <rect key="frame" x="44" y="325.5" width="624" height="350"/>
                                             </imageView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vCS-I6-YDP">
-                                                <rect key="frame" x="44" y="649" width="624" height="100"/>
+                                                <rect key="frame" x="44" y="705.5" width="624" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="lQJ-1b-FE3"/>
                                                 </constraints>
@@ -539,7 +543,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2MP-Hn-t6b">
-                                                <rect key="frame" x="44" y="779" width="624" height="145.5"/>
+                                                <rect key="frame" x="44" y="835.5" width="624" height="145.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJT-zG-kmW">
                                                         <rect key="frame" x="20" y="12" width="187.5" height="36"/>
@@ -551,7 +555,7 @@
                                                         </variation>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0EY-hy-s5h">
-                                                        <rect key="frame" x="491.5" y="12" width="112.5" height="49"/>
+                                                        <rect key="frame" x="491.5" y="12" width="112.5" height="48.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="0EY-hy-s5h" secondAttribute="height" multiplier="184:80" id="YM0-PK-Lxb"/>
                                                         </constraints>
@@ -565,7 +569,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAf-Sq-O2C">
-                                                        <rect key="frame" x="20" y="81" width="281" height="48.5"/>
+                                                        <rect key="frame" x="20" y="80.5" width="281" height="49"/>
                                                         <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="rAf-Sq-O2C" secondAttribute="height" multiplier="5" id="e0l-qb-4Jq"/>
@@ -581,10 +585,10 @@
                                                         </connections>
                                                     </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goldGradientButton.png" translatesAutoresizingMaskIntoConstraints="NO" id="tfN-gY-cmy">
-                                                        <rect key="frame" x="323" y="81" width="281" height="48.5"/>
+                                                        <rect key="frame" x="323" y="80.5" width="281" height="49"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80u-Tl-xTh">
-                                                        <rect key="frame" x="323" y="81" width="281" height="48.5"/>
+                                                        <rect key="frame" x="323" y="80.5" width="281" height="49"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
                                                         <state key="normal" title="Gold">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -634,10 +638,10 @@
                                                 </variation>
                                             </view>
                                             <view contentMode="scaleToFill" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="slN-ec-FqL">
-                                                <rect key="frame" x="44" y="954.5" width="624" height="131"/>
+                                                <rect key="frame" x="44" y="1011" width="624" height="130.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qY-ca-Uua">
-                                                        <rect key="frame" x="20" y="35" width="192" height="61"/>
+                                                        <rect key="frame" x="20" y="34.5" width="192" height="61.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="1qY-ca-Uua" secondAttribute="height" multiplier="25:8" id="Svj-BQ-UM7"/>
                                                         </constraints>
@@ -650,7 +654,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ywm-kd-16J">
-                                                        <rect key="frame" x="412" y="35" width="192" height="61"/>
+                                                        <rect key="frame" x="412" y="34.5" width="192" height="61.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="Ywm-kd-16J" secondAttribute="height" multiplier="25:8" id="tD5-Vc-8dd"/>
                                                         </constraints>
@@ -850,7 +854,7 @@
         <image name="btnActive.png" width="675" height="128"/>
         <image name="btnPassive.png" width="669" height="128"/>
         <image name="goldGradient.png" width="1242" height="2688"/>
-        <image name="goldGradientButton.png" width="581" height="273"/>
+        <image name="goldGradientButton.png" width="832" height="337"/>
         <image name="guitarSymbol.png" width="380" height="360"/>
         <image name="info.png" width="74" height="73"/>
         <image name="microphoneOn.png" width="179" height="183"/>

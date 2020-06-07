@@ -27,6 +27,7 @@
 "Info.microphoneButton" = "このボタンをタップすると、統合された周波数検出エンジンで楽器をチューニングすることができます。";
 "Info.settingsButton" = "楽器やチューニングを変更したい場合は、このボタンをタップしてください。";
 "Info.selectInstrument" = "楽器はこちらでお選びください";
+"Info.scrollTuning" = "利用可能なすべてのチューニングを取得するために、指で上下にスクロールします（上のボックス内";
 
 // Labels
 // main view

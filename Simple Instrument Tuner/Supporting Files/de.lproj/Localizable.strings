@@ -27,6 +27,7 @@
 "Info.microphoneButton" = "Tippen Sie auf diese Schaltfläche, um Ihr Instrument mit dem integrierten Frequenzerkennungs-Algorithmus zu stimmen.";
 "Info.settingsButton" = "Tippen Sie auf diese Schaltfläche, wenn Sie das Instrument und/oder die Stimmung ändern möchten.";
 "Info.selectInstrument" = "Bitte wählen Sie Ihr Instrument hier!";
+"Info.scrollTuning" = "Swipen Sie mit dem Finger nach oben oder nach unten (innerhalb der oberen Box), um alle verfügbaren Stimmungen zu sehen";
 
 // Labels
 // main view

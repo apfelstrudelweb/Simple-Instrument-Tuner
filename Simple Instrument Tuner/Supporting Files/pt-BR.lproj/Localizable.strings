@@ -27,6 +27,7 @@
 "Info.microphoneButton" = "Toque neste botão para sintonizar seu instrumento com o motor de detecção de freqüência integrado.";
 "Info.settingsButton" = "Toque neste botão se você quiser mudar o instrumento e/ou a afinação.";
 "Info.selectInstrument" = "Por favor escolha aqui o seu instrumento!";
+"Info.scrollTuning" = "Percorra com o dedo para cima ou para baixo (dentro da caixa superior) a fim de obter todas as afinações disponíveis";
 
 // Labels
 // main view

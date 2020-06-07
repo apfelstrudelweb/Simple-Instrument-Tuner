@@ -28,6 +28,7 @@
 "Info.microphoneButton" = "Tap this button in order to tune your instrument with the integrated frequency detection engine.";
 "Info.settingsButton" = "Tap this button if you would like to change the instrument and/or the tuning.";
 "Info.selectInstrument" = "Please choose your instrument here!";
+"Info.scrollTuning" = "Scroll with your finger up or down (within the upper box) in order to get all available tunings";
 
 // Labels
 // main view

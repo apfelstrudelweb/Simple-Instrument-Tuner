@@ -53,12 +53,12 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
             if UserDefaults.standard.bool(forKey: "gold") == true {
                 goldGradientView.alpha = 1.0
                 self.closeButton.backgroundColor = .clear
-                setDropdownColor()
             } else {
                 self.instrumentDropDown.arrowColor = headerColor
                 self.instrumentDropDown.selectedRowColor = headerColor
                 goldGradientView.alpha = 0.0
             }
+            setDropdownColor()
         }
     }
     
@@ -90,11 +90,20 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
     }
     
     
-    fileprivate func showTooltip() {
+    fileprivate func showSelectInstrumentTooltip() {
         
         EasyTipView.show(forView: self.instrumentDropDown,
                          withinSuperview: self.view,
                          text: NSLocalizedString("Info.selectInstrument", comment: ""),
+                         preferences: EasyTipView.globalPreferences,
+                         delegate: self)
+    }
+    
+    fileprivate func showScrollOptionTooltip() {
+        
+        EasyTipView.show(forView: self.embeddedTuningViewController.view,
+                         withinSuperview: self.view,
+                         text: NSLocalizedString("Info.scrollTuning", comment: ""),
                          preferences: EasyTipView.globalPreferences,
                          delegate: self)
     }
@@ -173,8 +182,10 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
         NotificationCenter.default.addObserver(self, selector: #selector(self.didChangeMainViewColor), name: NSNotification.Name(rawValue: "didChangeMainViewColor"), object: nil)
         
         if Utils().getInstrument() == nil {
-            showTooltip()
+            showSelectInstrumentTooltip()
+            showScrollOptionTooltip()
         }
+        
         
         setDropdownColor()
         
@@ -236,6 +247,8 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
 
             if let color = UserDefaults.standard.colorForKey(key: "mainViewColor") {
                 instrumentDropDown.backgroundColor = color
+            } else {
+                instrumentDropDown.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
             }
         }
         instrumentDropDown.rowBackgroundColor = instrumentDropDown.backgroundColor!
@@ -279,6 +292,10 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
             
             Utils().saveTuning(index: index)
             self.settingsDelegate?.didChangeTuning()
+            
+            if Utils().getInstrument()?.tunings?.count ?? 1 > 3 {
+                self.showScrollOptionTooltip()
+            }
         }
     }
     
