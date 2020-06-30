@@ -41,6 +41,9 @@
 "Label.instrumentDropdown" = "Por favor escolha aqui o seu instrumento!";
 "%d Label.strings" = "%d cordas";
 "Label.calibration" = "Calibração";
+"Label.colorSettings" = "Configurações de cor";
+"Label.goldSettings" = "Ouro";
+"Label.colorReset" = "reajustar para cores padrão";
 
 
 // Instruments and IAP

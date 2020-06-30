@@ -41,6 +41,9 @@
 "Label.instrumentDropdown" = "Bitte wählen Sie ein Instrument";
 "%d Label.strings" = "%d Saiten";
 "Label.calibration" = "Kalibrierung";
+"Label.colorSettings" = "Farbeinstellungen";
+"Label.goldSettings" = "Gold";
+"Label.colorReset" = "Auf Standradfarben zurücksetzen";
 
 
 // Instruments and IAP

@@ -42,6 +42,9 @@
 "Label.instrumentDropdown" = "Please select an instrument";
 "%d Label.strings" = "%d Strings";
 "Label.calibration" = "Calibration";
+"Label.colorSettings" = "Color Settings";
+"Label.goldSettings" = "Gold";
+"Label.colorReset" = "Reset to default colors";
 
 
 // Instruments and IAP

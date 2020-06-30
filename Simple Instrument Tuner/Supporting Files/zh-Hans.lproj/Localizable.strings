@@ -41,6 +41,9 @@
 "Label.instrumentDropdown" = "请选择一个仪器";
 "%d Label.strings" = "%d 琴弦";
 "Label.calibration" = "校准";
+"Label.colorSettings" = "颜色设置";
+"Label.goldSettings" = "黄金";
+"Label.colorReset" = "重置为标准色";
 
 
 // Instruments and IAP

@@ -62,6 +62,8 @@ class ColorSettingsViewController: UIViewController {
         
         closeButton.layer.cornerRadius = 10
         resetButton.layer.cornerRadius = 10
+        
+        resetButton.setTitle(NSLocalizedString("Label.colorReset", comment: ""), for: .normal)
     }
     
     

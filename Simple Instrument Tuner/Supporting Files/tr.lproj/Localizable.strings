@@ -1,0 +1,94 @@
+/* 
+  Localizable.strings .strings
+  Simple Instrument Tuner
+
+  Created by Ullrich Vormbrock on 01.05.20.
+  Copyright © 2020 Ullrich Vormbrock. All rights reserved.
+*/
+
+// General
+"Info" = "Bilgi";
+"Success" = "Başarı";
+    
+// Info Button
+"Info.intro" = "Bu görünümdeki tüm öğeler hakkında daha fazla bilgi için bu butona tıklayın. Tüm öğeleri gözden geçirmek için birkaç kez dokunun.";
+"Info.instrumentButton" = "Seçilen enstrümanlar için ayar butonu sağ altta yer alır. Enstrümana dokunduğunuzda müzik aletini değiştirebileceğiniz ayarlar seçeneği açılır.";
+"Info.frequencyLabel" = "Vurulan telin frekansını (Hz cinsinden) görüntüleme. Bu bilgi ileri seviyedeki kullanıcılar için faydalıdır...";
+"Info.calibrationLabel" = "Ses perdesi ayar tonu 440 Hz'dir. Enstrümanınızı akord edebilirsiniz. Kalibrasyondan sonraki yeni frekans burada görüntülenir.";
+"Info.fftButton" = "Hafifçe çekilen tellerin ses tayfını görmek için bu butona dokunun - Üst tonları da görebilirsiniz.";
+"Info.amplitudeButton" = "Hafifçe çekilen tellerin genliğini görmek için bu butona dokunun.";
+"Info.toneButton" = "Belirli bir teli dinleyerek ayarlamak için tekli tel butonuna dokunun. İkinci bir dokunuş sinyali susturur. Ayrıca notadan sonraki sayı oktavı gösterir.";
+"Info.tuningForkButton" = "Enstrümanınızı dinleyerek ayarlamak istiyorsanız bu butona dokunun. Tüm telleri gözden geçirmek için tıklamaya devam edin.";
+"Info.tuningLabel" = "Seçtiğiniz enstrümanın ayarını görüntüler. Gitar için standart ayar 'klasik / akustik'.";
+"Info.volumeView" = "Ses seviyesi göstergesi";
+"Info.deviationView" = "Hafifçe çekilen telin, bir sonraki olası notadan sapmasını görüntüler. Akordu yeşil LED görüntülenene kadar ayarlayın. Soldaki kırmızı LED'ler, çok yüksek ses çıkmasını önlemek için burguyu kendinizden uzaklaştırmanız gerektiğini gösterir. Sağdaki kırmızı LED'ler, çok alçak ses çıkmasını önlemek için burguyu kendinize doğru çevirmeniz gerektiğini gösterir.";
+"Info.octaveLabel" = "Hafifçe çekilen telin oktavını görüntüler. Herhangi bir enstrüman tarafından çalınan bir oktav, her zaman bir oktav ile yükselirken ilk notanın frekansından iki kat yüksek ve inerken yarıya inen bir perdedir.";
+"Info.gaugeView" = "Hafifçe çekilen telin notasını veya yarım tonunu görüntüler. Bu bilgi, yukarıda gösterilen oktav ile bağlantılı olarak çok faydalıdır. Gitarın 'kalın' E telini örnek alalım. E2 telini ayarlamak için hem göstergedeki 'E' tonunun hem de yukarıdaki oktavın '2' gösterildiğine dikkat edin.";
+"Info.microphoneButton" = "Enstrümanınızı dahili frekans algılama algoritmasıyla akord etmek için bu butona dokunun.";
+"Info.settingsButton" = "Enstrümanı ve/veya akordu değiştirmek için bu butona dokunun.";
+"Info.selectInstrument" = "Lütfen enstrümanınızı buradan seçin!";
+"Info.scrollTuning" = "Üstteki kutudan tüm akord seçeneklerini görmek için ekranı yukarı veya aşağı kaydırın";
+    
+// Labels
+// main view
+"Label.hertz %.2f" = "%.2f Hz";
+"Label.hertz %d" = "%d Hz";
+"Label.octave %d" = "Oktav: %d";
+"Label.fft" = "FFT";
+"Label.amplitude" = "Genlik";
+// settings view
+"Button.close" = "Kapat";
+"Label.instrumentDropdown" = "Lütfen bir enstrüman seçiniz";
+"%d Label.strings" = "%d Tel";
+"Label.calibration" = "Kalibrasyon";
+"Label.colorSettings" = "Renk Ayarları";
+"Label.goldSettings" = "Altın";
+"Label.colorReset" = "Renk ayarlarını sıfırlayın";
+    
+    
+// Instruments and IAP
+"Guitar" = "Gitar";
+"Banjo" = "Banjo";
+"Ukulele" = "Ukulele";
+"Violin" = "Keman";
+"Mandolin" = "Mandolin";
+"Balalaika" = "Balalayka";
+"Calibration" = "Kalibrasyon";
+"Premium" = "Premium";
+    
+"Label.iap.title" = "Uygulama içi satın alma";
+"Balalaika.iap1" = "Balalayka için çeşitli akordlar";
+"Balalaika.iap2" = "Tam frekans ses tayfı";
+"Balalaika.iap3" = "Uygulama için renk seçici";
+"Balalaika.iap4" = "Reklamsız";
+"Banjo.iap1" = "Banjo için çeşitli akordlar";
+"Banjo.iap2" = "Tam frekans ses tayfı";
+"Banjo.iap3" = "Uygulama için renk seçici";
+"Banjo.iap4" = "Reklamsız";
+"Guitar.iap1" = "Gitar için çeşitli akordlar";
+"Guitar.iap2" = "Tam frekans ses tayfı";
+"Guitar.iap3" = "Uygulama için renk seçici";
+"Guitar.iap4" = "Reklamsız";
+"Mandolin.iap1" = "Mandolin için çeşitli akordlar";
+"Mandolin.iap2" = "Tam frekans ses tayfı";
+"Mandolin.iap3" = "Uygulama için renk seçici";
+"Mandolin.iap4" = "Reklamsız";
+"Ukulele.iap1" = "Ukulele için çeşitli akordlar";
+"Ukulele.iap2" = "Tam frekans ses tayfı";
+"Ukulele.iap3" = "Uygulama için renk seçici";
+"Ukulele.iap4" = "Reklamsız";
+"Calibration.iap1" = "Enstrümanınızı 430 ile 450 Hz arasında kalibre edin";
+"Calibration.iap2" = "Tam frekans ses tayfı";
+"Calibration.iap3" = "Reklamsız";
+"Premium.iap1" = "Tüm enstrümanlar için çeşitli akordlar";
+"Premium.iap2" = "Tam frekans ses tayfı";
+"Premium.iap3" = "Enstrümanınızı 430 ile 450 Hz arasında kalibre edin";
+"Premium.iap4" = "Uygulama için renk seçici";
+"Premium.iap5" = "Reklamsız";
+    
+// IAP
+"IAP.alert.error.title" = "Uygulama içi satın alma seçeneği bulunamadı";
+"IAP.alert.error.text" = "Lütfen internet bağlantınızı kontrol edin ve tekrar deneyin! AppStore'a erişim şu anda mümkün olmayabilir. Böyle bir durumda daha sonra tekrar deneyin. Başlangıçta AppStore bağlantısı kurulacağından uygulamayı yeniden başlatın!";
+    
+"IAP.alert.items" = "Bu ürünler düzeltildi:";
+"IAP.alert.noitems" = "Henüz uygulama içi satın alma işlemi gerçekleştirmediniz. Bu nedenle hiçbir öğe geri yüklenemez.";

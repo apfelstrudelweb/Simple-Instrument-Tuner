@@ -125,6 +125,8 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
         scrollView.delaysContentTouches = false
         
         closeButton.setTitle(NSLocalizedString("Button.close", comment: ""), for: .normal)
+        instrumentDropdownLabel.text = NSLocalizedString("Label.instrumentDropdown", comment: "")
+        colorSettingsLabel.text = NSLocalizedString("Label.colorSettings", comment: "")
         
         PKIAPHandler.shared.pkiDelegate = self
         
@@ -169,6 +171,8 @@ class SettingsViewController: UIViewController, TuningTableViewControllerDelegat
         
         goldGradientImageView.layer.cornerRadius = fact * goldGradientImageView.frame.size.height
         goldGradientImageView.layer.masksToBounds = true
+        
+        goldSettingsButton.setTitle(NSLocalizedString("Label.goldSettings", comment: ""), for: .normal)
         
         colorSettingsButton.applyGradient(colors: [UIColor.green.cgColor, UIColor.yellow.cgColor, UIColor.orange.cgColor, UIColor.red.cgColor, UIColor.purple.cgColor, UIColor.blue.cgColor])
         

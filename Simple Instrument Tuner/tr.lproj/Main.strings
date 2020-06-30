@@ -1,0 +1,30 @@
+
+/* Class = "UIButton"; normalTitle = "Gold"; ObjectID = "80u-Tl-xTh"; */
+"80u-Tl-xTh.normalTitle" = "Gold";
+
+/* Class = "UILabel"; text = "Classical / Acoustic"; ObjectID = "AdA-7t-Bka"; */
+"AdA-7t-Bka.text" = "Classical / Acoustic";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Bog-oP-HxY"; */
+"Bog-oP-HxY.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "HaD-mg-trs"; */
+"HaD-mg-trs.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "440 Hz"; ObjectID = "ekl-pO-cjx"; */
+"ekl-pO-cjx.text" = "440 Hz";
+
+/* Class = "UILabel"; text = "Please select an instrument"; ObjectID = "mCn-UK-uyd"; */
+"mCn-UK-uyd.text" = "Please select an instrument";
+
+/* Class = "UILabel"; text = "Color Settings"; ObjectID = "mJT-zG-kmW"; */
+"mJT-zG-kmW.text" = "Color Settings";
+
+/* Class = "UILabel"; text = "Octave:"; ObjectID = "qai-VW-DJD"; */
+"qai-VW-DJD.text" = "Octave:";
+
+/* Class = "UIButton"; normalTitle = "Close"; ObjectID = "rcZ-Nt-Eve"; */
+"rcZ-Nt-Eve.normalTitle" = "Close";
+
+/* Class = "UILabel"; text = "0.0 Hz"; ObjectID = "vqR-9h-0vg"; */
+"vqR-9h-0vg.text" = "0.0 Hz";

@@ -526,6 +526,9 @@
 		65CE479C2448DCFC00E3B2EC /* doubleString.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doubleString.png; sourceTree = "<group>"; };
 		65CE479E2448E5A200E3B2EC /* settingsPatternLight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingsPatternLight.png; sourceTree = "<group>"; };
 		65CE47A02448E93100E3B2EC /* tuningsGradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tuningsGradient.png; sourceTree = "<group>"; };
+		65D6A17924AB3060000C7147 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		65D6A17A24AB3060000C7147 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
+		65D6A17B24AB3060000C7147 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		65FCB7A324478EC3005E142A /* Tuning.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tuning.storyboard; sourceTree = "<group>"; };
 		65FCB7A724478F22005E142A /* TuningTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuningTableViewController.swift; sourceTree = "<group>"; };
 		65FCB7B124479246005E142A /* offButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = offButton.png; path = "Simple Instrument Tuner/images/offButton.png"; sourceTree = SOURCE_ROOT; };
@@ -992,6 +995,7 @@
 				ja,
 				"zh-Hans",
 				ar,
+				tr,
 			);
 			mainGroup = 65CCBF4924260D9E00F518D8;
 			productRefGroup = 65CCBF5324260D9E00F518D8 /* Products */;
@@ -1569,6 +1573,7 @@
 				656A8414245E0AA000CC0419 /* ja */,
 				656A8417245E132B00CC0419 /* zh-Hans */,
 				65647DD8245F2784003F8C17 /* ar */,
+				65D6A17B24AB3060000C7147 /* tr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1581,6 +1586,7 @@
 				656A8413245E0AA000CC0419 /* ja */,
 				656A8416245E132A00CC0419 /* zh-Hans */,
 				65647DD7245F2784003F8C17 /* ar */,
+				65D6A17A24AB3060000C7147 /* tr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1596,6 +1602,7 @@
 				656A8412245E0AA000CC0419 /* ja */,
 				656A8415245E132A00CC0419 /* zh-Hans */,
 				65647DD6245F2783003F8C17 /* ar */,
+				65D6A17924AB3060000C7147 /* tr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1823,7 +1830,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Simple Instrument Tuner/Simple Instrument Tuner.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P2EQM7YAFH;
 				INFOPLIST_FILE = "Simple Instrument Tuner/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1831,7 +1838,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D INSTRUMENT";
 				PRODUCT_BUNDLE_IDENTIFIER = ch.vormbrock.simpleinstrumenttuner;
 				PRODUCT_NAME = Tunissimo;
@@ -1849,7 +1856,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Simple Instrument Tuner/Simple Instrument Tuner.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P2EQM7YAFH;
 				INFOPLIST_FILE = "Simple Instrument Tuner/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1857,7 +1864,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D INSTRUMENT";
 				PRODUCT_BUNDLE_IDENTIFIER = ch.vormbrock.simpleinstrumenttuner;
 				PRODUCT_NAME = Tunissimo;

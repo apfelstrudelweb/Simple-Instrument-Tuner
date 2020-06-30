@@ -41,6 +41,9 @@
 "Label.instrumentDropdown" = "楽器をお選びください";
 "%d Label.strings" = "%d 弦楽器";
 "Label.calibration" = "キャリブレーション";
+"Label.colorSettings" = "カラー設定";
+"Label.goldSettings" = "金";
+"Label.colorReset" = "標準色に戻す";
 
 
 // Instruments and IAP

@@ -41,6 +41,9 @@
 "Label.instrumentDropdown" = "Пожалуйста, выберите инструмент";
 "%d Label.strings" = "%d строки";
 "Label.calibration" = "калибровка";
+"Label.colorSettings" = "Настройки цвета";
+"Label.goldSettings" = "Золотой";
+"Label.colorReset" = "сброс до стандартных цветов";
 
 
 
